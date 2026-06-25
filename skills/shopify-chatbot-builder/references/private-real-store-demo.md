@@ -37,10 +37,23 @@ The demo should include:
 - support handoff button or link for unknown questions
 - loading state while the backend responds
 - friendly error state when the backend, model, or Shopify sync is unavailable
+- assistant responses render cleanly; Markdown markers such as `**bold**`, raw list asterisks, or unrendered links must not be visible to shoppers
 - mobile-responsive layout
 - private-preview label that does not dominate the UI
 
 Avoid raw HTML forms, unstyled textareas, cramped panels, placeholder content, debug JSON as the main UI, or anything that makes the user doubt the final chatbot.
+
+## Assistant Response Rendering
+
+Do not display raw model Markdown as plain text in the demo widget.
+
+Preferred options:
+
+- Prompt the model to avoid Markdown headings/tables and keep answers concise.
+- Still render a safe, whitelisted Markdown subset in the frontend, because models may emit bullets, bold text, or links anyway.
+- Escape all model text before rendering. Never pass model output directly to `innerHTML`.
+- Allow only safe formatting such as paragraphs, bullets, bold, italics, and http/https links.
+- Verify in a browser that shopper-visible messages do not show raw `**`, raw bullet syntax, or broken link syntax.
 
 ## Required Data Before Demo
 
@@ -65,6 +78,10 @@ Before moving to widget installation, show the member:
 - private demo URL
 - confirmation that the backend made a real AI model call
 - confirmation that no AI provider key or Shopify Admin credential is present in frontend code
+- confirmation that product answers are sourced only from `ACTIVE` Shopify products
+- confirmation that page answers are sourced only from published pages
+- confirmation that collection-derived product mentions cannot include draft or archived products
+- pass/fail result showing raw Markdown from model responses is not visible in the UI
 - pass/fail results for at least five questions, including real product, real policy, discount, inventory, and order-status questions
 
 If any item is missing, do not install the widget yet.

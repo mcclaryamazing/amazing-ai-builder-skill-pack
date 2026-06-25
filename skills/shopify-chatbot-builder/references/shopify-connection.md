@@ -49,6 +49,8 @@ Start read-only and request only what the demo needs:
 | `read_online_store_pages` | Online store pages when page sync is enabled |
 | `read_legal_policies` | Shopify legal policies through `ShopPolicy` |
 
+Legal policies require `read_legal_policies`. If policy sync returns a scope/access error, do not silently treat the demo as complete. Either request/approve the missing read-only scope or clearly fall back to published policy pages, and surface the warning in `/health` and `/api/knowledge`.
+
 Add only when needed:
 
 - `read_files` for Shopify-hosted files used as knowledge sources
@@ -68,10 +70,15 @@ Credential dry-run only proves values are present. It is not real store sync.
 
 Before the private demo, verify real Shopify data is retrievable by the backend and visible to chatbot retrieval:
 
+- products query uses active-only filtering and synced product records report `ACTIVE`
 - products and variants
 - collections
+- collection product mentions are filtered through already-synced active products or omitted
+- page query uses published-only filtering and synced page records are published
 - pages
+- policy sync works through `read_legal_policies`, or the app clearly reports the missing scope and uses published policy pages only
 - policies
 - support path
+- health/knowledge endpoints report configured scopes/status without exposing secrets
 
 If real data is not synced yet, do not present the chatbot as the demo. Treat any fake-data version as a temporary plumbing smoke test.

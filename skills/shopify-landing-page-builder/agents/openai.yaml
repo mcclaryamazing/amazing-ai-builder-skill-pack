@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify Landing Page Builder"
+  short_description: "Guided Shopify DTC landing page build"
+  default_prompt: "Use $shopify-landing-page-builder to guide me through designing, building, testing, and safely launching a high-converting Shopify landing page for my store."

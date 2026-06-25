@@ -109,6 +109,18 @@ Do not invent:
 
 When uncertain, say there is not enough verified store knowledge and offer support handoff.
 
+## Store Knowledge Visibility Rule
+
+The chatbot must only answer from customer-visible store content.
+
+For Shopify sync/retrieval:
+
+- Products must be active only. Use an Admin query filter such as `status:active`, request the `status` field, and drop any product whose status is not `ACTIVE`.
+- Pages must be published only. Use `published_status:published` where supported, request `isPublished`, and drop any page where `isPublished` is false.
+- Draft, archived, unpublished, hidden, or otherwise non-customer-visible content must never be used in retrieval context.
+- Collection records must not leak draft or archived product titles. If syncing collection product references, filter them through the already-synced active product handles, or omit product lists from collection records.
+- Store the applied source filters in health/knowledge metadata so the user can verify what content is eligible.
+
 ## Implementation Order
 
 1. Inspect the project and current files.
@@ -161,6 +173,11 @@ Before calling the chatbot ready for a real store, verify:
 - hosted backend works, if applicable
 - health endpoint works
 - Shopify sync has real retrievable data
+- smoke tests confirm synced products are active only
+- smoke tests confirm synced pages are published only
+- smoke tests confirm collection product mentions are filtered through active products
+- smoke tests or browser checks confirm Markdown renders cleanly in assistant messages
+- smoke tests confirm missing Shopify policy scopes are surfaced as warnings/failures rather than hidden
 - server-side AI model calls work
 - private demo acceptance gate is complete: real product count, synced policy/source names, private URL, model call verification, and pass/fail results for at least five real or risky questions
 - widget loads only where intended

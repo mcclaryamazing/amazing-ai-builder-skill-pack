@@ -16,20 +16,44 @@ function Fail-Check {
   Write-Check "fail" $Message
 }
 
+$skills = @(
+  @{
+    Name = "shopify-chatbot-builder"
+    References = @(
+      "guided-progress.md",
+      "private-real-store-demo.md",
+      "shopify-connection.md",
+      "widget-install-and-launch.md"
+    )
+  },
+  @{
+    Name = "shopify-landing-page-builder"
+    References = @(
+      "guided-progress.md",
+      "dtc-design-package.md",
+      "access-setup.md",
+      "shopify-implementation.md",
+      "launch-and-rollback.md"
+    )
+  }
+)
+
 $requiredFiles = @(
   "README.md",
   "INSTALL-CODEX.md",
   "START-HERE.md",
   "SKILL-PACK-GUIDE.md",
   "TROUBLESHOOTING.md",
-  "VERSION.md",
-  "skills/shopify-chatbot-builder/SKILL.md",
-  "skills/shopify-chatbot-builder/agents/openai.yaml",
-  "skills/shopify-chatbot-builder/references/guided-progress.md",
-  "skills/shopify-chatbot-builder/references/private-real-store-demo.md",
-  "skills/shopify-chatbot-builder/references/shopify-connection.md",
-  "skills/shopify-chatbot-builder/references/widget-install-and-launch.md"
+  "VERSION.md"
 )
+
+foreach ($skill in $skills) {
+  $requiredFiles += "skills/$($skill.Name)/SKILL.md"
+  $requiredFiles += "skills/$($skill.Name)/agents/openai.yaml"
+  foreach ($reference in $skill.References) {
+    $requiredFiles += "skills/$($skill.Name)/references/$reference"
+  }
+}
 
 foreach ($file in $requiredFiles) {
   $path = Join-Path $PackRoot $file
@@ -40,28 +64,36 @@ foreach ($file in $requiredFiles) {
   }
 }
 
-$skillPath = Join-Path $PackRoot "skills/shopify-chatbot-builder/SKILL.md"
-if (Test-Path -LiteralPath $skillPath -PathType Leaf) {
-  $content = Get-Content -LiteralPath $skillPath -Raw
-  if ($content -notmatch "(?s)^---\s*\r?\nname:\s*shopify-chatbot-builder\s*\r?\ndescription:\s*.+?\r?\n---") {
-    Fail-Check "invalid front matter for shopify-chatbot-builder"
-  } elseif ($content -match "\[TODO|TODO:") {
-    Fail-Check "TODO placeholder remains in shopify-chatbot-builder"
-  } else {
-    Write-Check "ok" "valid skill front matter for shopify-chatbot-builder"
+$quickValidate = Join-Path $env:USERPROFILE ".codex/skills/.system/skill-creator/scripts/quick_validate.py"
+$canQuickValidate = (Test-Path -LiteralPath $quickValidate -PathType Leaf) -and (Get-Command python -ErrorAction SilentlyContinue)
+
+foreach ($skill in $skills) {
+  $skillPath = Join-Path $PackRoot "skills/$($skill.Name)/SKILL.md"
+  if (-not (Test-Path -LiteralPath $skillPath -PathType Leaf)) {
+    continue
   }
 
-  $quickValidate = Join-Path $env:USERPROFILE ".codex/skills/.system/skill-creator/scripts/quick_validate.py"
-  if ((Test-Path -LiteralPath $quickValidate -PathType Leaf) -and (Get-Command python -ErrorAction SilentlyContinue)) {
+  $content = Get-Content -LiteralPath $skillPath -Raw
+  $frontMatterPattern = "(?s)^---\s*\r?\nname:\s*$($skill.Name)\s*\r?\ndescription:\s*.+?\r?\n---"
+
+  if ($content -notmatch $frontMatterPattern) {
+    Fail-Check ("invalid front matter for {0}" -f $skill.Name)
+  } elseif ($content -match "\[TODO|TODO:") {
+    Fail-Check ("TODO placeholder remains in {0}" -f $skill.Name)
+  } else {
+    Write-Check "ok" ("valid skill front matter for {0}" -f $skill.Name)
+  }
+
+  if ($canQuickValidate) {
     $skillDir = Split-Path -Parent $skillPath
     $previousPythonUtf8 = $env:PYTHONUTF8
     $env:PYTHONUTF8 = "1"
     try {
       $quickOutput = & python $quickValidate $skillDir 2>&1
       if ($LASTEXITCODE -ne 0) {
-        Fail-Check ("skill-creator validation failed for shopify-chatbot-builder: {0}" -f ($quickOutput -join " "))
+        Fail-Check ("skill-creator validation failed for {0}: {1}" -f $skill.Name, ($quickOutput -join " "))
       } else {
-        Write-Check "ok" "skill-creator validation passed for shopify-chatbot-builder"
+        Write-Check "ok" ("skill-creator validation passed for {0}" -f $skill.Name)
       }
     } finally {
       $env:PYTHONUTF8 = $previousPythonUtf8
@@ -92,8 +124,8 @@ foreach ($file in $allTextFiles) {
       Fail-Check ("stale old-demo wording remains in {0}" -f $relative)
     }
 
-    if ($text -match "Install all skills|install the skills|eight skills|three skills") {
-      Fail-Check ("stale multi-skill wording remains in {0}" -f $relative)
+    if ($text -match "\[TODO|TODO:") {
+      Fail-Check ("TODO placeholder remains in {0}" -f $relative)
     }
   }
 }

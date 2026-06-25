@@ -1,17 +1,16 @@
 # Version
 
-Current version: `0.3.0`
+Current version: `0.4.0`
 
-Repo focus: Shopify AI chatbot skill pack
-
-Source pattern: `shopify-ai-chatbot` starter workflow
+Repo focus: one Codex skill for Amazing.com members building a real Shopify AI chatbot.
 
 ## Status
 
-Focused distributable one-skill pack for building and installing a private one-store Shopify chatbot.
+Member-facing one-skill pack.
 
 ## Notes
 
-- The pack now includes one beginner-facing skill: `shopify-chatbot-builder`.
-- The skill includes internal references for guided progress, polished local demo, Shopify connection, widget installation, launch, and rollback.
-- The pack is intended for Codex and Claude Code users, with prompt fallbacks for tools that do not support skills.
+- The pack includes one skill: `shopify-chatbot-builder`.
+- The required demo uses real Shopify data and a real server-side AI model.
+- Fake/sample data may not be shown to the member as the chatbot demo.
+- The skill includes internal references for guided progress, private real-store demo, Shopify connection, widget installation, launch, and rollback.

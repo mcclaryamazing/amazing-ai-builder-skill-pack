@@ -1,50 +1,54 @@
 # Start Here
 
-This pack is for one job: building and installing a private AI chatbot on a Shopify store.
+This pack has one job: help an Amazing.com member use Codex to build a real, valuable Shopify chatbot for a live store.
 
-## Install The Skill
+## Install
 
-If the pack is published on GitHub, the easiest path is to ask your coding agent to install the skill from the repo URL:
+Paste this into Codex:
 
 ```text
+Use the skill-installer skill.
 Install the skill from this GitHub repo:
-https://github.com/<owner>/amazing-ai-builder-skill-pack
+https://github.com/mcclaryamazing/amazing-ai-builder-skill-pack
 
-The skill lives under skills/shopify-chatbot-builder.
+The skill is in:
+- skills/shopify-chatbot-builder
+
+After installing, tell me how to verify the skill is available.
 ```
 
-If the skill installs correctly, start with:
+Restart or refresh Codex if needed.
 
-```text
-Use the shopify-chatbot-builder skill. Help me build and install a private chatbot for my Shopify store. Show me where I am in the process and start with a polished local demo.
-```
+## Before You Start
 
-If the skill does not install cleanly, use the prompt fallbacks:
+Have these ready or know who can provide them:
 
-- [PROMPT-FALLBACKS.md](PROMPT-FALLBACKS.md)
+- Shopify site repo access
+- Shopify store owner, staff, collaborator, or Theme Access permissions
+- permission to create or use a Shopify app with read-only Admin API scopes
+- AI provider account and server-side API key
+- support contact page or support email
+- shipping, returns/refunds, privacy, terms, and warranty policy pages when available
+- development theme access
+- safe local or hosted secret storage for `.env` values and deployment secrets
 
-## Beginner Path
+Do not paste secrets into chat. Codex should tell you which local field to fill.
 
-1. Install the skill for your coding agent.
-2. Start with `shopify-chatbot-builder`.
-3. Build a polished local demo with sample products and policies.
-4. Connect Shopify store data only after the local demo works.
-5. Install the storefront chat widget on a development theme before touching the live theme.
-6. Test unsupported product, price, discount, inventory, shipping, returns, warranty, and order-status questions.
-7. Review readiness before private preview or live launch.
+## Start In The Shopify Site Repo
 
-## What Not To Do First
-
-- Do not paste API keys or Shopify tokens into chat.
-- Do not put secrets in frontend widget code.
-- Do not push to a live Shopify theme before reviewing the exact files.
-- Do not enable order lookup until authentication and privacy are designed.
-- Do not build a multi-store SaaS unless you explicitly want that.
-
-## First Prompt To Try
+Open Codex in the Shopify site repo, then paste:
 
 ```text
 Use the shopify-chatbot-builder skill.
 
-I want to build my own AI chatbot for my Shopify store. Please inspect this folder, explain what exists, show me the progress tracker, and help me get to a polished first local demo before we connect Shopify or touch a theme.
+I want to build a private AI chatbot for this live Shopify store. Inspect this repo first, show me the Shopify Chatbot Build Progress tracker, and guide me like a new user.
+
+Create a private demo using my real Shopify products, pages, policies, and a real server-side AI model before installing anything on my storefront. Ask me what setup I already have, verify and reuse it when safe, and do not ask me to paste secrets into chat.
 ```
+
+## Safety
+
+- Do not install anything on the live storefront until the private real-store demo passes.
+- Do not put Admin API tokens or AI provider keys in frontend code.
+- Do not enable order lookup unless authentication, privacy, and backend verification are designed.
+- Do not push to a live Shopify theme without a reviewed change list and rollback path.

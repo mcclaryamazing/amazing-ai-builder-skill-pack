@@ -1,17 +1,19 @@
 # Install For Codex
 
-Codex skills are folders with a `SKILL.md` file. This pack includes one Shopify chatbot skill folder under `skills/`.
+Codex skills are folders with a `SKILL.md` file. This pack contains one skill:
 
-Codex installations can vary. If your Codex setup uses a different skills directory, use that directory instead of the examples below.
+```text
+skills/shopify-chatbot-builder
+```
 
-## Easiest Path: Ask Codex To Install From GitHub
+## Install From GitHub
 
-After this repo is published to GitHub, paste the repo URL into Codex and ask it to install the skill.
+Paste this into Codex:
 
 ```text
 Use the skill-installer skill.
 Install the skill from this GitHub repo:
-https://github.com/<owner>/amazing-ai-builder-skill-pack
+https://github.com/mcclaryamazing/amazing-ai-builder-skill-pack
 
 The skill is in:
 - skills/shopify-chatbot-builder
@@ -19,44 +21,32 @@ The skill is in:
 After installing, tell me how to verify the skill is available.
 ```
 
-Codex may use a GitHub skill installer, a download flow, or git checkout depending on its current tooling and repository visibility. Private repos may require the user's existing GitHub credentials.
+Restart or refresh Codex if needed.
 
-## Manual Fallback: Copy Into Your Codex Skills Folder
+## Manual Fallback
 
 From this repo root:
 
 ```powershell
 $target = "$env:USERPROFILE\.codex\skills"
 New-Item -ItemType Directory -Force $target
-Copy-Item -Recurse -Force .\skills\* $target
-```
-
-From this skill-pack repo root, that copies:
-
-```text
-skills/shopify-chatbot-builder
+Copy-Item -Recurse -Force .\skills\shopify-chatbot-builder $target
 ```
 
 ## Verify
 
-Restart or refresh Codex if your setup requires it, then ask:
+Ask Codex:
 
 ```text
 What Amazing Shopify Chatbot skill can you see?
 ```
 
-Then try:
+Then start inside the Shopify site repo:
 
 ```text
-Use the shopify-chatbot-builder skill. Help me build and install a private Shopify chatbot. Show me the progress tracker and start with a polished local demo before connecting Shopify.
+Use the shopify-chatbot-builder skill.
+
+I want to build a private AI chatbot for this live Shopify store. Inspect this repo first, show me the Shopify Chatbot Build Progress tracker, and guide me like a new user.
+
+Create a private demo using my real Shopify products, pages, policies, and a real server-side AI model before installing anything on my storefront. Ask me what setup I already have, verify and reuse it when safe, and do not ask me to paste secrets into chat.
 ```
-
-If the skill is not detected, use [PROMPT-FALLBACKS.md](PROMPT-FALLBACKS.md).
-
-## If Codex Does Not Detect The Skills
-
-1. Confirm each skill folder contains `SKILL.md`.
-2. Confirm the folder name matches the `name:` in front matter.
-3. Restart or refresh the Codex session.
-4. Use the exact skill name in your prompt.
-5. Use a fallback prompt if needed.

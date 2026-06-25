@@ -19,28 +19,14 @@ function Fail-Check {
 $requiredFiles = @(
   "README.md",
   "INSTALL-CODEX.md",
-  "INSTALL-CLAUDE-CODE.md",
   "START-HERE.md",
   "SKILL-PACK-GUIDE.md",
-  "PROMPT-FALLBACKS.md",
   "TROUBLESHOOTING.md",
   "VERSION.md",
-  "examples/shopify-ai-chatbot/README.md",
-  "prompts/01-plan-my-shopify-chatbot.md",
-  "prompts/02-build-my-shopify-chatbot.md",
-  "prompts/03-connect-my-shopify-store.md",
-  "prompts/04-test-my-chatbot-safety.md",
-  "prompts/05-fix-my-chatbot-error.md",
-  "prompts/06-review-my-chatbot-before-launch.md"
-)
-
-$requiredSkills = @(
-  "shopify-chatbot-builder"
-)
-
-$requiredReferences = @(
+  "skills/shopify-chatbot-builder/SKILL.md",
+  "skills/shopify-chatbot-builder/agents/openai.yaml",
   "skills/shopify-chatbot-builder/references/guided-progress.md",
-  "skills/shopify-chatbot-builder/references/polished-local-demo.md",
+  "skills/shopify-chatbot-builder/references/private-real-store-demo.md",
   "skills/shopify-chatbot-builder/references/shopify-connection.md",
   "skills/shopify-chatbot-builder/references/widget-install-and-launch.md"
 )
@@ -54,29 +40,15 @@ foreach ($file in $requiredFiles) {
   }
 }
 
-foreach ($skill in $requiredSkills) {
-  $skillPath = Join-Path $PackRoot ("skills/{0}/SKILL.md" -f $skill)
-  if (-not (Test-Path -LiteralPath $skillPath -PathType Leaf)) {
-    Fail-Check ("missing SKILL.md for {0}" -f $skill)
-    continue
-  }
-
+$skillPath = Join-Path $PackRoot "skills/shopify-chatbot-builder/SKILL.md"
+if (Test-Path -LiteralPath $skillPath -PathType Leaf) {
   $content = Get-Content -LiteralPath $skillPath -Raw
-  if ($content -notmatch "(?s)^---\s*\r?\nname:\s*$([regex]::Escape($skill))\s*\r?\ndescription:\s*.+?\r?\n---") {
-    Fail-Check ("invalid front matter for {0}" -f $skill)
+  if ($content -notmatch "(?s)^---\s*\r?\nname:\s*shopify-chatbot-builder\s*\r?\ndescription:\s*.+?\r?\n---") {
+    Fail-Check "invalid front matter for shopify-chatbot-builder"
   } elseif ($content -match "\[TODO|TODO:") {
-    Fail-Check ("TODO placeholder remains in {0}" -f $skill)
+    Fail-Check "TODO placeholder remains in shopify-chatbot-builder"
   } else {
-    Write-Check "ok" ("valid skill front matter for {0}" -f $skill)
-  }
-}
-
-foreach ($reference in $requiredReferences) {
-  $path = Join-Path $PackRoot $reference
-  if (Test-Path -LiteralPath $path -PathType Leaf) {
-    Write-Check "ok" ("found {0}" -f $reference)
-  } else {
-    Fail-Check ("missing {0}" -f $reference)
+    Write-Check "ok" "valid skill front matter for shopify-chatbot-builder"
   }
 }
 
@@ -85,10 +57,32 @@ $allTextFiles = Get-ChildItem -LiteralPath $PackRoot -Recurse -File | Where-Obje
 }
 
 foreach ($file in $allTextFiles) {
+  $relative = $file.FullName.Replace($PackRoot, "").TrimStart("\", "/")
   $text = Get-Content -LiteralPath $file.FullName -Raw
+
   if ($text -match "(?i)(sk-[A-Za-z0-9_-]{20,}|shpat_[A-Za-z0-9_]{20,}|AIza[0-9A-Za-z_-]{20,}|-----BEGIN (RSA |EC |OPENSSH |)PRIVATE KEY-----)") {
-    Fail-Check ("possible literal secret in {0}" -f $file.FullName.Replace($PackRoot, "").TrimStart("\", "/"))
+    Fail-Check ("possible literal secret in {0}" -f $relative)
   }
+
+  if ($relative -ne "scripts\validate-skill-pack.ps1") {
+    if ($text -match "github\.com/<owner>/") {
+      Fail-Check ("placeholder GitHub owner remains in {0}" -f $relative)
+    }
+
+    if ($text -match "polished-local-demo|shopify-ai-chatbot-builder|sample products|sample policies|demo product data|demo policy data") {
+      Fail-Check ("stale old-demo wording remains in {0}" -f $relative)
+    }
+
+    if ($text -match "Install all skills|install the skills|eight skills|three skills") {
+      Fail-Check ("stale multi-skill wording remains in {0}" -f $relative)
+    }
+  }
+}
+
+if (-not (Test-Path -LiteralPath (Join-Path $PackRoot "skills/shopify-chatbot-builder/references/polished-local-demo.md"))) {
+  Write-Check "ok" "old polished-local-demo reference removed"
+} else {
+  Fail-Check "old polished-local-demo reference still exists"
 }
 
 if (-not $failed) {

@@ -1,6 +1,6 @@
 # Shopify Connection
 
-Connect Shopify only after the polished local demo works.
+Connect Shopify read-only data before the user-facing demo. The private demo needs real product, page, and policy data to be useful.
 
 If the user already has Shopify access or credentials set up, verify and reuse them. Do not create a new custom app, Admin token, Theme Access password, or Shopify CLI workflow unless the existing setup is missing, unsafe, or insufficient.
 
@@ -40,25 +40,33 @@ If the existing access is overbroad, stale, or not enough for the next step, exp
 
 ## Scope Guidance
 
-Start read-only:
+Start read-only and request only what the demo needs:
 
-- `read_products`
-- `read_content`
-- `read_online_store_pages` when page sync is enabled
+| Scope | Use |
+| --- | --- |
+| `read_products` | Products and variants |
+| `read_content` | Store content where supported |
+| `read_online_store_pages` | Online store pages when page sync is enabled |
+| `read_legal_policies` | Shopify legal policies through `ShopPolicy` |
 
 Add only when needed:
 
+- `read_files` for Shopify-hosted files used as knowledge sources
+- metafield read scopes only when metafields are part of the chatbot knowledge plan
+- `read_inventory` only when live inventory answers are explicitly in scope and safe
 - `read_themes` for theme inspection
 - `read_orders` for verified order lookup
 - `read_all_orders` only with strong justification
 
 Avoid order lookup in the first version unless authentication, privacy wording, and backend verification are implemented.
 
+For new apps, prefer Shopify Dev Dashboard or Shopify CLI app setup. Reuse an existing app when safe and sufficient. Do not send members down stale private-app or legacy setup paths.
+
 ## Verification
 
 Credential dry-run only proves values are present. It is not real store sync.
 
-Before launch, verify real Shopify data is retrievable by the backend and visible to chatbot retrieval:
+Before the private demo, verify real Shopify data is retrievable by the backend and visible to chatbot retrieval:
 
 - products and variants
 - collections
@@ -66,4 +74,4 @@ Before launch, verify real Shopify data is retrievable by the backend and visibl
 - policies
 - support path
 
-If real data is not synced yet, clearly label the project as demo-only.
+If real data is not synced yet, do not present the chatbot as the demo. Treat any fake-data version as a temporary plumbing smoke test.

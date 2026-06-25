@@ -1,8 +1,8 @@
 # Widget Install And Launch
 
-Touch Shopify theme files only after the backend works and the widget has been tested locally.
+Touch Shopify theme files only after the private real-store demo works.
 
-If the user already has hosting, storage, theme access, snippets, or widget assets set up, verify and reuse them. Do not recreate GCP projects, GCS buckets, Cloud Run services, Shopify snippets, theme credentials, or widget assets just because the workflow reaches that stage.
+If the user already has hosting, storage, theme access, snippets, or widget assets set up, verify and reuse them. Do not recreate hosting projects, storage buckets, deployment services, Shopify snippets, theme credentials, or widget assets just because the workflow reaches that stage.
 
 ## Safe Widget Pattern
 
@@ -51,12 +51,16 @@ If the render hook was added through Shopify Admin, do not push `layout/theme.li
 
 ## Launch Review
 
+Before any deploy, read the target chatbot repo's `deploy.md` or `DEPLOY.md` if one exists.
+
 Before live enablement, verify:
 
-- local demo still works
+- private real-store demo still works
 - hosted backend health endpoint works
-- existing GCP, GCS, Cloud Run, database, or Secret Manager resources have been verified when reused
+- existing hosting, storage, deployment, database, or secret-manager resources have been verified when reused
 - real Shopify sync works
+- server-side AI model calls work
+- private demo acceptance gate passed
 - widget loads only where intended
 - widget calls the intended backend endpoint
 - support handoff works
@@ -65,6 +69,16 @@ Before live enablement, verify:
 - mobile layout works
 - disable path works
 - rollback path is clear
+
+Before enabling the live theme, show:
+
+- development theme ID and live theme ID
+- exact files to be changed
+- confirmation that no secrets are in the files
+- disable switch or fastest disable path
+- rollback steps
+
+Ask for explicit approval before enabling the widget on a live theme.
 
 ## Disable And Rollback
 

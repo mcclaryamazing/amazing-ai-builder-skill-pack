@@ -1,44 +1,26 @@
 # Skill Pack Guide
 
-## One Skill, One Guided Journey
-
 Use `shopify-chatbot-builder` for the full Shopify chatbot build.
 
-The skill should guide the learner through:
+## Workflow
 
 1. Understand the store and chatbot goal.
-2. Build a polished local demo.
-3. Add safe answers and support handoff.
-4. Connect Shopify credentials server-side.
-5. Sync products, pages, and policies.
-6. Install the storefront widget on a development theme.
-7. Test desktop, mobile, and risky questions.
+2. Configure or verify the real AI model server-side.
+3. Connect Shopify read-only store data.
+4. Sync products, pages, collections, and policies.
+5. Build a private real-store demo.
+6. Test desktop, mobile, support handoff, and risky questions.
+7. Install the storefront widget on a development theme.
 8. Turn on limited live preview.
 9. Confirm rollback and disable path.
 
-The agent should keep a visible progress tracker so the user knows where they are, what just happened, and what comes next.
+The private demo is the first meaningful proof. It must use real Shopify data and a real model. Do not show fake products or made-up policies to the member as a demo.
 
-## Default Chatbot Architecture
+## Readiness Gates
 
-```text
-Shopify storefront widget
-  -> backend chat API
-  -> retrieval over synced Shopify/store knowledge
-  -> LLM response with commerce guardrails
-  -> human support handoff when uncertain
-```
-
-## Polished Local Demo Requirement
-
-The first demo is not throwaway. It should look credible enough that a new Shopify seller trusts the final build path.
-
-The local demo should include a polished chat UI, realistic sample products and policies, assistant/user bubbles, loading and error states, product or source cards when relevant, support handoff, and responsive desktop/mobile behavior.
-
-## Readiness Ladder
-
-- Local demo ready: polished UI, sample data, backend health, chat endpoint, safe refusals, and demo widget work.
-- Shopify data ready: real store data is synced and retrievable by the chatbot.
-- Private preview ready: hosted backend and widget work on a development theme.
-- Limited live beta ready: guardrails, rollback, support handoff, and monitoring are in place.
-
-Do not confuse credential dry-runs with real Shopify data ingestion.
+- Real inputs ready: server-side AI model access and read-only Shopify credentials are verified.
+- Store data ready: real products, pages, collections, and policies are retrievable by the backend.
+- Private demo ready: the member can ask real store questions through a polished private UI and get source-backed answers.
+- Safety ready: unsupported discounts, inventory, delivery promises, returns exceptions, warranty claims, and order status are refused or handed off.
+- Theme preview ready: the widget works on a development theme and can be disabled quickly.
+- Launch ready: live changes are approved, scoped, reversible, and monitored.

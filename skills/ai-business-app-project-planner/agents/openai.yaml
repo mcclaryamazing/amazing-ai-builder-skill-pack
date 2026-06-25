@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Business App Project Planner"
+  short_description: "Plan practical AI business tools before coding"
+  default_prompt: "Use the ai-business-app-project-planner skill to turn my AI tool idea into a simple, safe build plan."

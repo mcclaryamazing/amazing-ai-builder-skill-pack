@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify AI Chatbot Builder"
+  short_description: "Build a private one-store Shopify chatbot safely"
+  default_prompt: "Use the shopify-ai-chatbot-builder skill to help me build a private Shopify chatbot. Start with a local demo."

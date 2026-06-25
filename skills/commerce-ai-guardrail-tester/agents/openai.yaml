@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commerce AI Guardrail Tester"
+  short_description: "Test ecommerce AI answers for unsupported claims"
+  default_prompt: "Use the commerce-ai-guardrail-tester skill to review my chatbot for hallucinated commerce claims."

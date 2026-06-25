@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify Theme Widget Installer"
+  short_description: "Install storefront widgets without risky theme changes"
+  default_prompt: "Use the shopify-theme-widget-installer skill to install or review my Shopify widget safely."

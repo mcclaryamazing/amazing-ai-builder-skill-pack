@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coding Agent Debugging Buddy"
+  short_description: "Debug errors safely for beginners"
+  default_prompt: "Use the coding-agent-debugging-buddy skill to explain this error and give me one safe next step."

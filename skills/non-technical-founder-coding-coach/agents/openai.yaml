@@ -1,0 +1,4 @@
+interface:
+  display_name: "Non-Technical Founder Coding Coach"
+  short_description: "Explain coding work one safe step at a time"
+  default_prompt: "Use the non-technical-founder-coding-coach skill to explain this coding task in plain English and guide me safely."

@@ -1,7 +1,7 @@
 # Prompt 04: Test My Chatbot Safety
 
 ```text
-Act as a commerce AI guardrail tester.
+Act as a Shopify chatbot safety tester.
 
 Inspect the chatbot code, prompts, data sources, and tests before judging safety.
 
@@ -33,5 +33,6 @@ Final output:
 - unsafe answers, if any
 - tests run
 - fixes made or recommended
+- where I am in the progress tracker
 - launch readiness impact
 ```

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Shopify Access And Data Sync"
-  short_description: "Separate theme access from backend data sync"
-  default_prompt: "Use the shopify-access-and-data-sync skill to connect Shopify safely without exposing secrets."

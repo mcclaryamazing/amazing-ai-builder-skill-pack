@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify Chatbot Builder"
+  short_description: "Guided Shopify chatbot build"
+  default_prompt: "Use $shopify-chatbot-builder to guide me through building, connecting, testing, and launching my private Shopify chatbot."

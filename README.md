@@ -1,37 +1,29 @@
-# Amazing AI Builder Skill Pack
+# Amazing Shopify Chatbot Skill Pack
 
-This repo is a distributable skill pack for helping non-technical business owners use Codex or Claude Code to plan, build, test, debug, and safely launch AI tools.
+This repo is a focused skill pack for helping Shopify sellers and operators use Codex, Claude Code, or another coding agent to build and install a private AI chatbot on one Shopify store.
 
-The pack was extracted from the Shopify AI chatbot starter repo, but it is not a finished chatbot app. It is a reusable set of agent instructions, install notes, examples, and prompt fallbacks.
+The pack was extracted from a Shopify AI chatbot starter workflow. It is not a finished chatbot app. It is a reusable set of agent instructions, install notes, examples, and prompt fallbacks for building the app safely.
 
 ## Who This Is For
 
-- Shopify sellers and operators who understand their business but are new to coding.
-- Builders using Codex, Claude Code, or another AI coding agent as the developer.
-- Teams that want local demos, safety guardrails, and launch reviews before live changes.
+- Shopify sellers who want their own storefront chatbot.
+- Operators who are comfortable with their business but new to coding.
+- Builders using an AI coding agent as the developer.
+- Teams that want local demos, real store data sync, storefront widget installation, and cautious launch checks.
 
 ## What It Teaches The Agent
 
-- Plan a minimum viable AI business tool before coding.
-- Explain work in plain English for a non-technical founder.
-- Build a private one-store Shopify AI chatbot pattern safely.
-- Keep secrets server-side.
-- Separate Shopify theme access from backend Shopify data access.
-- Install storefront widgets without damaging live themes.
-- Test commerce AI answers for hallucinated claims.
-- Debug one careful step at a time.
-- Review launch readiness conservatively.
+- Build a polished local chatbot demo before touching Shopify.
+- Keep provider keys and Shopify Admin credentials server-side.
+- Connect products, collections, pages, and policies as chatbot knowledge.
+- Install a storefront chat widget without damaging live themes.
+- Refuse unsupported ecommerce claims instead of inventing answers.
+- Verify support handoff, rollback, and launch readiness before going live.
+- Keep the learner oriented with a visible step-by-step progress tracker.
 
 ## Skills
 
-- `ai-business-app-project-planner` - turn an AI tool idea into a scoped build plan.
-- `non-technical-founder-coding-coach` - help the agent explain coding work without overwhelming the owner.
-- `shopify-ai-chatbot-builder` - flagship one-store Shopify chatbot workflow.
-- `shopify-access-and-data-sync` - safe Shopify access, scopes, and backend data ingestion.
-- `shopify-theme-widget-installer` - safe snippet/widget install workflow.
-- `commerce-ai-guardrail-tester` - ecommerce hallucination and handoff tests.
-- `coding-agent-debugging-buddy` - step-by-step debugging help for beginners.
-- `launch-readiness-reviewer` - conservative launch readiness classification.
+- `shopify-chatbot-builder` - one guided skill for the whole Shopify chatbot project: polished local demo, Shopify connection, store sync, storefront widget, safety testing, launch, and rollback.
 
 ## Start Here
 
@@ -48,10 +40,10 @@ The pack was extracted from the Shopify AI chatbot starter repo, but it is not a
 After this pack is published to GitHub, paste this into Codex or Claude Code and replace the URL:
 
 ```text
-Install all skills from this GitHub repo:
+Install the skill from this GitHub repo:
 https://github.com/<owner>/amazing-ai-builder-skill-pack
 
-The skills live under the skills/ directory. After installing, tell me how to verify they are available.
+The skill lives under skills/shopify-chatbot-builder. After installing, tell me how to verify it is available.
 ```
 
 ## Critical Safety Rules

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Launch Readiness Reviewer"
-  short_description: "Classify launch readiness conservatively"
-  default_prompt: "Use the launch-readiness-reviewer skill to decide whether my AI tool is ready for the next launch stage."

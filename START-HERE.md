@@ -1,53 +1,50 @@
 # Start Here
 
-This pack teaches your AI coding agent how to help you build AI tools safely.
+This pack is for one job: building and installing a private AI chatbot on a Shopify store.
 
-You do not need to become a software engineer to use it. Your job is to make business decisions, approve risky steps, and provide store-specific information. The coding agent's job is to inspect files, explain the plan, write code, run checks, and warn before risky changes.
+## Install The Skill
 
-## First Choice
-
-If the pack is published on GitHub, the easiest path is to ask your coding agent to install the skills from the repo URL:
+If the pack is published on GitHub, the easiest path is to ask your coding agent to install the skill from the repo URL:
 
 ```text
-Install all skills from this GitHub repo:
+Install the skill from this GitHub repo:
 https://github.com/<owner>/amazing-ai-builder-skill-pack
 
-The skills live under the skills/ directory.
+The skill lives under skills/shopify-chatbot-builder.
 ```
 
-If skills install correctly, use a skill by name:
+If the skill installs correctly, start with:
 
 ```text
-Use the shopify-ai-chatbot-builder skill. Help me plan the safest first version of a private chatbot for my Shopify store. Start with a local demo and do not connect to Shopify yet.
+Use the shopify-chatbot-builder skill. Help me build and install a private chatbot for my Shopify store. Show me where I am in the process and start with a polished local demo.
 ```
 
-If skills do not install cleanly, use the prompt fallbacks:
+If the skill does not install cleanly, use the prompt fallbacks:
 
 - [PROMPT-FALLBACKS.md](PROMPT-FALLBACKS.md)
-- [prompts/01-start-a-new-ai-tool-project.md](prompts/01-start-a-new-ai-tool-project.md)
-- [prompts/02-build-my-shopify-chatbot.md](prompts/02-build-my-shopify-chatbot.md)
 
-## What To Do First
+## Beginner Path
 
-1. Install the skills for your coding agent.
-2. Ask the agent to explain what it can now help with.
-3. Start with planning, not deployment.
-4. Build a local demo before connecting real accounts.
-5. Test guardrails before launch.
+1. Install the skill for your coding agent.
+2. Start with `shopify-chatbot-builder`.
+3. Build a polished local demo with sample products and policies.
+4. Connect Shopify store data only after the local demo works.
+5. Install the storefront chat widget on a development theme before touching the live theme.
+6. Test unsupported product, price, discount, inventory, shipping, returns, warranty, and order-status questions.
+7. Review readiness before private preview or live launch.
 
 ## What Not To Do First
 
-- Do not paste API keys, access tokens, passwords, or service account files into chat.
-- Do not push Shopify theme files before reviewing the exact intended changes.
-- Do not deploy to cloud services before local tests pass.
-- Do not ask the chatbot to answer from store data until the store data is actually connected.
-- Do not assume "dry-run configured" means "real Shopify data is synced."
+- Do not paste API keys or Shopify tokens into chat.
+- Do not put secrets in frontend widget code.
+- Do not push to a live Shopify theme before reviewing the exact files.
+- Do not enable order lookup until authentication and privacy are designed.
+- Do not build a multi-store SaaS unless you explicitly want that.
 
-## Good First Request
+## First Prompt To Try
 
 ```text
-Use the ai-business-app-project-planner and non-technical-founder-coding-coach skills.
-I want to build an AI tool for my business, but I am not technical.
-Ask me only the business questions needed to plan a safe first version.
-Explain the plan in plain English and do not write code yet.
+Use the shopify-chatbot-builder skill.
+
+I want to build my own AI chatbot for my Shopify store. Please inspect this folder, explain what exists, show me the progress tracker, and help me get to a polished first local demo before we connect Shopify or touch a theme.
 ```

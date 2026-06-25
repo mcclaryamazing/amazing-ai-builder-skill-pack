@@ -1,21 +1,24 @@
 # Skill Pack Guide
 
-## How The Skills Work Together
+## One Skill, One Guided Journey
 
-Use the skills as a workflow:
+Use `shopify-chatbot-builder` for the full Shopify chatbot build.
 
-1. `ai-business-app-project-planner` turns the idea into a build plan.
-2. `non-technical-founder-coding-coach` keeps the experience understandable.
-3. `shopify-ai-chatbot-builder` guides the one-store chatbot architecture.
-4. `shopify-access-and-data-sync` handles Shopify access safely.
-5. `shopify-theme-widget-installer` handles theme/widget work safely.
-6. `commerce-ai-guardrail-tester` checks answer safety.
-7. `coding-agent-debugging-buddy` helps recover from errors.
-8. `launch-readiness-reviewer` decides whether the project is ready for the next stage.
+The skill should guide the learner through:
 
-## Default Build Pattern
+1. Understand the store and chatbot goal.
+2. Build a polished local demo.
+3. Add safe answers and support handoff.
+4. Connect Shopify credentials server-side.
+5. Sync products, pages, and policies.
+6. Install the storefront widget on a development theme.
+7. Test desktop, mobile, and risky questions.
+8. Turn on limited live preview.
+9. Confirm rollback and disable path.
 
-For a Shopify chatbot, default to:
+The agent should keep a visible progress tracker so the user knows where they are, what just happened, and what comes next.
+
+## Default Chatbot Architecture
 
 ```text
 Shopify storefront widget
@@ -25,38 +28,17 @@ Shopify storefront widget
   -> human support handoff when uncertain
 ```
 
-Use a private one-store architecture by default. Do not introduce OAuth distribution, marketplace packaging, multi-store billing, or multi-tenant SaaS unless the owner explicitly asks for it.
+## Polished Local Demo Requirement
+
+The first demo is not throwaway. It should look credible enough that a new Shopify seller trusts the final build path.
+
+The local demo should include a polished chat UI, realistic sample products and policies, assistant/user bubbles, loading and error states, product or source cards when relevant, support handoff, and responsive desktop/mobile behavior.
 
 ## Readiness Ladder
 
-- Local demo ready: sample data, health endpoint, chat endpoint, and safety refusals work locally.
-- Shopify credentials configured: backend credential dry-run passes.
-- Real store knowledge synced: products, collections, pages, and policies are actually available to retrieval.
-- Private preview ready: hosted backend/widget works on a development theme.
+- Local demo ready: polished UI, sample data, backend health, chat endpoint, safe refusals, and demo widget work.
+- Shopify data ready: real store data is synced and retrievable by the chatbot.
+- Private preview ready: hosted backend and widget work on a development theme.
 - Limited live beta ready: guardrails, rollback, support handoff, and monitoring are in place.
-- Broader launch ready: real data, privacy, reliability, and support process have been reviewed.
 
-## Owner-Agent Division
-
-The owner decides:
-
-- business goal
-- target customer
-- store-specific policies
-- acceptable risks
-- support handoff process
-- launch timing
-
-The coding agent handles:
-
-- repo inspection
-- implementation plan
-- code changes
-- local commands
-- test execution
-- risk callouts
-- rollback plan
-
-## Always Keep Secrets Out Of Chat
-
-The agent should name where secrets go, such as `.env` or a secret manager, but it should not ask the learner to paste values into chat.
+Do not confuse credential dry-runs with real Shopify data ingestion.

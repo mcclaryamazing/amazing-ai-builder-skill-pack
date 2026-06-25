@@ -26,23 +26,23 @@ $requiredFiles = @(
   "TROUBLESHOOTING.md",
   "VERSION.md",
   "examples/shopify-ai-chatbot/README.md",
-  "prompts/01-start-a-new-ai-tool-project.md",
+  "prompts/01-plan-my-shopify-chatbot.md",
   "prompts/02-build-my-shopify-chatbot.md",
   "prompts/03-connect-my-shopify-store.md",
   "prompts/04-test-my-chatbot-safety.md",
-  "prompts/05-fix-an-error.md",
-  "prompts/06-review-before-launch.md"
+  "prompts/05-fix-my-chatbot-error.md",
+  "prompts/06-review-my-chatbot-before-launch.md"
 )
 
 $requiredSkills = @(
-  "ai-business-app-project-planner",
-  "non-technical-founder-coding-coach",
-  "shopify-ai-chatbot-builder",
-  "shopify-access-and-data-sync",
-  "shopify-theme-widget-installer",
-  "commerce-ai-guardrail-tester",
-  "coding-agent-debugging-buddy",
-  "launch-readiness-reviewer"
+  "shopify-chatbot-builder"
+)
+
+$requiredReferences = @(
+  "skills/shopify-chatbot-builder/references/guided-progress.md",
+  "skills/shopify-chatbot-builder/references/polished-local-demo.md",
+  "skills/shopify-chatbot-builder/references/shopify-connection.md",
+  "skills/shopify-chatbot-builder/references/widget-install-and-launch.md"
 )
 
 foreach ($file in $requiredFiles) {
@@ -68,6 +68,15 @@ foreach ($skill in $requiredSkills) {
     Fail-Check ("TODO placeholder remains in {0}" -f $skill)
   } else {
     Write-Check "ok" ("valid skill front matter for {0}" -f $skill)
+  }
+}
+
+foreach ($reference in $requiredReferences) {
+  $path = Join-Path $PackRoot $reference
+  if (Test-Path -LiteralPath $path -PathType Leaf) {
+    Write-Check "ok" ("found {0}" -f $reference)
+  } else {
+    Fail-Check ("missing {0}" -f $reference)
   }
 }
 

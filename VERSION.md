@@ -1,15 +1,17 @@
 # Version
 
-Version: 0.1.0
+Current version: `0.3.0`
 
-Source pattern: `shopify-ai-chatbot` starter repo
+Repo focus: Shopify AI chatbot skill pack
 
-Created: 2026-06-25
+Source pattern: `shopify-ai-chatbot` starter workflow
 
-Status: initial distributable skill pack
+## Status
 
-Notes:
+Focused distributable one-skill pack for building and installing a private one-store Shopify chatbot.
 
-- The Shopify chatbot skill reflects the current one-store starter architecture.
-- Real Shopify ingestion and hosted deployment remain project-specific implementation work.
+## Notes
+
+- The pack now includes one beginner-facing skill: `shopify-chatbot-builder`.
+- The skill includes internal references for guided progress, polished local demo, Shopify connection, widget installation, launch, and rollback.
 - The pack is intended for Codex and Claude Code users, with prompt fallbacks for tools that do not support skills.

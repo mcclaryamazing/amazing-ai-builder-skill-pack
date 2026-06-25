@@ -1,82 +1,62 @@
 # Install For Codex
 
-Codex skills are folders with a `SKILL.md` file. This pack includes eight skill folders under `skills/`.
+Codex skills are folders with a `SKILL.md` file. This pack includes one Shopify chatbot skill folder under `skills/`.
 
 Codex installations can vary. If your Codex setup uses a different skills directory, use that directory instead of the examples below.
 
-## Recommended: Install From GitHub URL
+## Easiest Path: Ask Codex To Install From GitHub
 
-After this repo is published to GitHub, the easiest path is to paste the repo URL into Codex and ask it to install the skills.
-
-Use:
+After this repo is published to GitHub, paste the repo URL into Codex and ask it to install the skill.
 
 ```text
 Use the skill-installer skill.
-Install all skills from this GitHub repo:
+Install the skill from this GitHub repo:
 https://github.com/<owner>/amazing-ai-builder-skill-pack
 
-The skills are in:
-- skills/ai-business-app-project-planner
-- skills/non-technical-founder-coding-coach
-- skills/shopify-ai-chatbot-builder
-- skills/shopify-access-and-data-sync
-- skills/shopify-theme-widget-installer
-- skills/commerce-ai-guardrail-tester
-- skills/coding-agent-debugging-buddy
-- skills/launch-readiness-reviewer
+The skill is in:
+- skills/shopify-chatbot-builder
 
-After installing, tell me to restart Codex if needed and show me a verification prompt.
+After installing, tell me how to verify the skill is available.
 ```
 
 Codex may use a GitHub skill installer, a download flow, or git checkout depending on its current tooling and repository visibility. Private repos may require the user's existing GitHub credentials.
 
 ## Manual Fallback: Copy Into Your Codex Skills Folder
 
-Common Windows path:
+From this repo root:
 
 ```powershell
 $target = "$env:USERPROFILE\.codex\skills"
-New-Item -ItemType Directory -Force -Path $target
+New-Item -ItemType Directory -Force $target
 Copy-Item -Recurse -Force .\skills\* $target
 ```
 
 From this skill-pack repo root, that copies:
 
 ```text
-skills/ai-business-app-project-planner
-skills/non-technical-founder-coding-coach
-skills/shopify-ai-chatbot-builder
-skills/shopify-access-and-data-sync
-skills/shopify-theme-widget-installer
-skills/commerce-ai-guardrail-tester
-skills/coding-agent-debugging-buddy
-skills/launch-readiness-reviewer
+skills/shopify-chatbot-builder
 ```
 
 ## Verify
 
-After installing, restart Codex if the installer tells you to. Then start a new Codex session and ask:
+Restart or refresh Codex if your setup requires it, then ask:
 
 ```text
-What Amazing AI Builder skills can you see?
+What Amazing Shopify Chatbot skill can you see?
 ```
 
 Then try:
 
 ```text
-Use the shopify-ai-chatbot-builder skill. Help me plan the safest first version of a private chatbot for my Shopify store. Start with a local demo and do not connect to Shopify yet.
+Use the shopify-chatbot-builder skill. Help me build and install a private Shopify chatbot. Show me the progress tracker and start with a polished local demo before connecting Shopify.
 ```
 
-And:
-
-```text
-Use the commerce-ai-guardrail-tester skill. Review my chatbot answers for unsupported claims about price, discounts, inventory, shipping, returns, warranty, safety, and order status.
-```
+If the skill is not detected, use [PROMPT-FALLBACKS.md](PROMPT-FALLBACKS.md).
 
 ## If Codex Does Not Detect The Skills
 
 1. Confirm each skill folder contains `SKILL.md`.
-2. Confirm the folder names are lower-case hyphenated names.
-3. Restart Codex or open a new thread.
+2. Confirm the folder name matches the `name:` in front matter.
+3. Restart or refresh the Codex session.
 4. Use the exact skill name in your prompt.
-5. If detection still fails, use [PROMPT-FALLBACKS.md](PROMPT-FALLBACKS.md).
+5. Use a fallback prompt if needed.

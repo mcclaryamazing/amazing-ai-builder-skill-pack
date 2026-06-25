@@ -1,11 +1,11 @@
 # Prompt 03: Connect My Shopify Store
 
 ```text
-Act as a Shopify access and data-sync guide.
+Act as a Shopify chatbot store connector.
 
 Inspect the project first. Explain the access model in plain English.
 
-Separate two rails:
+Separate two rails for the chatbot:
 1. Theme/storefront file access for snippets, assets, widget loader, and Liquid.
 2. Backend-only Shopify data/API access for products, variants, collections, pages, policies, files, metafields, and optional discounts/order data.
 
@@ -17,6 +17,7 @@ Do:
 5. Use dry-run checks to confirm credentials are present.
 6. Explain that dry-run readiness is not real data ingestion.
 7. Confirm no Admin API credentials are in frontend/widget code.
+8. Show where this step fits in the chatbot build progress tracker.
 
 Do not:
 - ask me to paste tokens or client secrets into chat

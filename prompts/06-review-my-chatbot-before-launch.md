@@ -1,7 +1,7 @@
-# Prompt 06: Review Before Launch
+# Prompt 06: Review My Chatbot Before Launch
 
 ```text
-Act as a conservative launch-readiness reviewer.
+Act as a conservative Shopify chatbot launch reviewer.
 
 Inspect the project, docs, tests, configuration, and current git status before deciding readiness.
 
@@ -33,5 +33,6 @@ Final output:
 - blocking issues
 - non-blocking issues
 - tests run
+- current progress tracker
 - exact next steps
 ```

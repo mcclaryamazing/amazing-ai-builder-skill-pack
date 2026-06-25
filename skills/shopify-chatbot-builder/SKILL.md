@@ -87,6 +87,7 @@ Read `references/polished-local-demo.md` before building or judging the demo UI.
 - Explain each risky step in plain English.
 - Give one safe next command when the user is blocked.
 - Inspect the real repo before advising.
+- Reuse existing setup when the user already has it. Verify existing projects, buckets, keys, Shopify apps, Theme Access, snippets, deployments, and env values before proposing to recreate or replace them.
 - Warn before installs, deploys, theme pushes, secret changes, migrations, deletes, or live customer-facing changes.
 - Keep `.env` files ignored and never ask the learner to paste secrets into chat.
 
@@ -114,10 +115,30 @@ When uncertain, say there is not enough verified store knowledge and offer suppo
 5. Add sample product and policy retrieval.
 6. Add commerce guardrails before storefront testing.
 7. Add a thin widget or snippet that calls only the backend.
-8. Configure Shopify access with separate theme and backend data rails.
+8. Configure or verify Shopify access with separate theme and backend data rails.
 9. Implement real Shopify ingestion.
 10. Test safety questions.
 11. Deploy only after local and private preview checks pass.
+
+## Existing Setup Rule
+
+If the user says they already have part of the setup, do not recreate it by default. Treat existing infrastructure and access as first-class inputs.
+
+Examples:
+
+- existing GCP project, Cloud Run service, Secret Manager secrets, Cloud SQL instance, or GCS bucket
+- existing OpenAI or other LLM provider API key
+- existing Shopify Theme Access password, Shopify CLI login, custom app, Admin API token, or app scopes
+- existing storefront snippet, widget asset, metafields, backend endpoint, deployment, database, or local `.env`
+
+For existing setup:
+
+1. Ask what already exists at the relevant step.
+2. Verify it with read-only checks when possible.
+3. Reuse it if it matches the project needs.
+4. Update configuration to point at it rather than creating a duplicate.
+5. Explain when something must be changed and why.
+6. Ask before replacing, deleting, rotating, recreating, or broadening permissions.
 
 ## References
 

@@ -2,6 +2,8 @@
 
 Touch Shopify theme files only after the backend works and the widget has been tested locally.
 
+If the user already has hosting, storage, theme access, snippets, or widget assets set up, verify and reuse them. Do not recreate GCP projects, GCS buckets, Cloud Run services, Shopify snippets, theme credentials, or widget assets just because the workflow reaches that stage.
+
 ## Safe Widget Pattern
 
 Prefer:
@@ -21,14 +23,16 @@ Before pushing or editing theme files:
 
 1. Confirm target store and theme.
 2. Prefer a development theme.
-3. Pull or read current theme files.
-4. Inspect existing snippets, assets, and layout.
-5. Show exact intended changes.
-6. Confirm no secrets in Liquid or public JavaScript.
-7. Use targeted push when possible.
-8. Use no-delete behavior when possible.
-9. Verify desktop and mobile.
-10. Provide rollback or disable steps.
+3. Ask whether a snippet, render hook, widget asset, or Theme Access setup already exists.
+4. Pull or read current theme files.
+5. Inspect existing snippets, assets, and layout.
+6. Reuse existing working files when they match the project.
+7. Show exact intended changes.
+8. Confirm no secrets in Liquid or public JavaScript.
+9. Use targeted push when possible.
+10. Use no-delete behavior when possible.
+11. Verify desktop and mobile.
+12. Provide rollback or disable steps.
 
 Example push shape:
 
@@ -51,6 +55,7 @@ Before live enablement, verify:
 
 - local demo still works
 - hosted backend health endpoint works
+- existing GCP, GCS, Cloud Run, database, or Secret Manager resources have been verified when reused
 - real Shopify sync works
 - widget loads only where intended
 - widget calls the intended backend endpoint

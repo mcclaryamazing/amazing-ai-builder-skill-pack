@@ -8,6 +8,7 @@ Inspect the project, docs, tests, configuration, and current git status before d
 Review:
 - local demo works
 - hosted backend works, if applicable
+- any existing GCP project, GCS bucket, Cloud Run service, Secret Manager secrets, Shopify access, snippets, or widget assets were verified before reuse
 - health endpoint works
 - Shopify sync works or sample data is clearly marked
 - widget loads only where intended

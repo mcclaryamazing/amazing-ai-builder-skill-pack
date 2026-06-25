@@ -2,6 +2,8 @@
 
 Connect Shopify only after the polished local demo works.
 
+If the user already has Shopify access or credentials set up, verify and reuse them. Do not create a new custom app, Admin token, Theme Access password, or Shopify CLI workflow unless the existing setup is missing, unsafe, or insufficient.
+
 ## Two Access Rails
 
 Keep these separate:
@@ -23,6 +25,18 @@ Ask for non-secret values in chat:
 - whether order lookup is in scope
 
 For secrets, tell the user the exact `.env` key or secret-manager entry to fill locally. Do not ask them to paste secret values into chat.
+
+## Existing Access
+
+When the user says access already exists:
+
+1. Ask which access rail it belongs to: theme/storefront files or backend Admin API data.
+2. Verify the non-secret identifiers, such as store domain, app name, available scopes, theme ID, and configured env variable names.
+3. Use read-only checks where available, such as Shopify CLI status, a dry-run credential check, or an app-scope inspection.
+4. Point the project at the existing values instead of creating duplicates.
+5. Ask before rotating tokens, creating a new app, changing scopes, or replacing Theme Access credentials.
+
+If the existing access is overbroad, stale, or not enough for the next step, explain the gap and propose the smallest change.
 
 ## Scope Guidance
 

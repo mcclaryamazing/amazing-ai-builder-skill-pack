@@ -29,6 +29,8 @@ Shopify Chatbot Build Progress
 8. Limited live preview: the chatbot is enabled only for the intended storefront surface after review.
 9. Rollback: the owner knows how to disable the widget and roll back backend/theme changes.
 
+At each stage, ask whether the user already has relevant setup. Reuse verified existing resources instead of recreating them. Examples include API keys, `.env` files, Shopify Theme Access, Shopify custom apps, GCP projects, GCS buckets, Cloud Run services, Secret Manager entries, databases, snippets, or widget assets.
+
 ## Communication Pattern
 
 After completing a stage, say:

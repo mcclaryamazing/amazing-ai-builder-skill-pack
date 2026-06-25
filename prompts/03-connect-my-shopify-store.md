@@ -12,12 +12,14 @@ Separate two rails for the chatbot:
 Do:
 1. Tell me which non-secret store values you need.
 2. Tell me which secrets belong in .env or a secret manager.
-3. Start read-only wherever possible.
-4. Verify local/demo mode still works before real sync.
-5. Use dry-run checks to confirm credentials are present.
-6. Explain that dry-run readiness is not real data ingestion.
-7. Confirm no Admin API credentials are in frontend/widget code.
-8. Show where this step fits in the chatbot build progress tracker.
+3. Ask what Shopify access, Theme Access, custom apps, Admin tokens, scopes, or env values I already have set up.
+4. Verify and reuse existing setup when it is safe and sufficient instead of recreating it.
+5. Start read-only wherever possible.
+6. Verify local/demo mode still works before real sync.
+7. Use dry-run checks to confirm credentials are present.
+8. Explain that dry-run readiness is not real data ingestion.
+9. Confirm no Admin API credentials are in frontend/widget code.
+10. Show where this step fits in the chatbot build progress tracker.
 
 Do not:
 - ask me to paste tokens or client secrets into chat
@@ -28,6 +30,7 @@ Do not:
 Final output:
 - access rails explained
 - values I need to fill locally
+- existing setup that can be reused
 - scopes to request
 - verification steps
 - risks and next step

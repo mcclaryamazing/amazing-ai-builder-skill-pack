@@ -21,6 +21,8 @@ $skills = @(
     Name = "shopify-chatbot-builder"
     References = @(
       "guided-progress.md",
+      "empty-project-scaffold.md",
+      "admin-dashboard-control-plane.md",
       "private-real-store-demo.md",
       "shopify-connection.md",
       "widget-install-and-launch.md"
@@ -80,6 +82,12 @@ foreach ($skill in $skills) {
     Fail-Check ("invalid front matter for {0}" -f $skill.Name)
   } elseif ($content -match "\[TODO|TODO:") {
     Fail-Check ("TODO placeholder remains in {0}" -f $skill.Name)
+  } elseif ($skill.Name -eq "shopify-chatbot-builder" -and $content -notmatch "admin-dashboard-control-plane\.md") {
+    Fail-Check "shopify-chatbot-builder does not reference the admin dashboard control plane"
+  } elseif ($skill.Name -eq "shopify-chatbot-builder" -and $content -notmatch "empty-project-scaffold\.md") {
+    Fail-Check "shopify-chatbot-builder does not reference the empty project scaffold"
+  } elseif ($skill.Name -eq "shopify-chatbot-builder" -and $content -notmatch "Build the protected admin dashboard and embedded test chat") {
+    Fail-Check "shopify-chatbot-builder tracker is not dashboard-first"
   } else {
     Write-Check "ok" ("valid skill front matter for {0}" -f $skill.Name)
   }

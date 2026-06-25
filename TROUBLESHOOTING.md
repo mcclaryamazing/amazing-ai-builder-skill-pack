@@ -28,7 +28,15 @@ Do not ask me to paste secrets into chat. Tell me the exact .env variable names 
 Stop and redirect:
 
 ```text
-Use the shopify-chatbot-builder skill. Do not present fake products or made-up policies as my demo. The private demo must use my real Shopify products, pages, policies, and a real server-side AI model. If credentials are not ready, run only an internal connectivity test and label it clearly as not the demo.
+Use the shopify-chatbot-builder skill. Do not present fake products, made-up policies, static replies, standalone mock widgets, raw JSON endpoints, or fake data as my demo. The real private demo is the protected dashboard test chat using my real Shopify products, collections, pages, policies, and a real server-side AI model. If credentials are not ready, run only an internal connectivity test and label it clearly as not the demo.
+```
+
+## Codex Wants To Install The Widget Before The Dashboard
+
+Stop and redirect:
+
+```text
+Use the shopify-chatbot-builder skill. Do not install or enable any storefront widget yet. First build the protected admin dashboard/control plane with health/readiness status, chatbot mode, fast disable path, Shopify sync, source counts, source browser, active/published source filters, embedded dashboard test chat, risky-question tests, support routing, and no exposed secrets.
 ```
 
 ## Codex Wants To Skip The Landing Page Design Package
@@ -68,7 +76,7 @@ Do not touch my live Shopify theme yet. First inspect current files, read deploy
 Ask:
 
 ```text
-Use the shopify-chatbot-builder skill. Review the chatbot for unsupported claims about price, discounts, inventory, shipping, returns, warranty, safety, and order status. Fix the prompt, retrieval, or refusal behavior before any theme install.
+Use the shopify-chatbot-builder skill. Review the dashboard test chat for unsupported claims about price, discounts, inventory, shipping, returns, warranty, policy exceptions, safety, and order status. Fix the prompt, retrieval, source filters, or refusal behavior before any theme install.
 ```
 
 ## The Landing Page Looks Installed But Broken

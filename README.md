@@ -4,7 +4,7 @@ This repo contains installable Codex skills for Amazing.com members building pra
 
 ## Skills
 
-- `shopify-chatbot-builder` - guided workflow for building, testing, installing, and launching a private one-store Shopify AI chatbot.
+- `shopify-chatbot-builder` - dashboard-first workflow for building, testing, installing, and launching a private one-store Shopify AI chatbot.
 - `shopify-landing-page-builder` - guided workflow for designing, building, testing, and safely launching a high-converting DTC Shopify landing page.
 
 ## What The Skills Do
@@ -14,10 +14,11 @@ The chatbot skill guides Codex through a safe, practical path:
 1. Inspect the member's Shopify site repo.
 2. Verify or configure a real AI model key server-side.
 3. Connect read-only Shopify product, page, collection, and policy data.
-4. Build a private real-store chatbot demo before installing anything on the storefront.
-5. Test answer quality, refusals, support handoff, desktop, and mobile.
-6. Install the widget on a development theme.
-7. Launch only after approval, rollback, and disable paths are clear.
+4. Build a protected admin dashboard/control plane with source inspection, mode controls, sync status, and embedded test chat.
+5. Use the dashboard test chat as the real private demo with the same backend, model, retrieval, and guardrails the widget will use.
+6. Inspect sources and test answer quality, risky questions, product promotion, offers, refusals, support handoff, conversations, analytics, desktop, and mobile.
+7. Install the thin storefront widget on a development theme only after the dashboard acceptance gate passes.
+8. Launch only after approval, rollback, and disable paths are clear.
 
 The landing-page skill guides Codex through the full DTC page path:
 
@@ -83,7 +84,7 @@ Use the shopify-chatbot-builder skill.
 
 I want to build a private AI chatbot for this live Shopify store. Inspect this repo first, show me the Shopify Chatbot Build Progress tracker, and guide me like a new user.
 
-Create a private demo using my real Shopify products, pages, policies, and a real server-side AI model before installing anything on my storefront. Ask me what setup I already have, verify and reuse it when safe, and do not ask me to paste secrets into chat.
+Build this dashboard-first. Create a protected admin dashboard/control plane with source inspection, mode/status controls, Shopify sync status, source counts for products/collections/pages/policies, and an embedded dashboard test chat using my real Shopify data and a real server-side AI model before installing anything on my storefront. Ask me what setup I already have, verify and reuse it when safe, and do not ask me to paste secrets into chat.
 ```
 
 ## Start A Shopify Landing Page Build

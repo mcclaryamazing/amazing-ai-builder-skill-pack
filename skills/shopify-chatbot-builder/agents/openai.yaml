@@ -1,4 +1,4 @@
 interface:
   display_name: "Shopify Chatbot Builder"
-  short_description: "Guided Shopify chatbot build"
-  default_prompt: "Use $shopify-chatbot-builder to guide me through building a private Shopify chatbot demo using my real store data and a real AI model before installing it on my storefront."
+  short_description: "Dashboard-first Shopify chatbot build"
+  default_prompt: "Use $shopify-chatbot-builder to guide me through building a dashboard-first Shopify chatbot using my real store data, a real AI model, and a protected admin test chat before installing any storefront widget."

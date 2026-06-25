@@ -1,6 +1,6 @@
 # Widget Install And Launch
 
-Touch Shopify theme files only after the private real-store demo works.
+Touch Shopify theme files only after the protected dashboard and embedded real-store test chat work.
 
 If the user already has hosting, storage, theme access, snippets, or widget assets set up, verify and reuse them. Do not recreate hosting projects, storage buckets, deployment services, Shopify snippets, theme credentials, or widget assets just because the workflow reaches that stage.
 
@@ -23,16 +23,19 @@ Before pushing or editing theme files:
 
 1. Confirm target store and theme.
 2. Prefer a development theme.
-3. Ask whether a snippet, render hook, widget asset, or Theme Access setup already exists.
-4. Pull or read current theme files.
-5. Inspect existing snippets, assets, and layout.
-6. Reuse existing working files when they match the project.
-7. Show exact intended changes.
-8. Confirm no secrets in Liquid or public JavaScript.
-9. Use targeted push when possible.
-10. Use no-delete behavior when possible.
-11. Verify desktop and mobile.
-12. Provide rollback or disable steps.
+3. Read the target repo's `deploy.md` or `DEPLOY.md` if one exists.
+4. Run `git status --short` in every repo being touched.
+5. If uncommitted work exists, list it and ask whether it should be included before excluding it from deploy or theme work.
+6. Ask whether a snippet, render hook, widget asset, or Theme Access setup already exists.
+7. Pull or read current theme files.
+8. Inspect existing snippets, assets, and layout.
+9. Reuse existing working files when they match the project.
+10. Show exact intended changes.
+11. Confirm no secrets in Liquid or public JavaScript.
+12. Use targeted push when possible.
+13. Use no-delete behavior when possible.
+14. Verify desktop and mobile.
+15. Provide rollback or disable steps.
 
 Example push shape:
 
@@ -53,14 +56,16 @@ If the render hook was added through Shopify Admin, do not push `layout/theme.li
 
 Before any deploy, read the target chatbot repo's `deploy.md` or `DEPLOY.md` if one exists.
 
+Before any deploy or Shopify mutation, run `git status --short` in the target repo and any theme repo. If there is uncommitted work, list the files and ask whether that work should be included before deploying, excluding, overwriting, or pushing around it.
+
 Before live enablement, verify:
 
-- private real-store demo still works
+- protected dashboard and embedded real-store test chat still work
 - hosted backend health endpoint works
 - existing hosting, storage, deployment, database, or secret-manager resources have been verified when reused
 - real Shopify sync works
 - server-side AI model calls work
-- private demo acceptance gate passed
+- dashboard acceptance gate passed
 - widget loads only where intended
 - widget calls the intended backend endpoint
 - support handoff works

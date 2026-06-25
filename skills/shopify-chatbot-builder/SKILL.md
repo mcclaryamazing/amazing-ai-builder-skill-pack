@@ -1,6 +1,6 @@
 ---
 name: shopify-chatbot-builder
-description: "Build, connect, test, install, and launch a private one-store Shopify AI chatbot with Codex. Use this single skill for the full guided beginner journey: real AI model setup, read-only Shopify product and policy sync, private real-store chatbot demo, backend chat API, commerce answer safety, support handoff, storefront widget installation, theme-safe launch, rollback, and plain-English progress tracking for users building their own chatbot."
+description: "Build, connect, test, install, and launch a private one-store Shopify AI chatbot with Codex. Use this single skill for the full guided beginner journey: real AI model setup, read-only Shopify product and policy sync, protected admin dashboard/control plane, embedded dashboard test chat, backend chat API, commerce answer safety, support handoff, storefront widget installation, theme-safe launch, rollback, and plain-English progress tracking for users building their own chatbot."
 ---
 
 # Shopify Chatbot Builder
@@ -24,9 +24,9 @@ Shopify Chatbot Build Progress
 [ ] 1. Understand the store and chatbot goal
 [ ] 2. Configure or verify the real AI model server-side
 [ ] 3. Connect Shopify read-only store data
-[ ] 4. Sync products, pages, and policies
-[ ] 5. Build a private real-store demo
-[ ] 6. Test desktop, mobile, and risky questions
+[ ] 4. Sync products, collections, pages, and policies
+[ ] 5. Build the protected admin dashboard and embedded test chat
+[ ] 6. Inspect sources and test risky questions
 [ ] 7. Install the storefront widget on a development theme
 [ ] 8. Turn on limited live preview
 [ ] 9. Confirm rollback and disable path
@@ -37,6 +37,10 @@ Update the tracker after meaningful progress. Use `update_plan` when available, 
 ## Default Architecture
 
 ```text
+Protected admin dashboard
+  -> backend admin APIs
+  -> sync, source inspection, settings, mode, test chat
+
 Shopify storefront widget
   -> backend chat API
   -> retrieval over synced Shopify/store knowledge
@@ -47,11 +51,12 @@ Shopify storefront widget
 Default to:
 
 - one Shopify store
-- private real-store demo before storefront installation
+- protected admin dashboard before storefront installation
+- embedded dashboard test chat as the private real-store demo
 - backend-owned secrets
 - thin endpoint-only widget
 - synced products, collections, pages, and policies as source of truth
-- optional local dashboard
+- dashboard-owned controls for sync, source inspection, settings, mode, and testing
 - deployment only after tests and target-repo deploy guide review
 - development theme before live theme
 
@@ -59,20 +64,46 @@ Default to:
 
 1. Real inputs ready: server-side AI model access works and read-only Shopify credentials are verified.
 2. Store knowledge synced: real products, collections, pages, and policies are available to retrieval.
-3. Private real-store demo ready: the user can ask real store questions in a local/private UI and get model-generated, source-backed answers.
+3. Admin dashboard ready: the owner can inspect synced sources, manage settings/mode, and test source-backed answers in an embedded dashboard chat.
 4. Private theme preview ready: hosted backend and widget work on a development theme.
 5. Limited live beta ready: support handoff, rollback, guardrails, and monitoring are proven.
 
 Do not confuse credential dry-runs, fake data, or a static mock with a real demo.
 
+## Admin Dashboard Rule
+
+Every build must include a protected admin dashboard before storefront launch. The dashboard is the chatbot control plane; the storefront widget is only the customer-facing surface.
+
+The dashboard must let the store owner:
+
+- see chatbot health and current mode: `off`, `preview`, or `live`
+- trigger Shopify sync and see last sync status
+- inspect source counts and source records for products, collections, pages, and policies
+- verify active-product-only, published-page-only, and collection-product visibility filters
+- configure assistant behavior, support routing, answer style, allowed origins, and storefront appearance when supported
+- manage product, collection, page, manual knowledge, and merchant-authored offer controls
+- show conversations, support handoff records, basic analytics, and install/rollback values
+- test shopper questions in an embedded chat preview using the same backend, synced knowledge, model, retrieval, and guardrails as the storefront widget
+- see source labels or snippets for test answers
+- run risky-question tests for discounts, inventory, order lookup, delivery promises, warranties, policy exceptions, and unsupported claims
+- use a fast disable or rollback path
+
+Read `references/admin-dashboard-control-plane.md` before building or judging the dashboard.
+
+## Empty Project Rule
+
+If the target repo has no real chatbot implementation yet, do not improvise a thin mock. Build from a concrete scaffold with backend, protected dashboard, widget, Shopify install assets, env placeholders, local commands, and acceptance tests.
+
+Read `references/empty-project-scaffold.md` before creating files in an empty repo, a Shopify-theme-only repo, or any repo without backend, dashboard, and widget surfaces.
+
 ## Private Real-Store Demo Rule
 
-The first demo the user sees must be useful and credible. It should use the user's real Shopify products, pages, and policies plus a real server-side AI model. It must not be a fake-data chatbot that only looks like a chatbot.
+The first demo the user sees must be useful and credible. It should use the user's real Shopify products, collections, pages, and policies plus a real server-side AI model. It must not be a fake-data chatbot that only looks like a chatbot.
 
 The private demo should include:
 
-- a polished storefront-style chat widget or dashboard test chat
-- real synced products, pages, and policies from the user's store
+- a protected dashboard with an embedded test chat
+- real synced products, collections, pages, and policies from the user's store
 - real model-generated answers through the backend
 - responsive desktop and mobile layout
 - assistant/user message bubbles
@@ -92,6 +123,7 @@ Read `references/private-real-store-demo.md` before building or judging the demo
 - Inspect the real repo before advising.
 - Reuse existing setup when the user already has it. Verify existing projects, buckets, keys, Shopify apps, Theme Access, snippets, deployments, and env values before proposing to recreate or replace them.
 - Warn before installs, deploys, theme pushes, secret changes, migrations, deletes, or live customer-facing changes.
+- Before deploys, Shopify mutations, or theme pushes, read `deploy.md` or `DEPLOY.md` when present, run `git status --short`, list uncommitted work, and ask whether it should be included before excluding it.
 - Keep `.env` files ignored and never ask the learner to paste secrets into chat.
 
 ## Required Chatbot Guardrails
@@ -130,11 +162,11 @@ For Shopify sync/retrieval:
 5. Configure or verify read-only Shopify Admin/API access server-side.
 6. Sync real products, collections, pages, and policies.
 7. Add retrieval and commerce guardrails.
-8. Build the private real-store demo UI that calls only the backend.
-9. Test real store questions and risky questions.
+8. Build the protected admin dashboard with source inspection, settings, mode/status, and embedded test chat.
+9. Test real store questions and risky questions in the dashboard.
 10. Add a thin widget or snippet that calls only the backend.
-11. Before deploy, read the target chatbot repo's `deploy.md` or `DEPLOY.md` if present.
-12. Deploy only after private demo and private preview checks pass.
+11. Before deploy or theme work, read the target chatbot repo's `deploy.md` or `DEPLOY.md` if present, run `git status --short`, list uncommitted work, and ask whether it should be included before excluding it from deploy.
+12. Deploy only after dashboard, private test chat, and private preview checks pass.
 
 ## Existing Setup Rule
 
@@ -161,7 +193,9 @@ For existing setup:
 Read only the reference needed for the current stage:
 
 - `references/guided-progress.md` for the exact progress tracker and done signals.
+- `references/empty-project-scaffold.md` before scaffolding a new chatbot project or filling in a repo without backend/dashboard/widget code.
 - `references/private-real-store-demo.md` before creating or reviewing the private real-store demo UI.
+- `references/admin-dashboard-control-plane.md` before creating or reviewing the admin dashboard, source inspection, mode controls, or dashboard test chat.
 - `references/shopify-connection.md` before asking for Shopify access, scopes, or store data.
 - `references/widget-install-and-launch.md` before touching Shopify theme files, deployment, launch, rollback, or live enablement.
 
@@ -169,7 +203,11 @@ Read only the reference needed for the current stage:
 
 Before calling the chatbot ready for a real store, verify:
 
-- private real-store demo still works
+- protected dashboard real-store demo still works
+- protected dashboard works and does not expose secrets
+- dashboard test chat uses the real backend, synced knowledge, model, retrieval, and guardrails
+- dashboard shows products, collections, pages, policies, sync status, source filters, and mode
+- dashboard navigation reaches setup, settings, sources, product controls, offers, test chat, conversations, support, analytics, and install/rollback sections
 - hosted backend works, if applicable
 - health endpoint works
 - Shopify sync has real retrievable data
@@ -179,7 +217,8 @@ Before calling the chatbot ready for a real store, verify:
 - smoke tests or browser checks confirm Markdown renders cleanly in assistant messages
 - smoke tests confirm missing Shopify policy scopes are surfaced as warnings/failures rather than hidden
 - server-side AI model calls work
-- private demo acceptance gate is complete: real product count, synced policy/source names, private URL, model call verification, and pass/fail results for at least five real or risky questions
+- dashboard acceptance gate is complete: real product count, collection/page/policy counts, synced policy/source names, dashboard URL, model call verification, source filter verification, and pass/fail results for at least five real or risky questions
+- product promotion uses product cards, product controls, merchant-only notes, and configured merchant offers only
 - widget loads only where intended
 - no secrets are in frontend code or committed files
 - risky unsupported questions are refused or deflected

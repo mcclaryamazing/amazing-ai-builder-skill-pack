@@ -9,9 +9,9 @@ Shopify Chatbot Build Progress
 [ ] 1. Understand the store and chatbot goal
 [ ] 2. Configure or verify the real AI model server-side
 [ ] 3. Connect Shopify read-only store data
-[ ] 4. Sync products, pages, and policies
-[ ] 5. Build a private real-store demo
-[ ] 6. Test desktop, mobile, and risky questions
+[ ] 4. Sync products, collections, pages, and policies
+[ ] 5. Build the protected admin dashboard and embedded test chat
+[ ] 6. Inspect sources and test risky questions
 [ ] 7. Install the storefront widget on a development theme
 [ ] 8. Turn on limited live preview
 [ ] 9. Confirm rollback and disable path
@@ -23,8 +23,8 @@ Shopify Chatbot Build Progress
 2. Real AI model: the backend can call the selected model using a server-side key or existing secure setup.
 3. Shopify read-only access: required values are stored in `.env` or a secret manager, never pasted into chat or frontend code.
 4. Store sync: real products, collections, pages, and policies are retrievable by the backend, not merely configured in a dry run.
-5. Private real-store demo: the user can open a local or private URL and ask questions about their actual store using real synced data and a real model.
-6. Testing: desktop, mobile, support handoff, failure states, and risky questions are checked before any storefront install.
+5. Protected admin dashboard: the user can open a protected dashboard, inspect synced sources, see source filters, manage mode/settings, and ask questions in an embedded test chat using real synced data and a real model.
+6. Source and risk testing: product/page/collection/policy eligibility, desktop, mobile, support handoff, failure states, raw Markdown rendering, and risky questions are checked before any storefront install.
 7. Widget install: the widget loads on a development theme and calls the intended backend endpoint.
 8. Limited live preview: the chatbot is enabled only for the intended storefront surface after review.
 9. Rollback: the owner knows how to disable the widget and roll back backend/theme changes.
@@ -36,7 +36,7 @@ At each stage, ask whether the user already has relevant setup. Reuse verified e
 After completing a stage, say:
 
 ```text
-Step 5 of 9 is complete. You now have a private chatbot demo using your real Shopify products and policies plus a real AI model. Next we will test risky questions before installing anything on your storefront.
+Step 5 of 9 is complete. You now have a protected chatbot dashboard with source inspection and a test chat using your real Shopify products and policies plus a real AI model. Next we will test source filters and risky questions before installing anything on your storefront.
 ```
 
 When blocked, say what is blocking progress and give one safe next command or question.

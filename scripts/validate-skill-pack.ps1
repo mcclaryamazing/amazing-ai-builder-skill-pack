@@ -50,6 +50,25 @@ if (Test-Path -LiteralPath $skillPath -PathType Leaf) {
   } else {
     Write-Check "ok" "valid skill front matter for shopify-chatbot-builder"
   }
+
+  $quickValidate = Join-Path $env:USERPROFILE ".codex/skills/.system/skill-creator/scripts/quick_validate.py"
+  if ((Test-Path -LiteralPath $quickValidate -PathType Leaf) -and (Get-Command python -ErrorAction SilentlyContinue)) {
+    $skillDir = Split-Path -Parent $skillPath
+    $previousPythonUtf8 = $env:PYTHONUTF8
+    $env:PYTHONUTF8 = "1"
+    try {
+      $quickOutput = & python $quickValidate $skillDir 2>&1
+      if ($LASTEXITCODE -ne 0) {
+        Fail-Check ("skill-creator validation failed for shopify-chatbot-builder: {0}" -f ($quickOutput -join " "))
+      } else {
+        Write-Check "ok" "skill-creator validation passed for shopify-chatbot-builder"
+      }
+    } finally {
+      $env:PYTHONUTF8 = $previousPythonUtf8
+    }
+  } else {
+    Write-Check "skip" "skill-creator quick validator not available"
+  }
 }
 
 $allTextFiles = Get-ChildItem -LiteralPath $PackRoot -Recurse -File | Where-Object {

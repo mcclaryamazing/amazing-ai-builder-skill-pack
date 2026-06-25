@@ -1,6 +1,6 @@
 ---
 name: shopify-chatbot-builder
-description: Build, connect, test, install, and launch a private one-store Shopify AI chatbot with Codex. Use this single skill for the full guided beginner journey: real AI model setup, read-only Shopify product and policy sync, private real-store chatbot demo, backend chat API, commerce answer safety, support handoff, storefront widget installation, theme-safe launch, rollback, and plain-English progress tracking for users building their own chatbot.
+description: "Build, connect, test, install, and launch a private one-store Shopify AI chatbot with Codex. Use this single skill for the full guided beginner journey: real AI model setup, read-only Shopify product and policy sync, private real-store chatbot demo, backend chat API, commerce answer safety, support handoff, storefront widget installation, theme-safe launch, rollback, and plain-English progress tracking for users building their own chatbot."
 ---
 
 # Shopify Chatbot Builder

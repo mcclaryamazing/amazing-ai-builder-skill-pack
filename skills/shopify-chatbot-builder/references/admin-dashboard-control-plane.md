@@ -90,6 +90,9 @@ The dashboard must make source eligibility obvious:
 - Protect admin routes separately from storefront routes.
 - All `/api/admin/*` routes must reject unauthenticated requests.
 - The protected dashboard URL must require auth before showing source data, sync controls, settings, support requests, conversations, analytics, or install values.
+- When an admin dashboard token exists, the handoff must tell the user the dashboard URL, ignored env file path, token env key name, and hosted secret name/project/location when applicable, without revealing the token value.
+- Generated admin tokens must be saved directly into an ignored local env file such as `.env.admin.local`, `.env.local`, `local.env`, or a repo-specific ignored env file, or into a hosted secret store. Setup scripts may print only the path/key name or secret name.
+- Never expose an admin token in chat, docs, screenshots, browser JavaScript, Liquid, frontend code, source JSON, committed files, or logs.
 - Public storefront config should expose only what the widget needs.
 - Public chat routes must enforce allowed origins in production.
 - Dashboard source JSON should be considered admin data even when it contains only customer-visible content.
@@ -109,6 +112,7 @@ Do not install or enable the storefront widget until the dashboard shows:
 - product promotion works through product cards, product controls, merchant notes, and configured offers only
 - conversations, support handoff records, and basic analytics are visible in protected dashboard screens
 - dashboard features are reachable through navigation and verified in a browser
+- admin dashboard token location has been handed off by file path/key name or hosted secret name without exposing the token value
 - risky-question tests pass
 - mode is `off` or `preview`
 - disable/rollback instructions are visible or documented

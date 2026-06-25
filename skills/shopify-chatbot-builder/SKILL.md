@@ -27,7 +27,7 @@ Shopify Chatbot Build Progress
 [ ] 4. Sync products, collections, pages, and policies
 [ ] 5. Build the protected admin dashboard and embedded test chat
 [ ] 6. Inspect sources and test risky questions
-[ ] 7. Install the storefront widget on a development theme
+[ ] 7. Copy the current live theme, verify the copy, then install the storefront widget on that copied preview theme
 [ ] 8. Turn on limited live preview
 [ ] 9. Confirm rollback and disable path
 ```
@@ -58,14 +58,14 @@ Default to:
 - synced products, collections, pages, and policies as source of truth
 - dashboard-owned controls for sync, source inspection, settings, mode, and testing
 - deployment only after tests and target-repo deploy guide review
-- development theme before live theme
+- a fresh verified copy of the current live theme before any live theme change
 
 ## Readiness Ladder
 
 1. Real inputs ready: server-side AI model access works and read-only Shopify credentials are verified.
 2. Store knowledge synced: real products, collections, pages, and policies are available to retrieval.
 3. Admin dashboard ready: the owner can inspect synced sources, manage settings/mode, and test source-backed answers in an embedded dashboard chat.
-4. Private theme preview ready: hosted backend and widget work on a development theme.
+4. Private theme preview ready: hosted backend and widget work on a verified unpublished copy of the current live theme.
 5. Limited live beta ready: support handoff, rollback, guardrails, and monitoring are proven.
 
 Do not confuse credential dry-runs, fake data, or a static mock with a real demo.
@@ -126,6 +126,31 @@ Read `references/private-real-store-demo.md` before building or judging the demo
 - Before deploys, Shopify mutations, or theme pushes, read `deploy.md` or `DEPLOY.md` when present, run `git status --short`, list uncommitted work, and ask whether it should be included before excluding it.
 - Keep `.env` files ignored and never ask the learner to paste secrets into chat.
 
+## Admin Token Handoff Rule
+
+When the chatbot includes a protected admin dashboard, tell the user exactly where the admin token can be found after setup without revealing the token value.
+
+Never print the token value in chat, commit it, place it in docs, screenshots, browser JavaScript, Liquid, frontend code, source JSON, or logs.
+
+Usually the token belongs in an ignored local env file, depending on repo convention, such as `.env.admin.local`, `.env.local`, `local.env`, or another project-specific ignored env file. Identify the exact file path and key name, such as `CHATBOT_ADMIN_TOKEN` or `ADMIN_TOKEN`.
+
+If Secret Manager or another hosted secret system is used, include the hosted secret name and project/location, but still do not reveal the value.
+
+If a setup script generates the token, it must save the token into an ignored local env file or hosted secret store and print only the path/key name or secret name, never the token value.
+
+The final readiness or handoff report must include:
+
+- dashboard URL
+- token file path
+- token env key name
+- hosted secret name and project/location when applicable
+- safe copy-to-clipboard command when appropriate, without echoing the token value into chat
+- reminder not to paste, commit, or screenshot the token
+
+## Brand Name Rule
+
+If the store URL, repo name, or old project name differs from the active store brand, visible chatbot, dashboard, widget, greeting, and support copy should use the active brand name. The old name may remain in technical URLs, repo names, service names, buckets, historical infrastructure, or internal identifiers unless the user requests a rename.
+
 ## Required Chatbot Guardrails
 
 Do not invent:
@@ -164,7 +189,7 @@ For Shopify sync/retrieval:
 7. Add retrieval and commerce guardrails.
 8. Build the protected admin dashboard with source inspection, settings, mode/status, and embedded test chat.
 9. Test real store questions and risky questions in the dashboard.
-10. Add a thin widget or snippet that calls only the backend.
+10. Copy the current live Shopify theme into a fresh unpublished preview theme, verify the copy, then add a thin widget or snippet that calls only the backend.
 11. Before deploy or theme work, read the target chatbot repo's `deploy.md` or `DEPLOY.md` if present, run `git status --short`, list uncommitted work, and ask whether it should be included before excluding it from deploy.
 12. Deploy only after dashboard, private test chat, and private preview checks pass.
 
@@ -219,6 +244,11 @@ Before calling the chatbot ready for a real store, verify:
 - server-side AI model calls work
 - dashboard acceptance gate is complete: real product count, collection/page/policy counts, synced policy/source names, dashboard URL, model call verification, source filter verification, and pass/fail results for at least five real or risky questions
 - product promotion uses product cards, product controls, merchant-only notes, and configured merchant offers only
+- admin dashboard token location is handed off without exposing the token value
+- source live theme name and ID are reported
+- copied preview theme name and ID are reported
+- storefront verification screenshots come from the current real storefront, not a stale theme
+- desktop and mobile checks pass on the copied preview theme
 - widget loads only where intended
 - no secrets are in frontend code or committed files
 - risky unsupported questions are refused or deflected
@@ -233,7 +263,7 @@ Never touch live Shopify theme files without:
 
 - reading current files
 - showing intended changes
-- using a development theme first when possible
+- copying and verifying the current live theme before installing the widget
 - using targeted pushes with no-delete behavior
 - providing rollback
 - getting explicit approval

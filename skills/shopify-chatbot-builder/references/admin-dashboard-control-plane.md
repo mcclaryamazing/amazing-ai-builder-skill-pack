@@ -21,6 +21,7 @@ The dashboard must include:
 - visibility filter evidence: active products only, published pages only, and collection product references filtered through active synced products
 - embedded dashboard test chat that calls the same backend chat path or same chat service used by the storefront widget
 - customer preview chat that matches the storefront chat shape, rendering rules, product cards, Markdown/link behavior, loading state, and guardrails
+- dashboard test chat sends the same bounded, sanitized recent transcript shape as the storefront widget so follow-up behavior matches
 - source labels, source snippets, or product/source cards for dashboard test answers
 - source/debug inspection clearly separated from the customer preview chat
 - risky-question test prompts and visible pass/fail outcomes
@@ -67,7 +68,8 @@ The dashboard preview chat is the real private demo. It must:
 
 - use real synced Shopify knowledge, not sample data
 - call the real backend model path, not static replies
-- preserve short conversation history when testing follow-up questions
+- preserve short conversation history when testing follow-up questions and send that bounded, sanitized history to the backend with each request
+- prove the backend uses recent history in retrieval and model prompting, not only in visible UI state
 - render safe Markdown or force plain text so raw `**`, raw bullet syntax, or broken links are not visible
 - render Markdown links without double-escaping
 - match the storefront widget's message shape, product cards, link behavior, loading state, and guardrails
@@ -77,6 +79,7 @@ The dashboard preview chat is the real private demo. It must:
 - refuse or route to support for unsupported claims
 - test at least these scenarios before storefront install:
   - real product recommendation
+  - follow-up question that depends on prior shopper context
   - real policy question
   - discount request
   - live inventory question
@@ -123,6 +126,7 @@ Do not install or enable the storefront widget until the dashboard shows:
 - customer preview chat does not show source/debug blocks or developer/testing language
 - dashboard source records open customer-facing source URLs in a new tab
 - dashboard test chat matches the storefront chat shape, rendering, loading state, product cards, links, and guardrails
+- dashboard test chat sends bounded sanitized recent history and follow-up answers do not restart with a fresh greeting
 - recommendation-style queries prioritize product and collection records over policy or page records
 - product promotion works through product cards, product controls, merchant notes, and configured offers only
 - conversations, support handoff records, and basic analytics are visible in protected dashboard screens

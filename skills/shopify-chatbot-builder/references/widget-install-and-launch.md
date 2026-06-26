@@ -31,7 +31,10 @@ Require:
 - no developer or testing language such as "retrieval", "sources", "verified knowledge", "preview", provider/model names, API keys, internal route names, config names, stack traces, or private-preview details
 - friendly unavailable and model-failure messages that route to support
 - chat state persistence when a shopper follows an internal product, collection, page, or policy link and the page reloads behind the widget
+- bounded sanitized recent transcript sent with each chat request so follow-ups work after navigation and page reloads
 - subtle glass/translucent launcher or panel styling only when readability and contrast remain strong
+
+Visual transcript persistence alone is not enough. The backend must receive recent sanitized turns, or the assistant will treat each message as a new standalone request.
 
 ## Link Safety And Navigation
 
@@ -118,9 +121,19 @@ Before any deploy or Shopify mutation, run `git status --short` in the target re
 Before live enablement, verify:
 
 - protected dashboard and embedded real-store test chat still work
+- protected dashboard does not expose secrets and reaches setup, settings, sources, product controls, offers, test chat, conversations, support, analytics, and install/rollback sections when those surfaces exist
+- dashboard shows product, collection, page, and policy counts, sync status, source filters, current mode, synced policy/source names, model-call verification, and pass/fail results for at least five real or risky questions
+- dashboard test chat uses the real backend, synced knowledge, model, retrieval, and guardrails
+- dashboard test chat matches storefront chat shape, rendering, loading state, product cards, links, and guardrails
+- dashboard source records open the customer-facing source in a new tab when a public URL exists
+- admin dashboard token location has been handed off without exposing the token value
 - hosted backend health endpoint works
 - existing hosting, storage, deployment, database, or secret-manager resources have been verified when reused
 - real Shopify sync works
+- synced products are active only
+- synced pages are published only
+- collection product mentions are filtered through active products
+- missing Shopify policy scopes are surfaced as warnings or failures rather than hidden
 - server-side AI model calls work
 - dashboard acceptance gate passed
 - source live theme name and ID are recorded
@@ -132,6 +145,7 @@ Before live enablement, verify:
 - support handoff works
 - no secrets appear in frontend code, Liquid, metafields, logs, docs, screenshots, or commits
 - risky unsupported questions are refused or handed off
+- product promotions use product cards, product controls, merchant-only notes, and configured merchant offers only
 - mobile layout works
 - desktop preview layout works
 - customer-facing links strip preview, custom preview, admin, token, and key params for absolute and relative URLs while preserving shopper-safe params such as variant IDs
@@ -141,8 +155,12 @@ Before live enablement, verify:
 - shopper widget does not show source/debug blocks or developer/testing language
 - suggested prompts, input placeholder, and panel layout do not clip or overflow on mobile
 - internal link navigation preserves conversation state after the page reloads
+- the next chat request after internal navigation sends bounded sanitized recent history to the backend
+- follow-up questions use recent context and do not restart with a fresh welcome/greeting
 - disable path works
 - rollback path is clear
+- privacy expectations are clear
+- order lookup is disabled unless authentication, privacy, and backend logic are implemented
 - hosted smoke tests pass when a hosted backend or hosted widget asset is in use
 - hosted runtime mode is verified after deploy if mode is persisted outside environment variables, and reset to `preview` or `off` as required by the deploy guide
 - live theme remains untouched unless the user explicitly approves live launch

@@ -26,6 +26,7 @@ The chatbot skill is designed to replicate a polished Shopify chatbot build patt
 - shopper chat uses warm, concise copy, normal typing indicators, mobile-safe prompts/placeholders, and friendly fallbacks
 - shopper chat never exposes "retrieval", "sources", provider names, internal routes, API keys, stack traces, preview tokens, or source/debug panels
 - dashboard source inspection remains available, but it is separated from the customer preview chat
+- storefront and dashboard chat both send bounded, sanitized recent history to the backend so follow-up questions work in context
 - product, collection, page, and policy names become clickable when public storefront URLs are available
 - customer-facing links strip preview/admin/token/key params while preserving shopper-safe params such as variant IDs
 - recommendation-style questions prioritize product and collection records over policy/page records without inventing prices, discounts, inventory, delivery dates, or claims
@@ -96,7 +97,7 @@ I want to build a private AI chatbot for this live Shopify store. Inspect this r
 
 Build this dashboard-first. Create a protected admin dashboard/control plane with source inspection, mode/status controls, Shopify sync status, source counts for products/collections/pages/policies, and an embedded dashboard test chat using my real Shopify data and a real server-side AI model before installing anything on my storefront. Ask me what setup I already have, verify and reuse it when safe, and do not ask me to paste secrets into chat.
 
-Make the customer-facing widget polished and safe by default: no developer/testing language, no shopper-visible source/debug panels, friendly fallbacks, clean Markdown links, product-first recommendations, public storefront links with preview/admin/token params stripped, mobile-safe prompts/placeholders, and chat state preserved when shoppers follow internal links.
+Make the customer-facing widget polished and safe by default: no developer/testing language, no shopper-visible source/debug panels, friendly fallbacks, clean Markdown links, product-first recommendations, public storefront links with preview/admin/token params stripped, mobile-safe prompts/placeholders, chat state preserved when shoppers follow internal links, and bounded sanitized recent history sent to the backend so follow-up questions continue naturally.
 ```
 
 ## Start A Shopify Landing Page Build

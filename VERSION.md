@@ -1,6 +1,6 @@
 # Version
 
-Current version: `0.6.1`
+Current version: `0.6.2`
 
 Repo focus: installable Codex skills for Amazing.com members building Shopify AI growth assets.
 
@@ -17,6 +17,7 @@ Member-facing Shopify builder skill pack.
 - The customer-facing chatbot must feel like a polished shopping/support assistant, not a developer demo.
 - Shopper chat must not expose retrieval/source/debug language, provider names, internal routes, preview tokens, stack traces, config names, or admin-only details.
 - Customer-facing links must strip preview/admin/token/key params from absolute and relative URLs while preserving shopper-safe params such as variant IDs.
+- Storefront and dashboard chat must send bounded sanitized recent history to the backend so follow-up questions use real conversational context rather than visual transcript memory only.
 - Recommendation-style questions should prioritize product and collection records while preserving commerce guardrails.
 - A complete chatbot dashboard must expose reachable protected screens for setup, sync/status, sources, product promotion, offers, test chat, conversations, support handoffs, analytics, and install/rollback values.
 - Fake/sample data, standalone mock widgets, static replies, and raw JSON endpoints may not be shown to the member as the chatbot demo.

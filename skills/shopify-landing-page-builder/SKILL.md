@@ -1,6 +1,6 @@
 ---
 name: shopify-landing-page-builder
-description: "Design, build, test, install, and safely launch high-converting DTC Shopify landing pages with Codex. Use this single guided beginner skill for the full process: store/repo inspection, offer and audience intake, conversion strategy, DTC landing page design spec, copy strategy, exact image-slot plan, Shopify theme-file implementation, Shopify Files imagery, product/variant/cart wiring, page metadata, desktop/mobile QA, launch approval, rollback, and plain-English progress tracking."
+description: "Design, build, test, and safely launch DTC Shopify landing pages with Codex. Use for guided Shopify landing-page work involving offer/audience intake, DTC strategy and copy spec, exact image slots, theme-file implementation, Shopify Files, product/cart wiring, metadata, QA, approval, rollback, and progress tracking."
 ---
 
 # Shopify Landing Page Builder

@@ -45,6 +45,7 @@ The demo should include:
 - suggested prompt buttons fit on desktop and mobile without clipped text
 - input placeholder text is short enough for mobile, such as "Ask a question"
 - internal product, collection, page, and policy links preserve chat state when navigation reloads the page
+- follow-up questions use recent conversation context in the backend response, not only in the visible transcript
 - mobile-responsive layout
 - dashboard-level private demo label outside the customer preview chat
 
@@ -79,6 +80,22 @@ The assistant prompt should define the bot as a customer-facing shopping and sup
 For product recommendation questions, the assistant should recommend from available products when there is relevant store content. Do not refuse merely because there is no single perfect answer.
 
 Guardrail responses, model-disabled messages, and model-failure fallbacks must sound natural to shoppers and route to support. Never show provider names, missing-key messages, stack traces, config names, private-preview details, or other internal failure details in the customer-facing chat.
+
+## Conversation Context
+
+The private demo must prove real conversational continuity.
+
+Require:
+
+- Storefront-style preview chat sends a bounded, sanitized recent transcript with each request.
+- Dashboard test chat sends the same transcript shape as the storefront widget.
+- Backend sanitizes history again, keeping only expected `user` and `assistant` turns, normalizing whitespace, and capping turn count and text length.
+- Retrieval uses recent user turns as context for follow-up questions.
+- The model prompt includes recent conversation context and tells the assistant to continue naturally, avoid repeating itself, and avoid fresh greetings unless the shopper greets it.
+- History sent to the backend excludes source/debug blocks, provider traces, admin notes, secrets, internal route names, preview tokens, and raw HTML.
+- A clear conversation/reset action clears local history when present.
+
+Visual transcript persistence is not enough. If the UI remembers the conversation but `/api/chat` receives only the latest message, the demo is not ready.
 
 ## Link Safety
 
@@ -123,6 +140,8 @@ Before moving to widget installation, show the member:
 - pass/fail result showing Markdown links render without double-escaping
 - pass/fail result showing shopper-facing chat does not render source/debug blocks or developer/testing language
 - pass/fail result showing internal customer-facing links preserve chat state after navigation
+- pass/fail result showing the next backend request after internal navigation includes bounded sanitized recent history
+- pass/fail result showing a follow-up question uses previous shopper context and does not trigger a repeated welcome/greeting
 - pass/fail result showing mobile prompts, placeholders, and chat layout do not clip or overflow horizontally
 - pass/fail result showing recommendation-style queries prioritize product and collection records over policy or page records
 - pass/fail results for at least five questions, including real product, real policy, discount, inventory, and order-status questions

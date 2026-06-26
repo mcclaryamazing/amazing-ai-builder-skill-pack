@@ -63,6 +63,14 @@ Stop and redirect:
 Use the shopify-chatbot-builder skill. For recommendation-style questions like "Which product should I start with?", "best for a first-time buyer", "recommend", "compare", or "gift", prioritize product and collection records over policy/page records and recommend from available products. Keep guardrails: do not invent prices, discounts, live inventory, delivery dates, warranty terms, policy exceptions, order status, or regulated claims.
 ```
 
+## The Chatbot Keeps Restarting The Conversation
+
+Stop and redirect:
+
+```text
+Use the shopify-chatbot-builder skill. Fix conversational continuity. The storefront widget and dashboard test chat must send a bounded, sanitized recent transcript with each request. The backend must sanitize history again, use recent user turns in retrieval, include recent conversation context in the model prompt, and instruct the assistant to continue naturally instead of starting with a fresh welcome unless I am greeting it. Visual transcript persistence alone is not enough.
+```
+
 ## Codex Wants To Skip The Landing Page Design Package
 
 Stop and redirect:

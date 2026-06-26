@@ -1,6 +1,6 @@
 ---
 name: shopify-chatbot-builder
-description: "Build, connect, test, install, and launch a private one-store Shopify AI chatbot with Codex. Use this single skill for the full guided beginner journey: real AI model setup, read-only Shopify product and policy sync, protected admin dashboard/control plane, embedded dashboard test chat, backend chat API, commerce answer safety, support handoff, storefront widget installation, theme-safe launch, rollback, and plain-English progress tracking for users building their own chatbot."
+description: "Build, test, install, and safely launch a private one-store Shopify AI chatbot with Codex. Use for guided Shopify chatbot projects involving real AI setup, read-only store sync, protected admin dashboard/test chat, customer widget polish, commerce guardrails, theme-safe launch, rollback, and progress tracking."
 ---
 
 # Shopify Chatbot Builder
@@ -191,6 +191,7 @@ For shopper-facing chat:
 - Suggested prompt buttons must fit cleanly on desktop and mobile without clipping.
 - Input placeholders must be short enough to fit on mobile, such as "Ask a question".
 - Preserve conversation state when a shopper clicks an internal product, collection, page, or policy link and the page reloads behind the widget.
+- Send a sanitized recent transcript with each chat request so the backend can answer follow-up questions in context. Visual transcript persistence alone is not enough.
 - Floating launchers or panels may use subtle glass/translucent treatment only when readability and contrast remain strong.
 
 ## Link Safety And Navigation Rule
@@ -218,6 +219,23 @@ The prompt and fallback behavior must:
 - Never expose provider names, missing-key messages, stack traces, config names, private preview details, or other internal failure details to shoppers.
 - Use friendly model-disabled or model-failure fallbacks that route to support.
 
+## Conversation Context And Continuity Rule
+
+Every chat surface must provide real conversational continuity, not only visual transcript memory.
+
+Implement conversation context so:
+
+- The storefront widget sends a bounded, sanitized recent transcript with each public chat request, excluding the new user message until after the request payload is assembled.
+- The dashboard test chat sends the same shape of bounded, sanitized recent transcript so admin testing matches storefront behavior.
+- The backend validates and sanitizes incoming history again. Keep only expected roles such as `user` and `assistant`, normalize whitespace, drop empty or unknown records, cap turn count, and cap text length per turn.
+- The backend uses recent user turns in retrieval query construction so follow-up questions can retrieve the right product, page, policy, or collection records.
+- The backend includes recent conversation context in the model prompt with an explicit instruction to continue naturally, answer follow-ups from context, avoid repeating itself, and avoid starting with a fresh greeting unless the shopper is actually greeting it.
+- Stored or transmitted history must not include provider traces, source/debug blocks, admin-only notes, secrets, API keys, internal route names, preview tokens, or raw HTML.
+- The frontend should persist enough recent transcript across internal storefront navigation or page reloads to preserve continuity, but should still send only a bounded recent subset to the backend.
+- A clear "new chat" or "clear conversation" action should reset local transcript state when offered.
+
+Do not treat session-grouped conversation logging as a substitute for request-time context. Logging is useful for admin review, but the model and retrieval layer still need recent sanitized turns on each request unless the backend reloads that context server-side by session ID.
+
 ## Retrieval And Ranking Rule
 
 Recommendation-style prompts should prioritize product and collection records over policy or page records.
@@ -241,11 +259,11 @@ Keep safety constraints in place: do not invent prices, discounts, live inventor
 5. Configure or verify read-only Shopify Admin/API access server-side.
 6. Sync real products, collections, pages, and policies.
 7. Add retrieval and commerce guardrails.
-8. Add link safety, customer-facing copy, friendly fallbacks, safe Markdown/link rendering, and product-first retrieval for recommendation prompts.
+8. Add request-time conversation context, link safety, customer-facing copy, friendly fallbacks, safe Markdown/link rendering, and product-first retrieval for recommendation prompts.
 9. Build the protected admin dashboard with source inspection, settings, mode/status, embedded test chat, and customer-preview parity with the storefront chat.
-10. Test real store questions, recommendation questions, risky questions, link rendering, and mobile layout in the dashboard.
+10. Test real store questions, follow-up questions, recommendation questions, risky questions, link rendering, and mobile layout in the dashboard.
 11. Copy the current live Shopify theme into a fresh unpublished preview theme, verify the copy, then add a thin widget or snippet that calls only the backend.
-12. Before deploy or theme work, read the target chatbot repo's `deploy.md` or `DEPLOY.md` if present, run `git status --short`, list uncommitted work, and ask whether it should be included before excluding it from deploy.
+12. Before deploy or theme work, follow the target repo's deploy guide and uncommitted-work check.
 13. Deploy only after dashboard, private test chat, private preview, hosted preview, and hosted smoke checks pass when applicable.
 
 ## Existing Setup Rule
@@ -283,43 +301,11 @@ Read only the reference needed for the current stage:
 
 Before calling the chatbot ready for a real store, verify:
 
-- protected dashboard real-store demo still works
-- protected dashboard works and does not expose secrets
-- dashboard test chat uses the real backend, synced knowledge, model, retrieval, and guardrails
-- dashboard shows products, collections, pages, policies, sync status, source filters, and mode
-- dashboard navigation reaches setup, settings, sources, product controls, offers, test chat, conversations, support, analytics, and install/rollback sections
-- hosted backend works, if applicable
-- health endpoint works
-- Shopify sync has real retrievable data
-- smoke tests confirm synced products are active only
-- smoke tests confirm synced pages are published only
-- smoke tests confirm collection product mentions are filtered through active products
-- smoke tests or browser checks confirm Markdown renders cleanly in assistant messages
-- smoke tests confirm Markdown links render without double-escaping
-- smoke tests confirm missing Shopify policy scopes are surfaced as warnings/failures rather than hidden
-- smoke tests confirm absolute and relative URLs strip preview, custom preview, admin, token, key, and non-customer query params while preserving shopper-safe params such as variant IDs
-- smoke tests confirm public storefront policy URL fallback works
-- retrieval tests confirm product-first ranking for recommendation-style prompts
-- server-side AI model calls work
-- dashboard acceptance gate is complete: real product count, collection/page/policy counts, synced policy/source names, dashboard URL, model call verification, source filter verification, and pass/fail results for at least five real or risky questions
-- dashboard test chat matches storefront chat shape, rendering, loading state, product cards, links, and guardrails
-- dashboard source records open the underlying customer-facing source in a new tab
-- product promotion uses product cards, product controls, merchant-only notes, and configured merchant offers only
-- admin dashboard token location is handed off without exposing the token value
-- source live theme name and ID are reported
-- copied preview theme name and ID are reported
-- storefront verification screenshots come from the current real storefront, not a stale theme
-- desktop and mobile checks pass on the copied preview theme
-- mobile layout has no clipped suggested prompts, no clipped input placeholder, and no horizontal overflow
-- storefront widget preserves conversation state after clicking customer-facing internal links that reload the page
-- storefront widget does not render source/debug blocks or developer/testing language
-- widget loads only where intended
-- no secrets are in frontend code or committed files
-- risky unsupported questions are refused or deflected
-- support handoff works
-- rollback or disable path exists
-- privacy expectations are clear
-- order lookup is disabled unless authentication, privacy, and backend logic are implemented
+- `references/widget-install-and-launch.md` launch review has passed.
+- dashboard, backend, Shopify sync, model calls, storefront widget, support handoff, and rollback/disable paths are all verified.
+- active-only product sync, published-only page sync, link safety, Markdown rendering, request-time conversation context, and product-first recommendation retrieval are covered by smoke or browser tests.
+- no secrets, admin tokens, preview tokens, source/debug panels, developer language, or unverified claims are exposed to shoppers.
+- source live theme, copied preview theme, changed files, launch approval, and rollback path are reported in the handoff.
 
 ## Shopify Theme Rule
 

@@ -12,6 +12,7 @@ Do not stop at a demo page. A complete single-store chatbot project needs:
 - protected admin dashboard
 - dashboard test chat
 - thin storefront widget
+- request-time conversation context shared by storefront and dashboard chat
 - customer-facing link sanitizer shared by backend responses and widget rendering
 - Shopify install assets
 - local tests and launch checks
@@ -53,16 +54,20 @@ Create backend routes equivalent to:
 - `GET /api/admin/analytics`: basic counts for conversations, handoffs, widget opens, product clicks, add-to-cart, offer clicks, and unanswered questions when available
 - `POST /api/admin/test-chat`: protected dashboard test chat using the same chat service as the storefront widget
 - `GET /api/storefront/config`: public widget config only
-- `POST /api/chat`: public storefront chat route with production origin checks
+- `POST /api/chat`: public storefront chat route with production origin checks and bounded sanitized recent history support
 
 If the first version skips a route, mark the related dashboard area blocked and do not call the build complete.
 
 The shared chat service should include:
 
 - a customer-facing assistant prompt that uses only customer-visible store content without mentioning internal context, retrieval, sources, or system rules to shoppers
+- request-time conversation context from a sanitized recent transcript, used for both retrieval and model prompting
+- a prompt instruction to continue naturally, answer follow-ups from recent context, avoid repeating itself, and avoid fresh greetings unless the shopper is actually greeting it
 - product-first retrieval for recommendation-style prompts such as "Which product should I start with?", "best for a first-time buyer", "recommend", "compare", and "gift"
 - friendly guardrail and failure responses that never expose provider names, missing-key messages, stack traces, config names, private-preview details, or internal route names
 - safe public URL generation for products, collections, pages, and policies
+
+Sanitize incoming history server-side: keep only expected `user` and `assistant` roles, accept common text fields such as `text` or `content`, normalize whitespace, drop empty/unknown records, cap turn count, and cap text length per turn.
 
 ## Persistence
 
@@ -132,12 +137,14 @@ The widget should:
 - never contain model keys, Admin API tokens, dashboard tokens, database URLs, or service credentials
 - receive only public config such as title, greeting, color, enabled/mode, endpoint, and non-secret store context
 - send page/product/collection/cart context when available
+- send a bounded, sanitized recent transcript with every chat request; visual transcript persistence alone is not enough
 - render product cards and safe Markdown
 - render Markdown links without double-escaping
 - make product, collection, page, and policy names clickable when a customer-facing URL exists
 - strip preview tokens, theme preview params, admin tokens, generic token/key params, and other non-customer query values from absolute and relative customer-facing links while preserving shopper-safe params such as variant IDs
 - resolve policy links to public storefront policy pages whenever possible
 - navigate customer-facing links in the same tab by default and preserve chat state across internal page reloads
+- include preserved chat state in the next backend request after internal navigation
 - use warm, concise copy, mobile-safe prompt buttons and placeholders, and a normal typing indicator
 - never show source/debug panels or developer/testing language in the shopper widget
 - support handoff and unavailable states
@@ -175,6 +182,8 @@ Before moving to Shopify theme work, verify:
 - source filters are visible
 - dashboard navigation reaches all required pages
 - dashboard test chat uses the same chat service as the widget
+- storefront and dashboard chat requests include bounded sanitized recent history in the same shape
+- backend sanitization drops unknown roles, empty turns, and overlong content before retrieval or prompting
 - dashboard test chat matches storefront chat shape, product cards, Markdown/link behavior, loading state, and guardrails
 - source/debug UI is separated from the customer preview chat
 - source records open customer-facing source URLs in a new tab
@@ -186,6 +195,8 @@ Before moving to Shopify theme work, verify:
 - product-first retrieval works for recommendation-style prompts
 - shopper widget does not render source/debug blocks or developer/testing language
 - conversation state persists after clicking a customer-facing internal link
+- conversation state is included in the next backend request after internal navigation
+- follow-up questions use recent shopper context in retrieval and do not restart with a fresh greeting
 - mobile layout has no clipped prompts, no clipped input placeholder, and no horizontal overflow
 - risky-question tests pass
 - widget bundle builds and calls only backend endpoints

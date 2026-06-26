@@ -15,7 +15,7 @@ Use this pack for guided Shopify AI builder work.
 4. Sync products, pages, collections, and policies.
 5. Build the protected admin dashboard and embedded test chat.
 6. Polish the customer-facing assistant experience and separate it from admin source/debug inspection.
-7. Test desktop, mobile, safe links, product-first recommendations, support handoff, and risky questions.
+7. Test desktop, mobile, safe links, contextual follow-ups, product-first recommendations, support handoff, and risky questions.
 8. Install the storefront widget on a copied preview theme.
 9. Turn on limited live preview.
 10. Confirm rollback and disable path.
@@ -24,6 +24,8 @@ The dashboard test chat is the first meaningful proof. It must use real Shopify 
 
 The customer-facing preview and storefront widget should feel like a real shopping/support assistant. It must use warm concise copy, a normal typing indicator, clean Markdown/link rendering, mobile-safe prompts and placeholder text, friendly support fallbacks, and public storefront links. It must not expose developer/testing language, provider names, internal routes, stack traces, preview tokens, source/debug panels, or admin-only details.
 
+The chatbot must have request-time contextual memory. The storefront widget and dashboard test chat should send the same bounded, sanitized recent transcript shape to the backend with each chat request. The backend should sanitize it again, use recent user turns for retrieval, include recent context in the model prompt, and instruct the assistant to continue naturally instead of restarting with a fresh greeting.
+
 ## Chatbot Readiness Gates
 
 - Real inputs ready: server-side AI model access and read-only Shopify credentials are verified.
@@ -31,6 +33,7 @@ The customer-facing preview and storefront widget should feel like a real shoppi
 - Dashboard ready: the member can inspect synced products, collections, pages, policies, source filters, sync status, mode, settings, product controls, offers, conversations, support handoffs, analytics, and source-backed answers through a protected dashboard.
 - Dashboard demo ready: the embedded test chat uses the real backend, model, retrieval, and guardrails while matching the storefront chat shape, loading state, product cards, Markdown/link behavior, and guardrails.
 - Shopper polish ready: the customer-facing chat avoids developer/testing language and source/debug panels, uses polished copy, renders Markdown links cleanly, and has no clipped prompts, clipped placeholder text, or mobile horizontal overflow.
+- Conversation continuity ready: storefront and dashboard chat send bounded sanitized recent history to the backend, follow-up retrieval uses recent user context, and answers do not restart with a fresh welcome unless the shopper greets the assistant.
 - Link safety ready: absolute and relative customer-facing links strip preview, custom preview, admin, token, key, and other non-customer params while preserving shopper-safe params such as variant IDs.
 - Recommendation quality ready: recommendation-style questions prioritize product and collection records and recommend from available products without inventing prices, discounts, inventory, delivery dates, warranty terms, policy exceptions, order status, or regulated claims.
 - Safety ready: unsupported discounts, inventory, delivery promises, returns exceptions, warranty claims, policy exceptions, unsupported claims, and order status are refused or handed off.

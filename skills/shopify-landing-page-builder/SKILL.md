@@ -50,6 +50,7 @@ Read `references/guided-progress.md` when you need done signals or progress word
 Default to:
 
 - one Shopify store and one primary landing-page goal
+- Fast Draft Mode unless the user asks for deeper strategy or the project risk requires it
 - a mobile-first, shoppable, proof-backed DTC page
 - a DTC design spec before theme implementation
 - exact image placeholders when final images are not ready
@@ -60,6 +61,28 @@ Default to:
 - launch only after QA, approval, and rollback are clear
 
 Do not create a generic homepage unless the user specifically asks for one. For unclear product-specific DTC traffic, default to a direct-response PDP-style landing page.
+
+## Design Mode Options
+
+Offer depth without forcing a long interview. If the user wants speed, take the fast path and use assumptions or verification placeholders for non-blocking unknowns.
+
+```text
+Fast Draft Mode:
+  Use for users who want to answer a few questions and see a strong first version.
+  Cover the 5-7 highest-leverage inputs: product, buyer, offer, traffic source, CTA path, proof/assets, and claim/design constraints.
+  Ask at most 1-3 missing-answer questions before drafting; infer or placeholder the rest.
+  Infer sane defaults, label assumptions, and create placeholders for unverified proof, claims, offer terms, prices, shipping, images, and urgency.
+
+Guided Strategy Mode:
+  Use when the user wants a stronger strategy pass or the product, offer, audience, proof, or funnel path is unclear.
+  Ask a fuller but still practical intake, then derive strategy fields before writing sections.
+
+Deep Conversion Mode:
+  Use for paid campaigns, high-AOV products, regulated or claim-sensitive categories, weak proof, unfamiliar mechanisms, subscription economics, quiz/customization flows, or when the user asks for the best possible page.
+  Apply the detailed archetype, category, component, visual/copy, and QA references before build approval.
+```
+
+Default to Fast Draft Mode for new users, then recommend a deeper mode only when it would materially reduce launch or conversion risk. Do not block a first draft for missing facts unless the missing fact controls legal/compliance risk, the primary CTA path, product/variant wiring, price/offer truth, or Shopify launch safety.
 
 ## Readiness Ladder
 
@@ -86,16 +109,20 @@ Do not call a page ready for Shopify implementation until the design package is 
 
 Read `references/dtc-design-package.md` before producing the strategy/spec.
 
+For Fast Draft Mode, produce a compact but build-ready design package with assumptions and placeholders instead of a long interview. For Guided Strategy Mode or Deep Conversion Mode, read the additional DTC references needed for the page's archetype, category, components, copy/visual system, or QA risk.
+
 Create a Shopify-bound design package that includes:
 
 - recommended archetype and rationale
+- selected design mode and why it is enough for the current request
 - audience, awareness level, traffic source, ad/message match, and primary conversion goal
+- derived strategy labels: confidence label, education need, proof need, risk reversal need, comparison need, CTA mode, offer strength, claim sensitivity, and sticky CTA need
 - copy strategy with one concrete product-specific big idea
 - section-by-section sequence with copy, CTAs, offer/proof logic, and mobile notes
 - claim verification notes and placeholders for unverified claims
 - exact image-slot plan with role, placement, aspect ratio, target dimensions, crop behavior, planned Shopify Files filename, alt text, and zoom recommendation
 - SEO/browser title, meta description, social preview copy, and social preview image direction
-- QA score or punch list
+- conversion readiness score or punch list
 - handoff note that Shopify implementation must reproduce the approved spec faithfully
 
 The hero must make the product, promise, proof cue, offer, and next action clear quickly. The CTA label must match the real next step, such as `Add to Cart`, `Select Size`, `Choose Flavors`, `Build Your Bundle`, `Take the Quiz`, `Customize`, `Verify Eligibility`, or `Get My Sample`.
@@ -158,6 +185,12 @@ Read only the reference needed for the current stage:
 
 - `references/guided-progress.md` for the progress tracker, readiness ladder, and done signals.
 - `references/dtc-design-package.md` before creating or reviewing strategy, copy, section sequence, offer/proof architecture, image slots, metadata, or the final design package.
+- `references/dtc-derived-strategy.md` when choosing design depth, derived strategy labels, CTA mode, confidence label, sticky CTA need, or upgrade-from-fast-mode guidance.
+- `references/dtc-archetypes.md` when selecting or validating PDP, offer, subscription, bundle, quiz, collection, advertorial, or lead-capture structure.
+- `references/dtc-category-packs.md` when the category has specific buying friction such as apparel fit, supplement claims, home dimensions, pet/baby safety, wellness tech proof, outdoor specs, or custom-product confidence.
+- `references/dtc-components.md` when shaping sections, component props, sticky CTA behavior, comparison tables, review summaries, cross-sells, or email capture.
+- `references/dtc-visual-copy-system.md` when choosing visual direction, design tokens, headline patterns, CTA microcopy, FAQ topics, or copy modules.
+- `references/dtc-qa-rubric.md` before approving the design package for Shopify implementation or when a draft feels weak, generic, risky, or overlong.
 - `references/access-setup.md` when Theme Access, Shopify CLI, a development theme, Dev Dashboard app credentials, Admin API scopes, or access verification are missing or uncertain.
 - `references/shopify-implementation.md` before creating or changing Shopify theme files, page templates, Shopify Files images, product/variant/cart wiring, metadata, or local implementation previews.
 - `references/launch-and-rollback.md` before theme pushes, Admin API mutations, live preview, final QA, launch approval, disable paths, or rollback.
@@ -168,6 +201,8 @@ Before calling the landing page complete, verify:
 
 - the approved DTC design spec is still the source of truth
 - any deviation from the spec is documented
+- the selected design mode is clear and any Fast Draft assumptions are labeled
+- derived strategy labels and confidence label are present
 - claims, proof, offer terms, prices, discounts, guarantees, shipping, and urgency are verified or softened
 - missing images use exact placeholders or final Shopify Files assets
 - product, variant, bundle, quiz, lead form, cart, or checkout path matches the CTA

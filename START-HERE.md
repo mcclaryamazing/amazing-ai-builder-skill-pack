@@ -5,7 +5,7 @@ This pack helps Amazing.com members use Codex to build useful Shopify growth ass
 ## Choose A Skill
 
 - Use `shopify-chatbot-builder` to build a protected chatbot dashboard and real-store test chat first, polish the customer-facing assistant experience, then install and launch the thin storefront widget safely.
-- Use `shopify-landing-page-builder` to create a DTC landing page strategy, build it in real Shopify theme files, preview it, and launch with rollback.
+- Use `shopify-landing-page-builder` to create a DTC landing page strategy, build it in real Shopify theme files, preview it, and launch with rollback. It can start with a quick Fast Draft intake or go deeper when strategy risk is high.
 
 ## Install
 
@@ -27,7 +27,9 @@ Restart or refresh Codex if needed.
 
 ## Before You Start
 
-Have these ready or know who can provide them:
+For a Fast Draft landing-page strategy, you can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Codex should label assumptions and placeholders instead of making you complete a long intake.
+
+Before building, previewing, launching, or mutating Shopify state, have these ready or know who can provide them:
 
 - Shopify site repo access
 - Shopify store owner, staff, collaborator, or Theme Access permissions
@@ -43,8 +45,8 @@ For chatbot builds, also gather:
 
 For landing-page builds, also gather:
 
-- product, audience, traffic source, offer, and primary CTA
-- verified prices, discounts, shipping, guarantee, urgency, reviews, certifications, and claims support
+- product, audience, traffic source, offer, and primary CTA when available
+- verified prices, discounts, shipping, guarantee, urgency, reviews, certifications, and claims support before launch
 - available product, lifestyle, proof, UGC, logo, and packaging assets
 - product, variant, bundle, quiz, lead-form, cart, or checkout assumptions
 
@@ -73,7 +75,7 @@ Use the shopify-landing-page-builder skill.
 
 I want to create a high-converting Shopify landing page for this store. Inspect this repo first, show me the Shopify Landing Page Build Progress tracker, and guide me like a new user.
 
-Start with the product, audience, offer, traffic source, proof, claims, assets, and CTA path. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, exact image placeholders or Shopify Files images, and a rollback path.
+Start in Fast Draft Mode unless the page needs deeper strategy. Ask only for the product, audience, offer, traffic source, proof/assets, claims, and CTA path that materially change the page. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, exact image placeholders or Shopify Files images, and a rollback path.
 ```
 
 ## Safety

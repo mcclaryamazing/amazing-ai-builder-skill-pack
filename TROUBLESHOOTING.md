@@ -79,6 +79,14 @@ Stop and redirect:
 Use the shopify-landing-page-builder skill. Do not touch Shopify theme files yet. First create the Shopify-ready DTC design package with archetype, big idea, copy strategy, section sequence, offer/proof logic, CTA path, claim notes, metadata direction, and exact image-slot plan.
 ```
 
+## Codex Asks Too Many Landing Page Questions
+
+Stop and redirect:
+
+```text
+Use the shopify-landing-page-builder skill in Fast Draft Mode. Ask only for the missing facts that materially change the page archetype, CTA path, offer truth, claim/compliance boundaries, product selection logic, Shopify build path, or launch safety. Otherwise infer conservative defaults, label assumptions, and use verification placeholders.
+```
+
 ## Codex Invents Landing Page Claims Or Proof
 
 Stop and redirect:

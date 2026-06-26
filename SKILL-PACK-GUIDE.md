@@ -44,20 +44,23 @@ The chatbot must have request-time contextual memory. The storefront widget and 
 
 1. Understand the product, audience, offer, and traffic source.
 2. Inspect the Shopify repo, theme setup, and launch constraints.
-3. Create the DTC strategy and copy package.
-4. Approve page structure, claims, offer, product wiring, and image plan.
-5. Build the Shopify page in real theme files.
-6. Add products, images, metadata, and purchase wiring.
-7. QA desktop, mobile, accessibility, interactions, and checkout path.
-8. Preview on a development theme or private page.
-9. Launch only after approval, rollback, and monitoring are clear.
+3. Choose Fast Draft, Guided Strategy, or Deep Conversion depth.
+4. Create the DTC strategy and copy package.
+5. Approve page structure, claims, offer, product wiring, and image plan.
+6. Build the Shopify page in real theme files.
+7. Add products, images, metadata, and purchase wiring.
+8. QA desktop, mobile, accessibility, interactions, and checkout path.
+9. Preview on a development theme or private page.
+10. Launch only after approval, rollback, and monitoring are clear.
 
-The DTC design package is the first meaningful proof. It must include the archetype, big idea, section sequence, copy strategy, offer/proof logic, CTA path, claim notes, metadata direction, and exact image-slot plan before Shopify implementation begins.
+The DTC design package is the first meaningful proof. It must include the selected mode, labeled assumptions, archetype, confidence label, derived strategy labels, big idea, section sequence, copy strategy, offer/proof logic, CTA path, claim notes, metadata direction, and exact image-slot plan before Shopify implementation begins.
+
+Fast Draft Mode is the default for members who want to answer only a few questions and see a strong first version. Guided Strategy Mode helps shape the offer, audience, traffic promise, proof stack, or positioning before drafting. Deep Conversion Mode applies the fuller DTC rubric for high-stakes, high-AOV, regulated, technical, claim-sensitive, subscription, quiz, bundle, custom, or proof-light pages.
 
 ## Landing Page Readiness Gates
 
 - Brief ready: product, audience, offer, traffic source, proof, assets, claim boundaries, and primary CTA are known or marked as placeholders.
-- Strategy ready: the DTC design package is specific enough to build without redesigning.
+- Strategy ready: the DTC design package is specific enough to build without redesigning, with assumptions and verification needs labeled.
 - Approval ready: claims, offer, page structure, product wiring assumptions, and image plan are approved or clearly blocked.
 - Build ready: target repo, deploy guide, git status, theme access, Admin API access, theme ID, and implementation path are known.
 - Preview ready: the page works on a development theme or private URL with desktop/mobile QA.

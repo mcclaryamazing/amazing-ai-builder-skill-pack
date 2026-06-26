@@ -2,6 +2,8 @@
 
 Use this reference before producing or reviewing the strategy, copy, section sequence, image-slot plan, metadata direction, or final Shopify-ready design spec.
 
+This file is the design-phase router. It keeps the workflow fast by default while pointing to deeper references only when the page needs them.
+
 ## Core Philosophy
 
 Default to:
@@ -21,226 +23,142 @@ Why is it safe to try?
 What do I do next?
 ```
 
-Every page needs hero clarity, CTA clarity, offer clarity, proof, objection handling, risk reduction, and mobile conversion access.
-
-Do not promise patterns are guaranteed to convert unless the user provides actual conversion data. Use language like conversion-oriented, commonly observed among strong exemplars, or likely valuable.
-
-## Intake Fields
-
-Extract or infer:
-
-```json
-{
-  "brand": "Name, category, voice, trust level, positioning",
-  "product": "Name, type, price, variants, primary benefits, mechanism, objections",
-  "offer": "Discount, bundle, free shipping, free gift, guarantee, urgency, eligibility",
-  "traffic": "Source, temperature, ad promise, awareness level",
-  "proof": "Reviews, UGC, press, certifications, founder/expert proof, guarantee",
-  "assets": "Existing product, lifestyle, UGC, packaging, logo, and social images",
-  "constraints": "Compliance, claims to avoid, platform, must-include sections",
-  "response_path": "Purchase, size/flavor selection, bundle, quiz, lead capture, verification, or collection click"
-}
-```
-
-Ask only for missing information that would materially change the page. Use verification placeholders for facts that are unavailable.
-
-## Archetype Decision Tree
+The highest-leverage rule:
 
 ```text
-IF primary goal is email/SMS capture, sample request, giveaway, waitlist, or eligibility:
-    use lead_capture_page
-ELSE IF the product requires personalization before purchase:
-    use quiz_funnel
-ELSE IF the hook is a free trial, special discount, free gift, BOGO, or campaign promo:
-    use offer_page
-ELSE IF the product is a kit, pack, routine, box, or configurable consumable:
-    use bundle_builder
-ELSE IF the product is subscription-first:
-    use subscription_funnel
-ELSE IF traffic must choose a category, audience, segment, finish, or collection:
-    use collection_splitter
-ELSE IF cold traffic needs education or reframing before product selection:
-    use advertorial_listicle
-ELSE:
-    use pdp_direct_response
+Make the first screen shoppable.
+Make the middle persuasive.
+Make the final section reassuring.
 ```
 
-Default to `pdp_direct_response` for product-specific or unclear DTC traffic.
+Do not promise patterns are guaranteed to convert unless the user provides real conversion data. Use language like conversion-oriented, commonly observed among strong exemplars, or likely valuable.
 
-## Copy Strategy Packet
+## Operating Modes
 
-Create this before writing final page copy:
+### Fast Draft Mode
 
-```json
-{
-  "audience": "Who is most motivated to buy now",
-  "awareness_level": "problem_aware | solution_aware | product_aware | brand_aware",
-  "customer_problem": "Specific pain, desire, job, or moment",
-  "big_idea": "One concrete organizing product truth",
-  "mechanism": "Why the product can deliver the promise",
-  "primary_hook": "Benefit, curiosity, proof, identity, comparison, or offer hook",
-  "transformation": "Before/after change to make believable",
-  "proof_needed": ["Proof required for strongest claims"],
-  "offer_logic": "Why action now makes sense",
-  "response_path": "Actual CTA and next step"
-}
-```
+Fast Draft Mode is the default.
 
-A strong big idea is concrete, product-specific, easy to understand, visual enough to remember, tied to a real product truth, and supportable by proof, mechanism, or offer logic. Reject generic big ideas that could fit a competitor unchanged.
+Use it when the user asks for a landing page, design package, page draft, Shopify page, section sequence, copy spec, or implementation and has not explicitly requested a deeper strategy process.
 
-## Recommended Section Sequences
+In Fast Draft Mode:
 
-Most pages should follow this strategic arc:
+1. Start from the request, repo, Shopify context, product data, assets, and visible store truth.
+2. Ask at most 1-3 questions before drafting.
+3. Ask only when the missing answer would materially change page archetype, primary CTA, offer truth, claim/compliance boundaries, product selection logic, Shopify build path, or launch safety.
+4. Otherwise infer a conservative default and label it as an assumption.
+5. Use verification placeholders instead of inventing facts.
+6. Default unclear product-specific DTC traffic to `pdp_direct_response`.
+7. Default missing traffic to `cold_to_warm_paid_social_meta`.
+8. Default device priority to `mobile_first`.
+9. Default style to `minimalist_clean_with_conversion_density`.
+10. Include `data_needed_from_merchant` for all missing facts that matter before launch.
+
+Fast Draft Mode still produces a complete, build-ready design package. It may carry the confidence label `first_draft_to_test` when proof, offer, traffic, or category evidence is thin.
+
+### Guided Strategy Mode
+
+Use Guided Strategy Mode when the user wants help shaping the offer, audience, traffic promise, proof stack, positioning, or page direction before drafting.
+
+Ask a compact intake only for facts not already available from the user, repo, Shopify data, product copy, or assets:
+
+1. What product or offer is this page selling?
+2. Who is the primary buyer or traffic audience?
+3. Where is the traffic coming from, and what promise did they click?
+4. What is the real next action: buy, choose variant, build bundle, take quiz, sign up, verify, or customize?
+5. What proof is available: reviews, testimonials, UGC, press, certifications, testing, guarantee, or founder/expert credibility?
+6. What claims, guarantees, urgency, discounts, shipping terms, or compliance boundaries must be verified?
+
+After intake, produce the same build-ready design package as Fast Draft Mode, with clearer rationale for archetype, big idea, offer stack, proof stack, CTA strategy, and section sequence.
+
+### Deep Conversion Mode
+
+Use Deep Conversion Mode when:
+
+- the user explicitly asks for a deep conversion strategy, teardown, audit, CRO pass, or best-possible page
+- the product is high-AOV, regulated, technical, health/wellness, baby/pet, financial, safety-related, or claim-sensitive
+- the offer, proof, or CTA path is complex
+- the page depends on subscription, quiz, personalization, bundle building, eligibility, custom products, financing, or comparison claims
+- the first draft has weak hero clarity, CTA quality, proof strength, mobile UX, or claim hygiene
+- the conversion-readiness score is below 80
+
+Deep Conversion Mode may ask more questions, but only after producing a useful first pass or when the missing information blocks safe claims, purchase wiring, or page structure.
+
+## Ask, Infer, Or Placeholder Rules
+
+Ask before drafting only when the missing answer changes the page in a material way.
+
+Ask when missing:
+
+- actual product or product category
+- primary conversion goal
+- real CTA path when selection, quiz, bundle, customization, verification, or lead capture may be required
+- offer terms displayed as real discounts, urgency, guarantees, financing, free shipping, or free gifts
+- compliance boundaries for health, safety, sustainability, clinical, financial, superiority, or competitor claims
+- required Shopify target, theme, product, collection, or implementation path
+
+Infer when missing:
+
+- traffic source: default to `cold_to_warm_paid_social_meta`
+- page archetype for unclear product traffic: default to `pdp_direct_response`
+- device priority: default to `mobile_first`
+- style direction: default to `minimalist_clean_with_conversion_density`
+- brand trust level: default to `new` unless visible proof shows brand equity
+- proof need: stronger for new brands, premium products, claim-heavy products, subscriptions, and regulated categories
+- sticky CTA: enabled for long paid-traffic pages, high-AOV products, quiz funnels, offer pages, and mobile-first pages
+
+Use placeholders when missing facts would otherwise be fabricated:
 
 ```text
-1. Promo / trust / announcement bar
-2. Navigation or minimal landing-page header
-3. Hero with product, promise, proof, offer, and CTA
-4. Immediate proof or value-prop strip
-5. Product mechanism / feature education
-6. Offer reinforcement or product selection
-7. Comparison / differentiation / objection handling
-8. UGC / testimonials / reviews
-9. Cross-sell / bundle / subscription / collection recovery
-10. FAQ
-11. Final CTA recap
-12. Email/SMS capture when useful
-13. Footer
-14. Mobile sticky CTA when useful
+[Confirm current offer terms]
+[Insert verified review count]
+[Add real testimonial]
+[Verify guarantee terms]
+[Confirm shipping threshold]
+[Substantiate claim before launch]
 ```
 
-Common components:
+Never invent review counts, testimonials, prices, discounts, guarantee terms, shipping terms, certifications, clinical or testing claims, expert endorsements, urgency, scarcity, customer counts, before/after outcomes, awards, or inventory.
+
+## When To Recommend A Deeper Mode
+
+Recommend Guided Strategy Mode when the page can be drafted, but the offer, audience, traffic promise, proof stack, or positioning is vague enough that strategy choices may be weak.
+
+Recommend Deep Conversion Mode when the current draft is likely risky or underpowered because:
+
+- the product is high-AOV, regulated, technical, unfamiliar, or claim-sensitive
+- the brand is new and proof is thin
+- the offer is unverified or complex
+- the CTA path is more complex than direct purchase
+- the page relies on quiz, subscription, bundle, financing, eligibility, or customization logic
+- the hero does not clearly communicate product, promise, proof, offer, and next action
+- the design is attractive but sparse, proof-light, or not shoppable above the fold
+- QA score would be below 80
+
+Phrase the upgrade as an option, not a blocker:
 
 ```text
-PromoBar
-Header
-HeroBuyBox
-ProofStrip
-ValuePropGrid
-MechanismSection
-IngredientOrMaterialPanel
-HowItWorks
-ComparisonTable
-OfferStack
-SubscriptionToggle
-BundleBuilder
-UGCGallery
-ReviewSummary
-CrossSellRail
-FAQAccordion
-FinalCTA
-EmailCapture
-Footer
-StickyCTA
+I can keep this in Fast Draft Mode and produce a build-ready first pass now. Given the claim sensitivity, offer complexity, or proof gap here, I recommend a Deep Conversion pass afterward before launch.
 ```
 
-## Hero And CTA Rules
+## Reference Routing
 
-Hero formula:
+Read only what the current page needs:
 
-```text
-Eyebrow: offer, audience, or category cue
-Headline: specific outcome or transformation
-Subheadline: mechanism + who it is for + why it matters
-Proof row: rating, review count, press, certification, customer count, or placeholder
-CTA: exact next action
-Microcopy: shipping, guarantee, returns, cancel anytime, secure checkout, or placeholder
-```
-
-CTA selection:
-
-```text
-IF size must be selected: Select Size
-IF flavor/variant must be selected: Choose Flavors or Choose a Pack
-IF bundle must be completed: Build Your Bundle
-IF quiz is required: Take the Quiz or Find Your [Result]
-IF directly purchasable: Add to Cart or Add to Bag
-IF customized: Customize, Start Designing, or Upload Your Design
-IF trial offer: Try [Product] Free
-IF verification required: Verify Eligibility
-IF collection page: Shop [Category] or segment-specific CTAs
-IF lead capture: Sign Up, Get My Sample, or Enter Now
-```
-
-Do not use `Buy Now` if the customer still needs to choose size, flavor, formula, color, bundle items, or plan.
-
-## Offer And Proof Architecture
-
-Construct offers from five layers:
-
-```json
-{
-  "primary_incentive": "20% off first order",
-  "aov_lever": "Buy 3 save 20%",
-  "friction_reducer": "Free shipping over $75",
-  "risk_reversal": "30-day money-back guarantee",
-  "urgency_or_reason_now": "Limited-time launch offer"
-}
-```
-
-Display the offer in the promo bar, hero/buy box, product card or plan selector, sticky CTA, mid-page recap, final CTA, and FAQ if terms matter.
-
-Proof hierarchy:
-
-```text
-Purchase-adjacent proof: star rating, review count, guarantee, shipping/returns
-Human proof: testimonials, UGC, before/after, fit data, customer photos
-Authority proof: press, experts, founder, partners, certifications
-Technical proof: ingredients, materials, specs, testing, comparison data
-Risk proof: money-back guarantee, trial, warranty, secure checkout, free returns
-```
-
-Place proof close to the claim it supports.
-
-## Image Slot Standard
-
-Do not generate final images by default. Specify every image slot precisely enough for Shopify implementation and later image production:
-
-```json
-{
-  "slot_id": "hero-product-lifestyle",
-  "role": "hero image",
-  "section": "hero",
-  "desktop_placement": "right column, full height of hero content",
-  "mobile_placement": "above headline, full-width",
-  "aspect_ratio": "4:5",
-  "target_dimensions": "1200 x 1500 px",
-  "image_studio_ratio": "4:5",
-  "alignment": "center center",
-  "crop_behavior": "cover with product and face/hands inside safe area",
-  "description": "Final image description and crop notes",
-  "planned_shopify_files_filename": "hero-product-lifestyle.jpg",
-  "alt_text": "Descriptive alt text",
-  "zoom": true
-}
-```
-
-Visible placeholder content in the Shopify build should be limited to:
-
-```text
-IMAGE: <SLOT-ID>
-ASPECT RATIO: <RATIO> | SIZE: <WIDTH> X <HEIGHT> PX
-Description: <final image description/crop notes>
-```
-
-Do not display internal implementation notes, marketing placeholder headlines, or image-generation instructions inside the image frame.
-
-## Category Cautions
-
-- Apparel: include fit, size selection, fabric, model context, returns/exchanges, swatches when relevant.
-- Food, beverage, supplements: include ingredients, taste/flavors, cadence, subscription economics, safety/compliance notes, reviews, guarantee; flag health and clinical claims.
-- Beauty and personal care: include routine fit, usage, ingredient rationale, shade/formula selection, result proof; avoid unsupported result claims.
-- Home, furniture, cookware, decor: include dimensions, materials, room context, shipping/delivery, returns, warranty, care, financing if valid.
-- Pet and baby: emphasize safety, fit, ingredients/materials, expert/certification proof when available; be conservative with claims.
-- Wellness, electronics, recovery tech: explain mechanism, setup, specs, warranty, trial/returns, financing, clinical/testing proof when available.
-- Outdoor gear: include use cases, durability, materials, specs, environment fit, warranty, in-use imagery.
-- Custom or configurable goods: explain customization, preview/proofing, shipping timeline, minimum order, materials, examples, support.
+- `dtc-derived-strategy.md` for modes, derived strategy labels, CTA mode, proof/education/risk/comparison need, confidence label, and sticky CTA decisions.
+- `dtc-archetypes.md` for archetype selection, section sequences, scenario shortcuts, and archetype avoid lists.
+- `dtc-category-packs.md` for category-specific frictions, proof needs, offer patterns, and avoid lists.
+- `dtc-components.md` for section/component requirements, hero commerce stack, CTA labels, image slots, and placeholders.
+- `dtc-visual-copy-system.md` for visual direction, design tokens, headline formulas, CTA microcopy, FAQ topics, and copy modules.
+- `dtc-qa-rubric.md` before design approval, before Shopify implementation, or when a draft feels weak, generic, risky, or overlong.
 
 ## Design Spec Output
 
 Produce a structured `ShopifyLandingPageDesignSpec` or equivalent with:
 
-- metadata: brand, product, category, archetype, primary goal, traffic source, awareness level
+- metadata: brand, product, category, selected mode, archetype, confidence label, primary goal, traffic source, awareness level
+- assumptions: inferred defaults and facts needing merchant/legal verification
+- derived_strategy: education need, proof need, risk reversal need, comparison need, CTA mode, offer strength, claim sensitivity, sticky CTA need
 - strategy: ad/message match, promise, positioning, big idea, mechanism, offer stack, proof stack, CTA strategy, response path
 - shopify_handoff: template type, implementation owner, fidelity instruction, theme chrome preference
 - visual direction: style, colors, typography, section rhythm
@@ -255,6 +173,8 @@ Produce a structured `ShopifyLandingPageDesignSpec` or equivalent with:
 Before Shopify implementation, confirm:
 
 ```text
+The selected mode is clear.
+Fast Draft assumptions are labeled.
 The page has one clear big idea.
 The archetype matches the traffic and conversion goal.
 The hero repeats the ad or campaign promise when one exists.

@@ -19,7 +19,7 @@ Shopify Landing Page Build Progress
 
 ## Stage Done Signals
 
-1. Product, audience, offer, and traffic source: the agent knows the product/category, buyer, traffic source, ad or campaign promise, primary CTA, proof inventory, available assets, brand constraints, and claim-sensitive areas.
+1. Product, audience, offer, and traffic source: the agent knows, has inferred, or has explicitly placeholdered the product/category, buyer, traffic source, ad or campaign promise, primary CTA, proof inventory, available assets, brand constraints, and claim-sensitive areas. In Fast Draft Mode, this step can be complete with labeled assumptions and `data_needed_from_merchant` rather than a long intake.
 2. Repo and theme setup: the target repo, deploy guide, git status, Theme Access path, Shopify CLI verification, development theme, Dev Dashboard app, Admin API access path, target theme, and store-specific risks are known.
 3. DTC strategy and copy package: the archetype, big idea, copy strategy, section sequence, offer stack, proof stack, CTA mode, metadata direction, and exact image-slot plan are drafted.
 4. Approval gate: the user or owner has approved the offer, claims, page structure, product wiring assumptions, and image plan, or the remaining unknowns are clearly labeled as launch blockers.

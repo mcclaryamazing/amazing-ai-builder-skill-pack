@@ -33,6 +33,12 @@ $skills = @(
     References = @(
       "guided-progress.md",
       "dtc-design-package.md",
+      "dtc-derived-strategy.md",
+      "dtc-archetypes.md",
+      "dtc-components.md",
+      "dtc-category-packs.md",
+      "dtc-visual-copy-system.md",
+      "dtc-qa-rubric.md",
       "access-setup.md",
       "shopify-implementation.md",
       "launch-and-rollback.md"
@@ -88,6 +94,16 @@ foreach ($skill in $skills) {
     Fail-Check "shopify-chatbot-builder does not reference the empty project scaffold"
   } elseif ($skill.Name -eq "shopify-chatbot-builder" -and $content -notmatch "Build the protected admin dashboard and embedded test chat") {
     Fail-Check "shopify-chatbot-builder tracker is not dashboard-first"
+  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "Fast Draft Mode") {
+    Fail-Check "shopify-landing-page-builder does not define Fast Draft Mode"
+  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "Guided Strategy Mode") {
+    Fail-Check "shopify-landing-page-builder does not define Guided Strategy Mode"
+  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "Deep Conversion Mode") {
+    Fail-Check "shopify-landing-page-builder does not define Deep Conversion Mode"
+  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "Ask at most 1-3 missing-answer questions before drafting") {
+    Fail-Check "shopify-landing-page-builder Fast Draft guidance may force too much intake"
+  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "dtc-derived-strategy\.md") {
+    Fail-Check "shopify-landing-page-builder does not reference distilled DTC strategy references"
   } else {
     Write-Check "ok" ("valid skill front matter for {0}" -f $skill.Name)
   }
@@ -142,6 +158,25 @@ if (-not (Test-Path -LiteralPath (Join-Path $PackRoot "skills/shopify-chatbot-bu
   Write-Check "ok" "old polished-local-demo reference removed"
 } else {
   Fail-Check "old polished-local-demo reference still exists"
+}
+
+$landingDocs = @(
+  "README.md",
+  "INSTALL-CODEX.md",
+  "START-HERE.md",
+  "SKILL-PACK-GUIDE.md"
+)
+
+foreach ($doc in $landingDocs) {
+  $path = Join-Path $PackRoot $doc
+  if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+    continue
+  }
+
+  $text = Get-Content -LiteralPath $path -Raw
+  if ($text -notmatch "Fast Draft Mode") {
+    Fail-Check ("{0} does not mention Fast Draft Mode" -f $doc)
+  }
 }
 
 if (-not $failed) {

@@ -31,11 +31,11 @@ The chatbot skill is designed to replicate a polished Shopify chatbot build patt
 - customer-facing links strip preview/admin/token/key params while preserving shopper-safe params such as variant IDs
 - recommendation-style questions prioritize product and collection records over policy/page records without inventing prices, discounts, inventory, delivery dates, or claims
 
-The landing-page skill guides Codex through the full DTC page path:
+The landing-page skill guides Codex through the full DTC page path. It defaults to Fast Draft Mode for members who want to answer a few questions and get a strong first version, while still supporting Guided Strategy Mode and Deep Conversion Mode when the offer, proof, claims, category, or funnel path needs more rigor:
 
 1. Understand the product, audience, offer, and traffic source.
 2. Inspect the Shopify repo, theme setup, and launch constraints.
-3. Create a DTC strategy, copy package, section sequence, and exact image-slot plan.
+3. Create a Shopify-ready DTC strategy, copy package, section sequence, and exact image-slot plan using assumptions/placeholders when speed is preferred.
 4. Approve claims, offer, product wiring, page structure, and image plan.
 5. Build the page in real Shopify theme files.
 6. Add Shopify Files imagery, metadata, and purchase wiring.
@@ -45,7 +45,9 @@ The landing-page skill guides Codex through the full DTC page path:
 
 ## Member Readiness Checklist
 
-Before starting, the member should have or be able to get:
+For a Fast Draft landing-page strategy, the member can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Missing launch facts should become labeled assumptions or verification placeholders.
+
+Before building, previewing, launching, or mutating Shopify state, the member should have or be able to get:
 
 - access to the Shopify site repo
 - Shopify store owner, staff, collaborator, or Theme Access permissions
@@ -61,10 +63,10 @@ For chatbot work, also have:
 
 For landing-page work, also have:
 
-- product, offer, audience, and traffic-source details
+- product, offer, audience, and traffic-source details when available
 - available product, lifestyle, proof, UGC, logo, or packaging assets
 - product/variant/bundle/quiz/lead-form assumptions
-- verified proof, claim support, guarantee, shipping, discount, and urgency details
+- verified proof, claim support, guarantee, shipping, discount, and urgency details before launch
 
 Secrets must never be pasted into chat, committed to the repo, or placed in Liquid, public JavaScript, metafields, screenshots, or docs.
 
@@ -109,7 +111,7 @@ Use the shopify-landing-page-builder skill.
 
 I want to create a high-converting Shopify landing page for this store. Inspect this repo first, show me the Shopify Landing Page Build Progress tracker, and guide me like a new user.
 
-Start with the product, audience, offer, traffic source, proof, claims, assets, and CTA path. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, exact image placeholders or Shopify Files images, and a rollback path.
+Start in Fast Draft Mode unless the page needs deeper strategy. Ask only for the product, audience, offer, traffic source, proof/assets, claims, and CTA path that materially change the page. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, exact image placeholders or Shopify Files images, and a rollback path.
 ```
 
 ## Validation

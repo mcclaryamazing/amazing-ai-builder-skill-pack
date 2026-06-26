@@ -1,6 +1,6 @@
 # Version
 
-Current version: `0.6.2`
+Current version: `0.7.0`
 
 Repo focus: installable Codex skills for Amazing.com members building Shopify AI growth assets.
 
@@ -22,5 +22,7 @@ Member-facing Shopify builder skill pack.
 - A complete chatbot dashboard must expose reachable protected screens for setup, sync/status, sources, product promotion, offers, test chat, conversations, support handoffs, analytics, and install/rollback values.
 - Fake/sample data, standalone mock widgets, static replies, and raw JSON endpoints may not be shown to the member as the chatbot demo.
 - The landing-page workflow must create a Shopify-ready DTC design package before theme implementation.
+- The landing-page workflow supports Fast Draft Mode by default, plus Guided Strategy Mode and Deep Conversion Mode for higher-risk or higher-rigor pages.
+- The DTC master guide has been distilled into progressive references for derived strategy, archetypes, components, category packs, visual/copy rules, and QA scoring.
 - Landing-page image placeholders must preserve the final slot geometry and use the exact placeholder standard.
 - Theme pushes and Shopify mutations require deploy-guide review, git-status review, explicit uncommitted-work handling, targeted no-delete pushes where possible, and rollback.

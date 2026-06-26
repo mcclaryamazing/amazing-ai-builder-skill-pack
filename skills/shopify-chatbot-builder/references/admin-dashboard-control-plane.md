@@ -20,7 +20,9 @@ The dashboard must include:
 - source browser or tables showing exactly what customer-visible content the bot can use
 - visibility filter evidence: active products only, published pages only, and collection product references filtered through active synced products
 - embedded dashboard test chat that calls the same backend chat path or same chat service used by the storefront widget
+- customer preview chat that matches the storefront chat shape, rendering rules, product cards, Markdown/link behavior, loading state, and guardrails
 - source labels, source snippets, or product/source cards for dashboard test answers
+- source/debug inspection clearly separated from the customer preview chat
 - risky-question test prompts and visible pass/fail outcomes
 - support routing or handoff settings
 - no secrets in browser JavaScript, HTML, logs, screenshots, source JSON, or dashboard responses
@@ -57,6 +59,8 @@ Use clear mode behavior:
 
 The fastest disable path should switch mode to `off` without requiring a Shopify theme edit.
 
+Explain these modes in plain store-owner language. Prefer labels such as "Assistant service", "AI replies", "Store content", "Customer Preview", "Launch Controls", and "Storefront Visibility" over infrastructure jargon.
+
 ## Test Chat Requirements
 
 The dashboard preview chat is the real private demo. It must:
@@ -65,7 +69,11 @@ The dashboard preview chat is the real private demo. It must:
 - call the real backend model path, not static replies
 - preserve short conversation history when testing follow-up questions
 - render safe Markdown or force plain text so raw `**`, raw bullet syntax, or broken links are not visible
-- show source labels/cards for backed answers
+- render Markdown links without double-escaping
+- match the storefront widget's message shape, product cards, link behavior, loading state, and guardrails
+- use a normal typing indicator, preferably three animated dots, rather than internal status text
+- avoid customer-facing developer language such as "retrieval", "sources", "verified knowledge", model/provider names, route names, or config names inside the preview chat
+- show source labels/cards for backed answers only in admin-only source inspection or a clearly separated source-review area
 - refuse or route to support for unsupported claims
 - test at least these scenarios before storefront install:
   - real product recommendation
@@ -83,6 +91,8 @@ The dashboard must make source eligibility obvious:
 - Collections: do not let collection records leak draft or archived product titles. Use active synced product handles for any collection product references.
 - Policies: show which legal/policy records were synced and warn when expected policy coverage is missing.
 - Manual knowledge: distinguish merchant-authored manual entries from Shopify-synced records.
+- Source records should link to the underlying customer-facing product, collection, page, or policy URL when available, and these admin source-review links may open in a new tab.
+- Source links must use public storefront URLs with preview tokens, admin tokens, generic token/key params, and other non-customer query values stripped.
 
 ## Safety And Auth
 
@@ -109,6 +119,11 @@ Do not install or enable the storefront widget until the dashboard shows:
 - source browser works without exposing secrets
 - dashboard test chat produces model-backed answers with source labels
 - raw Markdown is not visible in the test chat
+- Markdown links render without double-escaping
+- customer preview chat does not show source/debug blocks or developer/testing language
+- dashboard source records open customer-facing source URLs in a new tab
+- dashboard test chat matches the storefront chat shape, rendering, loading state, product cards, links, and guardrails
+- recommendation-style queries prioritize product and collection records over policy or page records
 - product promotion works through product cards, product controls, merchant notes, and configured offers only
 - conversations, support handoff records, and basic analytics are visible in protected dashboard screens
 - dashboard features are reachable through navigation and verified in a browser

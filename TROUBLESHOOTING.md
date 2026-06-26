@@ -39,6 +39,30 @@ Stop and redirect:
 Use the shopify-chatbot-builder skill. Do not install or enable any storefront widget yet. First build the protected admin dashboard/control plane with health/readiness status, chatbot mode, fast disable path, Shopify sync, source counts, source browser, active/published source filters, embedded dashboard test chat, risky-question tests, support routing, and no exposed secrets.
 ```
 
+## The Chatbot Feels Like A Developer Demo
+
+Stop and redirect:
+
+```text
+Use the shopify-chatbot-builder skill. Polish the customer-facing chat so it sounds like a real shopping/support assistant. Remove developer/testing language such as retrieval, sources, verified knowledge, preview, provider names, route names, config names, API key messages, and stack traces. Use warm concise copy, a normal typing indicator, friendly support fallbacks, mobile-safe prompt buttons and placeholder text, and no shopper-visible source/debug panels.
+```
+
+## Chatbot Links Expose Preview Or Admin Tokens
+
+Stop and redirect:
+
+```text
+Use the shopify-chatbot-builder skill. Add and test customer-facing URL sanitization for both backend-generated and widget-rendered links. Strip preview, custom preview, admin, token, key, and other non-customer query params from absolute and relative URLs, preserve shopper-safe params such as variant IDs, route policy links to public storefront policy pages when possible, and keep source-review links admin-only.
+```
+
+## Product Recommendations Refuse Too Easily
+
+Stop and redirect:
+
+```text
+Use the shopify-chatbot-builder skill. For recommendation-style questions like "Which product should I start with?", "best for a first-time buyer", "recommend", "compare", or "gift", prioritize product and collection records over policy/page records and recommend from available products. Keep guardrails: do not invent prices, discounts, live inventory, delivery dates, warranty terms, policy exceptions, order status, or regulated claims.
+```
+
 ## Codex Wants To Skip The Landing Page Design Package
 
 Stop and redirect:

@@ -16,9 +16,19 @@ The chatbot skill guides Codex through a safe, practical path:
 3. Connect read-only Shopify product, page, collection, and policy data.
 4. Build a protected admin dashboard/control plane with source inspection, mode controls, sync status, and embedded test chat.
 5. Use the dashboard test chat as the real private demo with the same backend, model, retrieval, and guardrails the widget will use.
-6. Inspect sources and test answer quality, risky questions, product promotion, offers, refusals, support handoff, conversations, analytics, desktop, and mobile.
-7. Install the thin storefront widget on a development theme only after the dashboard acceptance gate passes.
-8. Launch only after approval, rollback, and disable paths are clear.
+6. Polish the customer-facing chat so it sounds like a real shopping/support assistant, never a developer test harness.
+7. Verify safe link handling, product-first recommendations, clean Markdown rendering, source/debug separation, mobile layout, support handoff, conversations, analytics, and risky-question behavior.
+8. Install the thin storefront widget on a copied preview theme only after the dashboard acceptance gate passes.
+9. Launch only after approval, hosted smoke checks when applicable, rollback, and disable paths are clear.
+
+The chatbot skill is designed to replicate a polished Shopify chatbot build pattern:
+
+- shopper chat uses warm, concise copy, normal typing indicators, mobile-safe prompts/placeholders, and friendly fallbacks
+- shopper chat never exposes "retrieval", "sources", provider names, internal routes, API keys, stack traces, preview tokens, or source/debug panels
+- dashboard source inspection remains available, but it is separated from the customer preview chat
+- product, collection, page, and policy names become clickable when public storefront URLs are available
+- customer-facing links strip preview/admin/token/key params while preserving shopper-safe params such as variant IDs
+- recommendation-style questions prioritize product and collection records over policy/page records without inventing prices, discounts, inventory, delivery dates, or claims
 
 The landing-page skill guides Codex through the full DTC page path:
 
@@ -85,6 +95,8 @@ Use the shopify-chatbot-builder skill.
 I want to build a private AI chatbot for this live Shopify store. Inspect this repo first, show me the Shopify Chatbot Build Progress tracker, and guide me like a new user.
 
 Build this dashboard-first. Create a protected admin dashboard/control plane with source inspection, mode/status controls, Shopify sync status, source counts for products/collections/pages/policies, and an embedded dashboard test chat using my real Shopify data and a real server-side AI model before installing anything on my storefront. Ask me what setup I already have, verify and reuse it when safe, and do not ask me to paste secrets into chat.
+
+Make the customer-facing widget polished and safe by default: no developer/testing language, no shopper-visible source/debug panels, friendly fallbacks, clean Markdown links, product-first recommendations, public storefront links with preview/admin/token params stripped, mobile-safe prompts/placeholders, and chat state preserved when shoppers follow internal links.
 ```
 
 ## Start A Shopify Landing Page Build

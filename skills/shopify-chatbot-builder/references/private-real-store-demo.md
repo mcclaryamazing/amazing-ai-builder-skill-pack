@@ -34,14 +34,19 @@ The demo should include:
 - polished chat launcher or embedded chat panel
 - assistant greeting with store-specific positioning
 - user and assistant message bubbles
-- real product cards and policy/source snippets
-- source links or source labels when answers use store knowledge
+- real product cards in the customer preview
+- policy/source snippets, source links, or source labels only in a clearly separated admin source-review area
 - support handoff button or link for unknown questions
-- loading state while the backend responds
+- normal typing/loading state while the backend responds, preferably a three-dot animation instead of internal status text
 - friendly error state when the backend, model, or Shopify sync is unavailable
 - assistant responses render cleanly; Markdown markers such as `**bold**`, raw list asterisks, or unrendered links must not be visible to shoppers
+- shopper-facing copy is warm, concise, specific, and helpful
+- shopper-facing UI does not mention "retrieval", "sources", "verified knowledge", "preview", model/provider names, internal route names, config names, API keys, stack traces, or other developer details
+- suggested prompt buttons fit on desktop and mobile without clipped text
+- input placeholder text is short enough for mobile, such as "Ask a question"
+- internal product, collection, page, and policy links preserve chat state when navigation reloads the page
 - mobile-responsive layout
-- private-preview label that does not dominate the UI
+- dashboard-level private demo label outside the customer preview chat
 
 Avoid raw HTML forms, unstyled textareas, cramped panels, placeholder content, debug JSON as the main UI, unauthenticated admin controls, or anything that makes the user doubt the final chatbot.
 
@@ -62,6 +67,29 @@ Preferred options:
 - Escape all model text before rendering. Never pass model output directly to `innerHTML`.
 - Allow only safe formatting such as paragraphs, bullets, bold, italics, and http/https links.
 - Verify in a browser that shopper-visible messages do not show raw `**`, raw bullet syntax, or broken link syntax.
+- Verify Markdown links render as links without double-escaping.
+- Make product, collection, page, and policy names clickable when a customer-facing URL is available.
+
+Do not render source/debug panels in the customer-facing preview. If the private demo is inside the dashboard, keep source inspection clearly separated from the customer preview chat.
+
+## Assistant Prompt And Fallbacks
+
+The assistant prompt should define the bot as a customer-facing shopping and support assistant. It should say to answer from customer-visible store content only, but it should not instruct the model to mention internal context, retrieval, sources, or system rules to the shopper.
+
+For product recommendation questions, the assistant should recommend from available products when there is relevant store content. Do not refuse merely because there is no single perfect answer.
+
+Guardrail responses, model-disabled messages, and model-failure fallbacks must sound natural to shoppers and route to support. Never show provider names, missing-key messages, stack traces, config names, private-preview details, or other internal failure details in the customer-facing chat.
+
+## Link Safety
+
+Customer-facing links in demo answers should use public storefront URLs.
+
+Verify that:
+
+- absolute and relative URLs strip preview tokens, theme preview params, admin tokens, generic token/key params, and other non-customer query values
+- shopper-safe params such as variant IDs are preserved
+- policy links resolve to public storefront policy pages whenever possible
+- storefront/customer-preview links navigate in the same tab unless there is a strong reason not to
 
 ## Required Data Before Demo
 
@@ -92,6 +120,11 @@ Before moving to widget installation, show the member:
 - confirmation that collection-derived product mentions cannot include draft or archived products
 - confirmation that dashboard source inspection does not expose secrets
 - pass/fail result showing raw Markdown from model responses is not visible in the UI
+- pass/fail result showing Markdown links render without double-escaping
+- pass/fail result showing shopper-facing chat does not render source/debug blocks or developer/testing language
+- pass/fail result showing internal customer-facing links preserve chat state after navigation
+- pass/fail result showing mobile prompts, placeholders, and chat layout do not clip or overflow horizontally
+- pass/fail result showing recommendation-style queries prioritize product and collection records over policy or page records
 - pass/fail results for at least five questions, including real product, real policy, discount, inventory, and order-status questions
 
 If any item is missing, do not install the widget yet.
@@ -112,6 +145,6 @@ Questions backed by synced product or policy data should answer with source-back
 
 ## Visual Bar
 
-The demo should feel close enough to a finished Shopify widget that a non-technical store owner trusts the build. Use restrained, modern styling; consistent spacing; readable type; clear buttons; polished empty/loading/error states; and product/source cards that look intentional.
+The demo should feel close enough to a finished Shopify widget that a non-technical store owner trusts the build. Use restrained, modern styling; consistent spacing; readable type; clear buttons; polished empty/loading/error states; customer-facing product cards that look intentional; and admin-only source review that is visually separate from the customer preview.
 
 When building a frontend, verify it in a browser at desktop and mobile widths before calling the demo done.

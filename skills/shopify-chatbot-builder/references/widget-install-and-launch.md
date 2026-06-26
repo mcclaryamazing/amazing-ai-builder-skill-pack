@@ -17,6 +17,36 @@ Prefer:
 
 Avoid large Custom Liquid blocks and broad global theme edits unless there is a clear reason.
 
+## Customer-Facing Widget Polish
+
+The storefront widget should feel like a finished customer service assistant.
+
+Require:
+
+- warm, concise, specific default copy
+- short mobile-safe placeholder text, such as "Ask a question"
+- suggested prompt buttons that do not clip on desktop or mobile
+- a normal typing indicator, preferably three animated dots
+- no source/debug panels in the shopper widget
+- no developer or testing language such as "retrieval", "sources", "verified knowledge", "preview", provider/model names, API keys, internal route names, config names, stack traces, or private-preview details
+- friendly unavailable and model-failure messages that route to support
+- chat state persistence when a shopper follows an internal product, collection, page, or policy link and the page reloads behind the widget
+- subtle glass/translucent launcher or panel styling only when readability and contrast remain strong
+
+## Link Safety And Navigation
+
+All shopper-visible links must resolve to customer-facing storefront destinations.
+
+Implement and test a shared URL sanitizer for backend-generated and frontend-rendered links:
+
+- Strip preview tokens, theme preview params, admin tokens, generic token/key params, and other non-customer query values.
+- Support both absolute and relative URLs.
+- Preserve normal shopper-safe params such as variant IDs.
+- Resolve policy links to public storefront policy pages whenever possible, not checkout, admin, preview, or private URLs.
+- Make product, collection, page, and policy names clickable when a customer-facing URL is available.
+- Navigate storefront chat links in the same tab by default, while preserving chat state.
+- Open admin source-review links in a new tab when useful.
+
 ## Current Live Theme Copy First
 
 Before installing or verifying the storefront widget, create or use a fresh unpublished copy of the current live theme for accurate preview and testing.
@@ -104,8 +134,17 @@ Before live enablement, verify:
 - risky unsupported questions are refused or handed off
 - mobile layout works
 - desktop preview layout works
+- customer-facing links strip preview, custom preview, admin, token, and key params for absolute and relative URLs while preserving shopper-safe params such as variant IDs
+- policy links resolve to public storefront policy pages when possible
+- product, collection, page, and policy names in answers are clickable when customer-facing URLs exist
+- Markdown links render without double-escaping
+- shopper widget does not show source/debug blocks or developer/testing language
+- suggested prompts, input placeholder, and panel layout do not clip or overflow on mobile
+- internal link navigation preserves conversation state after the page reloads
 - disable path works
 - rollback path is clear
+- hosted smoke tests pass when a hosted backend or hosted widget asset is in use
+- hosted runtime mode is verified after deploy if mode is persisted outside environment variables, and reset to `preview` or `off` as required by the deploy guide
 - live theme remains untouched unless the user explicitly approves live launch
 
 Before enabling the live theme, show:

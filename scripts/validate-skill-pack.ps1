@@ -43,6 +43,17 @@ $skills = @(
       "shopify-implementation.md",
       "launch-and-rollback.md"
     )
+  },
+  @{
+    Name = "shopify-site-builder"
+    References = @(
+      "guided-progress.md",
+      "site-strategy-and-architecture.md",
+      "access-setup.md",
+      "theme-system-and-implementation.md",
+      "surface-playbooks.md",
+      "launch-and-rollback.md"
+    )
   }
 )
 
@@ -104,6 +115,22 @@ foreach ($skill in $skills) {
     Fail-Check "shopify-landing-page-builder Fast Draft guidance may force too much intake"
   } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "dtc-derived-strategy\.md") {
     Fail-Check "shopify-landing-page-builder does not reference distilled DTC strategy references"
+  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Fast Site Draft Mode") {
+    Fail-Check "shopify-site-builder does not define Fast Site Draft Mode"
+  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Guided Site Strategy Mode") {
+    Fail-Check "shopify-site-builder does not define Guided Site Strategy Mode"
+  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Deep Storefront Build Mode") {
+    Fail-Check "shopify-site-builder does not define Deep Storefront Build Mode"
+  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Shopify Site Build Progress") {
+    Fail-Check "shopify-site-builder does not include the site progress tracker"
+  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "site-strategy-and-architecture\.md") {
+    Fail-Check "shopify-site-builder does not reference the site strategy reference"
+  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "access-setup\.md") {
+    Fail-Check "shopify-site-builder does not reference the access setup reference"
+  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Theme Access plus Shopify CLI") {
+    Fail-Check "shopify-site-builder does not preserve the theme access rail"
+  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Shopify Dev Dashboard app plus Admin GraphQL") {
+    Fail-Check "shopify-site-builder does not preserve the Admin API access rail"
   } else {
     Write-Check "ok" ("valid skill front matter for {0}" -f $skill.Name)
   }
@@ -176,6 +203,29 @@ foreach ($doc in $landingDocs) {
   $text = Get-Content -LiteralPath $path -Raw
   if ($text -notmatch "Fast Draft Mode") {
     Fail-Check ("{0} does not mention Fast Draft Mode" -f $doc)
+  }
+}
+
+$siteDocs = @(
+  "README.md",
+  "INSTALL-CODEX.md",
+  "START-HERE.md",
+  "SKILL-PACK-GUIDE.md"
+)
+
+foreach ($doc in $siteDocs) {
+  $path = Join-Path $PackRoot $doc
+  if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+    continue
+  }
+
+  $text = Get-Content -LiteralPath $path -Raw
+  if ($text -notmatch "shopify-site-builder") {
+    Fail-Check ("{0} does not mention shopify-site-builder" -f $doc)
+  }
+
+  if ($text -notmatch "Fast Site Draft Mode") {
+    Fail-Check ("{0} does not mention Fast Site Draft Mode" -f $doc)
   }
 }
 

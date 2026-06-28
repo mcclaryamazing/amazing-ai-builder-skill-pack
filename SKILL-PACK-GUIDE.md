@@ -6,6 +6,7 @@ Use this pack for guided Shopify AI builder work.
 
 - `shopify-chatbot-builder` for the full Shopify chatbot build.
 - `shopify-landing-page-builder` for the full Shopify DTC landing-page build.
+- `shopify-site-builder` for the full Shopify site build across homepage, product pages, collections, content pages, navigation, and shared theme systems.
 
 ## Chatbot Workflow
 
@@ -66,6 +67,32 @@ Fast Draft Mode is the default for members who want to answer only a few questio
 - Preview ready: the page works on a development theme or private URL with desktop/mobile QA.
 - Launch ready: live changes are approved, scoped, reversible, and monitored.
 
+## Site Builder Workflow
+
+1. Understand the store, catalog, brand, goals, and must-have pages.
+2. Inspect the repo, theme, deploy guide, git status, access, and constraints.
+3. Choose Fast Site Draft, Guided Site Strategy, or Deep Storefront Build depth.
+4. Create the site map, conversion strategy, and page-template plan.
+5. Define the shared theme system, reusable sections, and image plan.
+6. Approve homepage, PDP, collection, content-page, navigation, and data changes.
+7. Build the site surfaces in real Shopify theme files.
+8. Add or update products, collections, pages, menus, metadata, and Shopify Files.
+9. QA desktop, mobile, accessibility, interactions, performance, SEO, product forms, filters, cart, and checkout path.
+10. Preview on a development or copied theme and launch only after approval, rollback, and monitoring are clear.
+
+The Shopify site blueprint is the first meaningful proof. It must include the selected mode, labeled assumptions, site map, navigation, homepage plan, PDP plan, collection plan, content-page plan, conversion strategy, shared theme system, reusable section inventory, data plan, metadata direction, exact image-slot plan, QA plan, and rollback path before broad Shopify implementation begins.
+
+Fast Site Draft Mode is the default for members who want a practical first site plan quickly. Guided Site Strategy Mode helps shape positioning, catalog architecture, navigation, collection structure, page priority, or proof strategy. Deep Storefront Build Mode applies fuller rigor for rebuilds, migrations, multi-template launches, high-AOV or claim-sensitive catalogs, large catalogs, subscription/custom/quiz flows, or SEO-sensitive work.
+
+## Site Builder Readiness Gates
+
+- Store brief ready: brand, catalog shape, audiences, goals, required pages, proof/assets, and constraints are known or marked as placeholders.
+- Blueprint ready: site map, navigation, template strategy, reusable sections, content model, image plan, SEO direction, and data plan are specific enough to build without redesigning.
+- Build ready: target repo, deploy guide, git status, Theme Access, Admin API access, theme ID, implementation path, and preview plan are known.
+- Surface ready: homepage, PDP, collection, content-page, cart/checkout-adjacent, and navigation changes are implemented or intentionally out of scope.
+- Preview ready: the site works on a development or copied preview theme with desktop/mobile QA.
+- Launch ready: live changes are approved, scoped, reversible, monitored, and documented.
+
 ## Shared Safety Rules
 
 - Inspect the real repo before advising.
@@ -76,3 +103,4 @@ Fast Draft Mode is the default for members who want to answer only a few questio
 - Prefer development theme or private preview before live launch.
 - Use targeted Shopify theme pushes with `--nodelete` and explicit `--only` paths.
 - Keep rollback or fast disable paths clear.
+- Keep Theme Access plus Shopify CLI separate from Dev Dashboard app plus Admin GraphQL client credentials.

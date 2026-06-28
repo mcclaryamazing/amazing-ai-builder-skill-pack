@@ -62,7 +62,39 @@ Add only when needed:
 
 Avoid order lookup in the first version unless authentication, privacy wording, and backend verification are implemented.
 
-For new apps, prefer Shopify Dev Dashboard or Shopify CLI app setup. Reuse an existing app when safe and sufficient. Do not send members down stale private-app or legacy setup paths.
+For new apps, prefer Shopify Dev Dashboard app setup. Reuse an existing app when safe and sufficient. Do not send members down stale private-app or legacy setup paths.
+
+## Theme Access Setup
+
+Use Theme Access when the chatbot needs theme files for snippets, public JavaScript, CSS, render hooks, or widget installation.
+
+Plain-English flow:
+
+1. Confirm the user has store owner, staff, or collaborator permissions for theme work.
+2. Install the Shopify Theme Access app if it is not already installed.
+3. Open `Apps > Theme Access`.
+4. Click `Create password` or `Create theme password`.
+5. Save the password locally as `SHOPIFY_CLI_THEME_TOKEN` in `.env` or the approved secret store.
+6. Never paste the password into chat.
+
+Installing Theme Access is not enough; a theme password must be created. Theme Access password links are one-time-view and can expire. Reuse an existing working Theme Access password when safe instead of creating duplicates.
+
+## Dev Dashboard App Setup
+
+Use a Shopify Dev Dashboard app for backend Admin API access to products, variants, collections, pages, policies, files, metafields, discounts when needed, and optional order lookup.
+
+Plain-English flow:
+
+1. Open `https://dev.shopify.com/dashboard`.
+2. Create or reuse an app for this store.
+3. Create a version.
+4. Add only the scopes needed for the chatbot.
+5. Release the version.
+6. Install the app on the target store.
+7. Copy Client ID and Secret into local `.env` as `SHOPIFY_CLIENT_ID` and `SHOPIFY_CLIENT_SECRET`.
+8. Never paste the secret into chat.
+
+If scopes change later, release a new app version and approve updated data access in Shopify Admin. Releasing a version alone does not update granted scopes.
 
 ## Verification
 

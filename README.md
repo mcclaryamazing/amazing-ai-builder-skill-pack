@@ -6,6 +6,7 @@ This repo contains installable Codex skills for Amazing.com members building pra
 
 - `shopify-chatbot-builder` - dashboard-first workflow for building, testing, installing, and launching a private one-store Shopify AI chatbot.
 - `shopify-landing-page-builder` - guided workflow for designing, building, testing, and safely launching a high-converting DTC Shopify landing page.
+- `shopify-site-builder` - guided workflow for planning, building, testing, and safely launching a consistent Shopify site across homepage, product pages, collections, content pages, navigation, and shared theme systems.
 
 ## What The Skills Do
 
@@ -43,6 +44,19 @@ The landing-page skill guides Codex through the full DTC page path. It defaults 
 8. Preview on a development theme or private page.
 9. Launch only after approval, rollback, and monitoring are clear.
 
+The site-builder skill guides Codex through a full Shopify storefront path. It defaults to Fast Site Draft Mode for members who want a practical first site plan quickly, while still supporting Guided Site Strategy Mode and Deep Storefront Build Mode for larger rebuilds, SEO-sensitive stores, high-risk catalogs, or multi-template launches:
+
+1. Understand the store, catalog, brand, goals, and must-have pages.
+2. Inspect the Shopify repo, theme setup, deploy constraints, git status, Theme Access, and Admin API access.
+3. Create a site map, navigation plan, conversion strategy, and page-template plan.
+4. Define the shared theme system, reusable sections, and exact image-slot plan.
+5. Approve homepage, PDP, collection, content-page, navigation, and store-data changes.
+6. Build the site in real Shopify theme files.
+7. Add or update products, collections, pages, menus, metadata, and Shopify Files.
+8. QA desktop, mobile, accessibility basics, interactions, performance, SEO, product forms, filters, cart, and checkout path.
+9. Preview on a development or copied theme.
+10. Launch only after approval, rollback, and monitoring are clear.
+
 ## Member Readiness Checklist
 
 For a Fast Draft landing-page strategy, the member can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Missing launch facts should become labeled assumptions or verification placeholders.
@@ -68,6 +82,13 @@ For landing-page work, also have:
 - product/variant/bundle/quiz/lead-form assumptions
 - verified proof, claim support, guarantee, shipping, discount, and urgency details before launch
 
+For full-site builder work, also have:
+
+- brand, catalog, audience, and site-goal details when available
+- must-have pages, main collections, product-template needs, and navigation assumptions
+- available brand, product, collection, lifestyle, proof, guide, and social-preview assets
+- verified products, variants, collections, policies, shipping, discount, guarantee, and claim support before launch
+
 Secrets must never be pasted into chat, committed to the repo, or placed in Liquid, public JavaScript, metafields, screenshots, or docs.
 
 ## Install In Codex
@@ -82,8 +103,9 @@ https://github.com/mcclaryamazing/amazing-ai-builder-skill-pack
 The skill folders are:
 - skills/shopify-chatbot-builder
 - skills/shopify-landing-page-builder
+- skills/shopify-site-builder
 
-After installing, tell me how to verify both skills are available.
+After installing, tell me how to verify all three skills are available.
 ```
 
 Restart or refresh Codex if needed.
@@ -112,6 +134,18 @@ Use the shopify-landing-page-builder skill.
 I want to create a high-converting Shopify landing page for this store. Inspect this repo first, show me the Shopify Landing Page Build Progress tracker, and guide me like a new user.
 
 Start in Fast Draft Mode unless the page needs deeper strategy. Ask only for the product, audience, offer, traffic source, proof/assets, claims, and CTA path that materially change the page. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, exact image placeholders or Shopify Files images, and a rollback path.
+```
+
+## Start A Shopify Site Build
+
+Open Codex in the Shopify site repo, then paste:
+
+```text
+Use the shopify-site-builder skill.
+
+I want to build or rebuild a consistent Shopify site across homepage, product pages, collections, and content pages. Inspect this repo first, show me the Shopify Site Build Progress tracker, and guide me like a new user.
+
+Start in Fast Site Draft Mode unless the site needs deeper strategy. Ask only for the brand, catalog, audience, must-have pages, navigation, proof/assets, claims, and launch constraints that materially change the site. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready site blueprint before broad theme work, then build and preview safely using real Shopify theme files, Theme Access, Admin API access when needed, Shopify Files images, and a rollback path.
 ```
 
 ## Validation

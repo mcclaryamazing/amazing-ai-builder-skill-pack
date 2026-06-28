@@ -1,6 +1,6 @@
 # Version
 
-Current version: `0.7.0`
+Current version: `0.8.0`
 
 Repo focus: installable Codex skills for Amazing.com members building Shopify AI growth assets.
 
@@ -12,6 +12,7 @@ Member-facing Shopify builder skill pack.
 
 - The pack includes `shopify-chatbot-builder`.
 - The pack includes `shopify-landing-page-builder`.
+- The pack includes `shopify-site-builder`.
 - The chatbot workflow is dashboard-first: build a protected admin dashboard/control plane before any storefront widget install.
 - The dashboard test chat is the real private demo and must use real Shopify data, a real server-side AI model, real retrieval, and real commerce guardrails.
 - The customer-facing chatbot must feel like a polished shopping/support assistant, not a developer demo.
@@ -25,4 +26,8 @@ Member-facing Shopify builder skill pack.
 - The landing-page workflow supports Fast Draft Mode by default, plus Guided Strategy Mode and Deep Conversion Mode for higher-risk or higher-rigor pages.
 - The DTC master guide has been distilled into progressive references for derived strategy, archetypes, components, category packs, visual/copy rules, and QA scoring.
 - Landing-page image placeholders must preserve the final slot geometry and use the exact placeholder standard.
+- The site-builder workflow supports Fast Site Draft Mode by default, plus Guided Site Strategy Mode and Deep Storefront Build Mode for larger or riskier full-site projects.
+- The site-builder workflow must create a Shopify-ready site blueprint before broad theme implementation.
+- Site-builder scope includes homepage, product/PDP templates, collection templates, content pages, navigation, shared theme system, store data, metadata, QA, and rollback.
+- All three skills should guide users toward the right access rail when needed: Theme Access plus Shopify CLI for theme files, and Shopify Dev Dashboard app plus Admin GraphQL client credentials for store data.
 - Theme pushes and Shopify mutations require deploy-guide review, git-status review, explicit uncommitted-work handling, targeted no-delete pushes where possible, and rollback.

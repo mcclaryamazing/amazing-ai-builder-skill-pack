@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify Site Builder"
+  short_description: "Guided full Shopify site build"
+  default_prompt: "Use $shopify-site-builder to help me plan, build, test, and safely launch a consistent Shopify site across homepage, product pages, collections, and content pages."

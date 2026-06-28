@@ -5,6 +5,7 @@
 1. Confirm the expected `SKILL.md` file exists:
    - `skills/shopify-chatbot-builder/SKILL.md`
    - `skills/shopify-landing-page-builder/SKILL.md`
+   - `skills/shopify-site-builder/SKILL.md`
 2. Confirm the folder was copied under your Codex skills directory.
 3. Restart or refresh Codex.
 4. Invoke the skill by exact name.
@@ -103,6 +104,30 @@ Stop and redirect:
 Use the shopify-landing-page-builder skill. Build the landing page in real Shopify theme files: section, CSS asset, optional JS asset, and JSON page template. Use Shopify Files for merchant-facing images and exact placeholders for missing images.
 ```
 
+## Codex Treats A Full Site Like One Landing Page
+
+Stop and redirect:
+
+```text
+Use the shopify-site-builder skill. Do not treat this as one campaign page. First create the Shopify site blueprint with site map, navigation, homepage plan, PDP template plan, collection template plan, content-page plan, shared theme system, reusable sections, data plan, metadata direction, image-slot plan, QA plan, and rollback path.
+```
+
+## Codex Starts Full-Site Theme Work Without Access Setup
+
+Stop and redirect:
+
+```text
+Use the shopify-site-builder skill. Before broad theme work, verify or guide setup for both access rails: Theme Access plus Shopify CLI for theme files, and a Shopify Dev Dashboard app plus Admin GraphQL client credentials for products, collections, pages, files, menus, redirects, discounts, publications, metafields, and metaobjects. Reuse existing setup when safe and do not ask me to paste secrets into chat.
+```
+
+## Codex Breaks Product Or Collection Behavior
+
+Stop and redirect:
+
+```text
+Use the shopify-site-builder skill. Preserve Shopify-native product forms, variant selection, price/availability display, collection filters, sorting, pagination, product-card behavior, cart updates, and checkout links unless I explicitly approve a change. Re-test homepage, one product page, one collection page, one standard page, and cart/checkout path.
+```
+
 ## Codex Wants To Edit A Live Theme Too Early
 
 Stop and redirect:
@@ -125,4 +150,12 @@ Ask:
 
 ```text
 Use the shopify-landing-page-builder skill. Run the landing-page QA checklist: verify the approved DTC spec, CSS and JS asset loading, Shopify Files image references, exact placeholders, desktop and mobile layout, CTA wiring, metadata, theme chrome, sticky CTA behavior, and rollback path.
+```
+
+## The Site Build Looks Installed But Broken
+
+Ask:
+
+```text
+Use the shopify-site-builder skill. Run the full-site QA checklist: verify the approved site blueprint, shared theme system, homepage, PDPs, collections, content pages, navigation, product forms, filters, sorting, pagination, cart updates, checkout path, Shopify Files image references, metadata/social tags, desktop/mobile layout, normal-page regressions, and rollback path.
 ```

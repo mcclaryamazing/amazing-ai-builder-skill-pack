@@ -123,7 +123,7 @@ Read `references/private-real-store-demo.md` before building or judging the demo
 - Inspect the real repo before advising.
 - Reuse existing setup when the user already has it. Verify existing projects, buckets, keys, Shopify apps, Theme Access, snippets, deployments, and env values before proposing to recreate or replace them.
 - Warn before installs, deploys, theme pushes, secret changes, migrations, deletes, or live customer-facing changes.
-- Before deploys, Shopify mutations, or theme pushes, read `deploy.md` or `DEPLOY.md` when present, run `git status --short`, list uncommitted work, and ask whether it should be included before excluding it.
+- Before deploys, Shopify mutations, or theme pushes, read `deploy.md` or `DEPLOY.md` when present and run `git status --short`. Treat current-task changes as part of the requested scope and proceed without another confirmation. Ask only when changes are pre-existing, unrelated, or of uncertain ownership or scope; never silently discard, revert, or exclude them.
 - Keep `.env` files ignored and never ask the learner to paste secrets into chat.
 
 ## Admin Token Handoff Rule

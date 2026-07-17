@@ -8,7 +8,7 @@ Before any deploy, theme push, or Admin API mutation in the target Shopify repo:
 
 1. Read `deploy.md` or `DEPLOY.md` if present.
 2. Run `git status --short`.
-3. If there is uncommitted work, list exactly what changed and ask whether it should be included before deploying or mutating Shopify state.
+3. Review uncommitted work. Treat current-task changes as in scope for build, test, commit, deploy, and authorized Shopify mutations. Ask only about pre-existing, unrelated, or uncertain work.
 4. Never print `.env` values, Theme Access passwords, client secrets, Admin tokens, or access tokens.
 5. Use Shopify Theme Access plus Shopify CLI for theme files.
 6. Use Shopify Dev Dashboard app plus Admin GraphQL for pages, products, collections, files, discounts, publications, navigation, redirects, metafields, metaobjects, and other store data.
@@ -111,7 +111,7 @@ Before calling work complete:
 ```text
 deploy docs read
 git status checked
-uncommitted work reported and inclusion confirmed before deploy
+uncommitted work reviewed; only pre-existing, unrelated, or uncertain work requires a scope decision before deploy
 theme push used --nodelete and --only
 pull-back confirms remote code
 Admin API mutations have no userErrors

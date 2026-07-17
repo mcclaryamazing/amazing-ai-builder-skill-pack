@@ -162,7 +162,7 @@ Before any deploy, theme push, or Admin API mutation in the target Shopify repo:
 
 1. Read `deploy.md` or `DEPLOY.md` if present.
 2. Run `git status --short`.
-3. If there is uncommitted work, list exactly what changed and ask whether it should be included before deploying or mutating Shopify state.
+3. Review uncommitted work. Treat current-task changes as part of the requested scope and proceed through build, test, commit, deploy, and Shopify mutations without another confirmation. Ask only when changes are pre-existing, unrelated, or of uncertain ownership or scope; never silently discard, revert, or exclude them.
 4. Never print Theme Access passwords, Shopify CLI tokens, client secrets, Admin tokens, AI keys, or `.env` contents.
 5. Use targeted Shopify CLI pushes with `--nodelete` and explicit `--only` paths.
 6. Pull back changed theme files after pushes when possible and inspect the remote code.

@@ -85,7 +85,7 @@ Before pushing or editing theme files:
 4. Verify the copied preview theme matches the current live storefront in a browser before installing chatbot files.
 5. Read the target repo's `deploy.md` or `DEPLOY.md` if one exists.
 6. Run `git status --short` in every repo being touched.
-7. If uncommitted work exists, list it and ask whether it should be included before excluding it from deploy or theme work.
+7. Review uncommitted work. Current-task changes are in scope; ask only about pre-existing, unrelated, or uncertain work before excluding, overwriting, or pushing around it.
 8. Ask whether a snippet, render hook, widget asset, or Theme Access setup already exists.
 9. Pull or read current theme files.
 10. Inspect existing snippets, assets, and layout.
@@ -116,7 +116,7 @@ If the render hook was added through Shopify Admin, do not push `layout/theme.li
 
 Before any deploy, read the target chatbot repo's `deploy.md` or `DEPLOY.md` if one exists.
 
-Before any deploy or Shopify mutation, run `git status --short` in the target repo and any theme repo. If there is uncommitted work, list the files and ask whether that work should be included before deploying, excluding, overwriting, or pushing around it.
+Before any deploy or Shopify mutation, run `git status --short` in the target repo and any theme repo. Review the files and proceed with current-task changes without another confirmation. Ask only when work is pre-existing, unrelated, or of uncertain ownership or scope; never silently exclude, overwrite, or push around it.
 
 Before live enablement, verify:
 

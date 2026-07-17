@@ -108,5 +108,5 @@ Start in Fast Site Draft Mode unless the site needs deeper strategy. Ask only fo
 - Do not rely on visual transcript memory alone; the storefront widget and dashboard test chat must send bounded sanitized recent history to the backend for follow-up questions.
 - Do not push to a live Shopify theme without a reviewed change list, targeted no-delete push plan, and rollback path.
 - Do not deploy or mutate Shopify state before reading the target repo's `deploy.md` or `DEPLOY.md` if present.
-- If there is uncommitted work in the target repo, Codex should list it and ask whether it should be included before deploying.
+- Codex should review uncommitted work in the target repo before deploying. Current-task changes are already in scope; it should list and ask only about pre-existing, unrelated, or uncertain work.
 - Do not start a full-site build without a site blueprint covering homepage, PDPs, collections, content pages, navigation, shared theme system, data changes, QA, and rollback.

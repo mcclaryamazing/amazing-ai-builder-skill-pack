@@ -17,7 +17,7 @@ Before any deploy, theme push, or Admin API mutation in the target Shopify repo:
 9. Use real browser QA for live storefront verification.
 10. Do not place real test orders.
 
-If uncommitted work exists, do not assume it should be excluded from deployment. Excluding dirty work can remove deployed functionality that has not yet been committed.
+Classify uncommitted work before deployment. Current-task changes are already in scope; ask only about pre-existing, unrelated, or uncertain work. Never silently discard, revert, or exclude it.
 
 ## Access Rails
 

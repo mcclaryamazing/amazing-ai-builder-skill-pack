@@ -98,7 +98,7 @@ Fast Site Draft Mode is the default for members who want a practical first site 
 - Inspect the real repo before advising.
 - Read the target repo's `deploy.md` or `DEPLOY.md` before deploys or Shopify mutations.
 - Check `git status --short` before deploys or Shopify mutations.
-- If uncommitted work exists, list exactly what changed and ask whether it should be included before deploying.
+- Review uncommitted work before deploying. Current-task changes are already in scope; list exactly what changed and ask only about pre-existing, unrelated, or uncertain work.
 - Never ask the member to paste secrets into chat.
 - Prefer development theme or private preview before live launch.
 - Use targeted Shopify theme pushes with `--nodelete` and explicit `--only` paths.

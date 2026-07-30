@@ -1,7 +1,8 @@
 # Amazing AI Builder Skill Pack
 
-This repo contains installable Codex skills for Amazing.com members building
-practical AI-assisted Shopify growth tools and researching Amazon product
+This repo contains installable Codex skills and packaged Chrome extensions for
+Amazing.com members building practical AI-assisted Shopify growth tools,
+writing conversion-focused consumer-brand copy, and researching Amazon product
 opportunities.
 
 ## Skills
@@ -10,6 +11,21 @@ opportunities.
 - `shopify-landing-page-builder` - guided workflow for designing, building, testing, and safely launching a high-converting DTC Shopify landing page.
 - `shopify-site-builder` - guided workflow for planning, building, testing, and safely launching a consistent Shopify site across homepage, product pages, collections, content pages, navigation, and shared theme systems.
 - `amazon-opportunity-explorer` - guided workflow for mining Amazon Product Opportunity Explorer, shortlisting niches, validating product concepts, and producing evidence-separated reports.
+- `consumer-brand-copywriting` - conversion-focused copywriting for consumer-brand landing pages, Meta ads, product pages, email, offers, proof, objections, CTAs, and brand voice.
+
+## Chrome Extensions
+
+Versioned, locally installable packages are available under
+[`extensions/`](extensions/README.md):
+
+- `product-review-intelligence-v1.8.2.zip` collects visible Amazon review and
+  listing evidence into structured research exports.
+- `full-page-snapshot-v1.0.0.zip` captures a full-page PNG of the active Chrome
+  tab.
+
+Extract a package, open `chrome://extensions`, enable **Developer mode**, and
+choose **Load unpacked**. See the extension README for exact folder names,
+permissions, provenance, and SHA-256 checksums.
 
 ## What The Skills Do
 
@@ -76,6 +92,18 @@ path:
 7. Produce a traceable report that excludes failed simulations from
    data-driven rankings.
 
+The consumer-brand copywriting skill guides Codex through a claim-safe
+conversion-copy workflow:
+
+1. Establish the product, audience, offer, proof, brand voice, and placement.
+2. Lead with a clear customer outcome and one primary selling idea.
+3. Translate supplied features into practical and emotional benefits.
+4. Match Meta ad language to the landing-page hero and CTA path.
+5. Place real proof near the claims it supports.
+6. Address objections, risk reversal, FAQs, and buying friction.
+7. Deliver finished copy while marking unsupported claims, missing proof, and
+   missing assets for verification.
+
 ## Member Readiness Checklist
 
 For a Fast Draft landing-page strategy, the member can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Missing launch facts should become labeled assumptions or verification placeholders.
@@ -134,8 +162,9 @@ The skill folders are:
 - skills/shopify-landing-page-builder
 - skills/shopify-site-builder
 - skills/amazon-opportunity-explorer
+- skills/consumer-brand-copywriting
 
-After installing, tell me how to verify all four skills are available.
+After installing, tell me how to verify all five skills are available.
 ```
 
 Restart or refresh Codex if needed.
@@ -194,6 +223,20 @@ Amazon findings separate from your analysis.
 Start by mining and ranking up to five niches. Show me each proposed product
 concept and ask for approval immediately before submitting it to Validate a New
 Product Idea.
+```
+
+## Start Consumer-Brand Copywriting
+
+Open Codex with your product facts and brand materials available, then paste:
+
+```text
+Use the consumer-brand-copywriting skill.
+
+Create conversion-focused copy for my consumer brand. Start from the supplied
+product facts, audience, offer, proof, traffic source, and brand voice. Do not
+invent claims, testimonials, guarantees, pricing, shipping terms, urgency, or
+certifications. Mark anything missing for verification and deliver finished,
+channel-appropriate copy with clear benefits, proof, objections, and CTAs.
 ```
 
 ## Validation

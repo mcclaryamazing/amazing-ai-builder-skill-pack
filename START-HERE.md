@@ -1,7 +1,8 @@
 # Start Here
 
 This pack helps Amazing.com members use Codex to build useful Shopify growth
-assets and research Amazon product opportunities.
+assets, write conversion-focused consumer-brand copy, and research Amazon
+product opportunities.
 
 ## Choose A Skill
 
@@ -9,6 +10,7 @@ assets and research Amazon product opportunities.
 - Use `shopify-landing-page-builder` to create a DTC landing page strategy, build it in real Shopify theme files, preview it, and launch with rollback. It can start with a quick Fast Draft intake or go deeper when strategy risk is high.
 - Use `shopify-site-builder` to plan, build, preview, and safely launch a consistent Shopify site across homepage, product pages, collections, content pages, navigation, and shared theme systems.
 - Use `amazon-opportunity-explorer` to mine Product Opportunity Explorer, shortlist niches, validate approved product concepts, and create evidence-separated reports from the current user's authorized Seller Central account.
+- Use `consumer-brand-copywriting` to draft or improve claim-safe conversion copy for consumer-brand landing pages, ads, product pages, email, offers, proof, objections, CTAs, and brand voice.
 
 ## Install
 
@@ -24,8 +26,9 @@ The skill folders are:
 - skills/shopify-landing-page-builder
 - skills/shopify-site-builder
 - skills/amazon-opportunity-explorer
+- skills/consumer-brand-copywriting
 
-After installing, tell me how to verify all four skills are available.
+After installing, tell me how to verify all five skills are available.
 ```
 
 Restart or refresh Codex if needed.
@@ -127,6 +130,20 @@ Amazon findings separate from your analysis.
 Start by mining and ranking up to five niches. Show me each proposed product
 concept and ask for approval immediately before submitting it to Validate a New
 Product Idea.
+```
+
+## Start Consumer-Brand Copywriting
+
+Open Codex with your product facts and brand materials available, then paste:
+
+```text
+Use the consumer-brand-copywriting skill.
+
+Create conversion-focused copy for my consumer brand. Start from the supplied
+product facts, audience, offer, proof, traffic source, and brand voice. Do not
+invent claims, testimonials, guarantees, pricing, shipping terms, urgency, or
+certifications. Mark anything missing for verification and deliver finished,
+channel-appropriate copy with clear benefits, proof, objections, and CTAs.
 ```
 
 ## Safety

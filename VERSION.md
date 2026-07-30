@@ -1,13 +1,14 @@
 # Version
 
-Current version: `0.9.0`
+Current version: `0.10.0`
 
-Repo focus: installable Codex skills for Amazing.com members building Shopify AI
-growth assets and researching Amazon product opportunities.
+Repo focus: installable Codex skills and packaged Chrome extensions for
+Amazing.com members building Shopify AI growth assets and researching Amazon
+product opportunities.
 
 ## Status
 
-Member-facing AI builder skill pack.
+Member-facing AI builder skill and Chrome extension pack.
 
 ## Notes
 
@@ -15,6 +16,11 @@ Member-facing AI builder skill pack.
 - The pack includes `shopify-landing-page-builder`.
 - The pack includes `shopify-site-builder`.
 - The pack includes `amazon-opportunity-explorer`.
+- The pack includes `consumer-brand-copywriting`.
+- The pack includes Product Review Intelligence `1.8.2` as a versioned Chrome
+  extension ZIP.
+- The pack includes Full Page Snapshot `1.0.0` as a versioned Chrome extension
+  ZIP.
 - The chatbot workflow is dashboard-first: build a protected admin dashboard/control plane before any storefront widget install.
 - The dashboard test chat is the real private demo and must use real Shopify data, a real server-side AI model, real retrieval, and real commerce guardrails.
 - The customer-facing chatbot must feel like a polished shopping/support assistant, not a developer demo.

@@ -63,6 +63,12 @@ $skills = @(
     Assets = @(
       "icon.svg"
     )
+  },
+  @{
+    Name = "consumer-brand-copywriting"
+    References = @(
+      "consumer-brand-copywriting-framework.md"
+    )
   }
 )
 
@@ -72,7 +78,11 @@ $requiredFiles = @(
   "START-HERE.md",
   "SKILL-PACK-GUIDE.md",
   "TROUBLESHOOTING.md",
-  "VERSION.md"
+  "VERSION.md",
+  "extensions/README.md",
+  "extensions/product-review-intelligence-v1.8.2.zip",
+  "extensions/full-page-snapshot-v1.0.0.zip",
+  "scripts/package-chrome-extensions.ps1"
 )
 
 foreach ($skill in $skills) {
@@ -92,6 +102,61 @@ foreach ($file in $requiredFiles) {
     Write-Check "ok" ("found {0}" -f $file)
   } else {
     Fail-Check ("missing {0}" -f $file)
+  }
+}
+
+$extensionArchives = @(
+  @{
+    Path = "extensions/product-review-intelligence-v1.8.2.zip"
+    Sha256 = "7F1F3B8D9840D20AFBFF20B92444F0DF4515379EC4C9F01159C59D7BF443CFF9"
+  },
+  @{
+    Path = "extensions/full-page-snapshot-v1.0.0.zip"
+    Sha256 = "1B65448E7938880B45B94BB74E5519918E3624C1DB72E49740896F34D250652F"
+  }
+)
+
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+foreach ($extensionArchive in $extensionArchives) {
+  $path = Join-Path $PackRoot $extensionArchive.Path
+  if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+    continue
+  }
+
+  $actualHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $path).Hash
+  if ($actualHash -ne $extensionArchive.Sha256) {
+    Fail-Check ("checksum mismatch for {0}" -f $extensionArchive.Path)
+    continue
+  }
+
+  $archive = [System.IO.Compression.ZipFile]::OpenRead($path)
+  try {
+    if ($archive.Entries | Where-Object { $_.FullName -match "\\" }) {
+      Fail-Check ("non-portable path separators in {0}" -f $extensionArchive.Path)
+    } elseif ($archive.Entries | Where-Object { $_.FullName -match "(^|/)deploy\.md$" }) {
+      Fail-Check ("repo-internal deploy.md included in {0}" -f $extensionArchive.Path)
+    } else {
+      Write-Check "ok" ("portable extension archive {0}" -f $extensionArchive.Path)
+    }
+
+    foreach ($readmeEntry in $archive.Entries | Where-Object {
+      $_.FullName -match "(^|/)README\.md$"
+    }) {
+      $reader = [System.IO.StreamReader]::new(
+        $readmeEntry.Open(),
+        [System.Text.Encoding]::UTF8
+      )
+      try {
+        if ($reader.ReadToEnd() -match "[A-Za-z]:\\") {
+          Fail-Check ("machine-specific path in {0}" -f $readmeEntry.FullName)
+        }
+      } finally {
+        $reader.Dispose()
+      }
+    }
+  } finally {
+    $archive.Dispose()
   }
 }
 
@@ -147,6 +212,10 @@ foreach ($skill in $skills) {
     Fail-Check "amazon-opportunity-explorer does not bind research to the current user's authorized account"
   } elseif ($skill.Name -eq "amazon-opportunity-explorer" -and $content -notmatch "never reuse them as evidence") {
     Fail-Check "amazon-opportunity-explorer does not protect against illustrative example reuse"
+  } elseif ($skill.Name -eq "consumer-brand-copywriting" -and $content -notmatch "consumer-brand-copywriting-framework\.md") {
+    Fail-Check "consumer-brand-copywriting does not reference its channel framework"
+  } elseif ($skill.Name -eq "consumer-brand-copywriting" -and $content -notmatch "do not invent desire, claims, testimonials") {
+    Fail-Check "consumer-brand-copywriting does not preserve its claim boundary"
   } else {
     Write-Check "ok" ("valid skill front matter for {0}" -f $skill.Name)
   }
@@ -261,6 +330,48 @@ foreach ($doc in $amazonDocs) {
   $text = Get-Content -LiteralPath $path -Raw
   if ($text -notmatch "amazon-opportunity-explorer") {
     Fail-Check ("{0} does not mention amazon-opportunity-explorer" -f $doc)
+  }
+}
+
+$copywritingDocs = @(
+  "README.md",
+  "INSTALL-CODEX.md",
+  "START-HERE.md",
+  "SKILL-PACK-GUIDE.md",
+  "VERSION.md"
+)
+
+foreach ($doc in $copywritingDocs) {
+  $path = Join-Path $PackRoot $doc
+  if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+    continue
+  }
+
+  $text = Get-Content -LiteralPath $path -Raw
+  if ($text -notmatch "consumer-brand-copywriting") {
+    Fail-Check ("{0} does not mention consumer-brand-copywriting" -f $doc)
+  }
+}
+
+$extensionDocs = @(
+  "README.md",
+  "extensions/README.md"
+)
+
+foreach ($doc in $extensionDocs) {
+  $path = Join-Path $PackRoot $doc
+  if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+    continue
+  }
+
+  $text = Get-Content -LiteralPath $path -Raw
+  foreach ($package in @(
+    "product-review-intelligence-v1.8.2.zip",
+    "full-page-snapshot-v1.0.0.zip"
+  )) {
+    if ($text -notmatch [regex]::Escape($package)) {
+      Fail-Check ("{0} does not mention {1}" -f $doc, $package)
+    }
   }
 }
 

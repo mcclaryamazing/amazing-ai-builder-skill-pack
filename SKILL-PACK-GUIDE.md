@@ -1,7 +1,7 @@
 # Skill Pack Guide
 
-Use this pack for guided Shopify AI builder work and Amazon product opportunity
-research.
+Use this pack for guided Shopify AI builder work, consumer-brand copywriting,
+and Amazon product opportunity research.
 
 ## Available Skills
 
@@ -10,6 +10,20 @@ research.
 - `shopify-site-builder` for the full Shopify site build across homepage, product pages, collections, content pages, navigation, and shared theme systems.
 - `amazon-opportunity-explorer` for Product Opportunity Explorer research,
   product-concept validation, and evidence-separated opportunity reports.
+- `consumer-brand-copywriting` for claim-safe conversion copy across consumer
+  landing pages, Meta ads, product pages, email, offers, proof, objections,
+  CTAs, and brand voice.
+
+## Consumer-Brand Copywriting Workflow
+
+1. Gather the supplied product, audience, offer, proof, voice, and channel facts.
+2. Choose one primary audience, selling idea, offer, and CTA.
+3. Translate features into practical and emotional customer benefits.
+4. Draft clear, channel-appropriate final copy with message match.
+5. Place real proof close to the claims it supports.
+6. Address buying objections, risk reversal, FAQs, and friction.
+7. Mark unsupported claims and missing proof or assets for verification instead
+   of inventing them.
 
 ## Chatbot Workflow
 

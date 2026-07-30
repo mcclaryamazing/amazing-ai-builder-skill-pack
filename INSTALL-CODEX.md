@@ -6,6 +6,7 @@ Codex skills are folders with a `SKILL.md` file. This pack contains:
 skills/shopify-chatbot-builder
 skills/shopify-landing-page-builder
 skills/shopify-site-builder
+skills/amazon-opportunity-explorer
 ```
 
 ## Install From GitHub
@@ -21,8 +22,9 @@ The skill folders are:
 - skills/shopify-chatbot-builder
 - skills/shopify-landing-page-builder
 - skills/shopify-site-builder
+- skills/amazon-opportunity-explorer
 
-After installing, tell me how to verify all three skills are available.
+After installing, tell me how to verify all four skills are available.
 ```
 
 Restart or refresh Codex if needed.
@@ -37,6 +39,7 @@ New-Item -ItemType Directory -Force $target
 Copy-Item -Recurse -Force .\skills\shopify-chatbot-builder $target
 Copy-Item -Recurse -Force .\skills\shopify-landing-page-builder $target
 Copy-Item -Recurse -Force .\skills\shopify-site-builder $target
+Copy-Item -Recurse -Force .\skills\amazon-opportunity-explorer $target
 ```
 
 ## Verify
@@ -44,7 +47,7 @@ Copy-Item -Recurse -Force .\skills\shopify-site-builder $target
 Ask Codex:
 
 ```text
-What Amazing Shopify AI builder skills can you see?
+What Amazing AI Builder skills can you see?
 ```
 
 ## Start Chatbot Work
@@ -83,4 +86,22 @@ Use the shopify-site-builder skill.
 I want to build or rebuild a consistent Shopify site across homepage, product pages, collections, and content pages. Inspect this repo first, show me the Shopify Site Build Progress tracker, and guide me like a new user.
 
 Start in Fast Site Draft Mode unless the site needs deeper strategy. Ask only for the brand, catalog, audience, must-have pages, navigation, proof/assets, claims, and launch constraints that materially change the site. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready site blueprint before broad theme work, then build and preview safely using real Shopify theme files, Theme Access, Admin API access when needed, Shopify Files images, and a rollback path.
+```
+
+## Start Amazon Opportunity Research
+
+Open Codex while signed in to the Seller Central account you want to research,
+then paste:
+
+```text
+Use the amazon-opportunity-explorer skill.
+
+Help me research product opportunities using Product Opportunity Explorer in my
+currently authorized Amazon Seller Central account. Confirm the marketplace and
+my constraints first, use only evidence visible in this account, and keep
+Amazon findings separate from your analysis.
+
+Start by mining and ranking up to five niches. Show me each proposed product
+concept and ask for approval immediately before submitting it to Validate a New
+Product Idea.
 ```

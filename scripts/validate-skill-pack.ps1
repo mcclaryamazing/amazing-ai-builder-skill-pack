@@ -54,6 +54,15 @@ $skills = @(
       "surface-playbooks.md",
       "launch-and-rollback.md"
     )
+  },
+  @{
+    Name = "amazon-opportunity-explorer"
+    References = @(
+      "example-validation-report.md"
+    )
+    Assets = @(
+      "icon.svg"
+    )
   }
 )
 
@@ -71,6 +80,9 @@ foreach ($skill in $skills) {
   $requiredFiles += "skills/$($skill.Name)/agents/openai.yaml"
   foreach ($reference in $skill.References) {
     $requiredFiles += "skills/$($skill.Name)/references/$reference"
+  }
+  foreach ($asset in $skill.Assets) {
+    $requiredFiles += "skills/$($skill.Name)/assets/$asset"
   }
 }
 
@@ -131,6 +143,10 @@ foreach ($skill in $skills) {
     Fail-Check "shopify-site-builder does not preserve the theme access rail"
   } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Shopify Dev Dashboard app plus Admin GraphQL") {
     Fail-Check "shopify-site-builder does not preserve the Admin API access rail"
+  } elseif ($skill.Name -eq "amazon-opportunity-explorer" -and $content -notmatch "current user has\s+authorized") {
+    Fail-Check "amazon-opportunity-explorer does not bind research to the current user's authorized account"
+  } elseif ($skill.Name -eq "amazon-opportunity-explorer" -and $content -notmatch "never reuse them as evidence") {
+    Fail-Check "amazon-opportunity-explorer does not protect against illustrative example reuse"
   } else {
     Write-Check "ok" ("valid skill front matter for {0}" -f $skill.Name)
   }
@@ -226,6 +242,25 @@ foreach ($doc in $siteDocs) {
 
   if ($text -notmatch "Fast Site Draft Mode") {
     Fail-Check ("{0} does not mention Fast Site Draft Mode" -f $doc)
+  }
+}
+
+$amazonDocs = @(
+  "README.md",
+  "INSTALL-CODEX.md",
+  "START-HERE.md",
+  "SKILL-PACK-GUIDE.md"
+)
+
+foreach ($doc in $amazonDocs) {
+  $path = Join-Path $PackRoot $doc
+  if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+    continue
+  }
+
+  $text = Get-Content -LiteralPath $path -Raw
+  if ($text -notmatch "amazon-opportunity-explorer") {
+    Fail-Check ("{0} does not mention amazon-opportunity-explorer" -f $doc)
   }
 }
 

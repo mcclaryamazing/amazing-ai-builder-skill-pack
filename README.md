@@ -1,12 +1,15 @@
-# Amazing Shopify AI Builder Skill Pack
+# Amazing AI Builder Skill Pack
 
-This repo contains installable Codex skills for Amazing.com members building practical AI-assisted Shopify growth tools.
+This repo contains installable Codex skills for Amazing.com members building
+practical AI-assisted Shopify growth tools and researching Amazon product
+opportunities.
 
 ## Skills
 
 - `shopify-chatbot-builder` - dashboard-first workflow for building, testing, installing, and launching a private one-store Shopify AI chatbot.
 - `shopify-landing-page-builder` - guided workflow for designing, building, testing, and safely launching a high-converting DTC Shopify landing page.
 - `shopify-site-builder` - guided workflow for planning, building, testing, and safely launching a consistent Shopify site across homepage, product pages, collections, content pages, navigation, and shared theme systems.
+- `amazon-opportunity-explorer` - guided workflow for mining Amazon Product Opportunity Explorer, shortlisting niches, validating product concepts, and producing evidence-separated reports.
 
 ## What The Skills Do
 
@@ -57,6 +60,22 @@ The site-builder skill guides Codex through a full Shopify storefront path. It d
 9. Preview on a development or copied theme.
 10. Launch only after approval, rollback, and monitoring are clear.
 
+The Amazon opportunity skill guides Codex through an account-portable research
+path:
+
+1. Confirm the current user's authorized Seller Central account, marketplace,
+   constraints, and research scope.
+2. Mine Product Opportunity Explorer and capture the Amazon evidence actually
+   shown.
+3. Rank no more than five promising niches unless the user asks for more.
+4. Turn the strongest niches into concrete, validation-ready product concepts.
+5. Ask for approval immediately before submitting a concept to Validate a New
+   Product Idea.
+6. Keep Amazon findings, agent calculations, unknowns, and recommendations
+   clearly separated.
+7. Produce a traceable report that excludes failed simulations from
+   data-driven rankings.
+
 ## Member Readiness Checklist
 
 For a Fast Draft landing-page strategy, the member can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Missing launch facts should become labeled assumptions or verification placeholders.
@@ -89,6 +108,16 @@ For full-site builder work, also have:
 - available brand, product, collection, lifestyle, proof, guide, and social-preview assets
 - verified products, variants, collections, policies, shipping, discount, guarantee, and claim support before launch
 
+For Amazon opportunity research, have:
+
+- access to Product Opportunity Explorer in the Seller Central account and
+  marketplace being researched
+- the starting category, product, or customer problem
+- launch budget, target price, margin goals, and operational constraints when
+  known
+- access to Validate a New Product Idea when product-concept validation is
+  requested
+
 Secrets must never be pasted into chat, committed to the repo, or placed in Liquid, public JavaScript, metafields, screenshots, or docs.
 
 ## Install In Codex
@@ -104,8 +133,9 @@ The skill folders are:
 - skills/shopify-chatbot-builder
 - skills/shopify-landing-page-builder
 - skills/shopify-site-builder
+- skills/amazon-opportunity-explorer
 
-After installing, tell me how to verify all three skills are available.
+After installing, tell me how to verify all four skills are available.
 ```
 
 Restart or refresh Codex if needed.
@@ -146,6 +176,24 @@ Use the shopify-site-builder skill.
 I want to build or rebuild a consistent Shopify site across homepage, product pages, collections, and content pages. Inspect this repo first, show me the Shopify Site Build Progress tracker, and guide me like a new user.
 
 Start in Fast Site Draft Mode unless the site needs deeper strategy. Ask only for the brand, catalog, audience, must-have pages, navigation, proof/assets, claims, and launch constraints that materially change the site. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready site blueprint before broad theme work, then build and preview safely using real Shopify theme files, Theme Access, Admin API access when needed, Shopify Files images, and a rollback path.
+```
+
+## Start Amazon Opportunity Research
+
+Open Codex while signed in to the Seller Central account you want to research,
+then paste:
+
+```text
+Use the amazon-opportunity-explorer skill.
+
+Help me research product opportunities using Product Opportunity Explorer in my
+currently authorized Amazon Seller Central account. Confirm the marketplace and
+my constraints first, use only evidence visible in this account, and keep
+Amazon findings separate from your analysis.
+
+Start by mining and ranking up to five niches. Show me each proposed product
+concept and ask for approval immediately before submitting it to Validate a New
+Product Idea.
 ```
 
 ## Validation

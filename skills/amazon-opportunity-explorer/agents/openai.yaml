@@ -1,0 +1,14 @@
+interface:
+  display_name: Amazon Opportunity Explorer
+  short_description: Mine and validate Amazon product opportunities
+  default_prompt: Use $amazon-opportunity-explorer to mine Product Opportunity Explorer
+    and validate the best product ideas.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,12 +1,15 @@
 # Skill Pack Guide
 
-Use this pack for guided Shopify AI builder work.
+Use this pack for guided Shopify AI builder work and Amazon product opportunity
+research.
 
 ## Available Skills
 
 - `shopify-chatbot-builder` for the full Shopify chatbot build.
 - `shopify-landing-page-builder` for the full Shopify DTC landing-page build.
 - `shopify-site-builder` for the full Shopify site build across homepage, product pages, collections, content pages, navigation, and shared theme systems.
+- `amazon-opportunity-explorer` for Product Opportunity Explorer research,
+  product-concept validation, and evidence-separated opportunity reports.
 
 ## Chatbot Workflow
 
@@ -93,9 +96,47 @@ Fast Site Draft Mode is the default for members who want a practical first site 
 - Preview ready: the site works on a development or copied preview theme with desktop/mobile QA.
 - Launch ready: live changes are approved, scoped, reversible, monitored, and documented.
 
+## Amazon Opportunity Workflow
+
+1. Confirm the current user's authorized Seller Central account, marketplace,
+   research scope, budget, price, margin, and operational constraints.
+2. Search broadly in Product Opportunity Explorer, then inspect promising niche
+   detail pages.
+3. Capture the exact Amazon evidence exposed for each niche.
+4. Rank no more than five opportunities unless the user asks for more.
+5. Turn shortlisted opportunities into specific product concepts.
+6. Show the exact concept and ask for approval immediately before submitting it
+   to Validate a New Product Idea.
+7. Capture Amazon's findings, failed or pending simulations, and material
+   calculations.
+8. Report Amazon data, agent analysis, and unknowns in separate sections.
+
+The bundled report is an illustrative example of evidence separation and report
+depth. Its ASINs, benchmark values, and simulation outcomes are never evidence
+for another account.
+
+## Amazon Opportunity Readiness Gates
+
+- Account ready: the current user has authorized the Seller Central account and
+  marketplace being researched.
+- Scope ready: the category or customer problem and material product constraints
+  are known.
+- Evidence ready: demand, competition, and unmet-need conclusions trace to
+  visible Amazon values or are marked unavailable.
+- Concept ready: title, category, price, customer, form factor, components,
+  differentiation, and unverified claims are explicit.
+- Submission ready: the user has reviewed the exact concept and approved the
+  consequential Amazon submission.
+- Report ready: approximate chart readings are labeled, failed simulations are
+  excluded from rankings, and Amazon findings remain separate from agent
+  analysis.
+
 ## Shared Safety Rules
 
 - Inspect the real repo before advising.
+- For Amazon research, use only the current user's authorized Seller Central
+  account and marketplace, and never reuse illustrative report values as
+  current evidence.
 - Read the target repo's `deploy.md` or `DEPLOY.md` before deploys or Shopify mutations.
 - Check `git status --short` before deploys or Shopify mutations.
 - Review uncommitted work before deploying. Current-task changes are already in scope; list exactly what changed and ask only about pre-existing, unrelated, or uncertain work.

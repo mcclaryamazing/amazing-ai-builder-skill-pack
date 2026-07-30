@@ -1,18 +1,20 @@
 # Version
 
-Current version: `0.8.0`
+Current version: `0.9.0`
 
-Repo focus: installable Codex skills for Amazing.com members building Shopify AI growth assets.
+Repo focus: installable Codex skills for Amazing.com members building Shopify AI
+growth assets and researching Amazon product opportunities.
 
 ## Status
 
-Member-facing Shopify builder skill pack.
+Member-facing AI builder skill pack.
 
 ## Notes
 
 - The pack includes `shopify-chatbot-builder`.
 - The pack includes `shopify-landing-page-builder`.
 - The pack includes `shopify-site-builder`.
+- The pack includes `amazon-opportunity-explorer`.
 - The chatbot workflow is dashboard-first: build a protected admin dashboard/control plane before any storefront widget install.
 - The dashboard test chat is the real private demo and must use real Shopify data, a real server-side AI model, real retrieval, and real commerce guardrails.
 - The customer-facing chatbot must feel like a polished shopping/support assistant, not a developer demo.
@@ -29,5 +31,10 @@ Member-facing Shopify builder skill pack.
 - The site-builder workflow supports Fast Site Draft Mode by default, plus Guided Site Strategy Mode and Deep Storefront Build Mode for larger or riskier full-site projects.
 - The site-builder workflow must create a Shopify-ready site blueprint before broad theme implementation.
 - Site-builder scope includes homepage, product/PDP templates, collection templates, content pages, navigation, shared theme system, store data, metadata, QA, and rollback.
-- All three skills should guide users toward the right access rail when needed: Theme Access plus Shopify CLI for theme files, and Shopify Dev Dashboard app plus Admin GraphQL client credentials for store data.
+- All three Shopify skills should guide users toward the right access rail when needed: Theme Access plus Shopify CLI for theme files, and Shopify Dev Dashboard app plus Admin GraphQL client credentials for store data.
 - Theme pushes and Shopify mutations require deploy-guide review, git-status review, explicit uncommitted-work handling, targeted no-delete pushes where possible, and rollback.
+- The Amazon opportunity workflow must use the current user's authorized Seller
+  Central account and marketplace, preserve visible evidence exactly, and keep
+  Amazon findings separate from agent calculations and recommendations.
+- The bundled Amazon report is illustrative; its ASINs, benchmarks, and
+  simulation outcomes must never be reused as evidence for another account.

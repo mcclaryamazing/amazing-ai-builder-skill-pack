@@ -1,12 +1,14 @@
 # Start Here
 
-This pack helps Amazing.com members use Codex to build useful Shopify growth assets for a live store.
+This pack helps Amazing.com members use Codex to build useful Shopify growth
+assets and research Amazon product opportunities.
 
 ## Choose A Skill
 
 - Use `shopify-chatbot-builder` to build a protected chatbot dashboard and real-store test chat first, polish the customer-facing assistant experience, then install and launch the thin storefront widget safely.
 - Use `shopify-landing-page-builder` to create a DTC landing page strategy, build it in real Shopify theme files, preview it, and launch with rollback. It can start with a quick Fast Draft intake or go deeper when strategy risk is high.
 - Use `shopify-site-builder` to plan, build, preview, and safely launch a consistent Shopify site across homepage, product pages, collections, content pages, navigation, and shared theme systems.
+- Use `amazon-opportunity-explorer` to mine Product Opportunity Explorer, shortlist niches, validate approved product concepts, and create evidence-separated reports from the current user's authorized Seller Central account.
 
 ## Install
 
@@ -21,8 +23,9 @@ The skill folders are:
 - skills/shopify-chatbot-builder
 - skills/shopify-landing-page-builder
 - skills/shopify-site-builder
+- skills/amazon-opportunity-explorer
 
-After installing, tell me how to verify all three skills are available.
+After installing, tell me how to verify all four skills are available.
 ```
 
 Restart or refresh Codex if needed.
@@ -58,6 +61,15 @@ For full-site builds, also gather:
 - main collections, product-template needs, navigation assumptions, and content-page needs
 - available brand, product, collection, lifestyle, proof, guide, and social-preview assets
 - verified products, variants, collections, policies, shipping, discount, guarantee, and claim support before launch
+
+For Amazon opportunity research, also gather:
+
+- access to Product Opportunity Explorer in the Seller Central account and
+  marketplace you want to research
+- the starting category, product, or customer problem
+- launch budget, target price, margin goals, and operational constraints when
+  known
+- access to Validate a New Product Idea when concept validation is requested
 
 Do not paste secrets into chat. Codex should tell you which local field to fill.
 
@@ -99,6 +111,24 @@ I want to build or rebuild a consistent Shopify site across homepage, product pa
 Start in Fast Site Draft Mode unless the site needs deeper strategy. Ask only for the brand, catalog, audience, must-have pages, navigation, proof/assets, claims, and launch constraints that materially change the site. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready site blueprint before broad theme work, then build and preview safely using real Shopify theme files, Theme Access, Admin API access when needed, Shopify Files images, and a rollback path.
 ```
 
+## Start Amazon Opportunity Research
+
+Open Codex while signed in to the Seller Central account you want to research,
+then paste:
+
+```text
+Use the amazon-opportunity-explorer skill.
+
+Help me research product opportunities using Product Opportunity Explorer in my
+currently authorized Amazon Seller Central account. Confirm the marketplace and
+my constraints first, use only evidence visible in this account, and keep
+Amazon findings separate from your analysis.
+
+Start by mining and ranking up to five niches. Show me each proposed product
+concept and ask for approval immediately before submitting it to Validate a New
+Product Idea.
+```
+
 ## Safety
 
 - Do not put Admin API tokens, client secrets, Theme Access passwords, or AI provider keys in frontend code.
@@ -110,3 +140,6 @@ Start in Fast Site Draft Mode unless the site needs deeper strategy. Ask only fo
 - Do not deploy or mutate Shopify state before reading the target repo's `deploy.md` or `DEPLOY.md` if present.
 - Codex should review uncommitted work in the target repo before deploying. Current-task changes are already in scope; it should list and ask only about pre-existing, unrelated, or uncertain work.
 - Do not start a full-site build without a site blueprint covering homepage, PDPs, collections, content pages, navigation, shared theme system, data changes, QA, and rollback.
+- Do not reuse the Amazon skill's illustrative ASINs, benchmark values, or
+  simulation outcomes as evidence for the current user's Seller Central
+  account.

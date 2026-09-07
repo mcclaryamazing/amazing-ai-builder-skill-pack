@@ -72,6 +72,17 @@ $skills = @(
   }
 )
 
+$extensions = @(
+  @{
+    Name = "review-expander"
+    DisplayName = "Product Review Intelligence"
+  },
+  @{
+    Name = "full-page-snapshot"
+    DisplayName = "Full Page Snapshot"
+  }
+)
+
 $requiredFiles = @(
   "README.md",
   "INSTALL-CODEX.md",
@@ -79,10 +90,7 @@ $requiredFiles = @(
   "SKILL-PACK-GUIDE.md",
   "TROUBLESHOOTING.md",
   "VERSION.md",
-  "extensions/README.md",
-  "extensions/product-review-intelligence-v1.8.2.zip",
-  "extensions/full-page-snapshot-v1.0.0.zip",
-  "scripts/package-chrome-extensions.ps1"
+  "extensions/README.md"
 )
 
 foreach ($skill in $skills) {
@@ -96,6 +104,12 @@ foreach ($skill in $skills) {
   }
 }
 
+foreach ($extension in $extensions) {
+  foreach ($file in @("README.md", "deploy.md", "manifest.json")) {
+    $requiredFiles += "extensions/$($extension.Name)/$file"
+  }
+}
+
 foreach ($file in $requiredFiles) {
   $path = Join-Path $PackRoot $file
   if (Test-Path -LiteralPath $path -PathType Leaf) {
@@ -105,59 +119,77 @@ foreach ($file in $requiredFiles) {
   }
 }
 
-$extensionArchives = @(
-  @{
-    Path = "extensions/product-review-intelligence-v1.8.2.zip"
-    Sha256 = "7F1F3B8D9840D20AFBFF20B92444F0DF4515379EC4C9F01159C59D7BF443CFF9"
-  },
-  @{
-    Path = "extensions/full-page-snapshot-v1.0.0.zip"
-    Sha256 = "1B65448E7938880B45B94BB74E5519918E3624C1DB72E49740896F34D250652F"
-  }
-)
-
-Add-Type -AssemblyName System.IO.Compression.FileSystem
-
-foreach ($extensionArchive in $extensionArchives) {
-  $path = Join-Path $PackRoot $extensionArchive.Path
-  if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+foreach ($extension in $extensions) {
+  $extensionRoot = Join-Path $PackRoot "extensions/$($extension.Name)"
+  $manifestPath = Join-Path $extensionRoot "manifest.json"
+  if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
     continue
   }
 
-  $actualHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $path).Hash
-  if ($actualHash -ne $extensionArchive.Sha256) {
-    Fail-Check ("checksum mismatch for {0}" -f $extensionArchive.Path)
-    continue
-  }
-
-  $archive = [System.IO.Compression.ZipFile]::OpenRead($path)
   try {
-    if ($archive.Entries | Where-Object { $_.FullName -match "\\" }) {
-      Fail-Check ("non-portable path separators in {0}" -f $extensionArchive.Path)
-    } elseif ($archive.Entries | Where-Object { $_.FullName -match "(^|/)deploy\.md$" }) {
-      Fail-Check ("repo-internal deploy.md included in {0}" -f $extensionArchive.Path)
-    } else {
-      Write-Check "ok" ("portable extension archive {0}" -f $extensionArchive.Path)
-    }
-
-    foreach ($readmeEntry in $archive.Entries | Where-Object {
-      $_.FullName -match "(^|/)README\.md$"
-    }) {
-      $reader = [System.IO.StreamReader]::new(
-        $readmeEntry.Open(),
-        [System.Text.Encoding]::UTF8
-      )
-      try {
-        if ($reader.ReadToEnd() -match "[A-Za-z]:\\") {
-          Fail-Check ("machine-specific path in {0}" -f $readmeEntry.FullName)
-        }
-      } finally {
-        $reader.Dispose()
-      }
-    }
-  } finally {
-    $archive.Dispose()
+    $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
+  } catch {
+    Fail-Check ("invalid manifest JSON for {0}" -f $extension.Name)
+    continue
   }
+
+  if ($manifest.manifest_version -ne 3) {
+    Fail-Check ("{0} is not a Manifest V3 extension" -f $extension.Name)
+  } elseif ($manifest.name -ne $extension.DisplayName) {
+    Fail-Check ("unexpected display name for {0}" -f $extension.Name)
+  } elseif ([string]$manifest.version -notmatch "^[0-9]+(?:\.[0-9]+){0,3}$") {
+    Fail-Check ("invalid numeric manifest version for {0}" -f $extension.Name)
+  } else {
+    Write-Check "ok" ("valid unpacked extension {0} {1}" -f $extension.Name, $manifest.version)
+  }
+
+  $manifestReferences = @(
+    $manifest.background.service_worker,
+    $manifest.action.default_popup
+  )
+  if ($manifest.icons) {
+    $manifestReferences += $manifest.icons.PSObject.Properties.Value
+  }
+  if ($manifest.action.default_icon) {
+    $manifestReferences += $manifest.action.default_icon.PSObject.Properties.Value
+  }
+  foreach ($contentScript in @($manifest.content_scripts)) {
+    $manifestReferences += @($contentScript.js)
+    $manifestReferences += @($contentScript.css)
+  }
+
+  foreach ($reference in $manifestReferences | Where-Object { $_ -is [string] -and $_ }) {
+    $referencePath = [System.IO.Path]::GetFullPath((Join-Path $extensionRoot $reference))
+    if (-not $referencePath.StartsWith(
+      ([System.IO.Path]::GetFullPath($extensionRoot) + [System.IO.Path]::DirectorySeparatorChar),
+      [System.StringComparison]::OrdinalIgnoreCase
+    )) {
+      Fail-Check ("manifest path leaves extension/{0}: {1}" -f $extension.Name, $reference)
+    } elseif (-not (Test-Path -LiteralPath $referencePath -PathType Leaf)) {
+      Fail-Check ("manifest references missing file in {0}: {1}" -f $extension.Name, $reference)
+    }
+  }
+
+  foreach ($docName in @("README.md", "deploy.md")) {
+    $docPath = Join-Path $extensionRoot $docName
+    if ((Test-Path -LiteralPath $docPath -PathType Leaf) -and
+        ((Get-Content -LiteralPath $docPath -Raw) -match "[A-Za-z]:\\")) {
+      Fail-Check ("machine-specific path in extensions/{0}/{1}" -f $extension.Name, $docName)
+    }
+  }
+}
+
+$obsoleteArchives = Get-ChildItem -LiteralPath (Join-Path $PackRoot "extensions") -Filter "*.zip" -File
+if ($obsoleteArchives) {
+  Fail-Check "obsolete extension ZIP files remain"
+} else {
+  Write-Check "ok" "no obsolete extension ZIP files"
+}
+
+if (Test-Path -LiteralPath (Join-Path $PackRoot "scripts/package-chrome-extensions.ps1")) {
+  Fail-Check "obsolete Chrome extension packaging script remains"
+} else {
+  Write-Check "ok" "obsolete Chrome extension packaging script removed"
 }
 
 $quickValidate = Join-Path $env:USERPROFILE ".codex/skills/.system/skill-creator/scripts/quick_validate.py"
@@ -365,12 +397,9 @@ foreach ($doc in $extensionDocs) {
   }
 
   $text = Get-Content -LiteralPath $path -Raw
-  foreach ($package in @(
-    "product-review-intelligence-v1.8.2.zip",
-    "full-page-snapshot-v1.0.0.zip"
-  )) {
-    if ($text -notmatch [regex]::Escape($package)) {
-      Fail-Check ("{0} does not mention {1}" -f $doc, $package)
+  foreach ($extension in $extensions) {
+    if ($text -notmatch [regex]::Escape($extension.Name)) {
+      Fail-Check ("{0} does not mention {1}" -f $doc, $extension.Name)
     }
   }
 }

@@ -1,31 +1,40 @@
-# Chrome Extension Packages
+# Chrome Extensions
 
-These ZIP files contain self-contained Chrome extensions for local installation.
-Their runtime files were packaged from the clean `main` branch of the
-`chrome-extensions` source repository at commit
-`65212a009295ca59a3596aefb1f6738656b082b6` on July 30, 2026. Repo-internal
-`deploy.md` files are excluded, and the packaged README install paths are
-normalized for use from any extracted location.
+These folders contain self-contained Chrome extensions for local installation.
+Their runtime files are promoted from the `chrome-extensions` source repository
+and kept aligned with the corresponding extensions distributed through Amazing
+Copilot. Member-facing paths remain portable so the repository can be cloned to
+any stable local folder.
 
-## Packages
+## Included extensions
 
-| Extension | Package | Version | SHA-256 |
-|---|---|---:|---|
-| Product Review Intelligence | [product-review-intelligence-v1.8.2.zip](product-review-intelligence-v1.8.2.zip) | 1.8.2 | `7F1F3B8D9840D20AFBFF20B92444F0DF4515379EC4C9F01159C59D7BF443CFF9` |
-| Full Page Snapshot | [full-page-snapshot-v1.0.0.zip](full-page-snapshot-v1.0.0.zip) | 1.0.0 | `1B65448E7938880B45B94BB74E5519918E3624C1DB72E49740896F34D250652F` |
+| Extension | Folder | Version source |
+|---|---|---|
+| Product Review Intelligence | [`review-expander`](review-expander) | [`manifest.json`](review-expander/manifest.json) |
+| Full Page Snapshot | [`full-page-snapshot`](full-page-snapshot) | [`manifest.json`](full-page-snapshot/manifest.json) |
+
+Each extension's `manifest.json` is the authority for its installed version.
 
 ## Install
 
-1. Extract the ZIP file to a permanent local folder.
+1. Clone this repository into a permanent local folder.
 2. Open `chrome://extensions`.
 3. Turn on **Developer mode**.
 4. Click **Load unpacked**.
-5. For Product Review Intelligence, select the extracted `review-expander`
-   folder.
-6. For Full Page Snapshot, select the extracted `full-page-snapshot` folder.
+5. For Product Review Intelligence, select
+   `<clone-folder>/extensions/review-expander`.
+6. For Full Page Snapshot, select
+   `<clone-folder>/extensions/full-page-snapshot`.
 
-Chrome loads the extracted folder, not the ZIP file itself. Keep that folder in
-place after installation.
+Chrome loads each extension directly from its folder. Keep the clone in place
+after installation.
+
+## Update
+
+Run `git pull --ff-only` in the clean repository clone, open
+`chrome://extensions`, and click **Reload** on each installed extension card.
+If the clone contains local changes, review them before pulling or replacing
+files.
 
 ## Product Review Intelligence
 
@@ -38,7 +47,9 @@ Chrome permissions:
 - `downloads` to save the generated research archive
 - `storage` and `unlimitedStorage` to retain an in-progress multi-pass export
 - `tabs` to open and coordinate the selected Amazon review view
-- host access limited to Amazon.com and Amazon.de
+- host access to Amazon.com and Amazon.de product and review pages
+- host access to Amazon `media-amazon.com` and `ssl-images-amazon.com` image
+  delivery domains for optional listing-gallery downloads
 
 ## Full Page Snapshot
 
@@ -55,13 +66,5 @@ Chrome displays a temporary debugging notice while a full-page capture runs.
 Protected Chrome pages, the Chrome Web Store, extension pages, and some PDF
 viewer pages cannot be captured.
 
-## Verification
-
-To verify a downloaded package in PowerShell:
-
-```powershell
-Get-FileHash -Algorithm SHA256 .\product-review-intelligence-v1.8.2.zip
-Get-FileHash -Algorithm SHA256 .\full-page-snapshot-v1.0.0.zip
-```
-
-Compare the resulting hashes with the package table above.
+Read each extension's linked README before use for its current behavior,
+permissions, and limitations.

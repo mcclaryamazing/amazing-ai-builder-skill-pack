@@ -1,6 +1,6 @@
 # Amazing AI Builder Skill Pack
 
-This repo contains installable Codex skills and packaged Chrome extensions for
+This repo contains installable Codex skills and unpacked Chrome extensions for
 Amazing.com members building practical AI-assisted Shopify growth tools,
 writing conversion-focused consumer-brand copy, and researching Amazon product
 opportunities.
@@ -15,17 +15,18 @@ opportunities.
 
 ## Chrome Extensions
 
-Versioned, locally installable packages are available under
+Locally installable extension folders are available under
 [`extensions/`](extensions/README.md):
 
-- `product-review-intelligence-v1.8.2.zip` collects visible Amazon review and
+- `review-expander` contains Product Review Intelligence, which collects visible Amazon review and
   listing evidence into structured research exports.
-- `full-page-snapshot-v1.0.0.zip` captures a full-page PNG of the active Chrome
+- `full-page-snapshot` captures a full-page PNG of the active Chrome
   tab.
 
-Extract a package, open `chrome://extensions`, enable **Developer mode**, and
-choose **Load unpacked**. See the extension README for exact folder names,
-permissions, provenance, and SHA-256 checksums.
+Clone this repository into a stable local folder, open `chrome://extensions`,
+enable **Developer mode**, and choose **Load unpacked**. Select the individual
+extension folder containing `manifest.json`. See the extension README for exact
+paths, current manifest versions, permissions, usage, and update instructions.
 
 ## What The Skills Do
 

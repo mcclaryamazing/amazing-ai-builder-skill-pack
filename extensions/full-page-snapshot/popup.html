@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Full Page Snapshot</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="popup-header">
+        <h1>Full Page Snapshot</h1>
+        <span class="format-pill">PNG</span>
+      </header>
+
+      <button id="captureButton" class="capture-button" type="button">
+        <span aria-hidden="true" class="capture-icon"></span>
+        <span>Capture Full Page</span>
+      </button>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

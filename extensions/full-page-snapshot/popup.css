@@ -1,0 +1,138 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f7f3;
+  --panel: #ffffff;
+  --ink: #161616;
+  --muted: #5e6368;
+  --line: #dadbd2;
+  --accent: #0f6b5f;
+  --accent-strong: #0a5148;
+  --error: #a32727;
+  --shadow: 0 12px 28px rgba(24, 32, 27, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 304px;
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font: 14px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.popup-shell {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.format-pill {
+  min-width: 40px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--panel);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.capture-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 46px;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  background: var(--accent);
+  box-shadow: var(--shadow);
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.capture-button:hover {
+  background: var(--accent-strong);
+}
+
+.capture-button:focus-visible {
+  outline: 3px solid rgba(15, 107, 95, 0.28);
+  outline-offset: 2px;
+}
+
+.capture-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.capture-icon {
+  position: relative;
+  width: 18px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+}
+
+.capture-icon::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 4px;
+  height: 4px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.capture-icon::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 4px;
+  width: 6px;
+  height: 4px;
+  border-radius: 3px 3px 0 0;
+  background: currentColor;
+}
+
+.status {
+  min-height: 40px;
+  margin: 0;
+  padding: 10px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: var(--panel);
+  overflow-wrap: anywhere;
+}
+
+.status:empty {
+  color: transparent;
+}
+
+.status.error {
+  border-color: rgba(163, 39, 39, 0.35);
+  color: var(--error);
+  background: #fff7f6;
+}

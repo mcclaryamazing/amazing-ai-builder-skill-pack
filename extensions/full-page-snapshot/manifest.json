@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Full Page Snapshot",
+  "description": "Capture a full-page PNG snapshot of the current tab.",
+  "version": "1.1.0",
+  "permissions": [
+    "activeTab",
+    "debugger",
+    "downloads",
+    "scripting"
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Full Page Snapshot",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

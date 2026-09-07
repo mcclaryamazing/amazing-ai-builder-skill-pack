@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Review Intelligence</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div class="mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div>
+          <h1>Product Review Intelligence</h1>
+        </div>
+        <span id="version" class="version" aria-label="Extension version"></span>
+      </header>
+
+      <section class="product-card" aria-labelledby="productLabel">
+        <div>
+          <p id="productLabel" class="label">Detected ASIN</p>
+          <p id="asin" class="asin">Checking page…</p>
+        </div>
+        <span id="pageState" class="state">WAIT</span>
+      </section>
+
+      <fieldset class="filter-panel">
+        <legend>Review view</legend>
+
+        <div class="filter-grid">
+          <label class="filter-row" for="sortBy">
+            <span>Sort</span>
+            <select id="sortBy" name="sortBy">
+              <option value="helpful">Top reviews</option>
+              <option value="recent">Most recent</option>
+              <option value="both">Both</option>
+            </select>
+          </label>
+
+          <label class="filter-row" for="reviewerType">
+            <span>Reviewer</span>
+            <select id="reviewerType" name="reviewerType">
+              <option value="all_reviews">All reviewers</option>
+              <option value="avp_only_reviews">Verified purchase only</option>
+            </select>
+          </label>
+
+          <label class="filter-row" for="filterByStar">
+            <span>Rating</span>
+            <select id="filterByStar" name="filterByStar">
+              <option value="all_stars">All stars</option>
+              <option value="five_star">5 star only</option>
+              <option value="four_star">4 star only</option>
+              <option value="three_star">3 star only</option>
+              <option value="two_star">2 star only</option>
+              <option value="one_star">1 star only</option>
+              <option value="positive">Positive reviews</option>
+              <option value="critical">Critical reviews</option>
+              <option value="full_monty">The Full Monty</option>
+            </select>
+          </label>
+
+          <label class="filter-row" for="mediaType">
+            <span>Media</span>
+            <select id="mediaType" name="mediaType">
+              <option value="all_contents">Text, image, video</option>
+              <option value="media_reviews_only">Image and video reviews only</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+
+      <label class="capture-option" for="captureProductDetails">
+        <input id="captureProductDetails" name="captureProductDetails" type="checkbox">
+        <span>
+          <strong>Capture product details</strong>
+          <small>Title, demand, price, listing images, attributes, bullets, and product information</small>
+        </span>
+      </label>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <button id="exportButton" class="export-button" type="button" disabled>
+        <span>Open reviews &amp; export ZIP</span>
+        <span aria-hidden="true" class="arrow">↗</span>
+      </button>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+:root {
+  color-scheme: light;
+  --paper: #f3efe5;
+  --paper-deep: #e9e1d2;
+  --ink: #19231e;
+  --muted: #6a6d64;
+  --line: #d6cdbd;
+  --forest: #194d3b;
+  --forest-dark: #10392b;
+  --signal: #ee9c24;
+  --danger: #a43e32;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 344px;
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(238, 156, 36, 0.08), transparent 42%),
+    var(--paper);
+  font: 14px/1.45 "Segoe UI Variable", "Aptos", "Segoe UI", sans-serif;
+}
+
+.shell {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.masthead {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.version {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.mark {
+  display: grid;
+  gap: 4px;
+  width: 42px;
+  height: 42px;
+  padding: 10px 9px;
+  border-radius: 13px 13px 13px 4px;
+  background: var(--forest);
+  box-shadow: 0 8px 18px rgba(25, 77, 59, 0.18);
+}
+
+.mark span {
+  display: block;
+  height: 3px;
+  border-radius: 999px;
+  background: #fffaf0;
+}
+
+.mark span:nth-child(2) {
+  width: 76%;
+}
+
+.mark span:nth-child(3) {
+  width: 48%;
+  background: var(--signal);
+}
+
+.label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 66px;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 253, 247, 0.7);
+}
+
+.asin {
+  margin: 3px 0 0;
+  font: 750 15px/1.2 Consolas, "SFMono-Regular", monospace;
+  letter-spacing: 0.04em;
+}
+
+.state {
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--paper);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+
+.state.ready {
+  border-color: rgba(25, 77, 59, 0.28);
+  color: var(--forest);
+  background: #e6f0e9;
+}
+
+.state.error {
+  border-color: rgba(164, 62, 50, 0.28);
+  color: var(--danger);
+  background: #f8eae6;
+}
+
+.filter-panel {
+  min-width: 0;
+  margin: 0;
+  padding: 10px 12px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 253, 247, 0.7);
+}
+
+.filter-panel legend {
+  padding: 0 6px;
+  color: var(--forest);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.filter-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-row > span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+}
+
+.filter-row select {
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  padding: 0 30px 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fffdf7;
+  font: 650 12px/1.2 "Segoe UI Variable", "Aptos", "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.filter-row select:hover {
+  border-color: #b5a995;
+}
+
+.filter-row select:focus-visible {
+  border-color: var(--signal);
+  outline: 3px solid rgba(238, 156, 36, 0.22);
+  outline-offset: 1px;
+}
+
+.capture-option {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 253, 247, 0.7);
+  cursor: pointer;
+}
+
+.capture-option input {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  accent-color: var(--forest);
+}
+
+.capture-option strong,
+.capture-option small {
+  display: block;
+}
+
+.capture-option strong {
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.capture-option small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.capture-option:has(input:focus-visible) {
+  border-color: var(--signal);
+  outline: 3px solid rgba(238, 156, 36, 0.22);
+  outline-offset: 1px;
+}
+
+.export-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 11px;
+  color: #fffdf7;
+  background: var(--forest);
+  box-shadow: 0 10px 20px rgba(25, 77, 59, 0.2);
+  font: inherit;
+  font-weight: 780;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease;
+}
+
+.export-button:hover:not(:disabled) {
+  background: var(--forest-dark);
+  box-shadow: 0 12px 24px rgba(25, 77, 59, 0.26);
+  transform: translateY(-1px);
+}
+
+.export-button:focus-visible {
+  outline: 3px solid rgba(238, 156, 36, 0.42);
+  outline-offset: 2px;
+}
+
+.export-button:disabled {
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.45;
+}
+
+.arrow {
+  color: var(--signal);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.status {
+  margin: 0 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.status:empty {
+  display: none;
+}
+
+.status.error {
+  color: var(--danger);
+}

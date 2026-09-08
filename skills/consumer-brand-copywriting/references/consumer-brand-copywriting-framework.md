@@ -1,9 +1,10 @@
 # Consumer Brand Copywriting Framework
 
-This reference condenses the repo source document:
-`D:\repos\landing-page-catalog\docs\The Ultimate Copywriting Guide for Consumer Brands V2.md`.
+This reference condenses the user's original *Ultimate Copywriting Guide for Consumer Brands V2*, which combines timeless direct-response principles with modern channel guidance.
 
 Use it as a workflow checklist, not as text to copy verbatim.
+
+For the named copywriting-legends lenses, big-idea method, offer and audience discipline, headline and story momentum, empathy and transformation sequence, and channel translation, read `copywriting-legends.md`.
 
 ## Table Of Contents
 

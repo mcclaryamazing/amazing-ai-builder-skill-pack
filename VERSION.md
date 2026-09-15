@@ -1,6 +1,6 @@
 # Version
 
-Current version: `0.11.0`
+Current version: `0.12.0`
 
 Repo focus: installable Codex skills and unpacked Chrome extensions for
 Amazing.com members building Shopify AI growth assets and researching Amazon
@@ -12,11 +12,11 @@ Member-facing AI builder skill and Chrome extension pack.
 
 ## Notes
 
-- The pack includes `shopify-chatbot-builder`.
-- The pack includes `shopify-landing-page-builder`.
-- The pack includes `shopify-site-builder`.
+- The pack includes `amazing-shopify-chatbot-builder`.
+- The pack includes `amazing-landing-page-builder`.
+- The pack includes `amazing-shopify-site-builder`.
 - The pack includes `amazon-opportunity-explorer`.
-- The pack includes `consumer-brand-copywriting`.
+- The pack includes `amazing-copywriter`.
 - The pack includes Product Review Intelligence `1.8.5` as the unpacked
   `extensions/review-expander` folder.
 - The pack includes Full Page Snapshot `1.1.0` as the unpacked
@@ -31,7 +31,7 @@ Member-facing AI builder skill and Chrome extension pack.
 - A complete chatbot dashboard must expose reachable protected screens for setup, sync/status, sources, product promotion, offers, test chat, conversations, support handoffs, analytics, and install/rollback values.
 - Fake/sample data, standalone mock widgets, static replies, and raw JSON endpoints may not be shown to the member as the chatbot demo.
 - The landing-page workflow must create a Shopify-ready DTC design package before theme implementation.
-- The landing-page workflow supports Fast Draft Mode by default, plus Guided Strategy Mode and Deep Conversion Mode for higher-risk or higher-rigor pages.
+- The landing-page workflow uses one full-design process with deeper research where needed.
 - The DTC master guide has been distilled into progressive references for derived strategy, archetypes, components, category packs, visual/copy rules, and QA scoring.
 - Landing-page image placeholders must preserve the final slot geometry and use the exact placeholder standard.
 - The site-builder workflow supports Fast Site Draft Mode by default, plus Guided Site Strategy Mode and Deep Storefront Build Mode for larger or riskier full-site projects.

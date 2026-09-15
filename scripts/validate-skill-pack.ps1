@@ -18,7 +18,7 @@ function Fail-Check {
 
 $skills = @(
   @{
-    Name = "shopify-chatbot-builder"
+    Name = "amazing-shopify-chatbot-builder"
     References = @(
       "guided-progress.md",
       "empty-project-scaffold.md",
@@ -29,7 +29,7 @@ $skills = @(
     )
   },
   @{
-    Name = "shopify-landing-page-builder"
+    Name = "amazing-landing-page-builder"
     References = @(
       "guided-progress.md",
       "dtc-design-package.md",
@@ -45,7 +45,7 @@ $skills = @(
     )
   },
   @{
-    Name = "shopify-site-builder"
+    Name = "amazing-shopify-site-builder"
     References = @(
       "guided-progress.md",
       "site-strategy-and-architecture.md",
@@ -65,7 +65,7 @@ $skills = @(
     )
   },
   @{
-    Name = "consumer-brand-copywriting"
+    Name = "amazing-copywriter"
     References = @(
       "consumer-brand-copywriting-framework.md"
     )
@@ -208,46 +208,42 @@ foreach ($skill in $skills) {
     Fail-Check ("invalid front matter for {0}" -f $skill.Name)
   } elseif ($content -match "\[TODO|TODO:") {
     Fail-Check ("TODO placeholder remains in {0}" -f $skill.Name)
-  } elseif ($skill.Name -eq "shopify-chatbot-builder" -and $content -notmatch "admin-dashboard-control-plane\.md") {
-    Fail-Check "shopify-chatbot-builder does not reference the admin dashboard control plane"
-  } elseif ($skill.Name -eq "shopify-chatbot-builder" -and $content -notmatch "empty-project-scaffold\.md") {
-    Fail-Check "shopify-chatbot-builder does not reference the empty project scaffold"
-  } elseif ($skill.Name -eq "shopify-chatbot-builder" -and $content -notmatch "Build the protected admin dashboard and embedded test chat") {
-    Fail-Check "shopify-chatbot-builder tracker is not dashboard-first"
-  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "Fast Draft Mode") {
-    Fail-Check "shopify-landing-page-builder does not define Fast Draft Mode"
-  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "Guided Strategy Mode") {
-    Fail-Check "shopify-landing-page-builder does not define Guided Strategy Mode"
-  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "Deep Conversion Mode") {
-    Fail-Check "shopify-landing-page-builder does not define Deep Conversion Mode"
-  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "Ask at most 1-3 missing-answer questions before drafting") {
-    Fail-Check "shopify-landing-page-builder Fast Draft guidance may force too much intake"
-  } elseif ($skill.Name -eq "shopify-landing-page-builder" -and $content -notmatch "dtc-derived-strategy\.md") {
-    Fail-Check "shopify-landing-page-builder does not reference distilled DTC strategy references"
-  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Fast Site Draft Mode") {
-    Fail-Check "shopify-site-builder does not define Fast Site Draft Mode"
-  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Guided Site Strategy Mode") {
-    Fail-Check "shopify-site-builder does not define Guided Site Strategy Mode"
-  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Deep Storefront Build Mode") {
-    Fail-Check "shopify-site-builder does not define Deep Storefront Build Mode"
-  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Shopify Site Build Progress") {
-    Fail-Check "shopify-site-builder does not include the site progress tracker"
-  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "site-strategy-and-architecture\.md") {
-    Fail-Check "shopify-site-builder does not reference the site strategy reference"
-  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "access-setup\.md") {
-    Fail-Check "shopify-site-builder does not reference the access setup reference"
-  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Theme Access plus Shopify CLI") {
-    Fail-Check "shopify-site-builder does not preserve the theme access rail"
-  } elseif ($skill.Name -eq "shopify-site-builder" -and $content -notmatch "Shopify Dev Dashboard app plus Admin GraphQL") {
-    Fail-Check "shopify-site-builder does not preserve the Admin API access rail"
+  } elseif ($skill.Name -eq "amazing-shopify-chatbot-builder" -and $content -notmatch "admin-dashboard-control-plane\.md") {
+    Fail-Check "amazing-shopify-chatbot-builder does not reference the admin dashboard control plane"
+  } elseif ($skill.Name -eq "amazing-shopify-chatbot-builder" -and $content -notmatch "empty-project-scaffold\.md") {
+    Fail-Check "amazing-shopify-chatbot-builder does not reference the empty project scaffold"
+  } elseif ($skill.Name -eq "amazing-shopify-chatbot-builder" -and $content -notmatch "Build the protected admin dashboard and embedded test chat") {
+    Fail-Check "amazing-shopify-chatbot-builder tracker is not dashboard-first"
+  } elseif ($skill.Name -eq "amazing-landing-page-builder" -and $content -notmatch "placeholder-only") {
+    Fail-Check "landing builder must require the full placeholder wireframe"
+  } elseif ($skill.Name -eq "amazing-landing-page-builder" -and $content -notmatch "final-wireframe-review") {
+    Fail-Check "landing builder must retain independent final review"
+  } elseif ($skill.Name -eq "amazing-landing-page-builder" -and $content -notmatch "dtc-derived-strategy\.md") {
+    Fail-Check "amazing-landing-page-builder does not reference distilled DTC strategy references"
+  } elseif ($skill.Name -eq "amazing-shopify-site-builder" -and $content -notmatch "Fast Site Draft Mode") {
+    Fail-Check "amazing-shopify-site-builder does not define Fast Site Draft Mode"
+  } elseif ($skill.Name -eq "amazing-shopify-site-builder" -and $content -notmatch "Guided Site Strategy Mode") {
+    Fail-Check "amazing-shopify-site-builder does not define Guided Site Strategy Mode"
+  } elseif ($skill.Name -eq "amazing-shopify-site-builder" -and $content -notmatch "Deep Storefront Build Mode") {
+    Fail-Check "amazing-shopify-site-builder does not define Deep Storefront Build Mode"
+  } elseif ($skill.Name -eq "amazing-shopify-site-builder" -and $content -notmatch "Shopify Site Build Progress") {
+    Fail-Check "amazing-shopify-site-builder does not include the site progress tracker"
+  } elseif ($skill.Name -eq "amazing-shopify-site-builder" -and $content -notmatch "site-strategy-and-architecture\.md") {
+    Fail-Check "amazing-shopify-site-builder does not reference the site strategy reference"
+  } elseif ($skill.Name -eq "amazing-shopify-site-builder" -and $content -notmatch "access-setup\.md") {
+    Fail-Check "amazing-shopify-site-builder does not reference the access setup reference"
+  } elseif ($skill.Name -eq "amazing-shopify-site-builder" -and $content -notmatch "Theme Access plus Shopify CLI") {
+    Fail-Check "amazing-shopify-site-builder does not preserve the theme access rail"
+  } elseif ($skill.Name -eq "amazing-shopify-site-builder" -and $content -notmatch "Shopify Dev Dashboard app plus Admin GraphQL") {
+    Fail-Check "amazing-shopify-site-builder does not preserve the Admin API access rail"
   } elseif ($skill.Name -eq "amazon-opportunity-explorer" -and $content -notmatch "current user has\s+authorized") {
     Fail-Check "amazon-opportunity-explorer does not bind research to the current user's authorized account"
   } elseif ($skill.Name -eq "amazon-opportunity-explorer" -and $content -notmatch "never reuse them as evidence") {
     Fail-Check "amazon-opportunity-explorer does not protect against illustrative example reuse"
-  } elseif ($skill.Name -eq "consumer-brand-copywriting" -and $content -notmatch "consumer-brand-copywriting-framework\.md") {
-    Fail-Check "consumer-brand-copywriting does not reference its channel framework"
-  } elseif ($skill.Name -eq "consumer-brand-copywriting" -and $content -notmatch "do not invent desire, claims, testimonials") {
-    Fail-Check "consumer-brand-copywriting does not preserve its claim boundary"
+  } elseif ($skill.Name -eq "amazing-copywriter" -and $content -notmatch "consumer-brand-copywriting-framework\.md") {
+    Fail-Check "amazing-copywriter does not reference its channel framework"
+  } elseif ($skill.Name -eq "amazing-copywriter" -and $content -notmatch "do not invent desire, claims, testimonials") {
+    Fail-Check "amazing-copywriter does not preserve its claim boundary"
   } else {
     Write-Check "ok" ("valid skill front matter for {0}" -f $skill.Name)
   }
@@ -298,7 +294,7 @@ foreach ($file in $allTextFiles) {
   }
 }
 
-if (-not (Test-Path -LiteralPath (Join-Path $PackRoot "skills/shopify-chatbot-builder/references/polished-local-demo.md"))) {
+if (-not (Test-Path -LiteralPath (Join-Path $PackRoot "skills/amazing-shopify-chatbot-builder/references/polished-local-demo.md"))) {
   Write-Check "ok" "old polished-local-demo reference removed"
 } else {
   Fail-Check "old polished-local-demo reference still exists"
@@ -318,8 +314,8 @@ foreach ($doc in $landingDocs) {
   }
 
   $text = Get-Content -LiteralPath $path -Raw
-  if ($text -notmatch "Fast Draft Mode") {
-    Fail-Check ("{0} does not mention Fast Draft Mode" -f $doc)
+  if ($text -notmatch "full-design process") {
+    Fail-Check ("{0} does not mention full-design process" -f $doc)
   }
 }
 
@@ -337,8 +333,8 @@ foreach ($doc in $siteDocs) {
   }
 
   $text = Get-Content -LiteralPath $path -Raw
-  if ($text -notmatch "shopify-site-builder") {
-    Fail-Check ("{0} does not mention shopify-site-builder" -f $doc)
+  if ($text -notmatch "amazing-shopify-site-builder") {
+    Fail-Check ("{0} does not mention amazing-shopify-site-builder" -f $doc)
   }
 
   if ($text -notmatch "Fast Site Draft Mode") {
@@ -380,8 +376,8 @@ foreach ($doc in $copywritingDocs) {
   }
 
   $text = Get-Content -LiteralPath $path -Raw
-  if ($text -notmatch "consumer-brand-copywriting") {
-    Fail-Check ("{0} does not mention consumer-brand-copywriting" -f $doc)
+  if ($text -notmatch "amazing-copywriter") {
+    Fail-Check ("{0} does not mention amazing-copywriter" -f $doc)
   }
 }
 

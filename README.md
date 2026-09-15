@@ -5,13 +5,43 @@ Amazing.com members building practical AI-assisted Shopify growth tools,
 writing conversion-focused consumer-brand copy, and researching Amazon product
 opportunities.
 
-## Skills
+## Update or migrate existing installations
 
-- `shopify-chatbot-builder` - dashboard-first workflow for building, testing, installing, and launching a private one-store Shopify AI chatbot.
-- `shopify-landing-page-builder` - guided workflow for designing, building, testing, and safely launching a high-converting DTC Shopify landing page.
-- `shopify-site-builder` - guided workflow for planning, building, testing, and safely launching a consistent Shopify site across homepage, product pages, collections, content pages, navigation, and shared theme systems.
+Existing installations do not rename automatically. Use this prompt in the local
+agent environment where you installed the pack:
+
+```text
+Update my Amazing AI Builder Skill Pack from
+https://github.com/mcclaryamazing/amazing-ai-builder-skill-pack.
+Read its current README and use my authorized GitHub access. Migrate these names:
+shopify-landing-page-builder -> amazing-landing-page-builder
+shopify-site-builder -> amazing-shopify-site-builder
+shopify-chatbot-builder -> amazing-shopify-chatbot-builder
+consumer-brand-copywriting -> amazing-copywriter
+Inspect the active skill locations and existing copies. Preserve personal
+modifications in backups outside skill discovery before replacing files. Install
+complete new packages, including references, scripts, assets and metadata.
+Resolve compatible customizations; ask about actual conflicting modifications.
+Verify completeness, local references and actual discovery/readability before
+retiring old copies. If a restart is required, keep the working old copy until
+verification succeeds. Then move the old package outside every active skill
+directory, preserving its backup. If verification fails keep the working copy.
+Update relevant active project instructions, preserving historical records.
+Preserve Shopify setup, credentials, projects and generated assets. Do not change
+stores, deploy applications or run paid image generation during this update.
+Report install and backup paths and tell me to start a fresh task.
+```
+
+Only the existing four skills are renamed; Amazon Opportunity Explorer and both
+extensions remain. Photography stays optional when separately installed.
+
+## Included skills
+
+- `amazing-shopify-chatbot-builder` - dashboard-first workflow for building, testing, installing, and launching a private one-store Shopify AI chatbot.
+- `amazing-landing-page-builder` - guided workflow for designing, building, testing, and safely launching a high-converting DTC Shopify landing page.
+- `amazing-shopify-site-builder` - guided workflow for planning, building, testing, and safely launching a consistent Shopify site across homepage, product pages, collections, content pages, navigation, and shared theme systems.
 - `amazon-opportunity-explorer` - guided workflow for mining Amazon Product Opportunity Explorer, shortlisting niches, validating product concepts, and producing evidence-separated reports.
-- `consumer-brand-copywriting` - conversion-focused copywriting for consumer-brand landing pages, Meta ads, product pages, email, offers, proof, objections, CTAs, and brand voice.
+- `amazing-copywriter` - conversion-focused copywriting for consumer-brand landing pages, Meta ads, product pages, email, offers, proof, objections, CTAs, and brand voice.
 
 ## Chrome Extensions
 
@@ -52,7 +82,7 @@ The chatbot skill is designed to replicate a polished Shopify chatbot build patt
 - customer-facing links strip preview/admin/token/key params while preserving shopper-safe params such as variant IDs
 - recommendation-style questions prioritize product and collection records over policy/page records without inventing prices, discounts, inventory, delivery dates, or claims
 
-The landing-page skill guides Codex through the full DTC page path. It defaults to Fast Draft Mode for members who want to answer a few questions and get a strong first version, while still supporting Guided Strategy Mode and Deep Conversion Mode when the offer, proof, claims, category, or funnel path needs more rigor:
+The landing-page skill guides Codex through the full DTC page path. It uses one full-design process with substantial copy, a placeholder-only wireframe, and independent review; research depth follows the product and evidence needs:
 
 1. Understand the product, audience, offer, and traffic source.
 2. Inspect the Shopify repo, theme setup, and launch constraints.
@@ -107,7 +137,7 @@ conversion-copy workflow:
 
 ## Member Readiness Checklist
 
-For a Fast Draft landing-page strategy, the member can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Missing launch facts should become labeled assumptions or verification placeholders.
+For a landing-page strategy, the member can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Missing launch facts should become labeled assumptions or verification placeholders.
 
 Before building, previewing, launching, or mutating Shopify state, the member should have or be able to get:
 
@@ -159,11 +189,11 @@ Install from this GitHub repo:
 https://github.com/mcclaryamazing/amazing-ai-builder-skill-pack
 
 The skill folders are:
-- skills/shopify-chatbot-builder
-- skills/shopify-landing-page-builder
-- skills/shopify-site-builder
+- skills/amazing-shopify-chatbot-builder
+- skills/amazing-landing-page-builder
+- skills/amazing-shopify-site-builder
 - skills/amazon-opportunity-explorer
-- skills/consumer-brand-copywriting
+- skills/amazing-copywriter
 
 After installing, tell me how to verify all five skills are available.
 ```
@@ -175,7 +205,7 @@ Restart or refresh Codex if needed.
 Open Codex in the Shopify site repo, then paste:
 
 ```text
-Use the shopify-chatbot-builder skill.
+Use the amazing-shopify-chatbot-builder skill.
 
 I want to build a private AI chatbot for this live Shopify store. Inspect this repo first, show me the Shopify Chatbot Build Progress tracker, and guide me like a new user.
 
@@ -189,11 +219,11 @@ Make the customer-facing widget polished and safe by default: no developer/testi
 Open Codex in the Shopify site repo, then paste:
 
 ```text
-Use the shopify-landing-page-builder skill.
+Use the amazing-landing-page-builder skill.
 
 I want to create a high-converting Shopify landing page for this store. Inspect this repo first, show me the Shopify Landing Page Build Progress tracker, and guide me like a new user.
 
-Start in Fast Draft Mode unless the page needs deeper strategy. Ask only for the product, audience, offer, traffic source, proof/assets, claims, and CTA path that materially change the page. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, exact image placeholders or Shopify Files images, and a rollback path.
+Use the full-design process, deepening research when the page requires it. Ask only for the product, audience, offer, traffic source, proof/assets, claims, and CTA path that materially change the page. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, placeholder-only imagery before approval, then suitable Shopify Files images, and a rollback path.
 ```
 
 ## Start A Shopify Site Build
@@ -201,7 +231,7 @@ Start in Fast Draft Mode unless the page needs deeper strategy. Ask only for the
 Open Codex in the Shopify site repo, then paste:
 
 ```text
-Use the shopify-site-builder skill.
+Use the amazing-shopify-site-builder skill.
 
 I want to build or rebuild a consistent Shopify site across homepage, product pages, collections, and content pages. Inspect this repo first, show me the Shopify Site Build Progress tracker, and guide me like a new user.
 
@@ -231,7 +261,7 @@ Product Idea.
 Open Codex with your product facts and brand materials available, then paste:
 
 ```text
-Use the consumer-brand-copywriting skill.
+Use the amazing-copywriter skill.
 
 Create conversion-focused copy for my consumer brand. Start from the supplied
 product facts, audience, offer, proof, traffic source, and brand voice. Do not

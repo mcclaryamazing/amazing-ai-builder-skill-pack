@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazing Copywriter"
+  short_description: "Write conversion copy for consumer brands."
+  default_prompt: "Use amazing-copywriter to draft or improve conversion-focused copy from supplied product, audience, offer, proof, traffic source, and brand voice details."

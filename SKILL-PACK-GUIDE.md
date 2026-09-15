@@ -5,12 +5,12 @@ and Amazon product opportunity research.
 
 ## Available Skills
 
-- `shopify-chatbot-builder` for the full Shopify chatbot build.
-- `shopify-landing-page-builder` for the full Shopify DTC landing-page build.
-- `shopify-site-builder` for the full Shopify site build across homepage, product pages, collections, content pages, navigation, and shared theme systems.
+- `amazing-shopify-chatbot-builder` for the full Shopify chatbot build.
+- `amazing-landing-page-builder` for the full Shopify DTC landing-page build.
+- `amazing-shopify-site-builder` for the full Shopify site build across homepage, product pages, collections, content pages, navigation, and shared theme systems.
 - `amazon-opportunity-explorer` for Product Opportunity Explorer research,
   product-concept validation, and evidence-separated opportunity reports.
-- `consumer-brand-copywriting` for claim-safe conversion copy across consumer
+- `amazing-copywriter` for claim-safe conversion copy across consumer
   landing pages, Meta ads, product pages, email, offers, proof, objections,
   CTAs, and brand voice.
 
@@ -73,7 +73,7 @@ The chatbot must have request-time contextual memory. The storefront widget and 
 
 The DTC design package is the first meaningful proof. It must include the selected mode, labeled assumptions, archetype, confidence label, derived strategy labels, big idea, section sequence, copy strategy, offer/proof logic, CTA path, claim notes, metadata direction, and exact image-slot plan before Shopify implementation begins.
 
-Fast Draft Mode is the default for members who want to answer only a few questions and see a strong first version. Guided Strategy Mode helps shape the offer, audience, traffic promise, proof stack, or positioning before drafting. Deep Conversion Mode applies the fuller DTC rubric for high-stakes, high-AOV, regulated, technical, claim-sensitive, subscription, quiz, bundle, custom, or proof-light pages.
+full-design process is the default for members who want to answer only a few questions and see a strong first version. Guided Strategy Mode helps shape the offer, audience, traffic promise, proof stack, or positioning before drafting. Deep Conversion Mode applies the fuller DTC rubric for high-stakes, high-AOV, regulated, technical, claim-sensitive, subscription, quiz, bundle, custom, or proof-light pages.
 
 ## Landing Page Readiness Gates
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazing Landing Page Builder"
+  short_description: "Design, audit, copy and build Shopify DTC pages"
+  default_prompt: "Use $amazing-landing-page-builder for my requested DTC page design, audit, copy rewrite or Shopify build, keeping the deliverable and approval gates within that scope."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Shopify Landing Page Builder"
-  short_description: "Fast or deep Shopify DTC landing page build"
-  default_prompt: "Use $shopify-landing-page-builder to help me design, build, test, and safely launch a high-converting Shopify landing page. Start in Fast Draft Mode unless this project needs a deeper strategy pass."

@@ -15,3 +15,4 @@ secrets/
 local/
 .DS_Store
 Thumbs.db
+**/.skill-install.json

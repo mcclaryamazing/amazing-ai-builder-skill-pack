@@ -5,6 +5,11 @@ description: "Design, audit, rewrite copy for, build, and safely launch DTC Shop
 
 # Amazing Landing Page Builder
 
+## Startup version check
+
+Before substantive work, follow `references/skill-updates.md`. Stable update key: `shopify-landing-page-builder`. Check the repository this installation came from, automatically update a verified unmodified copy, and obtain explicit approval before a rename.
+
+
 Use this as the single entrypoint for DTC landing-page strategy, design, audits, copy rewrites and Shopify implementation. Match the workflow to the requested deliverable; a design or audit request does not authorize a store build or launch. For an end-to-end build, guide the member through strategy, design, Shopify implementation, QA and launch.
 
 ## Requested Scope

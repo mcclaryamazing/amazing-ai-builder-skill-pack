@@ -13,7 +13,9 @@ agent environment where you installed the pack:
 ```text
 Update my Amazing AI Builder Skill Pack from
 https://github.com/mcclaryamazing/amazing-ai-builder-skill-pack.
-Read its current README and use my authorized GitHub access. Migrate these names:
+Read its current README and use my authorized GitHub access. For future automatic checks, for the four Amazing packages below, follow each package's references/skill-updates.md and use its bundled skill_updates.py record command after verifying the pinned source commit. Preserve this repository as the installation source in .skill-install.json.
+Before installing under a new name or retiring an old name, ask for explicit approval of each old-to-new rename below. An update request alone does not approve renaming. You may stage and inspect packages outside skill discovery before approval.
+Migrate these names:
 shopify-landing-page-builder -> amazing-landing-page-builder
 shopify-site-builder -> amazing-shopify-site-builder
 shopify-chatbot-builder -> amazing-shopify-chatbot-builder
@@ -24,7 +26,7 @@ complete new packages, including references, scripts, assets and metadata.
 Resolve compatible customizations; ask about actual conflicting modifications.
 Verify completeness, local references and actual discovery/readability before
 retiring old copies. If a restart is required, keep the working old copy until
-verification succeeds. Then move the old package outside every active skill
+verification succeeds. After the named rename approval and successful verification, move the old package outside every active skill
 directory, preserving its backup. If verification fails keep the working copy.
 Update relevant active project instructions, preserving historical records.
 Preserve Shopify setup, credentials, projects and generated assets. Do not change
@@ -277,3 +279,9 @@ Run:
 ```powershell
 .\scripts\validate-skill-pack.ps1
 ```
+
+## Automatic checks for the four Amazing builder skills
+
+The four renamed Amazing skills now ship VERSION 1.0.0 and a source-aware startup check. Once installed with a verified local receipt, ordinary unmodified updates apply automatically; renamed packages require explicit approval. Local edits and unknown provenance are preserved. Offline checks report that the latest version could not be verified. Existing copies need a one-time update to install this mechanism. Amazon Opportunity Explorer is unchanged by this builder update.
+
+Maintainers must bump VERSION and the matching skill-releases.json entry whenever a package changes. Keep installed .skill-install.json receipts out of releases, promote complete verified packages from the authoritative live skills, and validate the pack before publishing.

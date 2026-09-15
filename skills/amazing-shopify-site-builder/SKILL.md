@@ -5,6 +5,11 @@ description: "Plan, build, test, and safely launch a consistent Shopify storefro
 
 # Amazing Shopify Site Builder
 
+## Startup version check
+
+Before substantive work, follow `references/skill-updates.md`. Stable update key: `shopify-site-builder`. Check the repository this installation came from, automatically update a verified unmodified copy, and obtain explicit approval before a rename.
+
+
 Use this as the one skill for helping a member build or rebuild a full Shopify site, not only one campaign page. The member should not need to know separate agent-internal specialties. Walk them through site strategy, theme system, surface planning, implementation, QA, and launch in one guided path.
 
 Use `amazing-landing-page-builder` instead when the project is only a single DTC/campaign landing page. Use this skill when the work spans multiple storefront surfaces or when consistency across homepage, PDPs, collections, and content pages matters.

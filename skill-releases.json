@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "skills": {
+    "shopify-landing-page-builder": {
+      "name": "amazing-landing-page-builder",
+      "version": "1.0.0",
+      "path": "skills/amazing-landing-page-builder",
+      "previous_names": [
+        "shopify-landing-page-builder"
+      ]
+    },
+    "consumer-brand-copywriting": {
+      "name": "amazing-copywriter",
+      "version": "1.0.0",
+      "path": "skills/amazing-copywriter",
+      "previous_names": [
+        "consumer-brand-copywriting"
+      ]
+    },
+    "shopify-site-builder": {
+      "name": "amazing-shopify-site-builder",
+      "version": "1.0.0",
+      "path": "skills/amazing-shopify-site-builder",
+      "previous_names": [
+        "shopify-site-builder"
+      ]
+    },
+    "shopify-chatbot-builder": {
+      "name": "amazing-shopify-chatbot-builder",
+      "version": "1.0.0",
+      "path": "skills/amazing-shopify-chatbot-builder",
+      "previous_names": [
+        "shopify-chatbot-builder"
+      ]
+    }
+  }
+}

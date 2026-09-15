@@ -5,6 +5,11 @@ description: "Build, test, install, and safely launch a private one-store Shopif
 
 # Amazing Shopify Chatbot Builder
 
+## Startup version check
+
+Before substantive work, follow `references/skill-updates.md`. Stable update key: `shopify-chatbot-builder`. Check the repository this installation came from, automatically update a verified unmodified copy, and obtain explicit approval before a rename.
+
+
 Use this as the one skill for building a private Shopify chatbot. The user should not need to know separate agent-internal specialties. Walk them through the whole project from repo inspection to real-model and real-store private demo to storefront launch.
 
 ## First Response Contract

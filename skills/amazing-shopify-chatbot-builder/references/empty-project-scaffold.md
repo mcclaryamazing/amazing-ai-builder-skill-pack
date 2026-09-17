@@ -97,7 +97,8 @@ Create `.env.example` with placeholder values only:
 APP_ENV=development
 PUBLIC_STORE_DOMAIN=
 SHOPIFY_SHOP_DOMAIN=
-SHOPIFY_ADMIN_ACCESS_TOKEN=
+SHOPIFY_CLIENT_ID=
+SHOPIFY_CLIENT_SECRET=
 SHOPIFY_API_VERSION=
 AI_PROVIDER=
 AI_MODEL=
@@ -108,6 +109,8 @@ ALLOWED_STOREFRONT_ORIGINS=
 SUPPORT_EMAIL=
 WIDGET_PUBLIC_URL=
 ```
+
+For a new merchant-owned app, implement the server-side token acquisition and renewal described in `shopify-connection.md`. If reusing a verified existing token-based setup, use its actual environment keys instead (for example `SHOPIFY_ADMIN_ACCESS_TOKEN`); do not demand client credentials as well.
 
 Tell the user which local values to fill. Never ask them to paste the secret values into chat.
 

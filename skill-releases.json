@@ -19,7 +19,7 @@
     },
     "shopify-site-builder": {
       "name": "amazing-shopify-site-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "skills/amazing-shopify-site-builder",
       "previous_names": [
         "shopify-site-builder"
@@ -27,7 +27,7 @@
     },
     "shopify-chatbot-builder": {
       "name": "amazing-shopify-chatbot-builder",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "path": "skills/amazing-shopify-chatbot-builder",
       "previous_names": [
         "shopify-chatbot-builder"

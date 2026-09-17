@@ -24,7 +24,7 @@ Classify uncommitted work before deployment. Current-task changes are already in
 Always push the smallest intended file set:
 
 ```powershell
-npx -y @shopify/cli@latest theme push `
+shopify theme push `
   --store your-store.myshopify.com `
   --theme 123456789 `
   --path .\shopify-site-upload `
@@ -55,7 +55,7 @@ Never print the token.
 After pushing, pull the same files into a verification folder and inspect them:
 
 ```powershell
-npx -y @shopify/cli@latest theme pull `
+shopify theme pull `
   --store your-store.myshopify.com `
   --theme 123456789 `
   --path .\shopify-site-verify `

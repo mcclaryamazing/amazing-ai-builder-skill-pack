@@ -1,6 +1,6 @@
 ---
 name: amazing-shopify-chatbot-builder
-description: "Build, test, install, and safely launch a private one-store Shopify AI chatbot with Codex. Use for guided Shopify chatbot projects involving real AI setup, read-only store sync, protected admin dashboard/test chat, customer widget polish, commerce guardrails, theme-safe launch, rollback, and progress tracking."
+description: "Build, test, install, and safely launch a private one-store Shopify AI chatbot with a local coding agent. Use for guided Shopify chatbot projects involving real AI setup, read-only store sync, protected admin dashboard/test chat, customer widget polish, commerce guardrails, theme-safe launch, rollback, and progress tracking."
 ---
 
 # Amazing Shopify Chatbot Builder
@@ -11,6 +11,8 @@ Before substantive work, follow `references/skill-updates.md`. Stable update key
 
 
 Use this as the one skill for building a private Shopify chatbot. The user should not need to know separate agent-internal specialties. Walk them through the whole project from repo inspection to real-model and real-store private demo to storefront launch.
+
+Before implementation in a new or unverified local environment, read `references/shopify-connection.md` for local desktop readiness and secure credential setup. These instructions apply to desktop ChatGPT Work when its actual capabilities are available; they do not establish end-to-end Work validation.
 
 ## First Response Contract
 

@@ -4,7 +4,7 @@ This extension is local-only. There is no hosted service or production deploymen
 
 ## Safety checks
 
-Before changing, updating, or reloading the extension:
+Before changing, reloading, or packaging the extension:
 
 1. Run `git status --short` from the root of the repository clone.
 2. Review any uncommitted work. Proceed with current-task changes without another confirmation; ask only about pre-existing, unrelated, or uncertain work.

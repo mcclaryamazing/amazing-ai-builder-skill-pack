@@ -15,6 +15,25 @@ Product Review Intelligence requests Chrome's `unlimitedStorage` permission so l
 
 The manifest also grants access to Amazon's `media-amazon.com` and `ssl-images-amazon.com` image hosts. This is used only to download the main listing-gallery URLs already captured from the selected product page when **Capture product details** is enabled. The background downloader rejects non-Amazon hosts and Amazon placeholder or video-button assets.
 
+## Use with a local AI agent
+
+Codex, Claude Code, or local desktop ChatGPT Work can help you install this
+extension and interpret its output. The extension runs in Chrome; it is not an
+Agent Skill and does not provide the agent's Chrome browser-control connection.
+Enable that connection separately if the workflow needs it.
+
+Load the extension in the Chrome profile you will use for the target page. A
+separate agent browser session or in-app browser does not automatically contain
+this extension or share that profile's sign-in. If the agent cannot operate
+`chrome://extensions`, the toolbar popup, or the folder picker, have it give you
+the exact folder and guide the necessary clicks; do not assume these browser
+controls are available to the agent.
+
+Sign in to Amazon yourself in that Chrome profile. Attach the downloaded ZIP
+to the AI task, or put it in a workspace folder the local agent can read. Ask
+it to read the archive's README and capture status before analyzing the CSVs;
+a partial or restricted export is not a complete review population.
+
 ## Use
 
 1. Sign in to an Amazon account on the marketplace you want to use.
@@ -78,9 +97,9 @@ If Amazon does not return to the pending export after sign-in, return to the pro
 
 ## Portability and icons
 
-The `review-expander` folder is self-contained and can be copied to another location or computer. Chrome reads the icon files through relative manifest paths such as `icons/icon-32.png`, so the extension has no dependency on its original source location.
+The `review-expander` folder is self-contained and can be copied to another location or computer. Chrome reads the icon files through relative manifest paths such as `icons/icon-32.png`, so the extension has no dependency on its original installation location.
 
-The checked-in folder contains the complete extension, including its generated PNG icons. Load the `review-expander` folder directly in Chrome.
+The ZIP package also contains the complete extension, including its generated PNG icons. Extract the ZIP and load the extracted `review-expander` folder in Chrome.
 
 The finished icons are included in the extension folder, so no icon generator is needed.
 

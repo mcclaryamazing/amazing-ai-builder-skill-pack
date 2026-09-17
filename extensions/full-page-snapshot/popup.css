@@ -136,3 +136,24 @@ h1 {
   color: var(--error);
   background: #fff7f6;
 }
+
+.mobile-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  cursor: pointer;
+}
+.mobile-option input {
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  accent-color: var(--accent);
+}
+.mobile-option small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.mobile-option:has(input:disabled) { opacity: 0.65; cursor: wait; }
+.mobile-option input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

@@ -4,6 +4,20 @@ Connect Shopify read-only data before the user-facing demo. The private demo nee
 
 If the user already has Shopify access or credentials set up, verify and reuse them. Do not create a new custom app, Admin token, Theme Access password, or Shopify CLI workflow unless the existing setup is missing, unsafe, or insufficient.
 
+## Local Desktop Readiness
+
+For local ChatGPT Work, Codex, or another local coding agent, verify the actual selected project folder, command execution, this complete skill package, and supported browser access before implementation. A desktop window or model name does not prove local access. If no project exists, guide the member to create/select a dedicated store folder, inspect it, then initialize Git on `main` when appropriate. Ignore local secret files, token caches and temporary QA artifacts before creating them; use placeholder-only examples and record verified store identity and deployment/rollback in `deploy.md`. Do not borrow credentials from another store.
+
+Check Git, Node/npm and the installed Shopify CLI; check Python/GitHub CLI for the bundled updater and other dependencies only as needed by the chosen project stack. Reuse working versions. Install missing tools through official sources within authorized setup, then verify them; do not silently upgrade or run `npx @latest` during read-only verification. PowerShell examples in this package are examples for that shell: adapt quoting, continuation and paths to the actual shell without changing the store, theme or file scope.
+
+Verify supported browser control against the intended signed-in Shopify Admin and storefront, plus local preview access when needed. Screenshot extensions do not provide browser control. Explain the specific missing capability or authentication step when blocked; do not claim browser QA, automatic skill discovery, or live readiness from files alone. Installing this skill does not authorize store changes, paid services or launch. Report local checks separately from hosted and live verification.
+
+## Secure Credential Setup
+
+Within authorized setup, use supported browser/file or secure-store capabilities to save credentials directly when they can do so without exposing values in chat, screenshots, tool output, logs or tracked files. Inspect the actual capabilities and test transfer with harmless text before opening a one-time Theme Access link. A writable file alone does not prove a secure transfer path. Do not invent APIs or bypass tool restrictions. Clear sensitive clipboard/runtime values after saving and verify access without printing secrets.
+
+If secure transfer is unavailable, give a precise manual handoff: the intended store and recipient inbox, how to identify its Theme Access message and observed link/button, the exact ignored local file and `SHOPIFY_CLI_THEME_TOKEN` field to fill, then ask the member to save and reply only Done. For the app secret, name its Dev Dashboard settings screen and `SHOPIFY_CLIENT_SECRET` separately. Do not consume a one-time link until the transfer path is ready. Reuse working credentials and keep unrelated mail and stores outside scope.
+
 ## Two Access Rails
 
 Keep these separate:
@@ -95,6 +109,12 @@ Plain-English flow:
 8. Never paste the secret into chat.
 
 If scopes change later, release a new app version and approve updated data access in Shopify Admin. Releasing a version alone does not update granted scopes.
+
+## Backend Token Acquisition
+
+For a merchant-owned Dev Dashboard app, verify the app and target store belong to the same Shopify organization and the app is installed on that store before using the [client credentials grant](https://shopify.dev/docs/apps/build/authentication-authorization/client-credentials-grant). Send a server-side POST to `https://{SHOPIFY_SHOP_DOMAIN}/admin/oauth/access_token` with form fields `grant_type=client_credentials`, `client_id` and `client_secret`. Keep the resulting `access_token` server-side, use it in `X-Shopify-Access-Token`, and renew through the same grant before the returned `expires_in` deadline; do not hardcode a temporary token as permanent configuration.
+
+If the ownership requirement is not met, use the app's supported [authentication flow](https://shopify.dev/docs/apps/build/authentication-authorization), rather than assuming client credentials work for another merchant's store. Preserve an existing supported token setup when verified. Match the scaffold environment keys to the chosen flow; never require both unrelated flows or expose credentials in health responses. Verify shop identity and granted scopes before real sync.
 
 ## Verification
 

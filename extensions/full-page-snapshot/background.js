@@ -11,71 +11,125 @@ const LAZY_SCROLL_OPTIONS = {
 };
 const MAX_CAPTURE_WIDTH = 16384;
 const MAX_CAPTURE_HEIGHT = 20000;
-const MAX_SINGLE_CAPTURE_HEIGHT = 16384;
 const MAX_CAPTURE_SOURCE_DIMENSION = 16000;
 const HARD_CAPTURE_SOURCE_DIMENSION = 16384;
-const MAX_CAPTURE_TILE_HEIGHT = 8192;
-const SCALE_PROBE_DIMENSION = 512;
+let captureInProgress = false;
 
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (message?.type !== "capture-full-page") return false;
 
-  captureFullPageSnapshot()
+  if (captureInProgress) {
+    sendResponse({ ok: false, error: "A snapshot is already in progress. Please wait for it to finish." });
+    return false;
+  }
+  captureInProgress = true;
+  captureFullPageSnapshot(message.includeMobile === true)
     .then((result) => sendResponse({ ok: true, ...result }))
-    .catch((error) => sendResponse({ ok: false, error: toFriendlyError(error) }));
+    .catch((error) => sendResponse({ ok: false, error: toFriendlyError(error) }))
+    .finally(() => { captureInProgress = false; });
 
   return true;
 });
 
-async function captureFullPageSnapshot() {
+async function captureFullPageSnapshot(includeMobile = false) {
   const [tab] = await queryTabs({ active: true, currentWindow: true });
-
-  if (!tab?.id) {
-    throw new Error("Could not find the active tab.");
-  }
-
+  if (!tab?.id) throw new Error("Could not find the active tab.");
   assertCapturableTab(tab);
 
   const debuggee = { tabId: tab.id };
   let isAttached = false;
-  let scrollState = null;
-
+  let mobileOverrideAttempted = false;
+  const filename = buildSnapshotFilename(tab);
+  let result;
+  const cleanupErrors = [];
   try {
-    scrollState = await preScrollPageForLazyContent(tab.id);
-    await scrollPageToTopForCapture(tab.id);
-
+    await executeScript({ target: { tabId: tab.id }, func: rememberCaptureScroll });
     await attachDebugger(debuggee);
     isAttached = true;
-
     await sendCommand(debuggee, "Page.enable");
+    const desktop = await captureSnapshotMode(debuggee, includeMobile
+      ? filename.replace(/\.png$/, "-desktop.png") : filename);
+    result = desktop;
+    if (!includeMobile) return result;
+    if (desktop.cleanupError) return { ...desktop, mobileError: "The desktop layout could not be restored. Refresh the page and try again." };
+
+    try {
+      mobileOverrideAttempted = true;
+      await sendCommand(debuggee, "Emulation.setDeviceMetricsOverride", {
+        width: 390, height: 844, deviceScaleFactor: 1, mobile: true,
+        screenWidth: 390, screenHeight: 844
+      });
+      await executeScript({ target: { tabId: tab.id }, func: settleCaptureViewport });
+      const mobile = await captureSnapshotMode(debuggee, filename.replace(/\.png$/, "-mobile.png"));
+      result = { ...desktop, mobile };
+      return result;
+    } catch (error) {
+      result = { ...desktop, mobileError: toFriendlyError(error) };
+      return result;
+    }
+  } finally {
+    if (mobileOverrideAttempted) {
+      await sendCommand(debuggee, "Emulation.clearDeviceMetricsOverride")
+        .catch(error => cleanupErrors.push(toFriendlyError(error)));
+    }
+    if (isAttached) await detachDebugger(debuggee)
+      .catch(error => cleanupErrors.push(toFriendlyError(error)));
+    await executeScript({ target: { tabId: tab.id }, func: restoreInitialCaptureScroll })
+      .catch(error => cleanupErrors.push(toFriendlyError(error)));
+    if (result && cleanupErrors.length) result.cleanupError = cleanupErrors.join(" ");
+  }
+}
+
+async function captureSnapshotMode(debuggee, filename) {
+  let scrollState;
+  let result;
+  try {
+    await executeScript({ target: { tabId: debuggee.tabId }, func: prepareCaptureLayout });
+    scrollState = await preScrollPageForLazyContent(debuggee.tabId);
+    await scrollPageToTopForCapture(debuggee.tabId);
+    await executeScript({ target: { tabId: debuggee.tabId }, func: prepareCaptureOverlays });
     const metrics = await sendCommand(debuggee, "Page.getLayoutMetrics");
     const pageSize = getPageSize(metrics, scrollState);
-
-    const imageDataUrl = await capturePageImage(debuggee, pageSize);
-
-    const filename = buildSnapshotFilename(tab);
-
-    await downloadFile({
-      url: imageDataUrl,
-      filename,
-      conflictAction: "uniquify",
-      saveAs: false
-    });
-
-    return {
-      filename,
-      width: pageSize.width,
-      height: pageSize.height,
-      scrolled: scrollState?.scrolled || false
-    };
+    const { imageDataUrl, width, height } = await capturePageImage(debuggee, pageSize);
+    await downloadFile({ url: imageDataUrl, filename, conflictAction: "uniquify", saveAs: false });
+    result = { filename, width, height, cropped: width < pageSize.width || height < pageSize.height,
+      scrolled: scrollState?.scrolled || false };
+    return result;
   } finally {
-    if (isAttached) {
-      await detachDebugger(debuggee).catch(() => {});
+    if (scrollState) await restorePageScroll(debuggee.tabId, scrollState).catch(() => {});
+    try {
+      await executeScript({ target: { tabId: debuggee.tabId }, func: restoreCaptureLayout });
+    } catch (error) {
+      if (result) result.cleanupError = toFriendlyError(error);
+      else throw error;
     }
+  }
+}
 
-    if (scrollState) {
-      await restorePageScroll(tab.id, scrollState).catch(() => {});
+function rememberCaptureScroll() {
+  globalThis.__fullPageSnapshotInitialScroll = {
+    x: window.scrollX, y: window.scrollY,
+    elements: Array.from(document.querySelectorAll("body *"))
+      .filter(element => element.scrollLeft || element.scrollTop)
+      .map(element => ({ element, x: element.scrollLeft, y: element.scrollTop }))
+  };
+}
+
+async function settleCaptureViewport() {
+  await new Promise(resolve => setTimeout(resolve, 300));
+}
+
+async function restoreInitialCaptureScroll() {
+  const state = globalThis.__fullPageSnapshotInitialScroll;
+  if (!state) return;
+  try {
+    await new Promise(resolve => setTimeout(resolve, 300));
+    for (const { element, x, y } of state.elements) {
+      if (element.isConnected) element.scrollTo({ left: x, top: y, behavior: "instant" });
     }
+    window.scrollTo({ left: state.x, top: state.y, behavior: "instant" });
+  } finally {
+    delete globalThis.__fullPageSnapshotInitialScroll;
   }
 }
 
@@ -106,10 +160,6 @@ function getPageSize(metrics, scrollState) {
     throw new Error("Could not read the page size.");
   }
 
-  if (width > MAX_CAPTURE_WIDTH || height > MAX_CAPTURE_HEIGHT) {
-    throw new Error(`Page is too large to capture (${width} x ${height}).`);
-  }
-
   return { width, height };
 }
 
@@ -118,96 +168,89 @@ async function capturePageImage(debuggee, pageSize) {
     throw new Error("Chrome does not support preparing screenshots in this extension context.");
   }
 
-  const outputScale = await measureScreenshotScale(debuggee, pageSize);
-  const { maxSafeClipHeight } = getSafeCaptureGeometry(pageSize, outputScale);
-
-  const canCaptureDirectly =
-    pageSize.height <= MAX_SINGLE_CAPTURE_HEIGHT &&
-    pageSize.height <= maxSafeClipHeight &&
-    Math.abs(outputScale.width - 1) < 0.001 &&
-    Math.abs(outputScale.height - 1) < 0.001;
-
-  if (canCaptureDirectly) {
-    const screenshot = await capturePageTile(debuggee, {
-      height: pageSize.height,
-      width: pageSize.width,
-      y: 0
-    });
-
-    return `data:image/png;base64,${screenshot.data}`;
-  }
-
-  const canvas = new OffscreenCanvas(pageSize.width, pageSize.height);
-  const context = canvas.getContext("2d");
-
-  if (!context) {
-    throw new Error("Chrome could not create the long screenshot canvas.");
-  }
-
-  context.fillStyle = "#ffffff";
-  context.fillRect(0, 0, pageSize.width, pageSize.height);
-
-  const tileHeight = pageSize.height <= maxSafeClipHeight
-    ? pageSize.height
-    : Math.min(MAX_CAPTURE_TILE_HEIGHT, maxSafeClipHeight);
-
-  for (let y = 0; y < pageSize.height; y += tileHeight) {
-    const height = Math.min(tileHeight, pageSize.height - y);
-    const screenshot = await capturePageTile(debuggee, {
-      height,
-      width: pageSize.width,
-      y
-    });
-    const bitmap = await screenshotToBitmap(screenshot);
-
-    try {
-      assertUniformScale(bitmap, pageSize.width, height);
-
-      context.drawImage(
-        bitmap,
-        0,
-        0,
-        bitmap.width,
-        bitmap.height,
-        0,
-        y,
-        pageSize.width,
-        height
-      );
-    } finally {
-      bitmap.close();
+  let canvas;
+  let context;
+  let size;
+  let viewport;
+  for (let y = 0; !size || y < size.height; y += viewport.height) {
+    for (let x = 0; !size || x < size.width; x += viewport.width) {
+      const [result] = await executeScript({
+        target: { tabId: debuggee.tabId },
+        func: scrollToCapturePosition,
+        args: [x, y]
+      });
+      const position = result.result;
+      if (!viewport) viewport = { width: position.width, height: position.height };
+      if (position.width !== viewport.width || position.height !== viewport.height) {
+        throw new Error("The browser window changed size during capture. Keep it the same size and try again.");
+      }
+      let offsetX = x - position.x;
+      let offsetY = y - position.y;
+      if (offsetX < -1 || offsetY < -1 || offsetX >= viewport.width || offsetY >= viewport.height) {
+        throw new Error("The page stopped scrolling during capture. Close any open page dialogs and try again.");
+      }
+      offsetX = Math.max(0, offsetX);
+      offsetY = Math.max(0, offsetY);
+      // No clip or beyond-viewport capture: those commands resize Chrome's
+      // rendering surface and can return repeated viewports on affected pages.
+      const screenshot = await sendCommand(debuggee, "Page.captureScreenshot", {
+        format: "png", fromSurface: true, captureBeyondViewport: false
+      });
+      if (!screenshot?.data) throw new Error("Chrome did not return screenshot data.");
+      const bitmap = await screenshotToBitmap(screenshot);
+      try {
+        const scale = assertUniformScale(bitmap, viewport.width, viewport.height);
+        if (!size) {
+          const geometry = getSafeCaptureGeometry(pageSize, scale);
+          size = { width: geometry.width, height: geometry.height };
+          canvas = new OffscreenCanvas(size.width, size.height);
+          context = canvas.getContext("2d");
+          if (!context) throw new Error("Chrome could not create the screenshot canvas.");
+          context.fillStyle = "#ffffff";
+          context.fillRect(0, 0, size.width, size.height);
+        }
+        const width = Math.min(viewport.width, size.width - x);
+        const height = Math.min(viewport.height, size.height - y);
+        if (offsetX + width > viewport.width + 1 || offsetY + height > viewport.height + 1) {
+          throw new Error("The page stopped scrolling during capture. Close any open page dialogs and try again.");
+        }
+        context.drawImage(bitmap, offsetX * scale.width, offsetY * scale.height,
+          width * scale.width, height * scale.height, x, y, width, height);
+      } finally {
+        bitmap.close();
+      }
     }
   }
-
   const blob = await canvas.convertToBlob({ type: "image/png" });
-  return `data:image/png;base64,${await blobToBase64(blob)}`;
+  return { imageDataUrl: `data:image/png;base64,${await blobToBase64(blob)}`, ...size };
+}
+
+async function scrollToCapturePosition(x, y) {
+  const state = globalThis.__fullPageSnapshotLayout;
+  if (state) {
+    for (const { element } of state.fixedElements) {
+      if (x || y) element.style.setProperty("visibility", "hidden", "important");
+    }
+  }
+  window.scrollTo({ left: x, top: y, behavior: "instant" });
+  // A timer also completes when Chrome pauses requestAnimationFrame in a hidden tab.
+  await new Promise(resolve => setTimeout(resolve, 200));
+  return { x: window.scrollX, y: window.scrollY, width: window.innerWidth, height: window.innerHeight };
 }
 
 function getSafeCaptureGeometry(pageSize, outputScale) {
-  const sourceWidth = Math.ceil(pageSize.width * outputScale.width);
+  const width = Math.min(
+    pageSize.width,
+    MAX_CAPTURE_WIDTH,
+    Math.floor(MAX_CAPTURE_SOURCE_DIMENSION / outputScale.width)
+  );
+  const height = Math.min(pageSize.height, MAX_CAPTURE_HEIGHT);
   const maxSafeClipHeight = Math.max(
     1,
     Math.floor(MAX_CAPTURE_SOURCE_DIMENSION / outputScale.height)
   );
 
-  if (sourceWidth > MAX_CAPTURE_SOURCE_DIMENSION) {
-    throw new Error(`Page is too wide to capture safely at Chrome's current scale (${pageSize.width} CSS pixels at ${outputScale.width.toFixed(2)}x).`);
-  }
-
-  return { maxSafeClipHeight };
-}
-
-async function measureScreenshotScale(debuggee, pageSize) {
-  const width = Math.min(SCALE_PROBE_DIMENSION, pageSize.width);
-  const height = Math.min(SCALE_PROBE_DIMENSION, pageSize.height);
-  const screenshot = await capturePageTile(debuggee, { height, width, y: 0 });
-  const bitmap = await screenshotToBitmap(screenshot);
-
-  try {
-    return assertUniformScale(bitmap, width, height);
-  } finally {
-    bitmap.close();
-  }
+  return { width, height, maxSafeClipHeight };
 }
 
 async function screenshotToBitmap(screenshot) {
@@ -233,27 +276,6 @@ function assertUniformScale(bitmap, requestedWidth, requestedHeight) {
   return { width, height };
 }
 
-async function capturePageTile(debuggee, { height, width, y }) {
-  const screenshot = await sendCommand(debuggee, "Page.captureScreenshot", {
-    format: "png",
-    fromSurface: true,
-    captureBeyondViewport: true,
-    clip: {
-      x: 0,
-      y,
-      width,
-      height,
-      scale: 1
-    }
-  });
-
-  if (!screenshot?.data) {
-    throw new Error("Chrome did not return screenshot data.");
-  }
-
-  return screenshot;
-}
-
 async function blobToBase64(blob) {
   const bytes = new Uint8Array(await blob.arrayBuffer());
   let binary = "";
@@ -263,6 +285,89 @@ async function blobToBase64(blob) {
   }
 
   return btoa(binary);
+}
+
+// Runs in Chrome's isolated extension world; DOM references stay in the tab.
+function prepareCaptureLayout() {
+  const state = { x: window.scrollX, y: window.scrollY, elements: [], fixedElements: [] };
+  globalThis.__fullPageSnapshotLayout = state;
+  const root = document.documentElement;
+  const viewportHeight = window.innerHeight;
+  if (root.scrollHeight > viewportHeight + 4) return;
+
+  let scroller = document.querySelector("main, [role='main']");
+  while (scroller && scroller !== document.body) {
+    const rect = scroller.getBoundingClientRect();
+    const style = getComputedStyle(scroller);
+    if (
+      /^(auto|scroll)$/.test(style.overflowY) &&
+      scroller.scrollHeight > scroller.clientHeight + 4 &&
+      rect.width >= window.innerWidth * 0.75 &&
+      rect.height >= viewportHeight * 0.75 &&
+      rect.top < viewportHeight * 0.25 && rect.bottom > viewportHeight * 0.75
+    ) break;
+    scroller = scroller.parentElement;
+  }
+  if (!scroller || scroller === document.body) return;
+
+  for (let element = scroller; element; element = element.parentElement) {
+    const properties = ["height", "max-height", "overflow-x", "overflow-y", "scroll-behavior"];
+    state.elements.push({
+      element,
+      x: element.scrollLeft,
+      y: element.scrollTop,
+      hadStyle: element.hasAttribute("style"),
+      properties: properties.map(name => ({ name, value: element.style.getPropertyValue(name),
+        priority: element.style.getPropertyPriority(name) }))
+    });
+    element.style.setProperty("height", "auto", "important");
+    element.style.setProperty("max-height", "none", "important");
+    element.style.setProperty("overflow-x", "visible", "important");
+    element.style.setProperty("overflow-y", "visible", "important");
+    element.style.setProperty("scroll-behavior", "auto", "important");
+  }
+}
+
+function prepareCaptureOverlays() {
+  const state = globalThis.__fullPageSnapshotLayout;
+  if (!state) return;
+  for (const element of document.querySelectorAll("body *")) {
+    const position = getComputedStyle(element).position;
+    if (position !== "fixed" && position !== "sticky") continue;
+    if (!element.getClientRects().length) continue;
+    const names = position === "sticky" ? ["position", "top", "right", "bottom", "left"] : ["visibility"];
+    const item = { element, hadStyle: element.hasAttribute("style"),
+      properties: names.map(name => ({ name, value: element.style.getPropertyValue(name),
+        priority: element.style.getPropertyPriority(name) })) };
+    state.elements.push(item);
+    if (position === "sticky") {
+      element.style.setProperty("position", "relative", "important");
+      for (const name of names.slice(1)) element.style.setProperty(name, "auto", "important");
+    } else state.fixedElements.push(item);
+  }
+}
+
+function restoreCaptureLayout() {
+  const state = globalThis.__fullPageSnapshotLayout;
+  if (!state) return;
+  try {
+    for (const { element, properties, hadStyle } of state.elements) {
+      for (const { name, value, priority } of properties) {
+        if (value) element.style.setProperty(name, value, priority);
+        else element.style.removeProperty(name);
+      }
+    }
+    // Restore positions only after the containers have their original dimensions.
+    for (const { element, x, y } of state.elements) {
+      if (x !== undefined) element.scrollTo({ left: x, top: y, behavior: "instant" });
+    }
+    window.scrollTo({ left: state.x, top: state.y, behavior: "instant" });
+    for (const { element, hadStyle } of state.elements) {
+      if (!hadStyle && !element.style.length) element.removeAttribute("style");
+    }
+  } finally {
+    delete globalThis.__fullPageSnapshotLayout;
+  }
 }
 
 async function preScrollPageForLazyContent(tabId) {
@@ -293,10 +398,8 @@ async function scrollPageToTopForCapture(tabId) {
   await executeScript({
     target: { tabId },
     func: async () => {
-      window.scrollTo({ left: 0, top: 0, behavior: "auto" });
-      await new Promise((resolve) => {
-        requestAnimationFrame(() => requestAnimationFrame(resolve));
-      });
+      window.scrollTo({ left: 0, top: 0, behavior: "instant" });
+      await new Promise(resolve => setTimeout(resolve, 100));
     }
   });
 }
@@ -416,9 +519,7 @@ async function scrollPageToBottomForLazyContent(options) {
       ]);
     }
 
-    await new Promise((resolve) => {
-      requestAnimationFrame(() => requestAnimationFrame(resolve));
-    });
+    await wait(100);
   }
 
   function wait(ms) {

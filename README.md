@@ -39,6 +39,13 @@ extensions remain. Photography stays optional when separately installed.
 
 ## Included skills
 
+The Site Builder and Chatbot Builder packages are now version 1.0.1. They include
+capability-based local ChatGPT Work setup, shell adaptation, installed CLI reuse
+and consistent Shopify authentication guidance. Work must verify actual local
+file, command, skill-discovery and browser capabilities; package validation does
+not establish a fresh member's end-to-end Work workflow. The Chrome extension
+guides also explain separate browser control and downloaded-file handoff.
+
 - `amazing-shopify-chatbot-builder` - dashboard-first workflow for building, testing, installing, and launching a private one-store Shopify AI chatbot.
 - `amazing-landing-page-builder` - guided workflow for designing, building, testing, and safely launching a high-converting DTC Shopify landing page.
 - `amazing-shopify-site-builder` - guided workflow for planning, building, testing, and safely launching a consistent Shopify site across homepage, product pages, collections, content pages, navigation, and shared theme systems.
@@ -282,6 +289,6 @@ Run:
 
 ## Automatic checks for the four Amazing builder skills
 
-The four renamed Amazing skills now ship VERSION 1.0.0 and a source-aware startup check. Once installed with a verified local receipt, ordinary unmodified updates apply automatically; renamed packages require explicit approval. Local edits and unknown provenance are preserved. Offline checks report that the latest version could not be verified. Existing copies need a one-time update to install this mechanism. Amazon Opportunity Explorer is unchanged by this builder update.
+The four renamed Amazing skills ship VERSION files and a source-aware startup check; `skill-releases.json` records their current versions. Once installed with a verified local receipt, ordinary unmodified updates apply automatically; renamed packages require explicit approval. Local edits and unknown provenance are preserved. Offline checks report that the latest version could not be verified. Existing copies need a one-time update to install this mechanism. Amazon Opportunity Explorer is unchanged by this builder update.
 
 Maintainers must bump VERSION and the matching skill-releases.json entry whenever a package changes. Keep installed .skill-install.json receipts out of releases, promote complete verified packages from the authoritative live skills, and validate the pack before publishing.

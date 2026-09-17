@@ -10,7 +10,7 @@ From the monorepo root:
 git status --short
 ```
 
-Review uncommitted work before updating or reloading the extension. Proceed with current-task changes without another confirmation; ask only about pre-existing, unrelated, or uncertain work.
+Review uncommitted work before reloading or packaging the extension. Proceed with current-task changes without another confirmation; ask only about pre-existing, unrelated, or uncertain work.
 
 ## Local Install
 
@@ -24,6 +24,6 @@ Review uncommitted work before updating or reloading the extension. Proceed with
 1. Open `chrome://extensions`.
 2. Find `Full Page Snapshot`.
 3. Click the reload button.
-4. Test on a normal website tab.
+4. Test on a normal website tab with **Also capture mobile** off, then on. Confirm the two suffixed PNGs, complete content up to the capture limit, and restoration of the desktop layout and original scroll position.
 
-Do not select the repository root; select this extension folder.
+Select the extension folder, not the repository root.

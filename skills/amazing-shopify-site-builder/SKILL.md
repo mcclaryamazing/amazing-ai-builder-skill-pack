@@ -1,6 +1,6 @@
 ---
 name: amazing-shopify-site-builder
-description: "Plan, build, test, and safely launch a consistent Shopify storefront site with Codex. Use for guided full-site Shopify work involving homepage, product/PDP templates, collection templates, content pages, navigation, theme system, reusable sections, Shopify Files imagery, products/collections/pages data, Theme Access, Dev Dashboard Admin API access, QA, approval, rollback, and progress tracking."
+description: "Plan, build, test, and safely launch a consistent Shopify storefront site with a local coding agent. Use for guided full-site Shopify work involving homepage, product/PDP templates, collection templates, content pages, navigation, theme system, reusable sections, Shopify Files imagery, products/collections/pages data, Theme Access, Dev Dashboard Admin API access, QA, approval, rollback, and progress tracking."
 ---
 
 # Amazing Shopify Site Builder
@@ -13,6 +13,8 @@ Before substantive work, follow `references/skill-updates.md`. Stable update key
 Use this as the one skill for helping a member build or rebuild a full Shopify site, not only one campaign page. The member should not need to know separate agent-internal specialties. Walk them through site strategy, theme system, surface planning, implementation, QA, and launch in one guided path.
 
 Use `amazing-landing-page-builder` instead when the project is only a single DTC/campaign landing page. Use this skill when the work spans multiple storefront surfaces or when consistency across homepage, PDPs, collections, and content pages matters.
+
+Before implementation in a new or unverified local environment, read `references/access-setup.md` for local desktop readiness and secure credential setup. These instructions apply to desktop ChatGPT Work when its actual capabilities are available; they do not establish end-to-end Work validation.
 
 ## First Response Contract
 

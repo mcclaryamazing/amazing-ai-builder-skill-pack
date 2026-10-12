@@ -273,10 +273,9 @@ Open Codex with your product facts and brand materials available, then paste:
 Use the amazing-copywriter skill.
 
 Create conversion-focused copy for my consumer brand. Start from the supplied
-product facts, audience, offer, proof, traffic source, and brand voice. Do not
-invent claims, testimonials, guarantees, pricing, shipping terms, urgency, or
-certifications. Mark anything missing for verification and deliver finished,
-channel-appropriate copy with clear benefits, proof, objections, and CTAs.
+product facts, audience, offer, proof, traffic source, and brand voice. Deliver finished, channel-appropriate copy with clear benefits and CTAs,
+using proof and objections where relevant. Keep essential factual questions
+in separate notes and write around nonessential gaps.
 ```
 
 ## Validation

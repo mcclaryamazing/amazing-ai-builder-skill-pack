@@ -4,6 +4,8 @@ This reference condenses the user's original *Ultimate Copywriting Guide for Con
 
 Use it as a workflow checklist, not as text to copy verbatim.
 
+Apply the Core Posture in `../SKILL.md`: deliver finished copy, handle factual checks in the background, and raise only essential missing facts outside customer-facing copy. The inputs and sequences below are options to adapt, not required sections or disclosures.
+
 For the named copywriting-legends lenses, big-idea method, offer and audience discipline, headline and story momentum, empathy and transformation sequence, and channel translation, read `copywriting-legends.md`.
 
 ## Table Of Contents
@@ -20,7 +22,7 @@ For the named copywriting-legends lenses, big-idea method, offer and audience di
 
 Start with a hungry market and a strong offer. Copy can amplify demand, clarify desire, reduce risk, and make the next step feel obvious, but it cannot rescue a weak product/offer mismatch.
 
-Use this order:
+Use these questions to plan the persuasion sequence, including only what the assignment needs:
 
 1. Audience: who is this for?
 2. Pain/desire: what do they already want fixed, gained, avoided, or felt?
@@ -51,7 +53,7 @@ Hero:
 - Use a short benefit-driven headline.
 - Use the subhead to name product category, audience, mechanism, or secondary benefit.
 - Put CTA above the fold when the offer is direct.
-- Add nearby microcopy for risk reversal, shipping, guarantee, quiz length, or discount.
+- Add nearby microcopy when an available detail, such as quiz length or an offer benefit, meaningfully reduces friction.
 
 Section sequence patterns:
 
@@ -66,7 +68,7 @@ Section copy rules:
 - Keep body copy short and mobile-readable.
 - Make bullets feature-benefit pairs.
 - Put proof close to the claim it supports.
-- Use FAQ to answer practical objections: fit, usage, shipping, returns, cancellation, safety, ingredients/materials, compatibility, timing.
+- Use FAQ to answer practical objections and reduce friction, but don't raise objections that a reader might not even be thinking of.
 - Use final CTA copy that restates the core outcome and offer.
 
 CTA rules:
@@ -74,7 +76,7 @@ CTA rules:
 - Use clear command verbs: `Shop Now`, `Add to Cart`, `Take the Quiz`, `Start Your Plan`, `Claim My Discount`.
 - Match the CTA to the real destination and offer.
 - Repeat CTA after major persuasion blocks.
-- Surround CTA with true friction reducers: guarantee, free shipping, secure checkout, delivery speed, easy returns, subscription cancellation.
+- Add relevant, available friction reducers near the CTA when they help the reader decide; do not automatically add shipping, guarantee, or cancellation copy.
 
 ## Meta Ad Copy And Ad-To-LP Match
 
@@ -85,7 +87,7 @@ Primary text structure:
 1. First 1-2 sentences: problem/desire + product category + core outcome.
 2. Next 1-2 sentences: benefit expansion and emotional payoff.
 3. Next 1-3 sentences: proof, scenario, or short story.
-4. Final line: risk reversal and CTA.
+4. Final line: CTA, with risk reversal only when relevant and available.
 
 First 200 characters:
 
@@ -133,7 +135,7 @@ Recommended order:
 Bullet pattern:
 
 - `Feature name: what it does for the customer.`
-- Keep claims source-bound. If a claim needs evidence, flag it.
+- Translate product facts into useful benefits; handle essential missing facts according to the Core Posture in `../SKILL.md`.
 
 Upsell/AOV copy:
 
@@ -193,11 +195,8 @@ Use this before finalizing:
 - Does the first visible copy state a clear outcome?
 - Does the hero match the ad or traffic source?
 - Does every feature become a benefit?
-- Are emotional promises grounded in real product facts?
-- Are all claims, stats, testimonials, endorsements, certifications, guarantees, prices, shipping terms, and specs sourced from intake?
 - Is proof specific and placed near related claims?
-- Are objections answered before the final CTA?
+- Are likely, relevant objections answered without introducing unnecessary concerns?
 - Is CTA copy clear, action-oriented, and matched to the destination?
-- Is urgency true?
 - Is the page skimmable on mobile?
-- Are missing facts marked with placeholders instead of invented?
+- Is the customer-facing copy finished, with any essential factual questions kept in separate notes?

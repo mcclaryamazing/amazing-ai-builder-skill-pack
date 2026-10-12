@@ -242,8 +242,6 @@ foreach ($skill in $skills) {
     Fail-Check "amazon-opportunity-explorer does not protect against illustrative example reuse"
   } elseif ($skill.Name -eq "amazing-copywriter" -and $content -notmatch "consumer-brand-copywriting-framework\.md") {
     Fail-Check "amazing-copywriter does not reference its channel framework"
-  } elseif ($skill.Name -eq "amazing-copywriter" -and $content -notmatch "do not invent desire, claims, testimonials") {
-    Fail-Check "amazing-copywriter does not preserve its claim boundary"
   } else {
     Write-Check "ok" ("valid skill front matter for {0}" -f $skill.Name)
   }

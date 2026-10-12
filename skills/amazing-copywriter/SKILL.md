@@ -12,25 +12,21 @@ Before substantive work, follow `references/skill-updates.md`. Stable update key
 
 ## Core Posture
 
-Write copy like a conversion strategist, not a slogan machine. Start from the customer, the offer, and the proof. Channel existing desire; do not invent desire, claims, testimonials, statistics, certifications, guarantees, pricing, shipping terms, ingredients, specs, or endorsements.
+Write copy like a conversion strategist, not a slogan machine. Start from the customer, the offer, and the proof. Channel existing desire.
 
-Apply the user's copywriting-legends methodology as principles, not impersonation. Use rigorous research, one concrete big idea, hungry-audience and offer discipline, reason-why proof, headline clarity, reading momentum, empathy, transformation, and a direct response path in the brand's own voice. Never imitate a named copywriter's style.
+Apply the user's copywriting-legends methodology as principles, not impersonation. Use rigorous research, one concrete big idea, hungry-audience and offer discipline, reason-why proof, headline clarity, reading momentum, empathy, transformation, and a direct response path in the brand's own voice.
 
-Use the user's facts as the claim boundary:
+Turn supplied features into practical and emotional benefits.
 
-- State supplied facts confidently.
-- Turn supplied features into practical and emotional benefits.
-- Mark missing claims as `[CLAIM TO VERIFY: ...]`.
-- Mark missing proof/assets as `[PROOF NEEDED: ...]` or `[ASSET NEEDED: ...]`.
-- Never borrow claim substance from competitor examples, landing-page exemplars, or the corpus.
+Deliver persuasive, finished copy. Use supplied facts confidently and translate features into practical and emotional benefits. Handle factual checks in the background. Include terms, certifications, qualifications, and objections when they materially help the reader understand the offer or decide. If a missing fact is essential, ask a focused question or flag it briefly outside the customer-facing copy; otherwise write around the gap. Do not invent facts.
 
 For detailed channel patterns and checklists, read `references/consumer-brand-copywriting-framework.md` when the task involves full-page copy, ad copy, product page copy, email sequences, or a copy audit.
 
 Read `references/copywriting-legends.md` when developing or auditing the big idea, audience and offer, headline or hook, mechanism, proof, objection handling, transformation narrative, story momentum, or response path. Use it for high-impact landing pages, Meta campaigns, PDPs, promotional emails, launches, and copy that otherwise feels generic.
 
-## Required Inputs
+## Relevant Inputs
 
-Before drafting substantive copy, gather or infer from available context:
+Use the available context below as relevant to the assignment, not as a mandatory intake checklist. Infer audience and voice where useful; use supplied information for product and offer facts:
 
 - Product: what it is, category, differentiators, price, shipping, specs, ingredients/materials, usage.
 - Customer: who it is for, pain/desire, buying trigger, objections, awareness level.
@@ -50,9 +46,8 @@ If brand voice is missing, propose a compact voice based on audience/category an
 - Use conversational language, short sentences, direct address, and concrete nouns.
 - Translate every feature into a benefit using "so you can..." logic.
 - Add emotion after clarity: relief, confidence, ease, pride, control, status, comfort, joy.
-- Build believability with real proof. If proof is absent, design a proof slot instead of fabricating.
+- Build believability with relevant available proof or a clear explanation of how the product helps. Apply the Core Posture rule when essential information is missing.
 - Keep copy skimmable: short paragraphs, benefit bullets, descriptive subheads, repeated CTAs.
-- Use truthful urgency only. No fake scarcity, fake countdowns, or unsupported "best" claims.
 
 ## Landing Page Workflow
 
@@ -60,13 +55,13 @@ For paid landing pages, produce final copy, not vague direction:
 
 1. Unless the user states otherwise, assume Meta paid-social cold prospecting and state the assumption. Do not treat a named product as proof of PDP-level purchase intent.
 2. Define the message match: driving ad hook, why the visitor clicked, what the ad already established, what remains to be believed, opening copy, and first response path.
-3. Select the persuasion architecture that continues the ad: AIDA, problem-solution-proof-offer, problem-agitate-solve, mechanism-first, demonstration-first, or comparison-first. Use problem-solution-proof-offer when the cold Meta brief is otherwise unclear.
+3. Select the persuasion architecture that continues the ad: AIDA, problem-solution-proof-offer, problem-agitate-solve, mechanism-first, demonstration-first, or comparison-first.
 4. Write a short benefit-driven hero headline, plus 2 alternates.
 5. Write a one-sentence subhead that names the audience, product category, and outcome.
 6. Match the first CTA to the actual next step: `Take the Quiz`, `Shop Now`, `Start Your Plan`, `Add to Cart`, etc.
-7. Build sections in the selected persuasive order, with product comprehension, mechanism or differentiation, proof near claims, offer clarity, risk reversal, objections, and a final CTA.
+7. Build sections in the selected persuasive order, with product comprehension, mechanism or differentiation, relevant proof, offer clarity, and a final CTA. Include risk reversal and objections when they help the reader decide.
 8. Put each section H2 in benefit language, not label language.
-9. Use FAQ to remove buying friction: fit, usage, shipping, returns, safety/compliance, subscription cancellation.
+9. Use FAQ to answer practical objections and reduce friction, but don't raise objections that a reader might not even be thinking of.
 10. Repeat the primary CTA after major persuasion blocks and include a mobile sticky CTA when appropriate.
 
 ## Meta Ad To Landing Page Match
@@ -91,10 +86,9 @@ For full landing-page specs, include:
 - Primary CTA and microcopy.
 - Section-by-section final copy.
 - Benefit bullets.
-- Proof copy with source labels.
-- Offer/risk-reversal copy.
-- FAQ questions and answers.
-- Missing claim/proof/asset placeholders.
+- Relevant proof copy, keeping source notes outside customer-facing copy.
+- Offer copy, with risk reversal where relevant and available.
+- FAQ questions and answers when they address likely buyer questions.
 - Notes on message match and voice choices.
 
 For audits, classify issues as:
@@ -102,7 +96,6 @@ For audits, classify issues as:
 - Missing customer outcome.
 - Feature without benefit.
 - Vague or clever-before-clear headline.
-- Unsupported claim.
 - Weak offer or CTA mismatch.
 - Proof too late or too vague.
 - Objection not handled.

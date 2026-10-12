@@ -1,6 +1,6 @@
 # Copywriting Legends
 
-Use this reference to apply the user's original consumer-brand copywriting method without copying source text or imitating any named writer. Translate the principles into the brand's own voice and keep every claim inside the supplied facts.
+Use this reference to apply the user's original consumer-brand copywriting method without copying source text or imitating any named writer. Translate the principles into the brand's own voice. Follow the Core Posture in `../SKILL.md` for confident use of facts, benefit interpretation, and handling essential missing information outside customer-facing copy.
 
 ## The Combined Method
 
@@ -11,7 +11,7 @@ Strong consumer copy is assembled from research, audience desire, offer strength
 3. Match the offer and hook to a motivated audience.
 4. Give a clear reason why the promise is believable.
 5. Build momentum from the first line to the response.
-6. Make the transformation emotionally relevant without exaggerating it.
+6. Make the transformation emotionally relevant.
 7. Test meaningful alternatives rather than treating any formula as guaranteed.
 
 ## Schwartz: Existing Desire And Awareness
@@ -39,8 +39,8 @@ concrete
 product-specific
 easy to understand
 visual enough to remember
-tied to a real product truth
-supportable by mechanism, proof, or offer logic
+tied to a product truth
+supportable
 ```
 
 Reject empty wordplay and ideas that could fit a competitor unchanged. Treat the customer as intelligent. Preserve the brand's character across headlines, captions, CTAs, FAQs, metadata, and follow-up messages.
@@ -57,15 +57,13 @@ Use curiosity, self-interest, specificity, identity, comparison, pain avoidance,
 
 ## Hopkins And Bencivenga: Reason Why And Believability
 
-Every important claim needs a reason to believe. Support it with the most appropriate available evidence:
+Make the central promise believable using the most appropriate available explanation or evidence. These are options, not a checklist of required proof or terms:
 
 - human proof: reviews, testimonials, UGC, demonstrations, customer stories
 - technical proof: ingredients, materials, specs, testing, process, comparison data
 - authority proof: founder expertise, certifications, press, partners, experts
 - risk proof: guarantee, warranty, trial, returns, secure checkout
 - offer proof: transparent terms, savings math, contents, shipping, cancellation
-
-If proof is missing, use `[PROOF NEEDED: ...]`, `[CLAIM TO VERIFY: ...]`, or softer wording. Never turn an illustrative example into a factual claim.
 
 ## Caples: Headline Clarity And Testing
 
@@ -115,7 +113,7 @@ Do not shame the customer, exaggerate the before-state, or promise a transformat
 
 ## Meta Ad-To-Landing-Page Continuity
 
-Unless the user states otherwise, assume Meta paid-social cold prospecting. The visitor was interrupted in a feed and may not have been shopping for the category. The ad earned attention and the click; the landing page must preserve that momentum and complete the persuasion the ad did not have room to finish.
+For paid landing pages with an unspecified traffic source, assume Meta paid-social cold prospecting. In that context, the visitor was interrupted in a feed and may not have been shopping for the category. The ad earned attention and the click; the landing page must preserve that momentum and complete the persuasion the ad did not have room to finish.
 
 Identify:
 
@@ -137,7 +135,7 @@ Choose the persuasion architecture that continues the ad:
 - Demonstration-first when the ad showed an observable result that the page should explain and substantiate.
 - Comparison-first when the visitor clicked because of a contrast with the old way or an alternative.
 
-For the default cold Meta case, use problem-solution-proof-offer when no other architecture has a stronger rationale. Do not default to PDP copy merely because the brief names a product.
+Choose based on the ad's angle, audience awareness, and remaining belief gap; no single architecture is mandatory for cold Meta traffic. Do not default to PDP copy merely because the brief names a product.
 
 ## Channel Translation
 
@@ -153,27 +151,26 @@ For the default cold Meta case, use problem-solution-proof-offer when no other a
 - Introduce the product soon enough to preserve trust.
 - Put proof near the claims it supports.
 - Make the offer, risk reversal, and next action easy to understand.
-- Use an education-first sequence for cold traffic unless affirmative purchase intent supports a PDP-style response.
+- Consider a listicle or education-first sequence when the visitor needs context; use a more direct response when the ad and audience support it.
 
 ### Product Pages
 
 - Lead with a clear category, use case, and primary outcome.
 - Convert features and specifications into practical and emotional benefits.
-- Keep selection, price, offer terms, shipping, returns, and purchase controls clear.
+- Keep product selection, price, offer details, and purchase controls clear; explain shipping and returns where they help the buying decision.
 - Use proof and mechanism to defend differentiation and price.
 
 ### Email
 
 - Give the message one job and one primary CTA.
 - Use subject and opening to establish the reason to care quickly.
-- Use story only when it naturally leads to the product, offer, or useful insight.
-- Keep promotion terms, urgency, and savings truthful.
+- Use story when it naturally leads to the product, offer, or useful insight.
 
 ### Social And Content
 
 - Deliver value, entertainment, or insight before forcing a sale.
 - Make product integration relevant to the audience's current problem or desire.
-- Preserve the brand voice while keeping claims and endorsements source-bound.
+- Adapt tone intensity to the channel and audience while preserving the brand's voice.
 
 ## Copy Strategy Packet
 
@@ -208,11 +205,10 @@ Before finalizing, confirm:
 - the opening is specific to this product, audience, and context
 - the offer is understandable without rereading
 - the mechanism or reason why makes the promise believable
-- every strong claim has proof, a placeholder, or softer wording
 - the headline earns attention without sacrificing comprehension
-- curiosity resolves truthfully
+- curiosity resolves naturally
 - the copy has forward momentum without filler
-- the transformation is emotionally relevant and evidence-bound
+- the transformation is emotionally relevant
 - the CTA matches the actual next action
 - the final voice belongs to the brand, not to a named copywriter
 

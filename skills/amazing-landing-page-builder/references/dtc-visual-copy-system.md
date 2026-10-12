@@ -2,6 +2,8 @@
 
 Use this reference when choosing visual direction, design tokens, headline patterns, CTA microcopy, FAQ topics, and reusable copy modules.
 
+Write finished copy for the buyer: lead with the practical benefit and why it matters to them, identify the product and actual offer promptly, then explain the mechanism and relevant available reason to believe. Treat inferred emotional motivations as hypotheses, not research findings. Essential missing facts belong in separate notes, not customer copy.
+
 ## Marketing Framework
 
 Unless the user states otherwise, write for Meta paid-social cold prospecting. Continue the ad's hook and reason for the click, then choose the persuasion architecture that closes the remaining belief gap.
@@ -16,7 +18,7 @@ Substantive Numbered Reasons
 Early Solution and Product Reveal
 Proof Near Claims
 Offer and Response Path
-Risk Reversal
+Risk Reversal When Relevant And Available
 Objection Handling and Final CTA
 ```
 
@@ -71,7 +73,7 @@ Style mapping:
 
 ## Design DNA
 
-Use:
+Consider these design practices when they fit the brand and page:
 
 - neutral base canvas
 - one dominant CTA accent color
@@ -124,7 +126,7 @@ Adjust tokens to match the store's real brand and theme.
 
 ## Copy Rules
 
-Prefer specific copy:
+Prefer specific copy grounded in verified facts; the lines below illustrate form, not facts to reuse:
 
 ```text
 Save 25% on your first order
@@ -144,12 +146,12 @@ Shop our amazing collection
 Transform your life
 ```
 
-Each section should usually include:
+Use the parts that help a section do its job; no fixed stack is required:
 
 - eyebrow
 - headline
 - supporting subheadline
-- 2-4 bullets/cards
+- distinct bullets or cards when they make the point easier to scan
 - CTA or proof cue when appropriate
 
 ## Headline Patterns
@@ -171,7 +173,7 @@ Include an explicit `headline_bank` in full copy strategy packets and headline-d
 
 ## CTA Microcopy
 
-Add reassurance near high-friction CTAs:
+Use relevant, verified reassurance near a CTA when it answers a likely hesitation:
 
 - free shipping over verified threshold
 - returns or guarantee terms
@@ -182,7 +184,7 @@ Add reassurance near high-friction CTAs:
 - try risk-free
 - warranty included
 
-When unverified, record placeholders in the separate specification/evidence checklist, never in rendered copy. Omit or truthfully rewrite the unsupported promise under the Customer-Facing Copy Gate in SKILL.md:
+When a fact essential to the offer or action is unverified, record a focused question in the separate specification/evidence notes. Otherwise omit or truthfully rewrite the unsupported promise. Never show these questions in rendered copy:
 
 ```text
 [Confirm shipping threshold]
@@ -194,7 +196,7 @@ When unverified, record placeholders in the separate specification/evidence chec
 
 Generate FAQs from objections, not generic filler.
 
-Minimum FAQ topics to consider:
+Consider only topics a buyer is likely to need for this product and offer:
 
 - shipping
 - returns or guarantee
@@ -225,7 +227,7 @@ Reuse modules when they fit the product:
 
 ## Copy Depth And Image Sequence
 
-Default to long-form, substantive copy: develop each reason with product-specific explanation, mechanism, proof and objections; use scannable sections without stripping the argument. Shorter copy requires relevant performance evidence and a recorded rationale for this product, audience, traffic and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count or add filler.
+Default to a substantive long-form argument: develop reasons with product-specific explanation and support where relevant, and address real objections. Cut irrelevant modules, repeated claims, and filler without needing performance data. Choosing an overall short-form design instead of the long-form default requires relevant performance evidence and a recorded rationale for this product, audience, traffic, and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count.
 
 Use the ideal visual direction to specify placeholder slots first. Do not select or insert existing images, or generate new ones, before the wireframe artifact is internally reviewed and the image approval gate in dtc-design-package.md is satisfied.
 
@@ -236,11 +238,11 @@ Apply these complementary principles, not any writer's voice or source text. The
 - Schwartz: identify the buyer's existing desire, awareness and beliefs; connect the product to that desire and close the remaining belief gap. Awareness guides explanation, not automatic PDP eligibility or shorter copy.
 - Ogilvy: research product facts, mechanism, differentiators, objections and proof; organize the page around one concrete, memorable, supportable big idea while preserving brand character.
 - Halbert: choose the motivated audience, make the real offer worthwhile, then earn attention with a specific truthful hook. Resolve curiosity and never fabricate scarcity.
-- Hopkins and Bencivenga: give important promises a credible reason why; place relevant human, technical, authority or offer evidence beside claims. Missing support requires a verification placeholder or softer wording.
+- Hopkins and Bencivenga: give important promises a credible reason why using relevant available human, technical, authority, or offer evidence. Soften or omit an unsupported promise; record an essential unanswered factual question separately.
 - Caples: write clear, benefit-led headlines using useful novelty or truthful curiosity. When testing alternatives, vary meaningful angles rather than adjectives; do not claim a winner without data.
-- Sugarman: make each sentence and section earn the next through concrete detail, logical transitions and resolved open loops. Remove repetition and throat-clearing without reducing the substantive long-form argument.
+- Sugarman: make each sentence and section earn the next through concrete detail, logical transitions and resolved open loops. Remove repetition and throat-clearing while keeping the argument substantive.
 - Edwards: connect the person's situation and problem to an attainable aspiration, solution, supported transformation, offer and clear response. Do not shame the buyer or exaggerate outcomes.
 
-Before full copy, produce a copy strategy packet with audience desire/awareness, verified product research, big idea, hook, ad promise and remaining belief gap, mechanism, claim-to-proof mapping, offer logic, actual response path and brand voice. Map those decisions to the hero and key numbered reasons, proof blocks, objections and CTA. Include a concise application note citing specific copy passages; listing the writers' names is not evidence of application.
+Before full copy, produce a concise copy strategy packet covering audience desire and awareness, verified product and offer facts, big idea, ad promise and remaining belief gap, relevant mechanism and proof, actual response path, and brand voice. Map these choices to the hero, key reasons, objections, and CTA. Explain how specific copy passages apply the principles; listing writers' names is not evidence of application. Make the actual purchase terms clear even when no risk-reversal offer exists.
 
-During wireframe QA, challenge whether the opening continues the ad, the big idea could fit a competitor unchanged, each major promise has support or a placeholder, reasons build belief without repetition, the offer is clear and the response is actionable. Record concrete findings and revisions in the same evidence-based QA. No separate copywriting skill or fresh external brand exemplar is required.
+During wireframe QA, challenge whether the opening continues the ad, the big idea could fit a competitor unchanged, each major promise has support or is truthfully qualified, reasons build belief without repetition, the actual offer is clear, and the response is actionable. Check that the copy leads with a meaningful benefit, reaches the emotional reason to care, and uses available evidence or explanation to make the promise believable. Record concrete findings and revisions in the same evidence-based QA. These embedded principles are sufficient for the builder workflow; no separate copywriting skill installation or fresh external brand exemplar is required.

@@ -20,8 +20,8 @@ The page should answer quickly:
 What is this?
 Why should I care?
 Why this brand/product?
-Why now?
-Why is it safe to try?
+Why act now, if there is a real reason?
+What would make the purchase feel clear and credible?
 What do I do next?
 ```
 
@@ -39,7 +39,7 @@ Do not promise patterns are guaranteed to convert unless the user provides real 
 
 ## Full Design Process
 
-Default to long-form, substantive copy: develop each reason with product-specific explanation, mechanism, proof and objections; use scannable sections without stripping the argument. Shorter copy requires relevant performance evidence and a recorded rationale for this product, audience, traffic and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count or add filler.
+Default to long-form, substantive copy: develop each useful reason with product-specific explanation, mechanism, available proof and objections; use scannable sections without stripping the argument. Delete repetitive or irrelevant passages even when there is no performance evidence. Choosing an overall short-form page still requires relevant performance evidence and a recorded rationale for this product, audience, traffic and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count or add filler.
 
 Start from verified product, audience, offer and traffic context. Ask only material missing questions; otherwise label assumptions. Use all relevant design references and produce complete strategy, copy, section sequence, image direction and QA. Deeper product, claim or audience research is useful when evidence is weak; fresh external brand exemplars are not mandatory.
 
@@ -47,21 +47,21 @@ A PDP is eligible only for explicitly identified retargeting traffic. Consider i
 
 ## Wireframe And Image Approval
 
-The first design deliverable is an actual rendered, reviewable full-page desktop/mobile wireframe artifact (for example local HTML), not merely a JSON spec or slot list with substantive page copy and exclusively image placeholders, even when existing images are available. Define the ideal image for every slot from its persuasive purpose, not from the asset inventory: subject/action, product truth, composition, placement, aspect ratio, target pixel dimensions, desktop/mobile crop and safe areas, alt text and planned filename. Existing product information may inform factual accuracy; do not select, generate or insert final imagery yet.
+The first design deliverable is an actual rendered, reviewable full-page desktop/mobile wireframe artifact (for example local HTML), with substantive finished page copy and exclusively image placeholders, even when existing images are available. A JSON spec or slot list alone does not suffice. Define the ideal image for every slot from its persuasive purpose, not from the asset inventory: subject/action, product truth, composition, placement, aspect ratio, target pixel dimensions, desktop/mobile crop and safe areas, alt text and planned filename. Existing product information may inform factual accuracy; do not select, generate or insert final imagery yet.
 
 Internally review the rendered desktop/mobile wireframe against the strategy and QA rubric, resolve findings, then present it for approval before selecting, generating or inserting final imagery. Explicit end-to-end authorization may waive this conversational pause; record that authorization, but still create the wireframe artifact and complete its internal review before imagery work. Otherwise stop at this approval gate. Afterward, propose existing images only when they fit the approved ideal slot; explain the fit or gap and generate/source replacements when needed. Do not redesign ideal slots to accommodate convenient assets.
 
-## Ask, Infer, Or Placeholder Rules
+## Ask, Infer, Or Omit
 
-Ask before drafting only when the missing answer changes the page in a material way.
+Ask before drafting only when the missing answer changes the page in a material way and the page cannot progress honestly by omitting that detail.
 
 Ask when missing:
 
 - actual product or product category
 - primary conversion goal
 - real CTA path when selection, quiz, bundle, customization, verification, or lead capture may be required
-- offer terms displayed as real discounts, urgency, guarantees, financing, free shipping, or free gifts
-- compliance boundaries for health, safety, sustainability, clinical, financial, superiority, or competitor claims
+- offer terms when a real discount, urgency, guarantee, financing, free shipping, or gift must appear in the proposed copy or determine the purchase path
+- a specific unresolved boundary for a material claim that must appear in the proposed page and cannot be resolved from available facts
 - required Shopify target, theme, product, collection, or implementation path only when needed for authorized implementation; these are not prerequisites for standalone design, audit or copy work
 
 Infer when missing:
@@ -74,18 +74,16 @@ Infer when missing:
 - device priority: default to `mobile_first`
 - style direction: default to `minimalist_clean_with_conversion_density`
 - brand trust level: default to `new` unless visible proof shows brand equity
-- proof need: stronger for new brands, premium products, claim-heavy products, subscriptions, and regulated categories
+- proof need: assess what would help belief for new brands, premium products, claim-heavy products, subscriptions, and regulated categories; absence of optional proof does not require a page placeholder
 - sticky CTA: enabled for long paid-traffic pages, high-AOV products, quiz funnels, offer pages, and mobile-first pages
 
-Use these placeholders only in the separate specification/evidence checklist when missing facts would otherwise be fabricated. They are not rendered page copy; omit or truthfully rewrite unsupported statements under the Customer-Facing Copy Gate in SKILL.md:
+Use a separate specification/evidence note only for a missing fact that materially affects proposed published copy or an honest purchase decision. These prompts are never rendered page copy; omit or truthfully rewrite unsupported statements under the Customer-Facing Copy Gate in SKILL.md. Do not carry a checklist of nonessential gaps into the handoff:
 
 ```text
 [Confirm current offer terms]
-[Insert verified review count]
-[Add real testimonial]
 [Verify guarantee terms]
 [Confirm shipping threshold]
-[Substantiate claim before launch]
+[Substantiate material claim used in proposed copy]
 ```
 
 Never invent review counts, testimonials, prices, discounts, guarantee terms, shipping terms, certifications, clinical or testing claims, expert endorsements, urgency, scarcity, customer counts, before/after outcomes, awards, or inventory.
@@ -110,7 +108,7 @@ Read only what the current page needs:
 Produce a structured `ShopifyLandingPageDesignSpec` or equivalent with:
 
 - metadata: brand, product, category, design rationale, destination archetype, persuasion architecture, confidence label, primary goal, traffic source, campaign stage, awareness level
-- assumptions: inferred defaults and facts needing merchant/legal verification
+- assumptions: inferred defaults and material facts needing merchant verification for proposed copy or purchase
 - derived_strategy: education need, proof need, risk reversal need, comparison need, CTA mode, offer strength, claim sensitivity, sticky CTA need, listicle-default status, listicle override rationale, PDP eligibility, and PDP eligibility rationale
 - copy_strategy_packet: audience desire/awareness, factual research, big idea, hook, mechanism, claim-to-proof mapping, offer, response path, brand voice, explicit headline_bank and section-level application of the copywriting principles
 - message_family_routes, when multiple ads are supplied: source ads, shared promise, remaining belief gap, destination or distinct opening, and routing rationale; follow dtc-derived-strategy.md
@@ -119,11 +117,11 @@ Produce a structured `ShopifyLandingPageDesignSpec` or equivalent with:
 - visual direction: style, colors, typography, section rhythm
 - sections: IDs, components, copy, props, CTAs, proof, mobile notes, image slots
 - image_production_plan: ideal specifications for every slot; final asset choices only after the image approval gate
-- compliance: claims to verify and facts not to invent
+- material claim and offer verification notes where the proposed copy or purchase path depends on them
 - metadata_direction: SEO title, meta description, social preview copy, image direction
-- QA checklist: score with evidence from the actual spec/wireframe, blockers, revision notes
+- QA checklist: score with evidence from the actual spec/wireframe, material blockers, revision notes
 - wireframe: reviewable desktop/mobile artifact, internal review findings and image-gate approval or explicit end-to-end waiver
-- copy_length: long-form default or relevant performance evidence and rationale for shorter copy
+- copy_length: substantive long-form default; relevant performance evidence and rationale only for an overall short-form page choice, not for pruning repetitive or irrelevant passages
 
 ## Design Review Gate
 
@@ -142,13 +140,13 @@ A PDP is selected only for explicitly identified retargeting and clearly wins th
 The product is instantly understandable.
 The offer is clear without rereading.
 CTAs match the actual next step.
-Proof is close to the claims it supports.
-Risk reversal is visible.
+Material claims are supported near the claim or rewritten within verified facts.
+Actual merchant risk-reversal terms are accurate and easy to find when relevant.
 Major objections are answered.
 The mobile purchase path is obvious.
 Image slots are exact enough to build.
 Every image in the first wireframe is an exact placeholder, including slots with existing assets.
 Metadata matches the page promise.
-Unsupported claims are removed, softened, or flagged.
+Unsupported material claims are removed or accurately qualified in customer copy.
 Shopify implementation has enough detail to build without redesigning the page.
 ```

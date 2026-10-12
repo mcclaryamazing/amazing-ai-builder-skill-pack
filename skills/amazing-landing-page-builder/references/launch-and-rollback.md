@@ -1,6 +1,6 @@
 # Launch And Rollback
 
-Before launch, rerun the Customer-Facing Copy Gate from SKILL.md and the rendered sweep in final-wireframe-review.md on the implemented page. Seller notes and non-image verification placeholders must not reach customers; retain seller-supplied or approved buyer disclosures and record missing evidence as separate launch blockers.
+Before launch, rerun the Customer-Facing Copy Gate from SKILL.md and the rendered sweep in final-wireframe-review.md on the implemented page. Seller notes and non-image verification placeholders must not reach customers; retain seller-supplied or approved buyer disclosures. Check actual material claims and purchase terms against the merchant's facts in the background. An unresolved fact blocks launch only when it affects proposed published copy or an honest purchase decision; omit optional proof or commercial elements that the merchant has not supplied rather than publishing a placeholder or treating every unknown as a blocker.
 
 Use this reference before theme pushes, Admin API mutations, live preview, final QA, launch approval, disable paths, or rollback planning.
 
@@ -137,6 +137,8 @@ images load from Shopify Files
 CSS and JS load from theme assets
 metadata and social tags are correct
 CTAs point to correct product, variant, cart, checkout, quiz, form, or collection path
+material customer-facing claims are supported or accurately qualified
+displayed price, discount, shipping, guarantee, subscription, and eligibility terms match the actual merchant offer
 mobile layout works
 desktop layout works
 no horizontal overflow

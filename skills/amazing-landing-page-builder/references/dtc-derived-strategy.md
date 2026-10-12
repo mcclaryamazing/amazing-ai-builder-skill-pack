@@ -6,16 +6,16 @@ Use this reference before writing final copy or selecting sections. The goal is 
 
 - Do not invent facts.
 - Unless the user states otherwise, assume `meta_paid_social` and `cold_prospecting`, state the assumption, and treat the visitor as having low or unexpressed commercial intent before the ad interrupted their feed.
-- Use placeholders for missing proof, offer terms, prices, guarantees, shipping, certifications, claims, testimonials, or urgency.
-- Flag health, clinical, safety, sustainability, financial, performance, medical, regulatory, superiority, and competitor-comparison claims.
+- Keep missing material facts in separate notes only when proposed published copy or an honest purchase decision depends on them. Omit unsupported optional proof and commercial terms from customer copy.
+- Check material health, clinical, safety, sustainability, financial, performance, medical, regulatory, superiority, and competitor-comparison claims for support when proposed in customer copy; do not add blanket flags for claims the page does not make.
 - Design mobile-first.
 - Match CTA labels to the real next step.
 - Continue the ad promise in the hero when an ad or campaign promise exists.
-- Put proof close to the claim it supports.
+- Put available proof close to the material claim it supports, or rewrite the claim within verified facts.
 - Use real urgency only.
 - Continue the ad's hook and reason for the click before expecting product-level purchase intent.
 - Preserve visible purchase access when useful, but do not force every cold-traffic opening into a PDP buy box.
-- Keep premium pages dense with product clarity, offer clarity, proof, specs, objections, and an appropriate response path.
+- Give premium pages enough product and offer clarity, useful detail, relevant evidence, objection handling, and an appropriate response path to justify the decision.
 
 ## Intake Fields
 
@@ -25,9 +25,9 @@ Extract or infer:
 {
   "brand": "name, category, voice, trust level, positioning",
   "product": "name, type, price, variants, mechanism, benefits, objections",
-  "offer": "discount, bundle, free shipping, gift, guarantee, urgency, eligibility",
+  "offer": "actual merchant offer and any verified discount, bundle, shipping, gift, guarantee, urgency, eligibility",
   "traffic": "source, campaign stage, temperature, ad angle, ad promise, click motivation, work already completed by the ad, audience, awareness level",
-  "proof": "reviews, UGC, press, certifications, testing, founder/expert, guarantee",
+  "proof": "available reviews, UGC, press, certifications, testing, founder/expert evidence; none is an allowed result",
   "assets": "product, lifestyle, UGC, packaging, logo, and social images",
   "constraints": "compliance, claims to avoid, platform, required sections",
   "response_path": "purchase, variant selection, bundle, quiz, lead capture, verification, customization, or collection click"
@@ -92,6 +92,8 @@ Apply the same archetype and PDP eligibility rules to each route. A routing reco
 
 ## Need Scores
 
+These labels guide editorial emphasis; they do not require proof modules, risk-reversal promises, comparison sections, or FAQ blocks. Use only actual merchant facts and material buyer questions. A missing optional element does not become a launch blocker.
+
 Education need:
 
 - low: familiar product, low price, simple SKU, clear category
@@ -102,7 +104,7 @@ Proof need:
 
 - low: established brand, simple product, low claims, low price
 - medium: growing brand, mid price, moderate claims, common product with differentiation
-- high: new brand, high price, health/safety claims, baby/pet/wellness, technical product, subscription, new mechanism, strong superiority claims
+- high: strong material claims, high price, health/safety claims, baby/pet/wellness, technical product, subscription, new mechanism, strong superiority claims; a new brand may need more explanation without requiring nonexistent third-party proof
 
 Risk reversal need:
 
@@ -150,11 +152,11 @@ Create this before final page copy:
   "mechanism": "Why the product can deliver the promise",
   "primary_hook": "Benefit, curiosity, proof, identity, comparison, or offer hook",
   "transformation": "Before/after change to make believable",
-  "proof_needed": ["Proof required for strongest claims"],
-  "offer_logic": "Why action now makes sense",
+  "proof_needed": ["Evidence needed only for material claims proposed in customer copy"],
+  "offer_logic": "Actual merchant offer and why it matters; no invented urgency",
   "response_path": "Actual CTA and next step",
-  "headline_bank": [{"headline": "Product-specific alternative", "angle": "Meaningfully different hook", "message_family": "Relevant ad family, if supplied", "proof_needed": "Supporting fact or verification placeholder"}],
-  "claim_verification_notes": ["Unresolved claims and the evidence needed"]
+  "headline_bank": [{"headline": "Product-specific alternative", "angle": "Meaningfully different hook", "message_family": "Relevant ad family, if supplied", "proof_needed": "Evidence only if the headline makes a material claim"}],
+  "claim_verification_notes": ["Only material unresolved claims retained for possible published copy"]
 }
 ```
 
@@ -162,15 +164,15 @@ A strong big idea is concrete, product-specific, visual enough to remember, tied
 
 ## Offer And Proof Architecture
 
-Construct offers from five layers:
+Consider these five optional offer layers only when they exist in the actual merchant offer. Omit absent layers; do not create a missing-input checklist for them, invent an incentive or turn illustrative values into presumed facts:
 
 ```json
 {
-  "primary_incentive": "20% off first order",
-  "aov_lever": "Buy 3 save 20%",
-  "friction_reducer": "Free shipping over $75",
-  "risk_reversal": "30-day money-back guarantee",
-  "urgency_or_reason_now": "Limited-time launch offer"
+  "primary_incentive": "Verified merchant incentive, if any",
+  "aov_lever": "Verified bundle or quantity offer, if any",
+  "friction_reducer": "Verified shipping or payment term, if any",
+  "risk_reversal": "Verified return, trial, or guarantee term, if any",
+  "urgency_or_reason_now": "Real merchant deadline or reason to act now, if any"
 }
 ```
 
@@ -180,12 +182,12 @@ Proof layers:
 - human: testimonials, UGC, before/after where compliant, fit data
 - authority: press, experts, founder, partners, certifications
 - technical: ingredients, materials, specs, testing, comparison data
-- risk: money-back guarantee, trial, warranty, secure checkout, free returns
+- risk: actual merchant guarantee, trial, warranty, checkout terms, or returns policy when relevant
 
-Place proof close to the claims it supports.
+Place available proof close to the material claims it supports. If that proof does not exist, write a narrower truthful claim or omit it. A weak proof inventory is an input to copy judgment, not a command to insert empty proof modules.
 
 ## Research Depth And Copy Length
 
-Default to long-form, substantive copy: develop each reason with product-specific explanation, mechanism, proof and objections; use scannable sections without stripping the argument. Shorter copy requires relevant performance evidence and a recorded rationale for this product, audience, traffic and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count or add filler.
+Default to long-form, substantive copy: develop each useful reason with product-specific explanation, mechanism, available proof and objections; use scannable sections without stripping the argument. Delete repetitive or irrelevant passages even without performance evidence. Choosing an overall short-form page still requires relevant performance evidence and a recorded rationale for this product, audience, traffic and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count or add filler.
 
 Deepen research for unclear positioning, weak proof, complex offers, claim sensitivity or QA failures within the same full-design process. Do not require fresh brand exemplars.

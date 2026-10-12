@@ -95,8 +95,8 @@ The landing-page skill guides Codex through the full DTC page path. It uses one 
 
 1. Understand the product, audience, offer, and traffic source.
 2. Inspect the Shopify repo, theme setup, and launch constraints.
-3. Create a Shopify-ready DTC strategy, copy package, section sequence, and exact image-slot plan using assumptions/placeholders when speed is preferred.
-4. Approve claims, offer, product wiring, page structure, and image plan.
+3. Create a Shopify-ready DTC strategy, finished copy, section sequence, and exact image-slot plan; keep essential factual questions separate.
+4. Review the wireframe, actual offer, product wiring, page structure, and image plan; resolve only material factual gaps affecting the proposed page or purchase.
 5. Build the page in real Shopify theme files.
 6. Add Shopify Files imagery, metadata, and purchase wiring.
 7. QA desktop, mobile, interactions, accessibility basics, and checkout path.
@@ -146,7 +146,7 @@ conversion-copy workflow:
 
 ## Member Readiness Checklist
 
-For a landing-page strategy, the member can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Missing launch facts should become labeled assumptions or verification placeholders.
+For a landing-page strategy, the member can start with only the product, likely buyer, offer if any, primary CTA, and whatever proof/assets are available. Keep essential factual questions in separate notes and write around optional gaps. Use the targeted source-guide index for richer category and component examples without importing historical content mandates.
 
 Before building, previewing, launching, or mutating Shopify state, the member should have or be able to get:
 
@@ -232,7 +232,7 @@ Use the amazing-landing-page-builder skill.
 
 I want to create a high-converting Shopify landing page for this store. Inspect this repo first, show me the Shopify Landing Page Build Progress tracker, and guide me like a new user.
 
-Use the full-design process, deepening research when the page requires it. Ask only for the product, audience, offer, traffic source, proof/assets, claims, and CTA path that materially change the page. Use labeled assumptions and verification placeholders instead of inventing facts. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, placeholder-only imagery before approval, then suitable Shopify Files images, and a rollback path.
+Use the full-design process, deepening research when the page requires it. Ask only for facts that materially change the page or purchase path. Deliver finished benefit-led copy, include proof and reassurance only when relevant and available, and keep essential factual questions separate. Use the targeted archive examples for useful visual and interaction choices. Create a Shopify-ready DTC design package before touching theme files, then build and preview the page safely using real Shopify theme files, placeholder-only imagery before approval, then suitable Shopify Files images, and a rollback path.
 ```
 
 ## Start A Shopify Site Build

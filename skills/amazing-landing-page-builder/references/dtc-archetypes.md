@@ -12,6 +12,8 @@ Choose destination and persuasion architecture separately. Keep `advertorial_lis
 
 ## Archetype Matrix
 
+Sequences are design menus, not lists of mandatory sections. Use the actual merchant offer and available product information. Include proof, reviews, guarantees, risk reversal, FAQs and terms only when relevant and available; omit unused modules without creating evidence placeholders or a launch blocker. Maintain a clear product argument and response path.
+
 ```text
 advertorial_listicle:
   default for cold Meta prospecting; especially strong for problem reframing, curiosity, unfamiliar categories, commodity disruption, and non-obvious value
@@ -58,8 +60,8 @@ PDP direct-response:
 
 - make the first screen shoppable
 - include price/selector or clear anchor to the buy module
-- keep proof near CTA
-- include objection handling and final CTA
+- place relevant available proof near the decision it supports
+- answer likely buyer questions and keep the final response accessible
 - avoid generic homepage structure for ad traffic
 - require explicitly identified retargeting and a documented last-choice comparison that PDP clearly wins
 - do not treat a named product, single SKU, premium price, or configurable product as sufficient eligibility by itself
@@ -75,7 +77,7 @@ Educational direct-response:
 
 Offer page:
 
-- show offer terms early and repeat them near conversion points
+- make material offer details clear at the relevant decision points without repeating unnecessary terms
 - use urgency only when real
 - include offer terms in FAQ when terms matter
 - avoid hiding the actual product behind promo language
@@ -84,7 +86,7 @@ Subscription funnel:
 
 - state cadence, first-order price, future price, savings, cancellation, and commitment truth
 - show value per use or per serving where helpful
-- include risk reversal and subscription FAQ
+- include available risk reversal and subscription FAQ when they address likely questions
 - avoid unclear future pricing
 
 Bundle builder:

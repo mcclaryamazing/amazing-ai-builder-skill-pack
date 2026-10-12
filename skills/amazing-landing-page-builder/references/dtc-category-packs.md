@@ -1,10 +1,12 @@
 # DTC Category Packs
 
-Non-image proof/term placeholders below are specification-only under the Customer-Facing Copy Gate in SKILL.md. Render only verified customer copy; omit or truthfully rewrite unsupported statements and record missing evidence separately. Designated image placeholders retain their prescribed production fields.
+Write finished, benefit-led customer copy with relevant available proof and actual offer terms. These category patterns are menus, not required section or reassurance counts. Omit unsupported or irrelevant elements; keep essential factual questions in separate notes, never in rendered copy. Designated image placeholders retain their prescribed production fields.
 
 Use this reference when product category should shape frictions, proof, section sequence, offer mechanics, visual direction, or compliance caution.
 
-Category patterns adapt content and purchase modules within the selected archetype; they never override the long-form listicle default or the retargeting-only last-choice PDP gate. All visual suggestions describe ideal placeholder slots until wireframe approval.
+See the [archive category examples](source-guide-index.md#category-lines) for additional visual patterns. They are optional art direction examples, not verified product facts or current requirements.
+
+Category patterns adapt content and purchase modules within the selected archetype; they never override the long-form listicle default or the retargeting-only last-choice PDP gate. The recommended hero elements apply only to an eligible selected commerce-first opening; in a listicle, introduce the same useful information at the persuasive stage where it fits. All visual suggestions describe ideal placeholder slots until wireframe approval. Choose art direction to fit the actual product and brand, not as a universal template.
 
 ## Apparel
 
@@ -15,11 +17,11 @@ Primary frictions:
 Recommended hero:
 
 - product/model gallery
-- visible rating or placeholder proof
+- verified rating when relevant and available
 - size selector or fit guidance
 - clear price
 - `Select Size` CTA
-- shipping/returns microcopy
+- relevant verified shipping or returns terms
 
 Recommended sections:
 
@@ -27,7 +29,7 @@ Recommended sections:
 - fabric or material section
 - shop the look
 - style or fit comparison
-- reviews with fit metadata
+- real reviews with available fit metadata such as usual size, purchased size, height, or fit experience
 - UGC/lifestyle gallery
 - FAQ for sizing, returns, and care
 
@@ -51,7 +53,7 @@ Primary frictions:
 Recommended hero:
 
 - product packshot plus serving/use visual
-- rating/review count or placeholder
+- verified rating or review count when relevant and available
 - subscription savings if relevant
 - free gift/starter kit if real
 - `Choose Flavors`, `Choose a Pack`, or `Get Started` CTA
@@ -72,12 +74,16 @@ Offer patterns:
 
 - subscription discount, free starter kit, free shipping, money-back guarantee, bundle discount, first-order discount
 
+Art direction options:
+
+- ingredient macros, serving details, or preparation close-ups when they help explain the product; use accurate ingredient identification and avoid implying a result the image cannot prove
+
 Avoid:
 
 - unverified health claims
 - unclear subscription pricing
 - generic healthy copy
-- no taste reassurance
+- unsupported taste claims or an unanswered taste objection when taste is central to the purchase
 
 ## Beauty And Personal Care
 
@@ -88,10 +94,10 @@ Primary frictions:
 Recommended hero:
 
 - result-led lifestyle image plus product image
-- rating/review count or placeholder
+- verified rating or review count when relevant and available
 - shade/routine help when relevant
 - `Add to Bag` or `Take the Quiz` CTA
-- free shipping/returns microcopy
+- relevant verified shipping or returns terms
 
 Recommended sections:
 
@@ -127,7 +133,7 @@ Recommended hero:
 - product-on-white plus lifestyle context
 - price/discount if verified
 - configuration controls
-- reviews or placeholder proof
+- real reviews when available and useful
 - financing if high-AOV and real
 - `Add to Cart` with price or selection CTA
 - shipping/returns/guarantee line
@@ -148,11 +154,15 @@ Offer patterns:
 
 - bundle savings, seasonal sale, free shipping, financing, warranty, return guarantee
 
+Art direction options:
+
+- warm room photography to show scale and lived use; restrained serif headings and neutral materials can suit an editorial home brand when they match its identity
+
 Avoid:
 
 - no dimensions
 - no shipping clarity
-- weak return reassurance
+- unclear applicable return terms when those terms matter to the purchase
 - style-heavy page with no operational confidence
 
 ## Pet And Baby
@@ -166,7 +176,7 @@ Recommended hero:
 - warm lifestyle image
 - clear product/offer
 - expert/vet/parent proof if real
-- rating/review count or placeholder
+- verified rating or review count when relevant and available
 - `Get Started`, `Choose Size`, or `Find Recipe` CTA
 - guarantee or free shipping if verified
 
@@ -186,11 +196,15 @@ Offer patterns:
 
 - free gift, first-order discount, subscription savings, free shipping, money-back guarantee, bundle supply
 
+Art direction options:
+
+- warm photography of real use and softly rounded cards can make a pet or baby page approachable; keep safety information clear and avoid treating warmth as evidence of safety
+
 Avoid:
 
 - unsupported medical/health claims
 - unclear subscription future pricing
-- cuteness without safety proof
+- cuteness used to imply safety without supporting facts
 
 ## Wellness, Electronics, And Recovery Tech
 
@@ -203,7 +217,7 @@ Recommended hero:
 - premium lifestyle or device render
 - specific outcome
 - financing/trial if available
-- proof cue
+- relevant available verified proof cue
 - `Shop Now`, `Try Free`, or accurate next-step CTA
 
 Recommended sections:
@@ -222,11 +236,15 @@ Offer patterns:
 
 - free trial, financing, warranty, HSA/FSA only if valid, free shipping, money-back guarantee
 
+Art direction options:
+
+- accurate device and app UI imagery can show setup and everyday use; a premium dark or clinical treatment may fit the brand when it preserves readability
+
 Avoid:
 
 - technical jargon without benefit translation
 - regulated claims without substantiation
-- high price without financing or risk reversal
+- high price without a clear explanation of value and the actual purchase terms
 
 ## Outdoor Gear And Utility Products
 
@@ -238,10 +256,10 @@ Recommended hero:
 
 - product-on-white
 - specific utility promise
-- review proof or placeholder
+- real review proof when available and useful
 - price
 - `Add to Cart` or selection CTA
-- trust strip
+- relevant verified trust cue when useful
 
 Recommended sections:
 
@@ -262,8 +280,8 @@ Avoid:
 
 - feature list without use-case explanation
 - no specs
-- no durability proof
-- weak warranty visibility
+- unsupported durability claims
+- unclear actual warranty terms when the warranty matters to the buying decision
 
 ## Custom, Print, And Configurable Goods
 
@@ -277,7 +295,7 @@ Recommended hero:
 - customization CTA
 - starting price if verified
 - sample or design help offer when real
-- trust cue
+- relevant verified trust cue when useful
 
 Recommended sections:
 
@@ -301,7 +319,6 @@ CTA examples:
 Avoid:
 
 - forcing customization before explaining quality
-- no sample bridge
-- no design support path
+- hiding an available sample or design-support path when it would resolve a real buying hesitation
 - unclear proofing/approval process or minimum quantity
 - unclear production/shipping timeline

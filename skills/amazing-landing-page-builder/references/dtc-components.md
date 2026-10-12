@@ -1,8 +1,10 @@
 # DTC Components
 
-Non-image proof/term placeholders below are specification-only under the Customer-Facing Copy Gate in SKILL.md. Render only verified customer copy; omit or truthfully rewrite unsupported statements and record missing evidence separately. Designated image placeholders retain their prescribed production fields.
+Write finished, benefit-led customer copy from verified product and offer facts. Use relevant available proof and terms where they help the decision; no component requires a fixed number of proof cues or reassurance lines. Keep essential unanswered factual questions in separate notes, never in rendered copy. Designated image placeholders retain their prescribed production fields.
 
 Use this reference when shaping the section sequence, component responsibilities, CTA system, sticky CTA, comparison table, review summary, cross-sells, email capture, or image slots.
+
+The [source guide index](source-guide-index.md#section-blueprint-lines) points to archived layout and module examples for the mechanism, reviews, cross-sells, and sticky CTA. Those examples are options to adapt, not current mandates or evidence that any product fact or offer term is true.
 
 ## Selection Contract
 
@@ -43,25 +45,25 @@ Footer
 StickyCTA
 ```
 
-Lead with product, not brand mission. Show price before comparison tables. Place FAQ near the bottom as objection cleanup. Include a non-buyer exit ramp when useful. On long pages, include sticky CTA or final offer recap.
+Lead with the customer's benefit and identify the product early, rather than opening with brand mission. Show the actual price and purchase details before asking the visitor to compare value. Place relevant FAQ answers near the bottom for remaining objections. Include a non-buyer exit ramp when useful. On long pages, provide conversion access after the argument has earned it, through a sticky CTA or final offer recap. Omit components that do not serve this product and avoid repeating the same point to fill a scaffold.
 
 ## Hero Commerce Stack
 
 For PDP-selected routes, the hero is a compressed buy box, not a billboard. Do not apply this model to the default listicle opening.
 
-Include:
+Choose the relevant elements:
 
 - product/category or offer eyebrow
 - specific outcome or transformation headline
 - mechanism plus audience subheadline
 - product visual or gallery
-- proof row: rating, review count, press, certification, customer count, guarantee, or placeholder
+- a verified proof cue, such as a rating, review, press mention, certification, or customer count, when useful
 - offer cue when relevant
 - price or selector when relevant
 - exact CTA
-- reassurance microcopy: shipping, guarantee, returns, cancel anytime, secure checkout, warranty, or placeholder
+- a relevant verified term near the action when it resolves a real hesitation, such as shipping, returns, cancellation, or warranty
 
-For unknown brands, prioritize verified proof or verified risk reversal in the hero. If evidence is missing, record the proof need separately; do not render a proof request or invent reassurance.
+For an unfamiliar brand, prioritize the most relevant available reason to believe or risk reduction in the hero. If a missing fact is essential to the offer or action, record a focused question separately; otherwise write around it. Do not render a proof request or invent reassurance.
 
 ## CTA Matrix
 
@@ -108,47 +110,47 @@ NumberedReasonsSection:
 SolutionAndProductReveal:
 
 - purpose: connect the problem or desire to the product and its mechanism
-- rules: name the product, explain why it is relevant, include a useful visual, and reserve proof for strong claims
+- rules: name the product, explain why it is relevant, and use a visual when it makes the mechanism easier to understand; support consequential claims with relevant available evidence or qualify them
 
 ProofNearClaims:
 
 - purpose: substantiate each important reason or promise where it appears
-- rules: use verified evidence or explicit placeholders; never invent ratings, tests, reviews, or endorsements
+- rules: use relevant available verified evidence; if an essential claim lacks support, soften or omit it and record the factual question separately; never invent ratings, tests, reviews, or endorsements
 
 OfferAndPurchasePath:
 
 - purpose: make the real response path accessible after interest is earned
-- rules: show verified price and terms, required selections, exact CTA, fulfillment details, risk reversal, and adjacent proof
+- rules: show the actual price, applicable terms, required selections, exact next-step CTA, and fulfillment details; add relevant available proof or risk reversal when it helps the decision
 
 RiskReversal:
 
 - purpose: reduce remaining action risk
-- rules: use verified returns, guarantee, trial, warranty, cancellation, shipping, compatibility, or support terms, otherwise placeholders
+- rules: use applicable verified returns, guarantee, trial, warranty, cancellation, shipping, compatibility, or support terms; omit unsupported promises and note essential factual questions separately
 
 HeroBuyBox:
 
 - purpose: orient and convert visitors in an eligible, selected PDP opening
-- rules: use only after PDP eligibility and destination selection are both satisfied; product understandable, proof near CTA, offer and price not buried, CTA matches real next step
+- rules: use only after PDP eligibility and destination selection are both satisfied; make the product, actual offer and price understandable, place relevant available evidence where it helps, and match the CTA to the real next step
 
 ProofStrip:
 
 - purpose: reduce bounce and build instant credibility
-- rules: use 3-5 short proof points; prefer varied proof types; use placeholders when proof is missing
+- rules: use only available, relevant evidence; vary proof types when that helps comprehension, and omit this strip if it adds no value
 
 ValuePropGrid:
 
 - purpose: translate benefits into fast-scannable reasons to believe
-- rules: use 3-4 cards; avoid generic adjectives; tie each item to a buyer friction
+- rules: use as many distinct benefits as the product warrants; avoid generic adjectives and tie each item to a buyer friction
 
 MechanismSection:
 
 - purpose: explain why the product works or why it is different
-- rules: best for premium, technical, ingredient/material, wellness, baby/pet, outdoor, and custom products
+- rules: use when the mechanism closes a real belief gap, especially for premium, technical, ingredient/material, wellness, baby/pet, outdoor, and custom products; choose a split image/text layout, focused cards, a contrasting band, or an annotated visual according to what makes the explanation clearest
 
 IngredientOrMaterialPanel:
 
 - purpose: build trust through transparency
-- rules: name each ingredient/material, explain user benefit, flag all substantiation needs
+- rules: explain relevant ingredients or materials through their practical benefits; raise only essential unanswered factual questions separately
 
 DimensionOrAnatomyDiagram:
 
@@ -168,7 +170,7 @@ ComparisonTable:
 OfferStack:
 
 - purpose: make the reason to act clear
-- rules: include primary incentive, AOV lever, friction reducer, risk reversal, and real urgency or reason-now when available
+- rules: explain the actual contents, price and relevant terms of the offer; include an incentive, bundle value, risk reduction, or reason to act only when real and useful
 
 SubscriptionToggle:
 
@@ -188,12 +190,12 @@ UGCGallery:
 ReviewSummary:
 
 - purpose: reduce cognitive load from many reviews
-- rules: summarize themes, include real review counts, include fit metadata for apparel and usage context for high-AOV products
+- rules: summarize real review themes; show a count only when verified and useful. For apparel, use available fit context such as usual and purchased size or height. For high-AOV products, useful context can include verified-buyer status, how long the buyer used it, the use case, and authentic photo/video reviews; do not imply these assets exist when they do not
 
 CrossSellRail:
 
 - purpose: increase AOV or prevent dead ends
-- rules: do not distract before the primary product is understood; keep product cards priced and actionable
+- rules: time placement to its purpose: simple add-ons may follow a clear primary offer, routine builders fit after product education, and alternative products can help after reviews or near an exit. Do not distract before the primary product is understood; keep cards priced and actionable
 
 FAQAccordion:
 
@@ -202,7 +204,7 @@ FAQAccordion:
 
 FinalCTA:
 
-- purpose: recap product, offer, proof, and risk reversal before footer
+- purpose: recap the product, actual offer, and next action before footer, with relevant available proof or risk reduction when helpful
 - rules: do not force users to scroll back to hero to convert
 
 EmailCapture:
@@ -213,7 +215,7 @@ EmailCapture:
 StickyCTA:
 
 - purpose: keep conversion access available during long mobile scrolls
-- rules: include product/offer, price or selected variant when useful, CTA, and one trust cue; do not cover content
+- rules: show the product/offer, accurate price or selected variant when useful, and the real next-step CTA. Add a verified trust cue only if it helps; avoid duplicate selectors or competing controls, covering content, and purchase pressure before product clarity
 
 ## Image Slot Standard
 

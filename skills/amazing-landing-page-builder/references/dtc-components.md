@@ -12,7 +12,7 @@ Components are reusable building blocks, not a reason to choose an archetype. Fo
 
 ## Canonical Scaffold
 
-Start from this scaffold and tailor by archetype:
+Select useful components from this menu; it is not a required sequence:
 
 ```text
 PromoBar
@@ -105,7 +105,7 @@ MessageMatchedHero:
 NumberedReasonsSection:
 
 - purpose: build a scannable, cumulative listicle argument
-- rules: every reason must add product truth, useful education, mechanism, comparison, demonstration, or proof; do not pad the count
+- rules: give each numbered reason a meaningfully different reason to care, believe or choose, developed with relevant product facts, supported explanation or available evidence. Preserve purposeful reinforcement under `../SKILL.md`; every paragraph need not introduce a new fact. Do not pad the count.
 
 SolutionAndProductReveal:
 
@@ -120,7 +120,7 @@ ProofNearClaims:
 OfferAndPurchasePath:
 
 - purpose: make the real response path accessible after interest is earned
-- rules: show the actual price, applicable terms, required selections, exact next-step CTA, and fulfillment details; add relevant available proof or risk reversal when it helps the decision
+- rules: show the actual price, required selections and exact next-step CTA, with terms and fulfillment details that materially affect the decision. For a genuine verified discount, prefer the discounted price beside or immediately above a visibly struck-through comparison price and a concise savings label. Compare equivalent quantities using the actual applicable pricing basis; make the savings understandable visually before adding explanation. This applies to offer cards and stacks too; no reference design authorizes borrowing its price-history claims.
 
 RiskReversal:
 
@@ -200,12 +200,12 @@ CrossSellRail:
 FAQAccordion:
 
 - purpose: handle objections near the end
-- rules: generate from real objections, not generic filler
+- rules: answer meaningful remaining purchase questions using the FAQ selection guidance in dtc-visual-copy-system.md; omit this component when it adds nothing
 
 FinalCTA:
 
-- purpose: recap the product, actual offer, and next action before footer, with relevant available proof or risk reduction when helpful
-- rules: do not force users to scroll back to hero to convert
+- purpose: renew the reason to act and give direct access to the offer before the footer
+- rules: reinforce the core outcome and provide a clear purchase action or link to the selector. Repeated purchase access does not require repeated prices; keep them where they help the current decision, such as an offer-led opening or selected-price sticky control.
 
 EmailCapture:
 

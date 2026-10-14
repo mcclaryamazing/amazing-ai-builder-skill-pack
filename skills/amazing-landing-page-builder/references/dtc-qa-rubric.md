@@ -45,7 +45,7 @@ Fixes:
 - low CTA quality: fix label and purchase path
 - weak proof: use relevant evidence that actually exists, explain the product mechanism, and revise claims that demand unavailable support
 - weak claim hygiene: remove or accurately qualify unsupported material claims in customer copy; record evidence needed only for claims retained for later use
-- weak mobile UX: simplify sections, improve scanability, and add or fix sticky CTA
+- weak mobile UX: simplify layout and improve typography, spacing and scanability without automatically truncating the useful argument; add or fix sticky CTA where needed
 
 ## Design Review Gate
 
@@ -64,6 +64,8 @@ Confirm:
 - persuasion architecture matches the ad angle, awareness level, and work already completed by the ad
 - PDP eligibility cites explicit retargeting; any selected PDP clearly wins the recorded comparison as the last choice
 - product is instantly understandable
+- product desire anchors the argument; the strategy answers why the reader would want the product without the discount or bonus and records the basis for any promotion-led opening
+- important reasons are developed beyond benefit summaries; numbered reasons differ meaningfully, and recurring ideas serve a specific persuasive or usability purpose
 - offer is clear
 - CTA matches the actual next step
 - material claims have support where they appear, or are rewritten to stay within verified facts
@@ -121,7 +123,7 @@ Avoid:
 - unclear subscription terms
 - unclear discount math
 - no objection handling
-- generic or repetitive passages that add no useful answer
+- generic or repeated passages with no useful persuasive or usability role; purposeful reinforcement does not require a new fact
 
 ## Category Anti-Patterns
 
@@ -157,6 +159,6 @@ Do not let Shopify implementation redesign the page unless a hard Shopify, produ
 
 The final step before user delivery is the independent conversion review and remediation in `final-wireframe-review.md`. Supply `dtc-visual-copy-system.md` for master-copywriter guidance and the relevant bundled DTC framework references. Resolve and verify accepted findings before marking this gate complete; a passing rubric score does not substitute for this review.
 
-Require the reviewable desktop/mobile wireframe with full substantive copy and placeholders in every image slot, even when assets exist. Verify ideal purpose, description, aspect ratio, pixel dimensions and mobile crop. Record internal review findings and fixes. Record user approval before final image selection/generation/insertion, or the explicit end-to-end authorization waiving only that pause. Existing images must fit the approved ideal. Prune repetitive or irrelevant passages without performance evidence; require relevant performance evidence and rationale only for an overall short-form page choice. There is no minimum word count or filler requirement.
+Require the reviewable desktop/mobile wireframe with full substantive copy and placeholders in every image slot, even when assets exist. Verify ideal purpose, description, aspect ratio, pixel dimensions and mobile crop. Record internal review findings and fixes. Record user approval before final image selection/generation/insertion, or the explicit end-to-end authorization waiving only that pause. Existing images must fit the approved ideal. Develop underexplained reasons, preserve purposeful reinforcement, and prune irrelevant or purposeless repetition without performance evidence; require relevant performance evidence and rationale only for an overall short-form page choice. There is no minimum word count or filler requirement.
 
 Copy review must cite how the strategy packet applies the master-copywriter principles from dtc-visual-copy-system.md to actual hero, reasons, available proof, offer and CTA passages. Reject name-dropping without application, unsupported material claims and generic big ideas.

@@ -291,3 +291,12 @@ Run:
 The four renamed Amazing skills ship VERSION files and a source-aware startup check; `skill-releases.json` records their current versions. Once installed with a verified local receipt, ordinary unmodified updates apply automatically; renamed packages require explicit approval. Local edits and unknown provenance are preserved. Offline checks report that the latest version could not be verified. Existing copies need a one-time update to install this mechanism. Amazon Opportunity Explorer is unchanged by this builder update.
 
 Maintainers must bump VERSION and the matching skill-releases.json entry whenever a package changes. Keep installed .skill-install.json receipts out of releases, promote complete verified packages from the authoritative live skills, and validate the pack before publishing.
+
+### Landing Page Builder 1.0.4
+
+The builder develops product desire before promotional preference and encourages
+substantive long-form listicles with truthful explanation. It preserves purposeful
+reinforcement, including recaps and decision-point reminders, while removing
+repetition without a useful role. Explicit promotion-led campaigns remain supported;
+discounts in a brief alone do not determine the page angle. No word quotas or
+invented claims are required to make a page longer.

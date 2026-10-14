@@ -39,7 +39,7 @@ Do not promise patterns are guaranteed to convert unless the user provides real 
 
 ## Full Design Process
 
-Default to long-form, substantive copy: develop each useful reason with product-specific explanation, mechanism, available proof and objections; use scannable sections without stripping the argument. Delete repetitive or irrelevant passages even when there is no performance evidence. Choosing an overall short-form page still requires relevant performance evidence and a recorded rationale for this product, audience, traffic and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count or add filler.
+Follow the Full Design Process in `../SKILL.md`: default to substantive long form, develop important reasons beyond benefit summaries, preserve purposeful reinforcement, and remove only irrelevant or purposeless repetition. Plan depth using known product facts, supported explanations, available evidence and meaningful objections; do not invent claims to make the page longer. Relevant performance evidence and a recorded rationale are required for an overall short-form departure, not individual editorial cuts. No word count or reason quota applies.
 
 Start from verified product, audience, offer and traffic context. Ask only material missing questions; otherwise label assumptions. Use all relevant design references and produce complete strategy, copy, section sequence, image direction and QA. Deeper product, claim or audience research is useful when evidence is weak; fresh external brand exemplars are not mandatory.
 
@@ -110,7 +110,7 @@ Produce a structured `ShopifyLandingPageDesignSpec` or equivalent with:
 - metadata: brand, product, category, design rationale, destination archetype, persuasion architecture, confidence label, primary goal, traffic source, campaign stage, awareness level
 - assumptions: inferred defaults and material facts needing merchant verification for proposed copy or purchase
 - derived_strategy: education need, proof need, risk reversal need, comparison need, CTA mode, offer strength, claim sensitivity, sticky CTA need, listicle-default status, listicle override rationale, PDP eligibility, and PDP eligibility rationale
-- copy_strategy_packet: audience desire/awareness, factual research, big idea, hook, mechanism, claim-to-proof mapping, offer, response path, brand voice, explicit headline_bank and section-level application of the copywriting principles
+- copy_strategy_packet: product-desire answer without the discount or bonus, any promotion-led opening rationale, audience desire/awareness, factual research, big idea, hook, mechanism, claim-to-proof mapping, offer, response path, brand voice, explicit headline_bank and section-level application of the copywriting principles
 - message_family_routes, when multiple ads are supplied: source ads, shared promise, remaining belief gap, destination or distinct opening, and routing rationale; follow dtc-derived-strategy.md
 - strategy: ad angle, click motivation, work already completed by the ad, remaining belief gap, ad/message match, promise, positioning, big idea, mechanism, rejected alternatives, offer stack, proof stack, CTA strategy, response path
 - shopify_handoff: template type, implementation owner, fidelity instruction, theme chrome preference
@@ -121,7 +121,7 @@ Produce a structured `ShopifyLandingPageDesignSpec` or equivalent with:
 - metadata_direction: SEO title, meta description, social preview copy, image direction
 - QA checklist: score with evidence from the actual spec/wireframe, material blockers, revision notes
 - wireframe: reviewable desktop/mobile artifact, internal review findings and image-gate approval or explicit end-to-end waiver
-- copy_length: substantive long-form default; relevant performance evidence and rationale only for an overall short-form page choice, not for pruning repetitive or irrelevant passages
+- copy_length: substantive long-form development plan, including underdeveloped reasons and purposeful reinforcement; evidence and rationale for an overall short-form departure, not for removing irrelevant or purposeless repetition
 
 ## Design Review Gate
 

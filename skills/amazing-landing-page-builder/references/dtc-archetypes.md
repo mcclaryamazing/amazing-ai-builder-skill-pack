@@ -24,7 +24,7 @@ educational_direct_response:
   sequence: MessageMatchedHero, ProblemOrDesireFraming, ProductReveal, MechanismOrDifferentiation, ProofNearClaims, OfferAndPurchasePath, ComparisonOrObjectionHandling, RiskReversal, FAQAccordion, FinalCTA, StickyCTAWhenUseful, Footer
 
 offer_page:
-  best for discount, free gift, free trial, BOGO, campaign promo, sample offer
+  candidate when an explicit user direction or supplied campaign makes the promotion the click reason; a discount, free gift, free trial, BOGO or sample in the brief alone does not establish this
   sequence: PromoBar, OfferHero, ProofCue, OfferCards, HowItWorks, ValueProps, TermsFAQ, FinalCTA, EmailCapture, Footer
 
 subscription_funnel:
@@ -114,7 +114,8 @@ Advertorial/listicle:
 - make brand ownership or sponsorship transparent; never imply independent publisher coverage
 - identify the product early enough to preserve trust
 - use only as many numbered reasons as the evidence supports
-- make every reason add product truth, useful education, mechanism, comparison, demonstration, or proof
+- make numbered reasons meaningfully different reasons to care, believe or choose; develop each through relevant product truth, useful education, supported explanation or available evidence, not merely a short benefit summary
+- build product desire before promotional preference under `../SKILL.md`; quantities and savings alone are not the reasons, and purposeful reinforcement within or between reasons is allowed
 - keep the offer and response path accessible, especially on mobile
 - avoid unsupported claims, filler reasons, clickbait, or excessive preamble
 

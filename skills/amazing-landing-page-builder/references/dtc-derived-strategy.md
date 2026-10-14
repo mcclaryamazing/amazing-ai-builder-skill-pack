@@ -188,6 +188,6 @@ Place available proof close to the material claims it supports. If that proof do
 
 ## Research Depth And Copy Length
 
-Default to long-form, substantive copy: develop each useful reason with product-specific explanation, mechanism, available proof and objections; use scannable sections without stripping the argument. Delete repetitive or irrelevant passages even without performance evidence. Choosing an overall short-form page still requires relevant performance evidence and a recorded rationale for this product, audience, traffic and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count or add filler.
+Follow the Full Design Process in `../SKILL.md`: default to substantive long form, develop important reasons beyond benefit summaries, preserve purposeful reinforcement, and remove only irrelevant or purposeless repetition. Plan depth using known product facts, supported explanations, available evidence and meaningful objections; do not invent claims to make the page longer. Relevant performance evidence and a recorded rationale are required for an overall short-form departure, not individual editorial cuts. No word count or reason quota applies.
 
 Deepen research for unclear positioning, weak proof, complex offers, claim sensitivity or QA failures within the same full-design process. Do not require fresh brand exemplars.

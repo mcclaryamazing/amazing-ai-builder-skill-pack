@@ -22,7 +22,7 @@ Risk Reversal When Relevant And Available
 Objection Handling and Final CTA
 ```
 
-This is a reason-based listicle organized by problem-solution-proof-offer. Use it when no other persuasion architecture has a stronger rationale. Product specificity does not justify PDP copy by itself. Do not invent a publisher identity or disguise the page's brand ownership.
+Build product desire before promotional preference under `../SKILL.md`; record why the reader would want the product without the discount or bonus. This is a reason-based listicle organized by problem-solution-proof-offer. Use it when no other persuasion architecture has a stronger rationale. Product specificity does not justify PDP copy by itself. Do not invent a publisher identity or disguise the page's brand ownership.
 
 Choose emphasis by the ad angle and click reason:
 
@@ -36,7 +36,7 @@ Choose emphasis by the ad angle and click reason:
 The following are persuasion and module suggestions within the selected destination, not automatic archetype overrides. The long-form listicle default and retargeting-only, last-choice PDP gate still apply:
 
 - premium product: problem, mechanism, proof, offer
-- discount campaign: offer-first promo
+- promotion-led opening: only when explicitly requested or the supplied campaign establishes the promotion as the click reason; a discount in the brief alone does not justify this emphasis
 - personalized product: quiz funnel
 - commodity disruption: us-vs-them comparison
 - high-AOV tech: educational mechanism plus proof stack
@@ -194,7 +194,7 @@ When a fact essential to the offer or action is unverified, record a focused que
 
 ## FAQ Generation
 
-Generate FAQs from objections, not generic filler.
+Use FAQs for plausible, purchase-relevant questions still insufficiently answered by the page. Prefer customer evidence; otherwise use grounded product judgment. Do not invent concerns or repeat clear offer information to fill a section. There is no minimum count; omit the FAQ when it adds nothing.
 
 Consider only topics a buyer is likely to need for this product and offer:
 
@@ -227,7 +227,7 @@ Reuse modules when they fit the product:
 
 ## Copy Depth And Image Sequence
 
-Default to a substantive long-form argument: develop reasons with product-specific explanation and support where relevant, and address real objections. Cut irrelevant modules, repeated claims, and filler without needing performance data. Choosing an overall short-form design instead of the long-form default requires relevant performance evidence and a recorded rationale for this product, audience, traffic, and offer. This is a design policy, not a claim that long copy always converts better; do not impose a minimum word count.
+Apply the Full Design Process in `../SKILL.md`: develop a substantive long-form argument rather than a collection of benefit summaries. Deepen important reasons with truthful detail, explanation, available evidence and meaningful objections; preserve purposeful reinforcement and remove irrelevant or purposeless repetition. Short paragraphs and scannable headings support a long argument; they do not impose short sections or a short page. An overall short-form departure requires relevant performance evidence and a recorded rationale. Do not impose word counts or invent claims to fill space.
 
 Use the ideal visual direction to specify placeholder slots first. Do not select or insert existing images, or generate new ones, before the wireframe artifact is internally reviewed and the image approval gate in dtc-design-package.md is satisfied.
 
@@ -240,9 +240,9 @@ Apply these complementary principles, not any writer's voice or source text. The
 - Halbert: choose the motivated audience, make the real offer worthwhile, then earn attention with a specific truthful hook. Resolve curiosity and never fabricate scarcity.
 - Hopkins and Bencivenga: give important promises a credible reason why using relevant available human, technical, authority, or offer evidence. Soften or omit an unsupported promise; record an essential unanswered factual question separately.
 - Caples: write clear, benefit-led headlines using useful novelty or truthful curiosity. When testing alternatives, vary meaningful angles rather than adjectives; do not claim a winner without data.
-- Sugarman: make each sentence and section earn the next through concrete detail, logical transitions and resolved open loops. Remove repetition and throat-clearing while keeping the argument substantive.
+- Sugarman: make each sentence and section earn the next through concrete detail, logical transitions and resolved open loops. Remove purposeless repetition and throat-clearing while preserving useful depth and deliberate reinforcement.
 - Edwards: connect the person's situation and problem to an attainable aspiration, solution, supported transformation, offer and clear response. Do not shame the buyer or exaggerate outcomes.
 
 Before full copy, produce a concise copy strategy packet covering audience desire and awareness, verified product and offer facts, big idea, ad promise and remaining belief gap, relevant mechanism and proof, actual response path, and brand voice. Map these choices to the hero, key reasons, objections, and CTA. Explain how specific copy passages apply the principles; listing writers' names is not evidence of application. Make the actual purchase terms clear even when no risk-reversal offer exists.
 
-During wireframe QA, challenge whether the opening continues the ad, the big idea could fit a competitor unchanged, each major promise has support or is truthfully qualified, reasons build belief without repetition, the actual offer is clear, and the response is actionable. Check that the copy leads with a meaningful benefit, reaches the emotional reason to care, and uses available evidence or explanation to make the promise believable. Record concrete findings and revisions in the same evidence-based QA. These embedded principles are sufficient for the builder workflow; no separate copywriting skill installation or fresh external brand exemplar is required.
+During wireframe QA, challenge whether the opening continues the ad, the big idea could fit a competitor unchanged, each major promise has support or is truthfully qualified, reasons develop desire and belief beyond summaries, repeated ideas serve a specific local purpose, the actual offer is clear, and the response is actionable. Check that the copy leads with a meaningful benefit, reaches the emotional reason to care, and uses available evidence or explanation to make the promise believable. Record concrete findings and revisions in the same evidence-based QA. These embedded principles are sufficient for the builder workflow; no separate copywriting skill installation or fresh external brand exemplar is required.

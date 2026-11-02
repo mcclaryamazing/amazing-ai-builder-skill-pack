@@ -300,3 +300,10 @@ reinforcement, including recaps and decision-point reminders, while removing
 repetition without a useful role. Explicit promotion-led campaigns remain supported;
 discounts in a brief alone do not determine the page angle. No word quotas or
 invented claims are required to make a page longer.
+
+### Landing Page Builder 1.0.5
+
+Image descriptions, captions and on-image text describe the pictured product or
+scene without AI-production labels. Natural product-specific wording supports
+accessibility, SEO and answer-engine relevance; captions remain optional and
+production notes stay in the seller handoff.

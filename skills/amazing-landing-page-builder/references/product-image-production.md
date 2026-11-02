@@ -10,6 +10,16 @@ Pass the approved slot's persuasive purpose, scene, exact product variant, factu
 
 If the full skill is unavailable, use the short framework below and disclose this route. Do not force installation or stop useful work solely because the optional skill is absent. If generation/editing capability itself is missing, prepare the reference brief and prompts, state the actual blocker, and retain placeholders rather than claim images were created.
 
+## Customer-facing image text and search relevance
+
+Use finished, factual descriptions of what the image shows in alt text, captions, image descriptions, filenames and any text generated onto the image. Never add "AI-generated," "AI illustration," "concept illustration," "not a real photo," "these are not real photos," or equivalent production disclaimers to those fields. Do not prompt an image generator to print them. Keep generation method, provenance and production/review notes in the separate seller handoff. Existing seller-supplied disclosures follow the skill's disclosure rule.
+
+Write for accessibility, search engines and answer engines together: name the actual brand/product or model when established and relevant, then describe the visible subject, action or setting in natural language. Use a short descriptive filename and concise, context-specific alt text; use empty alt text for purely decorative images. Captions are optional and should add useful product or scene context rather than repeat the alt text. On-image text should be brief, readable and grounded in the pictured product and approved claims. Keep meaningful information available in page text rather than relying only on lettering inside an image. Avoid keyword stuffing, search-oriented filler and claims of guaranteed rankings or answer-engine inclusion.
+
+Example alt text: "Intervine Sentinel 2000 and Guardian LTE flashlights beside a protective case on a workshop bench." Optional caption: "Sentinel 2000 and Guardian LTE flashlights ready for home and vehicle use." Filename: `intervine-sentinel-guardian-workshop.webp`.
+
+Describe visible contents accurately. Generation does not establish product performance, a customer endorsement, a real test result or included bundle contents; do not describe an illustrative scene as evidence of those things. Resolve unsupported claims through the image choice and copy, with any unresolved factual question in seller notes, rather than adding production labels to the image description.
+
 ## Distilled framework
 
 1. Establish product truth. Inspect reference images of the exact variant/configuration; preserve construction, proportions, materials, colors, controls and markings. Use verified dimensions when scale matters. Do not invent hidden details, accessories, printed page layouts, specifications or performance.

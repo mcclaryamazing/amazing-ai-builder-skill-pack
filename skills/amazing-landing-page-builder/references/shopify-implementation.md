@@ -24,6 +24,38 @@ Load assets from the section:
 
 Use a schema preset so the section appears in the Shopify Theme Editor.
 
+## Editable Copy And Saved Content
+
+For Shopify landing pages, make customer-facing copy editable through native section and block settings by default. Cover headlines, eyebrows, body paragraphs, CTA labels, bullets/trust points, comparison labels, review text/attributions, FAQs, captions and image descriptions. Keep the approved layout and copy intact when exposing fields; this is not authorization to rewrite content or change the design. Use clearly named sections/blocks and descriptive labels such as "Hero headline" or "Intro paragraphs", with stable semantic IDs. Group related copy within Shopify's actual schema limits; avoid a single unstructured HTML box or one field per arbitrary text fragment.
+
+Choose the field and rendering together:
+
+- Use `text` for short labels and `textarea` for longer plain text, escaping output. A textarea does not preserve entered newlines in ordinary HTML: explicitly use `newline_to_br` or scoped `white-space: pre-line` when line breaks should display.
+- Use `richtext` for body copy that needs multiple paragraphs, emphasis or links. Render the sanitized rich-text value directly inside a `div`, not escaped text or an enclosing `p`. Paragraph spacing should be styled consistently with the design. Sellers should be able to create paragraph breaks in the editor without adding another field or typing HTML.
+- Guard blank optional values at the complete element level, including any associated checkmark, icon, border or spacing. Required content should have approved defaults.
+- Provide native image pickers and editable alt text/captions where used. Keep product/variant prices, compare-at prices, savings and inventory derived from Shopify's transactional data; explain in the seller handoff where those values are managed.
+
+For example, a paragraph-capable intro uses this markup and matching section setting:
+
+```liquid
+{% if section.settings.intro != blank %}
+  <div class="landing-intro">{{ section.settings.intro }}</div>
+{% endif %}
+```
+
+```json
+{
+  "type": "richtext",
+  "id": "intro",
+  "label": "Intro paragraphs",
+  "default": "<p>Approved introductory copy.</p>"
+}
+```
+
+Treat Shopify-saved template settings as merchant-owned data. Once a page is installed, ordinary code releases must exclude its saved template JSON and other settings data. Do not regenerate defaults over current values, renumber IDs, or copy one theme's saved content over another's. When a requested change needs new fields or a deliberate migration, pull and back up each target theme's current settings, deploy the compatible schema first, merge only the authorized settings, then read back and compare all unaffected values. Preserve the distinction between an unset field and an intentionally cleared optional field; do not silently restore cleared copy with runtime fallback text.
+
+Before delivery, verify in a preview theme or disposable test instance that a headline, multi-paragraph body field and CTA label can be edited and saved, reloaded, and retained after an ordinary code update. Check paragraph spacing and blank optional content at desktop and phone widths. Restore temporary test copy before publishing. Report the editable section names and any intentionally product-managed values in the seller handoff; do not claim persistence from schema inspection alone.
+
 ## Build Workflow
 
 1. Read the full DTC design spec and internally reviewed placeholder-only wireframe. Before selecting, generating or inserting any final image, verify wireframe approval or an explicit end-to-end waiver of the pause. The artifact and internal review cannot be waived.
@@ -35,7 +67,7 @@ Use a schema preset so the section appears in the Shopify Theme Editor.
 7. Use exact placeholders for every image until the wireframe has passed internal review and the image approval gate.
 8. Upload final merchant-facing images to Shopify Files and reference them with `file_url`.
 9. Wire CTAs to the actual next step.
-10. Verify in desktop and mobile before launch.
+10. Verify editable copy, paragraph formatting, saved-value persistence, and desktop/mobile rendering before launch.
 
 The target Shopify theme is the delivery surface, not the creative ceiling. Do not flatten the approved design around theme defaults unless a hard implementation constraint requires it. Document any deviation.
 
@@ -222,6 +254,9 @@ mobile layout works
 no horizontal overflow
 text is readable in every section
 no mojibake or encoding artifacts
+copy fields save and reload in Theme Editor; body paragraphs retain their breaks
+saved copy and image selections remain intact after code updates
+blank optional fields leave no empty checkmarks, icons or layout gaps
 FAQ and interactive controls work
 sticky CTA appears only where intended
 metadata and social preview tags are correct

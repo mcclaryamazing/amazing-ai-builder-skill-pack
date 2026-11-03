@@ -75,6 +75,7 @@ Default to:
 - a DTC design spec before theme implementation
 - exact image placeholders in every first-wireframe slot, even when assets already exist
 - real Shopify theme files, not a large Custom Liquid paste-in
+- merchant-editable copy in native Shopify Theme Editor fields, with saved edits preserved across code updates
 - Shopify Files for merchant-facing product, hero, lifestyle, proof, offer, and social-preview images
 - backend/Admin API or Shopify CLI automation only after access is verified
 - development theme or private preview before live launch
@@ -190,6 +191,8 @@ templates/page.<template-suffix>.json
 
 Use scoped CSS under a unique wrapper. Do not redesign around theme defaults. Detect and neutralize theme bleed only inside the landing-page scope.
 
+For Shopify implementations, expose customer-facing copy through native section/block settings by default, including headlines, body copy, CTA labels, lists, FAQs, captions and image descriptions. Use paragraph-capable fields for prose, descriptive field labels and stable IDs, and preserve merchant-saved values on subsequent updates. Read the editable-copy contract in `references/shopify-implementation.md`; keep transactional prices and inventory sourced from Shopify product data rather than editable copy fields. This does not require a Shopify implementation for a standalone design or copy request.
+
 Use Shopify Files and `file_url` for merchant-facing landing-page images. Use theme `asset_url` for CSS, JS, fonts, small icons, and code-owned decoration.
 
 For campaign-only fixed-price bundle parents, keep the products natively
@@ -272,6 +275,8 @@ Full-build checks:
 - product, variant, bundle, quiz, lead form, cart, or checkout path matches the CTA
 - metadata and social preview tags are page-specific
 - desktop and mobile QA passed
+- customer-facing copy is editable in the Theme Editor, paragraph breaks render correctly, and empty optional fields leave no stray icons or spacing
+- saved merchant copy and image selections survive code updates; any deliberate settings migration is scoped and verified
 - text is readable, no horizontal overflow, no mojibake, and sticky CTA does not block controls or legal copy
 - image zoom works for meaningful final images when included
 - normal store pages still work if shared layout/theme files changed

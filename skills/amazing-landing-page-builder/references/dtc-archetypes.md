@@ -1,6 +1,6 @@
 # DTC Archetypes
 
-Use this reference when choosing or validating the landing-page model, section sequence, and confidence label.
+Use this reference to choose the page model and shape its sequence. For the default listicle, use the [listicle playbook](listicle-playbook.md).
 
 ## Decision Tree
 
@@ -12,12 +12,12 @@ Choose destination and persuasion architecture separately. Keep `advertorial_lis
 
 ## Archetype Matrix
 
-Sequences are design menus, not lists of mandatory sections. Use the actual merchant offer and available product information. Include proof, reviews, guarantees, risk reversal, FAQs and terms only when relevant and available; omit unused modules without creating evidence placeholders or a launch blocker. Maintain a clear product argument and response path.
+Adapt these sequences to the buyer's decision. Use the merchant's product facts and actual offer. Add reviews, demonstrations, guarantees, FAQs and other supporting material where they help the buyer. Disclose terms that affect the decision where the buyer needs them.
 
 ```text
 advertorial_listicle:
   default for cold Meta prospecting; especially strong for problem reframing, curiosity, unfamiliar categories, commodity disruption, and non-obvious value
-  sequence: AdvertorialHeader, MessageMatchedHero, NumberedReasons, ProductReveal, MechanismSection, ProofNearClaims, OfferAndPurchasePath, Testimonials, RiskReversal, FAQAccordion, FinalCTA, StickyCTAWhenUseful, Footer
+  sequence: AdvertorialHeader, MessageMatchedHero (counted H1, product, short opening, early CTA), NumberedReasonsSection, OfferAndPurchasePath, FinalCTA, Footer
 
 educational_direct_response:
   best when the ad's mechanism, demonstration, comparison, proof, or offer calls for a more direct educational continuation than the default listicle
@@ -112,12 +112,12 @@ Advertorial/listicle:
 
 - use as the default for cold Meta prospecting
 - make brand ownership or sponsorship transparent; never imply independent publisher coverage
-- identify the product early enough to preserve trust
-- use only as many numbered reasons as the evidence supports
-- make numbered reasons meaningfully different reasons to care, believe or choose; develop each through relevant product truth, useful education, supported explanation or available evidence, not merely a short benefit summary
-- build product desire before promotional preference under `../SKILL.md`; quantities and savings alone are not the reasons, and purposeful reinforcement within or between reasons is allowed
-- keep the offer and response path accessible, especially on mobile
-- avoid unsupported claims, filler reasons, clickbait, or excessive preamble
+- make the visible H1 unmistakably a listicle, such as “7 Reasons Why [product] Helps You [specific outcome]”; match the advertised count to the distinct, numbered reasons the page actually delivers
+- name and show the product in the opening, then use a short lead that connects the click to why the reader should care
+- give interested readers an early CTA to the actual offer or required choices, then repeat access where the argument gives them a new reason to act
+- develop each reason around a distinct buyer payoff or objection, a real feature or mechanism and a tangible use; use available demonstrations, reviews or other proof where they strengthen the argument
+- build product desire before promotional preference under `../SKILL.md`; meaningful product benefits drive the reasons, while pack size and savings help the shopper choose the offer
+- prefer a direct-sale listicle with the actual package choices on the page when the purchase path supports it. Use a presell when the buyer needs a specific matching offer page or a separate configuration flow. A story-led advertorial is a distinct option when the campaign calls for a narrative
 
 Lead capture:
 
@@ -135,12 +135,4 @@ Lead capture:
 
 ## Confidence Label
 
-The confidence labels describe design confidence, not measured performance. Use `validated_pattern` only with relevant observed performance evidence for the destination and persuasion combination; otherwise use `first_draft_to_test`. Do not award this label to a PDP merely because PDPs are common or the brief names one product.
-
-Use `first_draft_to_test` when:
-
-- category is sparse or ambiguous
-- brand proof is weak
-- offer is unverified
-- product has claim-sensitive copy
-- page depends on high-cost incentives, celebrity/founder authority, or claims the brand has not substantiated
+Where a design record uses a confidence label, `validated_pattern` requires relevant observed performance for the destination and persuasion combination. Use `first_draft_to_test` for an untested design.

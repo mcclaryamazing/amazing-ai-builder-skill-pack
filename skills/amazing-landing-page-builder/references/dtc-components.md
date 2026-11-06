@@ -1,6 +1,6 @@
 # DTC Components
 
-Write finished, benefit-led customer copy from verified product and offer facts. Use relevant available proof and terms where they help the decision; no component requires a fixed number of proof cues or reassurance lines. Keep essential unanswered factual questions in separate notes, never in rendered copy. Designated image placeholders retain their prescribed production fields.
+Write finished, benefit-led customer copy using the product and offer facts the merchant supplies. Use available proof where it strengthens the pitch and show material terms where shoppers need them. Keep internal notes outside the page. Designated image placeholders retain their prescribed production fields.
 
 Use this reference when shaping the section sequence, component responsibilities, CTA system, sticky CTA, comparison table, review summary, cross-sells, email capture, or image slots.
 
@@ -45,7 +45,7 @@ Footer
 StickyCTA
 ```
 
-Lead with the customer's benefit and identify the product early, rather than opening with brand mission. Show the actual price and purchase details before asking the visitor to compare value. Place relevant FAQ answers near the bottom for remaining objections. Include a non-buyer exit ramp when useful. On long pages, provide conversion access after the argument has earned it, through a sticky CTA or final offer recap. Omit components that do not serve this product and avoid repeating the same point to fill a scaffold.
+Lead with the customer's benefit and identify the product early. Put an honest next step near the opening and repeat it at meaningful decision points. Show the actual price and purchase details before asking the visitor to compare package value. Put answers to decisive objections where the objections arise, and use an FAQ for any remaining questions. Include a non-buyer exit ramp when useful. On long pages, consider a sticky CTA if it keeps the offer easy to reach without covering content or controls.
 
 ## Hero Commerce Stack
 
@@ -57,13 +57,13 @@ Choose the relevant elements:
 - specific outcome or transformation headline
 - mechanism plus audience subheadline
 - product visual or gallery
-- a verified proof cue, such as a rating, review, press mention, certification, or customer count, when useful
+- an available proof cue, such as a rating, review, press mention, certification, or customer count, when useful
 - offer cue when relevant
 - price or selector when relevant
 - exact CTA
-- a relevant verified term near the action when it resolves a real hesitation, such as shipping, returns, cancellation, or warranty
+- a relevant merchant term near the action when it resolves a real hesitation, such as shipping, returns, cancellation, or warranty
 
-For an unfamiliar brand, prioritize the most relevant available reason to believe or risk reduction in the hero. If a missing fact is essential to the offer or action, record a focused question separately; otherwise write around it. Do not render a proof request or invent reassurance.
+For an unfamiliar brand, the most useful product detail, demonstration or merchant reassurance may earn space in the hero. Choose the one that helps the buyer understand or believe the main benefit.
 
 ## CTA Matrix
 
@@ -75,7 +75,7 @@ Use:
 - `Build Your Bundle` for required bundles
 - `Take the Quiz` or `Find Your Match` for quiz funnels
 - `Customize`, `Start Designing`, or `Upload Your Design` for custom goods
-- `Try Free` for verified free-trial offers
+- `Try Free` when the merchant offers a free trial
 - `Verify Eligibility` for eligibility flows
 - `Sign Up`, `Get My Sample`, or `Join the Waitlist` for lead capture
 - price-anchored CTAs such as `Add to Cart - $89` for high-AOV or configurable products when accurate
@@ -100,32 +100,32 @@ AdvertorialHeader:
 MessageMatchedHero:
 
 - purpose: continue the ad hook and make the click feel coherent
-- rules: resolve the premise, identify the product/category early enough for trust, and point to the next persuasive or commercial step without forcing a buy box
+- rules: resolve the premise, name and show the product, and offer a clear commercial next step. For a listicle, use a visible counted H1 such as “7 Reasons Why…” and match it to the numbered body headings. An early “See Packages” or “Choose Your Pack” can lead to the actual offer without a buy box. See the [listicle playbook](listicle-playbook.md).
 
 NumberedReasonsSection:
 
 - purpose: build a scannable, cumulative listicle argument
-- rules: give each numbered reason a meaningfully different reason to care, believe or choose, developed with relevant product facts, supported explanation or available evidence. Preserve purposeful reinforcement under `../SKILL.md`; every paragraph need not introduce a new fact. Do not pad the count.
+- rules: make the headings tell the sales argument on their own. Give each reason a distinct payoff or objection and develop it through real product details, a recognizable situation, a useful visual or available evidence. Give complex reasons the space they need and keep purposeful reinforcement under `../SKILL.md`. Use the actual number of distinct reasons.
 
 SolutionAndProductReveal:
 
 - purpose: connect the problem or desire to the product and its mechanism
-- rules: name the product, explain why it is relevant, and use a visual when it makes the mechanism easier to understand; support consequential claims with relevant available evidence or qualify them
+- rules: name the product in the opening. Use a later mechanism section only if it can deepen the argument, with a visual when that helps explain how the product works
 
 ProofNearClaims:
 
-- purpose: substantiate each important reason or promise where it appears
-- rules: use relevant available verified evidence; if an essential claim lacks support, soften or omit it and record the factual question separately; never invent ratings, tests, reviews, or endorsements
+- purpose: make a particular benefit or mechanism easier to believe
+- rules: place useful merchant-supplied demonstrations, ratings, reviews or other evidence beside the point they illuminate. Omit a standalone proof module when it would add nothing
 
 OfferAndPurchasePath:
 
-- purpose: make the real response path accessible after interest is earned
-- rules: show the actual price, required selections and exact next-step CTA, with terms and fulfillment details that materially affect the decision. For a genuine verified discount, prefer the discounted price beside or immediately above a visibly struck-through comparison price and a concise savings label. Compare equivalent quantities using the actual applicable pricing basis; make the savings understandable visually before adding explanation. This applies to offer cards and stacks too; no reference design authorizes borrowing its price-history claims.
+- purpose: make the offer clear and accessible whenever a shopper is ready
+- rules: show what each package contains, the quantities, the actual price, any required selections and the exact next-step CTA. Include terms and fulfillment details that affect the decision. Put a real discounted price next to its comparison price and savings. When the comparison is an actual former price, a strike-through makes the difference easy to see. Compare equivalent quantities and label purchased-separately value as such.
 
 RiskReversal:
 
 - purpose: reduce remaining action risk
-- rules: use applicable verified returns, guarantee, trial, warranty, cancellation, shipping, compatibility, or support terms; omit unsupported promises and note essential factual questions separately
+- rules: use applicable merchant terms, such as returns, guarantee, trial, warranty, cancellation, shipping, compatibility or support, when they resolve a real concern
 
 HeroBuyBox:
 
@@ -165,7 +165,7 @@ HowItWorks:
 ComparisonTable:
 
 - purpose: defend value or clarify differentiation
-- rules: show price first, use for premium/confusing/category-disruptive products, avoid unsupported competitor claims
+- rules: compare named alternatives or a clearly defined category on criteria that matter to the decision. Keep the conditions comparable and distinguish unknown from absent. Introduce the actual price before asking shoppers to compare package value or savings
 
 OfferStack:
 
@@ -190,7 +190,7 @@ UGCGallery:
 ReviewSummary:
 
 - purpose: reduce cognitive load from many reviews
-- rules: summarize real review themes; show a count only when verified and useful. For apparel, use available fit context such as usual and purchased size or height. For high-AOV products, useful context can include verified-buyer status, how long the buyer used it, the use case, and authentic photo/video reviews; do not imply these assets exist when they do not
+- rules: summarize real review themes and show the supplied count when useful. For apparel, use available fit context such as usual and purchased size or height. For high-AOV products, useful context can include verified-buyer status, usage time, the use case, and authentic photo/video reviews
 
 CrossSellRail:
 
@@ -215,7 +215,7 @@ EmailCapture:
 StickyCTA:
 
 - purpose: keep conversion access available during long mobile scrolls
-- rules: show the product/offer, accurate price or selected variant when useful, and the real next-step CTA. Add a verified trust cue only if it helps; avoid duplicate selectors or competing controls, covering content, and purchase pressure before product clarity
+- rules: show the product or offer, the actual selected price or variant when useful, and the real next-step CTA. Reserve space for it on small screens and keep content and controls accessible. Keep selection controls in one place unless duplication helps the shopper
 
 ## Image Slot Standard
 

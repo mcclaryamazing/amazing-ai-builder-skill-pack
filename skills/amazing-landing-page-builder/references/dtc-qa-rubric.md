@@ -1,164 +1,63 @@
-# DTC QA Rubric
+# Conversion And Rendered-Page Review
 
-Use this reference before approving the design package for Shopify implementation, or when a draft feels weak, generic, risky, or unnecessarily repetitive.
+Use before design handoff or implementation, and when a draft feels generic or weak. Judge the buying argument first, then the interface. The owner's supplied details are the working facts; this is not a substantiation audit.
 
-## Current Rubric And Precedence
+## Review The Page The Buyer Sees
 
-This file owns the maintained 100-point score and revision thresholds for the builder. Use it consistently; do not mix in the retired DTC condensed rubric, which allocated 10 points to traffic-stage/route fit, 10 to hero clarity and 5 to visual hierarchy. Here hero clarity remains 15 and visual hierarchy 10; traffic-stage/route fit is a mandatory design-review gate rather than extra points. Copy quality is evaluated with concrete passage evidence under the relevant criteria and the independent conversion review.
+Score only when a numerical diagnostic is useful; otherwise give a prioritized punch list. Scores are editorial judgments, not predicted conversion rates or a substitute for reading the page. The old claim-hygiene score and fact-checking gates are retired.
 
-The preserved full source is optional archival context. Its historical workflow, scoring or readiness language cannot waive current scope, claim, archetype, wireframe, independent-review, image-approval or deployment gates. A total score never overrides a failed mandatory gate. For a partial audit, score only inspectable criteria and state missing evidence; do not represent an uninspected page as passing out of 100.
+| Criterion | Maximum | What strong work does |
+| --- | ---: | --- |
+| Hook, relevance and ad continuity | 15 | Immediately gives the intended visitor a specific reason to read; continues the campaign promise |
+| Product desire and emotional stakes | 20 | Makes ownership matter beyond specs or savings; shows a practical benefit and deeper payoff |
+| Reason-why and differentiation | 15 | Explains what makes this product worth choosing, using supplied details and useful available customer material |
+| Reading momentum and depth | 15 | Develops the important arguments, resolves curiosity and preserves purposeful reinforcement without filler |
+| Offer and CTA clarity | 15 | Makes package contents, price, value and next action easy to understand and choose |
+| Mobile reading and interaction | 10 | Readable type, sensible stacking, reachable controls, no overflow or obstructive sticky elements |
+| Visual hierarchy and brand character | 10 | Makes the argument easy to scan through typography, whitespace, purposeful image slots and distinct section rhythm |
 
-## Conversion Readiness Score
+Use concrete passages and rendered locations to explain findings. Do not deduct for absent optional testimonials, certifications, guarantees or FAQs. Ask whether the product explanation and available material make the case compelling. A low score is a reason to improve the actual weakness, not collect more documents from the owner.
 
-Score the design package out of 100:
+## Conversion Questions
 
-```json
-{
-  "ad_scent": 10,
-  "hero_clarity": 15,
-  "offer_clarity": 10,
-  "cta_quality": 10,
-  "proof_strength": 10,
-  "education_quality": 10,
-  "objection_handling": 10,
-  "mobile_ux": 10,
-  "visual_hierarchy": 10,
-  "claim_hygiene": 5
-}
-```
+- Does the first screen create desire or merely name a category?
+- Can the visitor quickly identify the product, promised benefit and next step?
+- Does the copy make ownership attractive even without the promotion?
+- Does the big idea belong to this product, or could a competitor paste it unchanged?
+- Is the emotional payoff connected to a real practical change described in the brief?
+- Are important reasons developed beyond assertions and short summaries?
+- Do customer words, details, comparisons and visuals strengthen the point where they appear?
+- Does each recurrence reinforce a decision or merely occupy space?
+- Have timid qualifiers, unnecessary disclaimers or defensive FAQs weakened the argument?
+- Are the real offer choices clear, with a reason to choose and act?
 
-For every criterion, cite concrete evidence in the actual copy, section or rendered wireframe; explain deductions that matter to the buyer. The numbers above are maxima, not prefilled passing scores. Re-score after revisions. A total alone is not proof of readiness or performance. Score proof strength and claim hygiene as diagnostic criteria, not automatic blockers: a new brand can have little third-party proof and still present a persuasive, truthful page. Assess how well available product facts, explanation and evidence support the actual argument; do not deduct for absent optional reviews, certifications, guarantees or FAQ sections, then recreate those requirements through the total-score threshold.
+## Listicle Check
 
-## Revision Rules
+For a selected listicle, inspect the actual first screen at desktop and mobile sizes. The main visible H1 must contain N and the reason-based promise, not hide them in an eyebrow. Count exactly N distinct numbered reasons in the body. Read their headings alone: they should tell the buying argument. Name the product before the list develops, keep commercial ownership clear and provide early offer access. Use `listicle-playbook.md` for the full format.
 
-Revise before Shopify implementation when:
+Fix an invisible format, mismatched count, duplicate reasons, delayed product reveal or feature-only numbered list before handoff. Do not remedy those failures by padding the page or shrinking the headline.
 
-- total score is under 80
-- hero clarity is under 12
-- CTA quality is under 8
-- mobile UX is under 8
-- a material customer-facing claim lacks support or a purchase detail is inaccurate or unclear
+## Visual And Interaction Check
 
-Fixes:
+Inspect real desktop/mobile rendering, not only HTML or source copy:
 
-- low hero clarity: rewrite hero around product, supportable promise, actual offer, and exact CTA; use a proof cue when one is available and relevant
-- low CTA quality: fix label and purchase path
-- weak proof: use relevant evidence that actually exists, explain the product mechanism, and revise claims that demand unavailable support
-- weak claim hygiene: remove or accurately qualify unsupported material claims in customer copy; record evidence needed only for claims retained for later use
-- weak mobile UX: simplify layout and improve typography, spacing and scanability without automatically truncating the useful argument; add or fix sticky CTA where needed
+- clear headline hierarchy, readable prose width, useful paragraph spacing and consistent section rhythm;
+- images/placeholders that explain a benefit, mechanism, use or desired experience;
+- visible CTA contrast, adequate tap targets, keyboard access, sensible focus and no horizontal overflow;
+- mobile sticky CTA that helps purchase access without covering content or controls;
+- clear complete package choices and relevant selection states;
+- accordions, forms and error/success states that work when present;
+- exact first-wireframe placeholders and approved imagery only after the image gate;
+- shopper-facing copy throughout, with strategy/setup/owner questions in the separate handoff.
 
-## Design Review Gate
+Use the Customer Copy rules in SKILL.md and the state sweep in `final-wireframe-review.md`. An inert local purchase control gives honest immediate demo feedback; live purchase controls must perform the stated action. Preserve supplied purchase terms and accessibility information.
 
-The Customer-Facing Copy Gate in SKILL.md is mandatory: complete and record the rendered copy sweep in final-wireframe-review.md. Seller notes or verification requests exposed outside prescribed image placeholders fail acceptance regardless of score. Necessary buyer guidance, accessibility and seller-supplied or approved disclosures remain. Record only material unresolved facts affecting proposed published copy or an honest purchase decision as launch blockers in separate notes; omit nonessential gaps.
+## Revision And Acceptance
 
-Confirm:
+Prioritize the weakness that most obstructs the buying decision. A technically tidy page with no compelling reason to care needs a stronger argument. Develop underwritten reasons, replace generic headings, improve offer comprehension, remove needless caveats and fix cramped typography or distracting whitespace. Do not cap every section at a paragraph or delete deliberate reinforcement merely because the idea appears earlier.
 
-- design rationale is clear
-- assumptions are labeled
-- traffic source and campaign stage are explicit; absent contrary input, they are Meta paid social and cold prospecting
-- confidence label is present
-- one clear product-specific big idea exists
-- destination archetype matches traffic and conversion goal
-- the cold Meta listicle default is retained or overridden with a concrete strategic or functional rationale
-- opening continues the ad promise and reason for the click when one exists
-- persuasion architecture matches the ad angle, awareness level, and work already completed by the ad
-- PDP eligibility cites explicit retargeting; any selected PDP clearly wins the recorded comparison as the last choice
-- product is instantly understandable
-- product desire anchors the argument; the strategy answers why the reader would want the product without the discount or bonus and records the basis for any promotion-led opening
-- important reasons are developed beyond benefit summaries; numbered reasons differ meaningfully, and recurring ideas serve a specific persuasive or usability purpose
-- offer is clear
-- CTA matches the actual next step
-- material claims have support where they appear, or are rewritten to stay within verified facts
-- any actual merchant risk-reversal terms are accurate and easy to find when relevant
-- major objections are answered
-- mobile purchase path is obvious
-- image slots are exact enough to build
-- every image in the first wireframe is an exact placeholder
-- metadata matches the page promise
-- unsupported material claims are removed or accurately qualified in customer copy
-- Shopify implementation has enough detail to build without redesigning
+Do not approve a selected listicle with a hidden/mismatched counted promise, an unclear actual offer, broken controls, unreadable mobile layout, seller notes in customer copy or an accepted unresolved editorial defect. These are observable output defects. Do not add a factual launch blocker or evidence-collection assignment in their place.
 
-## Strategic Anti-Patterns
+Complete one bounded independent conversion review before full-wireframe delivery. Supply the actual artifacts, audience, ad when available and the user's brief; assess attention, desire, belief and action without the writer's self-assessment first. Fix accepted findings and recheck changed areas. Follow `final-wireframe-review.md` for scope and reporting.
 
-Avoid:
-
-- generic homepage for specific ad traffic
-- hero that does not repeat ad promise
-- treating a named product, single SKU, premium price, or common PDP pattern as sufficient reason to choose a PDP
-- using a commerce-first PDP opening without explicit retargeting and a clear last-choice comparison win, including a buy box renamed as a subscription or bundle hero
-- overriding the cold Meta listicle default without a concrete response-path, user-direction, ad-continuity rationale; never bypass the retargeting-only PDP gate
-- padding the default listicle with filler reasons, hiding the product too long, implying independent editorial coverage, or burying the purchase path
-- brand mission before product clarity
-- unclear or hidden offer
-- CTA that does not match next action
-- unsupported proof cues above the fold
-- invented risk-reversal terms
-- unanswered material purchase questions, whether handled in an FAQ or elsewhere
-- no final CTA recap
-- too many navigation exits
-- cross-sells distracting from primary conversion
-- comparison table before price
-
-## Design Anti-Patterns
-
-Avoid:
-
-- low-contrast CTA
-- too many competing colors
-- sparse minimalist page with low persuasion density
-- dense text without visual breaks
-- unclear product imagery
-- no mobile sticky CTA on long pages
-- sticky CTA blocking important content
-- product cards missing price or action
-
-## Copy Anti-Patterns
-
-Avoid:
-
-- vague benefit language
-- unsupported best claims
-- fake urgency
-- unverified clinical or medical claims
-- unclear subscription terms
-- unclear discount math
-- no objection handling
-- generic or repeated passages with no useful persuasive or usability role; purposeful reinforcement does not require a new fact
-
-## Category Anti-Patterns
-
-Avoid:
-
-- apparel without fit guidance
-- supplements without ingredient transparency
-- beauty without usage/result explanation
-- home goods missing dimensions, care or shipping information necessary for the actual purchase decision
-- pet/baby copy leaving a relevant safety or suitability question unanswered
-- tech/wellness copy leaving setup or actual warranty/financing terms unclear when those details affect the decision; do not require an offer the merchant does not provide
-- collection pages without segmentation
-- quiz pages where the quiz does not add value
-- custom products that leave the actual customization process unclear or hide useful available sample/design support
-
-## Shopify Handoff Gate
-
-Before implementation, the design package must include:
-
-- finished customer-facing copy, with material unresolved facts recorded separately
-- section sequence
-- component responsibilities
-- exact CTA paths
-- product, variant, bundle, quiz, form, cart, or checkout assumptions
-- exact image slots and placeholder text
-- metadata direction
-- material claim and offer verification notes when needed
-- score or punch list
-
-Do not let Shopify implementation redesign the page unless a hard Shopify, product-data, compliance, asset, or access constraint requires it.
-
-## Wireframe Acceptance
-
-The final step before user delivery is the independent conversion review and remediation in `final-wireframe-review.md`. Supply `dtc-visual-copy-system.md` for master-copywriter guidance and the relevant bundled DTC framework references. Resolve and verify accepted findings before marking this gate complete; a passing rubric score does not substitute for this review.
-
-Require the reviewable desktop/mobile wireframe with full substantive copy and placeholders in every image slot, even when assets exist. Verify ideal purpose, description, aspect ratio, pixel dimensions and mobile crop. Record internal review findings and fixes. Record user approval before final image selection/generation/insertion, or the explicit end-to-end authorization waiving only that pause. Existing images must fit the approved ideal. Develop underexplained reasons, preserve purposeful reinforcement, and prune irrelevant or purposeless repetition without performance evidence; require relevant performance evidence and rationale only for an overall short-form page choice. There is no minimum word count or filler requirement.
-
-Copy review must cite how the strategy packet applies the master-copywriter principles from dtc-visual-copy-system.md to actual hero, reasons, available proof, offer and CTA passages. Reject name-dropping without application, unsupported material claims and generic big ideas.
+Before Shopify implementation, the full copy, section sequence, image plan, package selections and CTA destinations must be clear enough to build. Real price/cart/checkout consistency, permissions, secrets and release/rollback are verified separately under the implementation and launch references.

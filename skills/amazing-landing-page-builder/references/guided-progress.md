@@ -19,13 +19,13 @@ Shopify Landing Page Build Progress
 
 ## Stage Done Signals
 
-1. Product, audience, offer, and traffic source: the agent knows or has labeled reasonable assumptions about the product/category, buyer, traffic source, ad or campaign promise, primary CTA, actual merchant offer, available proof and assets, brand constraints, and material claim boundaries. Keep only essential merchant questions in separate notes while completing the full-design process; the customer-facing page uses finished copy.
+1. Product, audience, offer, and traffic source: the agent knows or has labeled reasonable assumptions about the product/category, buyer, traffic source, ad or campaign promise, primary CTA, merchant-supplied offer, usable proof and assets, and brand constraints. Use supplied product facts in finished copy and keep any essential questions about the requested direction in separate notes.
 2. Repo and theme setup: the target repo, deploy guide, git status, Theme Access path, Shopify CLI verification, development theme, Dev Dashboard app, Admin API access path, target theme, and store-specific risks are known.
-3. DTC strategy, full copy and placeholder-only desktop/mobile wireframe: the archetype, big idea, copy strategy, section sequence, offer stack, proof stack, CTA mode, metadata direction, and exact image-slot plan are drafted.
-4. Approval gate: internal wireframe review is complete; before any final image selection/generation/insertion, the user has approved the wireframe and ideal slots (or explicit end-to-end authorization waives only this pause). The offer, material claims, page structure, purchase path, and image plan are reviewable. Only unresolved material facts that would affect proposed published copy or an honest purchase decision remain launch blockers in separate notes.
+3. DTC strategy, full copy and placeholder-only desktop/mobile wireframe: the archetype, big idea, copy strategy, section sequence, offer choices, useful available customer material, CTA mode, metadata direction, and exact image-slot plan are drafted.
+4. Approval gate: internal wireframe review is complete; before any final image selection/generation/insertion, the user has approved the wireframe and ideal slots (or explicit end-to-end authorization waives only this pause). The product's appeal, sales argument, offer, purchase path, and image plan are reviewable. The seller reviews product and marketing facts as part of their copy review.
 5. Shopify build: the page exists in real theme files, usually section, CSS, JS, and JSON template files, with scoped styling and no large Custom Liquid paste-in.
 6. Products, images, metadata, and wiring: CTAs point to the intended product, variant, bundle, quiz, lead form, cart, or checkout path; merchant-facing images use Shopify Files; metadata is page-specific.
-7. QA: desktop, mobile, accessibility basics, image slots, text readability, interactions, sticky CTA, console, metadata, and checkout path are checked without placing a real order.
+7. QA: desktop, mobile, accessibility basics, image slots, text readability, interactions, sticky CTA, console, metadata, and the actual purchase path are checked without placing a real order. Confirm that displayed offer terms match the configured purchase experience.
 8. Preview: the user can review the page on a development theme, preview URL, or private page with the intended images or exact placeholders.
 9. Launch: live changes are approved, scoped, reversible, monitored, and documented.
 
@@ -34,10 +34,10 @@ Shopify Landing Page Build Progress
 After completing a stage, say:
 
 ```text
-Step 3 of 9 is complete. You now have a Shopify-ready DTC design package with the page strategy, finished copy, section order, CTA plan, and exact image slots. Next we will review the material claims, actual offer, purchase path, and image plan before touching Shopify theme files.
+Step 3 of 9 is complete. You now have a Shopify-ready DTC design package with the page strategy, finished copy, section order, CTA plan, and exact image slots. Next we will review how the page builds desire, presents the offer, guides the purchase, and uses imagery before building the Shopify page.
 ```
 
-When blocked, say what is blocking progress and give one safe next command or question.
+Resolve blockers within the authorized task when tools allow. If the next action requires the user, name the specific blocker and action needed.
 
 For in-scope Shopify setup or implementation, inspect existing resources first and ask only about setup that remains unknown and materially needed. Reuse verified existing resources instead of recreating them. Examples include a Shopify site repo, Theme Access, Shopify CLI login, development theme, Dev Dashboard app, client credentials, products, variants, discounts, Shopify Files images, landing-page templates, deployment service, or existing preview theme.
 

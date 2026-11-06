@@ -307,3 +307,18 @@ Image descriptions, captions and on-image text describe the pictured product or
 scene without AI-production labels. Natural product-specific wording supports
 accessibility, SEO and answer-engine relevance; captions remain optional and
 production notes stay in the seller handoff.
+
+### Landing Page Builder 1.1.0
+
+Conversion-first copy now applies “Don’t play it safe. Safe doesn’t sell.”
+throughout the workflow: specific hooks, vivid scenarios, emotional benefits,
+reason-why explanations and clear buying actions. The owner supplies and approves
+marketing facts; the builder no longer runs claim-verification or substantiation
+workflows. Actual Shopify offer, cart and checkout checks remain.
+
+The listicle playbook makes the actual count and reason-based promise visible in
+the main headline, introduces the product and offer access early, and develops
+distinct buying arguments. Seven is an example, never a prescribed count;
+non-listicle formats need no numbered headline. It includes desktop/mobile
+guidance and adaptable examples. The design brief and review now emphasize
+desire, momentum, offer clarity and rendered usability.

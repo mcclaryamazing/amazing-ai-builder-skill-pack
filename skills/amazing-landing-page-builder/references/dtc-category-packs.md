@@ -1,14 +1,16 @@
 # DTC Category Packs
 
-Write finished, benefit-led customer copy with relevant available proof and actual offer terms. These category patterns are menus, not required section or reassurance counts. Omit unsupported or irrelevant elements; keep essential factual questions in separate notes, never in rendered copy. Designated image placeholders retain their prescribed production fields.
+Use the category to find a moment the buyer recognizes. Show the practical change the product makes possible and the feeling that makes the change worth buying. Pick the seller's facts, imagery, demonstrations and customer experiences that make the argument most vivid. These patterns are menus. Use what earns its place in the buyer's decision.
 
-Use this reference when product category should shape frictions, proof, section sequence, offer mechanics, visual direction, or compliance caution.
+Use this reference when product category should shape frictions, proof, section sequence, offer mechanics, visual direction, or seller-supplied usage guidance.
 
-See the [archive category examples](source-guide-index.md#category-lines) for additional visual patterns. They are optional art direction examples, not verified product facts or current requirements.
+See the [archive category examples](source-guide-index.md#category-lines) for optional art direction patterns. Use the seller's details for the product and offer.
 
 Category patterns adapt content and purchase modules within the selected archetype; they never override the long-form listicle default or the retargeting-only last-choice PDP gate. The recommended hero elements apply only to an eligible selected commerce-first opening; in a listicle, introduce the same useful information at the persuasive stage where it fits. All visual suggestions describe ideal placeholder slots until wireframe approval. Choose art direction to fit the actual product and brand, not as a universal template.
 
 ## Apparel
+
+Persuasive angle: Show what getting dressed feels like when a specific fit, feel or styling detail solves the hesitation that usually sends the buyer back to the closet.
 
 Primary frictions:
 
@@ -17,11 +19,11 @@ Primary frictions:
 Recommended hero:
 
 - product/model gallery
-- verified rating when relevant and available
+- a useful rating or fit review when supplied
 - size selector or fit guidance
 - clear price
 - `Select Size` CTA
-- relevant verified shipping or returns terms
+- shipping or returns details that help a buyer choose
 
 Recommended sections:
 
@@ -41,21 +43,23 @@ Avoid:
 
 - `Add to Cart` before size selection
 - no size guidance
-- reviews without fit context
+- relying on a rating where a buyer needs concrete fit guidance
 - low-quality product photography
 
 ## Food, Beverage, And Supplements
 
+Persuasive angle: Take the reader into a recognizable first sip, snack break or morning routine. Connect the actual preparation, flavor or serving format to the pleasure or ease of keeping that routine.
+
 Primary frictions:
 
-- taste, habit fit, ingredient trust, price per serving, subscription terms, health/claim credibility
+- taste, habit fit, ingredients, price per serving, subscription terms, the benefit the buyer wants
 
 Recommended hero:
 
 - product packshot plus serving/use visual
-- verified rating or review count when relevant and available
+- a useful rating or customer experience when supplied
 - subscription savings if relevant
-- free gift/starter kit if real
+- included gift or starter kit when offered
 - `Choose Flavors`, `Choose a Pack`, or `Get Started` CTA
 
 Recommended sections:
@@ -66,7 +70,7 @@ Recommended sections:
 - value per serving
 - how to use
 - subscription benefits
-- taste/results guarantee if real
+- actual taste or results guarantee when offered
 - reviews/UGC
 - FAQ for ingredients, allergens, cancellation, and shipping
 
@@ -76,16 +80,17 @@ Offer patterns:
 
 Art direction options:
 
-- ingredient macros, serving details, or preparation close-ups when they help explain the product; use accurate ingredient identification and avoid implying a result the image cannot prove
+- ingredient close-ups, serving details or preparation scenes that show why the product fits the buyer's day
 
 Avoid:
 
-- unverified health claims
 - unclear subscription pricing
 - generic healthy copy
-- unsupported taste claims or an unanswered taste objection when taste is central to the purchase
+- leaving the buyer to guess what the product tastes like when taste is central to the purchase
 
 ## Beauty And Personal Care
+
+Persuasive angle: Show the look, feel or moment of use the buyer is looking forward to. Tie it to the actual shade, texture, tool or step that makes the product distinctive in their routine.
 
 Primary frictions:
 
@@ -93,19 +98,18 @@ Primary frictions:
 
 Recommended hero:
 
-- result-led lifestyle image plus product image
-- verified rating or review count when relevant and available
+- a lifestyle image showing the relevant use or finish plus a product image
+- a useful rating or customer experience when supplied
 - shade/routine help when relevant
 - `Add to Bag` or `Take the Quiz` CTA
-- relevant verified shipping or returns terms
+- shipping or returns details that help a buyer choose
 
 Recommended sections:
 
 - benefits
 - how to use
 - ingredients
-- compliant before/after only when substantiated
-- verified clinical or user results
+- seller-supplied before/after or results when useful to the buyer
 - UGC gallery
 - routine cross-sells
 - reviews
@@ -117,12 +121,13 @@ Offer patterns:
 
 Avoid:
 
-- unsupported before/after claims
 - unclear shade selection
-- weak product education
-- founder reliance without proof
+- describing ingredients or features without showing how the product fits a routine
+- a founder story that crowds out why the buyer wants the product
 
 ## Home, Furniture, Cookware, And Decor
+
+Persuasive angle: Put the buyer in the room or at the table. Show what a specific size, finish, layout or material changes about the way they cook, unwind or welcome people into their home.
 
 Primary frictions:
 
@@ -131,12 +136,12 @@ Primary frictions:
 Recommended hero:
 
 - product-on-white plus lifestyle context
-- price/discount if verified
+- actual price and any applicable discount
 - configuration controls
-- real reviews when available and useful
-- financing if high-AOV and real
+- reviews that show relevant lived use
+- financing when offered and useful
 - `Add to Cart` with price or selection CTA
-- shipping/returns/guarantee line
+- shipping, returns or guarantee details that affect this decision
 
 Recommended sections:
 
@@ -163,9 +168,11 @@ Avoid:
 - no dimensions
 - no shipping clarity
 - unclear applicable return terms when those terms matter to the purchase
-- style-heavy page with no operational confidence
+- attractive room imagery that leaves the buyer guessing about scale, placement or use
 
 ## Pet And Baby
+
+Persuasive angle: Show an ordinary part of care the buyer wants to make easier, like getting out the door or setting up mealtime. Make the useful change concrete and give the buyer the fit, stage and use details they need.
 
 Primary frictions:
 
@@ -175,20 +182,19 @@ Recommended hero:
 
 - warm lifestyle image
 - clear product/offer
-- expert/vet/parent proof if real
-- verified rating or review count when relevant and available
+- a useful expert, parent or owner perspective when supplied
 - `Get Started`, `Choose Size`, or `Find Recipe` CTA
-- guarantee or free shipping if verified
+- actual guarantee or shipping benefit when offered
 
 Recommended sections:
 
 - how it works
-- safety/ingredient proof
+- relevant setup, fit, use and ingredient details
 - stage or size explanation
 - comparison
 - subscription or plan logic
 - UGC/testimonials
-- founder/expert proof when real
+- founder or expert perspective when useful
 - FAQ
 - guarantee
 
@@ -198,15 +204,16 @@ Offer patterns:
 
 Art direction options:
 
-- warm photography of real use and softly rounded cards can make a pet or baby page approachable; keep safety information clear and avoid treating warmth as evidence of safety
+- warm everyday photography that shows the product fitting the routine, with any supplied safety guidance kept clear
 
 Avoid:
 
-- unsupported medical/health claims
 - unclear subscription future pricing
-- cuteness used to imply safety without supporting facts
+- cute imagery that obscures the size, stage or way the product is used
 
 ## Wellness, Electronics, And Recovery Tech
+
+Persuasive angle: Put the product into the buyer's day. Show the step it simplifies, the useful capability they gain or the part of their routine that becomes easier to look forward to.
 
 Primary frictions:
 
@@ -217,13 +224,13 @@ Recommended hero:
 - premium lifestyle or device render
 - specific outcome
 - financing/trial if available
-- relevant available verified proof cue
+- a relevant product demonstration, result or customer experience when supplied
 - `Shop Now`, `Try Free`, or accurate next-step CTA
 
 Recommended sections:
 
 - how it works
-- science/results with substantiation
+- useful explanation of the mechanism and any supplied results
 - use cases
 - app/device ecosystem
 - comparison table
@@ -234,7 +241,7 @@ Recommended sections:
 
 Offer patterns:
 
-- free trial, financing, warranty, HSA/FSA only if valid, free shipping, money-back guarantee
+- actual trial, financing, warranty, HSA/FSA eligibility, shipping benefit or return terms when offered
 
 Art direction options:
 
@@ -243,10 +250,11 @@ Art direction options:
 Avoid:
 
 - technical jargon without benefit translation
-- regulated claims without substantiation
 - high price without a clear explanation of value and the actual purchase terms
 
 ## Outdoor Gear And Utility Products
+
+Persuasive angle: Let the buyer picture the trip, task or backup plan. Give a specific job a specific tool, then show the satisfaction of doing it easily or having the gear ready when it matters.
 
 Primary frictions:
 
@@ -256,10 +264,10 @@ Recommended hero:
 
 - product-on-white
 - specific utility promise
-- real review proof when available and useful
+- a useful demonstration or use-case review when supplied
 - price
 - `Add to Cart` or selection CTA
-- relevant verified trust cue when useful
+- purchase details that help the buyer choose
 
 Recommended sections:
 
@@ -278,12 +286,13 @@ Offer patterns:
 
 Avoid:
 
-- feature list without use-case explanation
-- no specs
-- unsupported durability claims
+- feature lists that never show where the gear earns its place
+- omitting specs the buyer needs for fit or use
 - unclear actual warranty terms when the warranty matters to the buying decision
 
 ## Custom, Print, And Configurable Goods
+
+Persuasive angle: Help the buyer picture the finished piece in use or being given. Show the choice that makes it feel like theirs and make the steps from idea to order easy to follow.
 
 Primary frictions:
 
@@ -293,15 +302,15 @@ Recommended hero:
 
 - premium product photography
 - customization CTA
-- starting price if verified
-- sample or design help offer when real
-- relevant verified trust cue when useful
+- actual starting price when relevant
+- sample or design help when offered
+- purchase details that build confidence in the finished piece
 
 Recommended sections:
 
 - sample pack bridge
 - how customization works, including preview/proof approval and correction steps when offered
-- minimum order quantity, quantity increments and quantity pricing when applicable; verify the actual terms
+- actual minimum order quantity, increments and quantity pricing when applicable
 - design options
 - product tiers
 - finish/material comparison

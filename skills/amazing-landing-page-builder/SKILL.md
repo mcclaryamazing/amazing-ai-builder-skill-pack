@@ -1,178 +1,86 @@
 ---
 name: amazing-landing-page-builder
-description: "Design, audit, rewrite copy for, build, and safely launch DTC Shopify landing pages. Use for standalone conversion strategy, headlines, page copy, desktop/mobile wireframes and audits, or a guided Shopify theme implementation and launch. Includes advertorial/listicle, offer, bundle, quiz, subscription, collection, lead-capture and eligible PDP work."
+description: "Write, design, audit, and build conversion-focused DTC Shopify landing pages. Especially strong for persuasive long-form listicles, advertorials, product and bundle offers, full-copy desktop/mobile wireframes, and Shopify implementation."
 ---
 
 # Amazing Landing Page Builder
 
 ## Startup version check
 
-Before substantive work, follow `references/skill-updates.md`. Stable update key: `shopify-landing-page-builder`. Check the repository this installation came from, automatically update a verified unmodified copy, and obtain explicit approval before a rename.
+Follow `references/skill-updates.md` once per task. Stable update key: `shopify-landing-page-builder`. A maintainer's authoritative source is edited through its maintenance process, never auto-replaced as an installed member copy.
 
+## Conversion Is The Job
 
-Use this as the single entrypoint for DTC landing-page strategy, design, audits, copy rewrites and Shopify implementation. Match the workflow to the requested deliverable; a design or audit request does not authorize a store build or launch. For an end-to-end build, guide the member through strategy, design, Shopify implementation, QA and launch.
+Build a page that makes the right buyer want the product and take the next step. Start with the audience's existing desire, make the benefit of ownership tangible, explain what makes this product worth choosing, and present the actual offer clearly. A polished page that merely summarizes features has not done the job.
 
-## Requested Scope
+### Don’t play it safe. Safe doesn’t sell.
 
-- **Full build:** use both phases below, a visible progress tracker and the relevant access, implementation and release gates.
-- **Standalone design or wireframe:** produce the complete DTC design package and rendered placeholder-only desktop/mobile wireframe, including independent review. End with the design deliverable and any implementation handoff; do not require Shopify credentials, app installation, theme setup or deployment.
-- **Audit:** inspect the supplied copy, artifacts or page, use the relevant strategy/category/copy guidance and current QA rubric, and return evidence-backed findings and prioritized corrections. Remain read-only unless edits are requested. State what could not be inspected; do not create a replacement wireframe or claim live QA when only copy was supplied.
-- **Copy rewrite or headline work:** preserve the requested page/section boundary and actual offer. Return finished copy and relevant headline alternatives, with separate factual questions only when essential; use the strategy/copy references without forcing a full-page design package, wireframe, onboarding or launch.
+Here, “safe” means timid, generic, emotionally flat, overqualified copy. Write with conviction. Use specific hooks, vivid situations, future pacing, meaningful stakes, contrast, customer language, and the consequences of putting off a useful purchase. Make relief, readiness, pride, enjoyment, independence, or another relevant emotional payoff felt. Match the intensity to the brand and buyer; bold does not always mean alarming or loud.
 
-The full-design, wireframe, progress and completion requirements below apply to full builds and standalone page designs. For audits and limited copy work, apply only the requirements relevant to that deliverable. Read implementation/access/launch references only when that work is in scope. Current entrypoint and maintained references govern. Use the targeted design-example routes in `references/source-guide-index.md` when selecting category art direction, component layouts or shopping interactions; open only the relevant archived section, not the entire guide. Historical workflow, scoring and mandatory-content instructions do not override the current rules.
+An imagined future does not need a forecast. Frame a plausible scene once, then let it unfold naturally. Move from the situation to the product's practical role and the action the reader can take. Do not interrupt persuasion with defensive FAQs, repeated “may/could/potentially,” statements about what has not been predicted, or unsolicited disclaimers. Give the reader a reason to act now even when there is no sale deadline.
 
-Internally, treat the work as two phases:
+Read `references/conversion-copy.md` before substantive copy work. Apply this posture to the headline, introduction, reasons, visuals, offer, CTA and final review, not just one paragraph. The acceptance question is: **Does this make the buyer want to own the product, or merely understand it?**
+
+### User-Supplied Details Are The Working Facts
+
+The user owns the accuracy, substantiation, and legal approval of the product details, claims, reviews, announcements, and offer they supply. Use those details confidently. Do not run an unsolicited fact-checking project, demand independent corroboration, create claim ledgers or substantiation scores, or make copy delivery contingent on proof collection. Research when requested or needed for new information you choose to introduce; do not silently turn supplied claims into a research assignment.
+
+Do not invent facts, quotations, endorsements, statistics, capabilities, prices, deadlines or scarcity, or knowingly misrepresent the supplied material. A clearly imagined scene is creative writing, not invented evidence. If the supplied inputs conflict or a necessary offer decision is missing, ask one focused question and continue the independent work. Otherwise write around the missing detail. Keep owner decisions and production notes outside shopper copy. Preserve supplied disclosures and clear material purchase terms; disclosure selection and legal approval belong to the seller.
+
+This division of responsibility governs all maintained references and supersedes the archived guide's fact-checking and claim-review procedures. Apply the craft and legends from supporting copywriting skills when required by project instructions, but do not import their background fact-checking, proof requests or claim ledgers into this builder workflow. It does not remove technical checks that the implemented offer, quantities, prices, selections, cart and checkout agree.
+
+## Match The Requested Scope
+
+- **Copy or headlines:** return finished copy and useful alternatives within the requested boundary. No forced wireframe, onboarding or store access.
+- **Audit:** inspect the supplied page or artifact and give prioritized conversion findings. Remain read-only unless edits are requested; distinguish copy review from rendered review.
+- **Design or wireframe:** deliver full copy, a concise design package, and a rendered desktop/mobile placeholder wireframe with independent review. Stop at that deliverable.
+- **Full build:** carry the approved design into real Shopify theme files, purchase wiring, private preview and authorized launch.
+
+For full designs/builds, inspect the working folder, explain the immediate goal and keep a short visible progress tracker limited to scope: understand → strategy/copy → desktop/mobile wireframe → review → imagery/build when authorized → technical QA/preview → approved launch. Ask only for decisions that materially change the work. Use `references/guided-progress.md` for done signals, not a mandatory intake interview.
+
+## Choose The Conversion Format
+
+Unless told otherwise, assume Meta paid-social cold prospecting and label that assumption in the strategy. Continue the ad's promise and reason for the click. The visitor may not yet have decided they need the product.
+
+**A long-form, brand-owned listicle is a highly recommended option and the default for cold Meta traffic.** It earns attention through a clear numbered promise, then develops distinct reasons to want and choose the product. Read `references/listicle-playbook.md` whenever selecting, writing, building or reviewing one. Story-led advertorials, educational, comparison, offer, bundle, quiz, subscription, collection and lead-capture pages remain options when the user, ad or response path warrants them. Record a concise reason for departing from the default, not an exhaustive defense.
+
+For a selected listicle, put **the actual number and reason-based promise in the main visible H1**, such as “[N] Reasons Why …”. Choose N after identifying the genuinely distinct buying arguments: it may be 5, 8, 11 or another useful count. Seven is only an example, never a default or requirement; do not pad or cut strong arguments to reach it. A small eyebrow, browser title, introductory sentence or later section does not satisfy the visible listicle promise. The number must match the distinct reasons actually delivered. Other page formats need no numbered headline. Name the product early, make the commercial source clear, and keep an early path to the offer. Do not hide the product until after the list or append numbered features to a generic sales page and call it a listicle.
+
+Preserve the builder's PDP selection preference: enumerate `advertorial_listicle` first and `pdp_direct_response` last. A PDP is eligible only for explicitly identified retargeting and must clearly win the last-choice comparison. A named SKU, discount, configuration, Search or Shopping source alone does not satisfy that gate. User instructions take precedence. See `references/dtc-archetypes.md` for destination options and `references/dtc-derived-strategy.md` for persuasion and response-path decisions.
+
+## Build Desire, Then Make The Offer Irresistibly Clear
+
+Before drafting, answer: **Without the discount or bonus, why would this buyer still want this product?** Identify the practical change and deeper emotional reason. Use supplied customer language to sharpen both; label inferred motivations in the internal strategy. Read all supplied briefs and relevant review material before deciding the angle. For large exports, inspect their full structure, analyze all relevant records, distinguish product variants, and report any ingestion limits rather than claiming to have read inaccessible material.
+
+Choose one concrete big idea. For a full page or requested headline exploration, develop three meaningfully different headline candidates and recommend the strongest fit. For a single headline or narrow rewrite, return only the requested scope. Build the argument with product-specific details, recognizable use situations, explanation, relevant customer experiences, contrast and important objections. Available proof is a selling asset: use it where it makes a reason more believable. Its absence is not a reason to dilute supplied facts or stall drafting.
+
+Price, bonuses and bundle quantities support product desire. Lead with a promotion when the user requests it or the campaign makes it the click reason. Identify the product and offer early enough to understand the proposition, and explain which package fits which buyer. Make the product, contents, quantity, price, payment cadence when relevant, and next action unmistakable.
+
+Default to substantive long form for cold traffic. Develop important reasons beyond benefit summaries; use as much copy as earns attention, desire, belief and action. Short paragraphs do not require short sections. Preserve purposeful repetition at recaps and decision points. Remove filler, throat-clearing and repeated arguments that do no new persuasive work. No word quota or reason quota applies. If a shorter page better fits the brief, state the strategic reason; prior performance data is not required.
+
+## Design Package And Wireframe
+
+Read `references/dtc-design-package.md` for the deliverable and use relevant category, component and visual references. Keep the strategy compact enough to serve the page: buyer/desire, big idea, traffic/ad match, format, full copy, offer/response, visual direction and review. Do not replace page creation with a pile of scoring forms.
+
+Deliver an actual rendered full-copy desktop/mobile wireframe (for example local HTML), not only a spec. The first wireframe is placeholder-only for imagery, even when final assets exist. Define the ideal image by its persuasive job, subject/action, product, composition, placement, aspect ratio, pixel size, desktop/mobile crop, alt text and planned filename. Default to practical 1K/2K assets unless a slot needs more. Use exactly:
 
 ```text
-Phase 1: DTC design package
-Phase 2: Shopify implementation and launch
+IMAGE: <SLOT-ID>
+ASPECT RATIO: <RATIO> | SIZE: <WIDTH> X <HEIGHT> PX
+Description: <final image description/crop notes>
 ```
 
-The DTC design package is the creative and conversion source of truth. Shopify implementation should reproduce it faithfully in real theme files, documenting any deviation caused by a hard Shopify, product-data, compliance, asset, or access constraint.
+Preserve final slot geometry. Review typography, line length, whitespace, section rhythm, scan hierarchy and CTA visibility in the real desktop/mobile rendering. For a listicle, check that a glance at the first screen identifies the numbered format and a headings-only skim communicates the buying argument. Do not solve a long H1 by hiding “[N] Reasons Why” or shrinking it into an eyebrow.
 
-## Local Execution Readiness
+Use `references/dtc-qa-rubric.md` for conversion and rendered-page QA, then complete the independent editor/remediation pass in `references/final-wireframe-review.md` before delivery. Fix accepted findings and check the affected rendering. Then present the wireframe for approval before selecting, generating or inserting final imagery. Explicit end-to-end authorization can waive the conversational pause, but not the wireframe or review. After approval, choose existing assets only when they fit the ideal slots; do not reshape the argument around convenient stock images.
 
-For full-workflow onboarding, use the complete storefront access profile in `references/access-setup.md`, including product and discount writes. A setup-only test limits actions, not the agreed app capability. Keep authorization for actual store mutations separate from granted permissions.
+## Finished Customer Copy
 
-For authorized access setup or Shopify implementation in a new store folder or unverified environment, read `references/access-setup.md` first. This skill bundles its own design and Shopify references; separate DTC and storefront-ops skills are not required. Establish actual local file, command and browser access, rather than inferring capability from the assistant model name or a shared Codex runtime label.
+Every passage should create desire, explain the product, build belief, answer a real buying question, help selection or advance action. Use necessary purchase guidance, accessibility and supplied disclosures. Keep strategy, owner questions, image provenance, review comments, setup status and implementation notes in the separate handoff. Do not add disclaimer sections, verification requests or defensive FAQs. Missing optional testimonials, certifications or guarantees need no placeholder or explanation.
 
-## First Response Contract
+Image alt text and captions describe the pictured content naturally, without production labels. Design instructions appear only inside the prescribed image placeholders. Follow `references/product-image-production.md` for image fidelity and production after approval.
 
-For full builds and standalone page designs, in the first response:
-
-1. Inspect the current folder before advising.
-2. State where the user is in the landing-page journey.
-3. Show a visible progress tracker limited to the requested scope; a standalone design ends at the reviewed wireframe.
-4. Explain the immediate goal in plain English.
-5. Ask only for inputs that materially affect the page or next safe action.
-
-Use a tracker like:
-
-```text
-Shopify Landing Page Build Progress
-[ ] 1. Understand the product, audience, offer, and traffic source
-[ ] 2. Inspect the Shopify repo, theme setup, and launch constraints
-[ ] 3. Create full strategy, copy and placeholder-only wireframe
-[ ] 4. Internally review and approve the wireframe before final imagery
-[ ] 5. Build the Shopify page in real theme files
-[ ] 6. Add products, images, metadata, and purchase wiring
-[ ] 7. QA desktop, mobile, accessibility, interactions, and checkout path
-[ ] 8. Preview on a development theme or private page
-[ ] 9. Launch only after approval, rollback, and monitoring are clear
-```
-
-Update the tracker after meaningful progress. Use `update_plan` when available, but still explain the user's stage in normal language.
-
-Read `references/guided-progress.md` when you need done signals or progress wording.
-
-## Default Landing Page System
-
-Default to:
-
-- one Shopify store and one primary landing-page goal
-- one full-design process with long-form substantive copy and a placeholder-only wireframe first
-- a mobile-first, shoppable DTC page with a clear product explanation and relevant available proof
-- a DTC design spec before theme implementation
-- exact image placeholders in every first-wireframe slot, even when assets already exist
-- real Shopify theme files, not a large Custom Liquid paste-in
-- merchant-editable copy in native Shopify Theme Editor fields, with saved edits preserved across code updates
-- Shopify Files for merchant-facing product, hero, lifestyle, proof, offer, and social-preview images
-- backend/Admin API or Shopify CLI automation only after access is verified
-- development theme or private preview before live launch
-- launch only after QA, approval, and rollback are clear
-
-Do not create a generic homepage unless the user specifically asks for one.
-Unless the user states otherwise, assume Meta paid-social cold prospecting. Treat the visitor as having low or unexpressed commercial intent before the ad interrupted their feed. State the assumption in the strategy output and let the user override it without blocking the first draft.
-
-For the default cold Meta case, use a transparent, brand-owned advertorial/listicle as the destination archetype. Continue the ad's hook, promise, and reason for the click; use substantive numbered reasons, introduce the product early enough to preserve trust, and keep the offer and response path accessible. Use another destination only when a concrete response-path requirement, explicit user direction, or strong ad-message continuity makes it a compellingly stronger fit; PDP still requires explicitly identified retargeting and the last-choice comparison. Record whether the listicle default was retained or overridden and, when overridden, the specific rationale.
-
-Whenever archetypes are enumerated, list `advertorial_listicle` first and `pdp_direct_response` last. Do not let a neutral option list imply PDP priority.
-
-A PDP is eligible only for explicitly identified retargeting traffic. Consider it last, after the long-form listicle and relevant specialized destinations, and select it only when a documented comparison clearly shows it is the strongest fit. Search, Shopping, product awareness, existing-customer status, a discount, subscription, configuration or a named SKU does not independently qualify. PDP variants and hybrids follow this same gate.
-
-## Product Desire Before Promotional Preference
-
-For cold-traffic advertorials/listicles, organize the argument around why the reader would want the product: the relevant problem or existing desire, practical and emotional benefits, how the product helps, and credible reasons to believe it. Before drafting, answer: **"Without the discount or bonus, why would this person still want this product?"** Use that answer to guide the headline and section sequence; label inferred audience motivations as hypotheses in the strategy, not established customer research.
-
-Price, discounts, pack sizes and bonuses normally support that argument. Their presence in the brief does not make them the editorial angle. Lead with a promotion only when the user explicitly requests it or the supplied campaign establishes it as the reason for the click; record that basis in the strategy. This governs persuasive emphasis, not disclosure timing: identify the product early, make material purchase terms clear where needed, and keep the offer and response path accessible.
-
-Each numbered reason must advance a meaningfully different reason to care, believe or choose. Bundle quantities alone are not reasons; explain their practical relevance when grounded in the product and audience context. Do not append a reasons section to an otherwise promotion-led page and call it a product-desire argument.
-
-## Full Design Process
-
-Default to long-form, substantive copy, especially for cold-traffic listicles and advertorials. Develop the argument rather than merely summarizing benefits: a headline and short benefit statement may introduce a reason without adequately developing it. Give useful reasons enough space to build desire, understanding and belief through relevant product details, practical implications, supported explanations, relatable use situations, available evidence and meaningful objections. These are options, not mandatory subsections. Several paragraphs can deepen one benefit without requiring a new benefit or fact in every paragraph.
-
-Limited evidence constrains what can be claimed; it does not automatically require minimal copy. Expand through truthful explanation of known facts, not invented specifications, mechanisms, statistics, testimonials, histories or outcomes. Illustrative situations must not masquerade as actual customer experiences or imply unsupported capabilities.
-
-Distinguish purposeful reinforcement from unnecessary repetition. Repeat a benefit, claim, explanation or purchase detail when its placement serves a specific persuasive or usability purpose: connecting proof to a promise, reinforcing the central idea, supporting scanning, answering a different objection, recapping the argument or helping at a purchase point. Even exact wording may earn its place without a new fact. Ask: **"What does this recurrence accomplish here, and what would the reader lose if it were removed?"** Combine or remove repetition that merely occupies space, interrupts momentum or restates a point without useful purpose; never cut solely because the idea appears elsewhere.
-
-Framework components do not automatically deserve separate sections. Let the useful argument determine length and the number of reasons; do not impose word counts, reason quotas or filler. Choosing an overall short-form design instead of the long-form default still requires relevant performance evidence and a recorded rationale for this product, audience, traffic and offer. This is a design preference, not a claim that long copy always converts better. These depth and reinforcement rules govern the maintained references and any supporting copywriting guidance used in this builder workflow.
-
-Use the complete strategy, copy, section and QA process for every new full-page design. For audits and limited copy work, use the relevant parts without expanding the deliverable. Ask only for missing decisions that materially change the page; keep assumptions and essential factual questions in the specification. Research unresolved product or offer questions when they affect the proposed argument or purchase path. Fresh external brand exemplars are optional, never a prerequisite.
-
-## Wireframe And Image Approval
-
-The first design deliverable is an actual rendered, reviewable full-page desktop/mobile wireframe artifact (for example local HTML), not merely a JSON spec or slot list with substantive page copy and exclusively image placeholders, even when existing images are available. Define the ideal image for every slot from its persuasive purpose, not from the asset inventory: subject/action, product truth, composition, placement, aspect ratio, target pixel dimensions, desktop/mobile crop and safe areas, alt text and planned filename. Existing product information may inform factual accuracy; do not select, generate or insert final imagery yet.
-
-Internally review the rendered desktop/mobile wireframe against the strategy and QA rubric. As the final step before delivering it to the user, run the independent conversion editor and remediation gate in `references/final-wireframe-review.md`; resolve accepted findings and verify the affected rendering before presenting the wireframe for approval. Explicit end-to-end authorization may waive this conversational pause; record that authorization, but still create the wireframe artifact and complete its internal review before imagery work. Otherwise stop at this approval gate. Afterward, propose existing images only when they fit the approved ideal slot; explain the fit or gap and generate/source replacements when needed. Do not redesign ideal slots to accommodate convenient assets.
-
-## Customer-Facing Copy Gate
-
-Deliver persuasive, finished copy. Local preview, standalone HTML and selection-demo requests describe implementation behavior; default to the intended finished customer experience unless a visibly labeled prototype is explicitly requested. Local prototype controls may use the intended purchase-action label with truthful immediate demo feedback, even though the purchase connection is pending; this is a scoped exception to matching the actual next step. Published purchase controls must perform their stated action. Put missing connections and setup instructions in the seller handoff. Use supplied facts confidently and translate features into practical and emotional benefits. Handle factual checks in the background. Include proof modules, terms, certifications, qualifications, FAQs and risk reversal when relevant and available, not to fill mandatory slots. If a missing fact is essential to the proposed page or purchase decision, ask a focused question or flag it briefly outside customer-facing copy; otherwise omit the unsupported statement or write around the gap. Do not invent facts. This operating rule governs the bundled copy guidance and any archived examples; use the available Amazing Copywriter skill when requested or required by project instructions without requiring a separate installation.
-
-Every customer-facing passage must advance or purposefully reinforce desire, understanding, belief or action, resolve a meaningful remaining purchase question, or provide necessary purchase guidance, accessibility or seller-supplied or approved disclosures. Add explanatory microcopy only for a specific ambiguity or material condition that remains after the actual offer presentation; internal verification and information already clear elsewhere do not require another explanation. Keep seller instructions, strategy labels, placement rationale, production notes, review comments and verification requests in separate specification/review documents, never in page copy. The only page exception is the prescribed image-production guidance inside designated image placeholders; do not use them to hide unrelated seller notes.
-
-Disclosure selection and legal adequacy belong to the seller. Preserve supplied or seller-approved disclosures; do not add generic disclaimers, precautionary legal sections or a disclosure checklist to the page by default. Flag a concrete potential gap in the separate seller review notes for their decision; do not treat speculative disclosure concerns as automatic delivery blockers. This does not permit invented claims, misleading omissions or unclear material offer terms.
-
-Image alt text, captions, descriptions and text rendered onto images must describe the pictured product, scene or relevant benefit, without production labels such as "AI-generated," "AI illustration," "concept illustration," or "not a real photo." Apply the descriptive SEO/AEO guidance in `references/product-image-production.md` when planning slots, prompting images and implementing the page; keep production provenance in separate seller notes.
-
-Unknown claims and terms must not become page text such as "[Confirm shipping terms]" or "[Insert testimonial]". Omit the unsupported statement or rewrite it using available facts. Record only unresolved essential gaps and their specific consequence separately. A gap blocks launch only when it leaves a material statement unsupported in the proposed published page or prevents an honest purchase decision; missing optional proof or unused terms are not blockers. These rules govern placeholder guidance throughout the maintained references and archive.
-
-Before delivery, perform the explicit customer-facing copy sweep in `references/final-wireframe-review.md`; a violation fails acceptance regardless of the total QA score. Apply it to the requested scope for audits and limited copy work without forcing a full wireframe. Recheck the implemented page before launch.
-
-## Readiness Ladder
-
-1. Brief ready: enough product, audience, actual offer, traffic and CTA context is available to draft; relevant proof/assets are inventoried and essential missing facts are noted separately.
-2. Strategy ready: page archetype, big idea, copy strategy, section sequence, offer stack, proof stack, CTA mode, metadata direction, and image-slot plan are drafted.
-3. Wireframe reviewed: full-copy desktop/mobile artifact uses only image placeholders; internal review is complete. User approval or an explicit end-to-end waiver of the pause is recorded before final imagery. Only unresolved essential gaps under the Customer-Facing Copy Gate remain factual launch blockers.
-4. Build ready: target repo, deploy guide, git status, theme access, Admin API access, theme ID, and implementation path are known.
-5. Private preview ready: the page works on a development theme or private URL with desktop/mobile QA.
-6. Launch ready: live changes are scoped, reversible, approved, and verified.
-
-Do not call a page ready for Shopify implementation until the design package is good enough to build without redesigning the page.
-
-## Beginner-Friendly Working Style
-
-- Explain each risky step in plain English.
-- Give one safe next command when the user is blocked.
-- Inspect the real repo before advising.
-- Reuse existing setup when the user already has it. Verify existing themes, apps, credentials, products, Shopify Files, deployment paths, and docs before proposing replacements.
-- Warn before installs, theme pushes, Admin API mutations, product changes, discount changes, metadata changes, deploys, deletes, or live customer-facing changes.
-- Keep `.env` files ignored and never ask the learner to paste secrets into chat.
-- Keep essential factual questions separate from finished copy, and omit nonessential gaps. Apply the Customer-Facing Copy Gate to the rendered page.
-
-## Design Phase Rules
-
-Read `references/dtc-design-package.md` before producing the strategy/spec.
-
-Produce the full design package and wireframe, using the archetype, category, component, visual/copy and QA references relevant to the product. Use the restored optional design details and targeted archive routes for the selected category/components; adapt them to the brand rather than copying a template. Label assumptions; deepen research where needed.
-
-Create a Shopify-bound design package that includes:
-
-- recommended destination archetype, persuasion architecture, rationale, rejected alternatives, listicle-default status and override rationale, and PDP eligibility decision
-- full-design rationale, product-desire answer without the promotion, any promotion-led opening rationale, long-copy development plan and any evidence-supported shorter-copy exception
-- audience, awareness level, traffic source, campaign stage, ad angle, click motivation, work already completed by the ad, ad/message match, and primary conversion goal
-- derived strategy labels: confidence label, education need, proof need, risk reversal need, comparison need, CTA mode, offer strength, claim sensitivity, and sticky CTA need
-- copy strategy packet applying the master-copywriter principles in references/dtc-visual-copy-system.md in the brand's own voice, with one concrete product-specific big idea and an explicit headline bank
-- message-family routing when multiple ads are supplied, mapping each materially different promise to its page or opening
-- section-by-section sequence with copy, CTAs, offer/proof logic, and mobile notes
-- separate notes for unresolved essential factual questions, if any
-- exact image-slot plan with role, placement, aspect ratio, target dimensions, crop behavior, planned Shopify Files filename, alt text, and zoom recommendation
-- SEO/browser title, meta description, social preview copy, and social preview image direction
-- conversion readiness score or punch list
-- handoff note that Shopify implementation must reproduce the approved spec faithfully
-
-The hero must make the product, meaningful benefit and next action clear quickly, with the actual offer and relevant proof where useful. The CTA label must match the real next step, such as `Add to Cart`, `Select Size`, `Choose Flavors`, `Build Your Bundle`, `Take the Quiz`, `Customize`, `Verify Eligibility`, or `Get My Sample`.
+A local preview defaults to finished shopper copy unless the user requests an annotated prototype. Unconnected purchase controls can carry intended purchase labels but must show immediate truthful demo feedback on activation: no order or payment occurred. Keep them inert with respect to checkout. Put connection status in the seller handoff. Published controls must perform their stated action. Follow the response-state sweep in `references/final-wireframe-review.md`.
 
 ## Implementation Phase Rules
 
@@ -204,16 +112,6 @@ ready, verify both Shopify publication representations, MARKET-filtered
 publications, `publishedInContext=true` for every target country, and the real
 cart-to-checkout path without placing an order.
 
-For the first wireframe, render exact visible placeholders in every image slot, regardless of available assets:
-
-```text
-IMAGE: <SLOT-ID>
-ASPECT RATIO: <RATIO> | SIZE: <WIDTH> X <HEIGHT> PX
-Description: <final image description/crop notes>
-```
-
-Placeholders should preserve the final slot's desktop/mobile layout, aspect ratio, alignment, crop behavior, and spacing.
-
 ## Safety And Launch Rules
 
 Before any deploy, theme push, or Admin API mutation in the target Shopify repo:
@@ -226,7 +124,9 @@ Before any deploy, theme push, or Admin API mutation in the target Shopify repo:
 6. Pull back changed theme files after pushes when possible and inspect the remote code.
 7. Verify live storefront behavior in a real browser, preferably the user's Chrome session when available.
 
-Read `references/launch-and-rollback.md` before live theme work, final QA, launch approval, or rollback planning.
+Before release, check that secrets are absent from frontend code, Liquid, Shopify metafields, documentation, screenshots, logs and commits. Keep credentials in the authorized private storage path.
+
+Read `references/launch-and-rollback.md` before any theme push, Admin API mutation, live preview, final QA, launch approval or rollback planning.
 
 Never touch live Shopify theme files without:
 
@@ -237,48 +137,26 @@ Never touch live Shopify theme files without:
 - providing rollback
 - getting explicit approval
 
-## References
+## References By Task
 
-Read only the reference needed for the current stage:
+- `references/conversion-copy.md`: core persuasive craft, vivid possibilities, emotional benefits, confident owner facts and sharper examples.
+- `references/listicle-playbook.md`: counted headlines, reason maps, long-form development, desktop/mobile sequence and worked examples.
+- `references/dtc-design-package.md`: compact design deliverable and handoff.
+- `references/dtc-derived-strategy.md`: audience/ad continuity, persuasion architecture, offers and response paths.
+- `references/dtc-archetypes.md`: listicle and specialized destination selection.
+- `references/dtc-category-packs.md`: category-specific buying friction and art direction.
+- `references/dtc-components.md`: sections, commerce, comparisons, reviews and sticky CTA behavior.
+- `references/dtc-visual-copy-system.md`: typography, whitespace, visual rhythm, headlines and CTA language.
+- `references/dtc-qa-rubric.md` and `references/final-wireframe-review.md`: conversion quality, rendered QA and independent editorial review.
+- `references/source-guide-index.md`: optional archived visual examples; historical workflow and fact-checking instructions are inactive.
+- `references/guided-progress.md`: scope-appropriate progress and done signals.
+- `references/access-setup.md`: authorized Shopify access setup; no separate storefront skill required.
+- `references/shopify-implementation.md`: native editable copy, preserved merchant settings, assets and purchase wiring.
+- `references/product-image-production.md`: image planning, fidelity and approved production.
+- `references/launch-and-rollback.md`: private preview, targeted live changes, checkout checks and rollback.
 
-- `references/guided-progress.md` for the progress tracker, readiness ladder, and done signals.
-- `references/source-guide-index.md` for targeted archived examples while selecting category art direction, component layouts or shopping interactions; consult the matching section when an example helps make the choice concrete. It is not necessary to load the full archive. Current maintained rules take precedence.
-- `references/dtc-design-package.md` before creating or reviewing strategy, copy, section sequence, offer/proof architecture, image slots, metadata, or the final design package.
-- `references/dtc-derived-strategy.md` when choosing design depth, derived strategy labels, CTA mode, confidence label, sticky CTA need, or additional research guidance.
-- `references/dtc-archetypes.md` when selecting or validating advertorial/listicle, educational, offer, subscription, bundle, quiz, collection, lead-capture, or PDP structure.
-- `references/dtc-category-packs.md` when the category has specific buying friction such as apparel fit, supplement claims, home dimensions, pet/baby safety, wellness tech proof, outdoor specs, or custom-product confidence.
-- `references/dtc-components.md` when shaping sections, component props, sticky CTA behavior, comparison tables, review summaries, cross-sells, or email capture.
-- `references/dtc-visual-copy-system.md` when choosing visual direction, design tokens, headline patterns, CTA microcopy, FAQ topics, or copy modules.
-- `references/dtc-qa-rubric.md` before approving the design package for Shopify implementation or when a draft feels weak, generic, risky, or unnecessarily repetitive.
-- `references/access-setup.md` when Theme Access, Shopify CLI, a development theme, Dev Dashboard app credentials, Admin API scopes, or access verification are missing or uncertain.
-- `references/shopify-implementation.md` before creating or changing Shopify theme files, page templates, Shopify Files images, product/variant/cart wiring, metadata, or local implementation previews.
-- `references/product-image-production.md` after the wireframe/image approval gate, before final-image reference selection or production. Use the available Fidelity First Product Photography skill; otherwise use the bundled distilled framework.
-- `references/launch-and-rollback.md` before theme pushes, Admin API mutations, live preview, final QA, launch approval, disable paths, or rollback.
+## Completion
 
-## Completion Gate
+Deliver the requested artifact, explain the strongest conversion decisions, and state what was actually reviewed or tested. For a full design, include independent findings and fixes, desktop/mobile typography and whitespace review, and the image plan. For implementation, also verify editable copy survives updates, the correct products/variants/prices reach checkout, accessibility and mobile controls work, and rollback is available. Report local, committed, pushed, deployed and live-verified status accurately. A score is editorial judgment, not evidence of conversion lift.
 
-For full builds, verify the applicable items below before calling the landing page complete. A standalone design ends at its reviewed design/wireframe handoff; an audit or copy rewrite ends with its requested findings or copy and relevant verification. Do not report unperformed implementation, deployment or live QA as complete.
-
-Full-build checks:
-
-- the approved DTC design spec is still the source of truth
-- any deviation from the spec is documented
-- the design rationale is clear and any Assumptions are labeled
-- the traffic source and campaign stage are explicit; absent contrary input, they are Meta paid social and cold prospecting
-- the opening continues the ad promise and reason for the click when one exists
-- the cold Meta listicle default is either retained or overridden with a concrete strategic or functional rationale
-- the persuasion architecture matches the ad angle, awareness level, and work already completed by the ad
-- a PDP is selected only for explicitly identified retargeting and clearly wins the recorded comparison as the last choice
-- derived strategy labels and confidence label are present
-- material statements and purchase details actually used on the page are accurate; unresolved essential gaps are fixed or clearly identified, and absent optional proof/terms do not force extra content or block readiness
-- the first wireframe uses only exact image placeholders; final Shopify Files assets follow the image approval gate
-- product, variant, bundle, quiz, lead form, cart, or checkout path matches the CTA
-- metadata and social preview tags are page-specific
-- desktop and mobile QA passed
-- customer-facing copy is editable in the Theme Editor, paragraph breaks render correctly, and empty optional fields leave no stray icons or spacing
-- saved merchant copy and image selections survive code updates; any deliberate settings migration is scoped and verified
-- text is readable, no horizontal overflow, no mojibake, and sticky CTA does not block controls or legal copy
-- image zoom works for meaningful final images when included
-- normal store pages still work if shared layout/theme files changed
-- no secrets are in frontend code, Liquid, metafields, docs, screenshots, logs, or commits
-- rollback or fast disable path exists
+When testing is requested, compare meaningful hooks, reason order, imagery or package presentation with consistent offers and comparable traffic. Measure purchases and contribution profit where available, with checkout completion, AOV and returns as context. Clicks alone do not establish sales success. Testing suggestions do not authorize ad spending or launch.

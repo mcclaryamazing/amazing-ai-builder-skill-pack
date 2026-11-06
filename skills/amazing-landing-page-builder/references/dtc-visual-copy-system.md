@@ -2,7 +2,7 @@
 
 Use this reference when choosing visual direction, design tokens, headline patterns, CTA microcopy, FAQ topics, and reusable copy modules.
 
-Write finished copy for the buyer: lead with the practical benefit and why it matters to them, identify the product and actual offer promptly, then explain the mechanism and relevant available reason to believe. Treat inferred emotional motivations as hypotheses, not research findings. Essential missing facts belong in separate notes, not customer copy.
+Write finished copy that makes the buyer want the product and see why it matters now. Lead with a specific practical benefit and its emotional payoff, identify the product and offer promptly, and show what makes the result possible. Apply [conversion-copy.md](conversion-copy.md) and, for listicles, [listicle-playbook.md](listicle-playbook.md).
 
 ## Marketing Framework
 
@@ -12,14 +12,12 @@ Default cold-Meta listicle argument:
 
 ```text
 Transparent Advertorial Header
-Message-Matched Hook
-Problem or Desired Outcome
-Substantive Numbered Reasons
-Early Solution and Product Reveal
-Proof Near Claims
-Offer and Response Path
-Risk Reversal When Relevant And Available
-Objection Handling and Final CTA
+Message-Matched N Reasons Headline
+Opening Scene or Desired Outcome, Named Product and Its Role
+Early CTA to the Actual Offer
+Substantive Numbered Reasons with Relevant Visuals and Available Proof
+Offer, Selection and Purchase Path
+Remaining Purchase Questions and Final CTA
 ```
 
 Build product desire before promotional preference under `../SKILL.md`; record why the reader would want the product without the discount or bonus. This is a reason-based listicle organized by problem-solution-proof-offer. Use it when no other persuasion architecture has a stronger rationale. Product specificity does not justify PDP copy by itself. Do not invent a publisher identity or disguise the page's brand ownership.
@@ -39,7 +37,7 @@ The following are persuasion and module suggestions within the selected destinat
 - promotion-led opening: only when explicitly requested or the supplied campaign establishes the promotion as the click reason; a discount in the brief alone does not justify this emphasis
 - personalized product: quiz funnel
 - commodity disruption: us-vs-them comparison
-- high-AOV tech: educational mechanism plus proof stack
+- high-AOV tech: explain the mechanism and use the strongest available demonstration or customer detail
 - new product launch: AIDA plus comparison
 - broad collection: collection splitter plus merchandising
 - custom product: quality uncertainty, sample/design help, customization CTA
@@ -126,7 +124,9 @@ Adjust tokens to match the store's real brand and theme.
 
 ## Copy Rules
 
-Prefer specific copy grounded in verified facts; the lines below illustrate form, not facts to reuse:
+Turn the seller's product details into moments the buyer can picture. Show the immediate practical change and why it matters emotionally. For example, a lantern with a hanging hook can leave both hands free while you reset a breaker. That scene makes the design useful in a way a label like “hanging hook” cannot. Use a plausible imagined scene when it makes the benefit vivid. Frame the scene once and let it unfold naturally.
+
+Use concrete wording for the seller's actual offer. These examples illustrate form:
 
 ```text
 Save 25% on your first order
@@ -158,6 +158,9 @@ Use the parts that help a section do its job; no fixed stack is required:
 
 Use:
 
+- listicle outcome: `[N] Reasons [Product] Makes [Specific Task] Easier`
+- listicle situation: `[N] Reasons to Keep [Product] Ready for [Recognizable Moment]`
+- listicle gift or package: `[N] Reasons [Bundle] Belongs in [Buyer’s Routine or Gift Occasion]`
 - product outcome: `The [product] built for [specific outcome]`
 - problem/solution: `Finally, [solution] without [common frustration]`
 - premium mechanism: `Powered by [mechanism], designed for [benefit]`
@@ -167,34 +170,19 @@ Use:
 - subscription: `Your [routine/product] delivered every [cadence]`
 - custom product: `Create [product] that looks and feels like [desired outcome]`
 
+Every listicle's visible main headline must say the number and “Reasons” and tell readers why the list matters. Match the number to the distinct numbered reasons in the finished page, including after cuts. Name the product in the hero or opening before the reasons.
+
 ## Headline Bank Output
 
-Include an explicit `headline_bank` in full copy strategy packets and headline-development deliverables. Offer a small useful set of product-specific alternatives across meaningful benefit, mechanism, sensory proof, offer, identity, curiosity or comparison angles. Identify each angle, its ad/message-family fit when applicable, and the evidence needed for its promise. Recommend an opening with a strategic rationale; do not claim a winning headline without performance data. For a narrow rewrite, keep alternatives within the requested section and scope.
+Include an explicit `headline_bank` in full copy strategy packets and headline-development deliverables. Offer a small set of product-specific alternatives that vary the idea, such as a meaningful benefit, recognizable scene, identity, mechanism, offer or comparison. Identify each angle and its ad/message-family fit when applicable. Recommend the opening that best earns attention and leads into this product's argument. For a narrow rewrite, keep alternatives within the requested section and scope.
 
 ## CTA Microcopy
 
-Use relevant, verified reassurance near a CTA when it answers a likely hesitation:
-
-- free shipping over verified threshold
-- returns or guarantee terms
-- cancel anytime
-- ships in verified timeframe
-- secure checkout
-- HSA/FSA eligible only if valid
-- try risk-free
-- warranty included
-
-When a fact essential to the offer or action is unverified, record a focused question in the separate specification/evidence notes. Otherwise omit or truthfully rewrite the unsupported promise. Never show these questions in rendered copy:
-
-```text
-[Confirm shipping threshold]
-[Verify guarantee terms]
-[Confirm cancellation terms]
-```
+Name the actual action and package. If the first button scrolls to a choice, say “Choose Your [Product] Bundle” or “See [Product] Options.” If the button adds the chosen bundle to cart, name that action. Use concise terms near the CTA when they help the buyer choose, such as the seller's actual shipping threshold, delivery window or return period. A timely use, a recurring annoyance or the benefit of being ready can give the buyer a reason to act even at full price.
 
 ## FAQ Generation
 
-Use FAQs for plausible, purchase-relevant questions still insufficiently answered by the page. Prefer customer evidence; otherwise use grounded product judgment. Do not invent concerns or repeat clear offer information to fill a section. There is no minimum count; omit the FAQ when it adds nothing.
+Resolve the major buying objection where it arises. Use FAQs for remaining questions a buyer would reasonably ask. Give the direct answer, the relevant condition and what it means for the buyer. If the page creates a misleading implication, fix the passage or visual that creates it. Leave out defensive FAQs about implications the page never raises and skip the section when it adds nothing.
 
 Consider only topics a buyer is likely to need for this product and offer:
 
@@ -219,7 +207,7 @@ Reuse modules when they fit the product:
 - which one is right for you
 - the problem we're solving
 - what customers are saying
-- risk-free for X days when verified
+- the seller's return, trial or guarantee terms when they help the decision
 - bundle value breakdown
 - complete the routine/look/setup
 - the technical details
@@ -227,22 +215,22 @@ Reuse modules when they fit the product:
 
 ## Copy Depth And Image Sequence
 
-Apply the Full Design Process in `../SKILL.md`: develop a substantive long-form argument rather than a collection of benefit summaries. Deepen important reasons with truthful detail, explanation, available evidence and meaningful objections; preserve purposeful reinforcement and remove irrelevant or purposeless repetition. Short paragraphs and scannable headings support a long argument; they do not impose short sections or a short page. An overall short-form departure requires relevant performance evidence and a recorded rationale. Do not impose word counts or invent claims to fill space.
+Apply the copy-depth guidance in `../SKILL.md`: develop a substantive long-form argument. Deepen important reasons with concrete moments, the consequence of sticking with the current approach, practical product detail, available proof and meaningful objections. Use descriptive headings and readable paragraphs. Preserve purposeful reinforcement and cut repetition that serves no purpose. If the decision calls for an overall short page, give a concise rationale based on the buyer, ad, product and offer. Let the argument set the length.
 
 Use the ideal visual direction to specify placeholder slots first. Do not select or insert existing images, or generate new ones, before the wireframe artifact is internally reviewed and the image approval gate in dtc-design-package.md is satisfied.
 
 ## Master Copywriter Principles In The Brand's Voice
 
-Apply these complementary principles, not any writer's voice or source text. They guide reasoning; they do not guarantee conversion or change the archetype, long-copy or wireframe gates.
+Apply these complementary principles in the brand's own voice.
 
 - Schwartz: identify the buyer's existing desire, awareness and beliefs; connect the product to that desire and close the remaining belief gap. Awareness guides explanation, not automatic PDP eligibility or shorter copy.
-- Ogilvy: research product facts, mechanism, differentiators, objections and proof; organize the page around one concrete, memorable, supportable big idea while preserving brand character.
-- Halbert: choose the motivated audience, make the real offer worthwhile, then earn attention with a specific truthful hook. Resolve curiosity and never fabricate scarcity.
-- Hopkins and Bencivenga: give important promises a credible reason why using relevant available human, technical, authority, or offer evidence. Soften or omit an unsupported promise; record an essential unanswered factual question separately.
+- Ogilvy: organize the seller's product details, differentiation and offer around one memorable idea specific to the buyer and brand.
+- Halbert: choose the motivated audience, make the real offer worthwhile and earn attention with a hook that matters to that person now.
+- Hopkins and Bencivenga: give the reader a concrete reason why the product delivers. Use construction, an explanation, a demonstration or a customer experience where it makes the argument stronger.
 - Caples: write clear, benefit-led headlines using useful novelty or truthful curiosity. When testing alternatives, vary meaningful angles rather than adjectives; do not claim a winner without data.
 - Sugarman: make each sentence and section earn the next through concrete detail, logical transitions and resolved open loops. Remove purposeless repetition and throat-clearing while preserving useful depth and deliberate reinforcement.
 - Edwards: connect the person's situation and problem to an attainable aspiration, solution, supported transformation, offer and clear response. Do not shame the buyer or exaggerate outcomes.
 
-Before full copy, produce a concise copy strategy packet covering audience desire and awareness, verified product and offer facts, big idea, ad promise and remaining belief gap, relevant mechanism and proof, actual response path, and brand voice. Map these choices to the hero, key reasons, objections, and CTA. Explain how specific copy passages apply the principles; listing writers' names is not evidence of application. Make the actual purchase terms clear even when no risk-reversal offer exists.
+Use the same compact conversion brief from `dtc-design-package.md` to guide the hero, reasons, objections and CTA. Apply these principles in the actual copy; do not create another strategy packet or a per-principle explanation inventory.
 
-During wireframe QA, challenge whether the opening continues the ad, the big idea could fit a competitor unchanged, each major promise has support or is truthfully qualified, reasons develop desire and belief beyond summaries, repeated ideas serve a specific local purpose, the actual offer is clear, and the response is actionable. Check that the copy leads with a meaningful benefit, reaches the emotional reason to care, and uses available evidence or explanation to make the promise believable. Record concrete findings and revisions in the same evidence-based QA. These embedded principles are sufficient for the builder workflow; no separate copywriting skill installation or fresh external brand exemplar is required.
+During wireframe review, read the opening as a buyer who just clicked the ad and skim the headings as someone deciding whether to keep reading. Ask whether the message gives a specific reason to want this product and act, whether the buyer can picture the payoff, whether each reason advances the decision and whether the offer is easy to choose. Revise generic or overqualified copy and keep material offer conditions clear. Record concrete findings and fixes.

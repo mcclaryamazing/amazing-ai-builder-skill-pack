@@ -164,6 +164,8 @@ For a direct purchase CTA, use a real add-to-cart form:
 
 Keep top-of-page CTAs as anchor links to the purchase module unless the user wants every button to submit to cart.
 
+Test the actual page buttons for the offered product, variant, bundle, discount and subscription paths as applicable. Confirm selected items and quantities, resulting product subtotal after discounts, and purchase frequency and renewal price where applicable. Compare displayed savings with the actual offer basis. Keep taxes and location-dependent shipping separate from the product subtotal. Check market eligibility where the offer is geographically scoped. If the live price, offer setup, or purchase path cannot be verified, keep the page private and disable shopper checkout until resolved.
+
 CTA wiring patterns:
 
 ```text
@@ -230,8 +232,7 @@ text embedded in images
 layout shifts from unreserved image space
 content-blocking overlays
 sticky bars that hide forms or legal copy
-fake product data
-unverified claims
+placeholder product data reaching the published page
 ```
 
 For side-by-side offer cards, make the cards flex columns and put the form/button area at `margin-top: auto` so buttons align even when copy lengths differ.
@@ -245,7 +246,7 @@ Before presenting an implemented page as ready, verify:
 ```text
 approved spec is recognizable in the build
 section sequence and copy match the spec
-hero product, promise, offer, proof cue, and CTA are clear
+hero product, compelling benefit, offer, and CTA are clear
 CTA actions match the actual response path
 image placeholders/final images preserve exact slots
 all merchant-facing final images use Shopify Files and file_url
@@ -261,7 +262,7 @@ FAQ and interactive controls work
 sticky CTA appears only where intended
 metadata and social preview tags are correct
 meaningful final images support zoom when included
-checkout/add-to-cart path works without placing an order
+actual page buttons select the right items and quantities, and configured prices and terms match the presented offer without placing an order
 ```
 
 For storefront pages with lazy loading, reveal animations, counters, or sticky CTA observers, scroll from top to bottom and back before final screenshots or conclusions.

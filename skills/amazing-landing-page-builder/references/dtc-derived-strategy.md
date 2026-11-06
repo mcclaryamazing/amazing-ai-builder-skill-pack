@@ -1,21 +1,18 @@
 # DTC Derived Strategy
 
-Use this reference before writing final copy or selecting sections. The goal is to turn partial inputs into a useful landing-page strategy without forcing a long interview.
+Use this reference before writing final copy or selecting sections. Turn the seller's brief into a compelling buying argument. Apply [conversion-copy.md](conversion-copy.md) and the [listicle playbook](listicle-playbook.md) when relevant.
 
 ## Non-Negotiables
 
-- Do not invent facts.
+- Use the seller's product facts, claims, proof and offer directly. The seller owns factual approval.
 - Unless the user states otherwise, assume `meta_paid_social` and `cold_prospecting`, state the assumption, and treat the visitor as having low or unexpressed commercial intent before the ad interrupted their feed.
-- Keep missing material facts in separate notes only when proposed published copy or an honest purchase decision depends on them. Omit unsupported optional proof and commercial terms from customer copy.
-- Check material health, clinical, safety, sustainability, financial, performance, medical, regulatory, superiority, and competitor-comparison claims for support when proposed in customer copy; do not add blanket flags for claims the page does not make.
+- Identify what the buyer wants to feel, do or avoid. Choose the product difference that makes it worth acting on.
 - Design mobile-first.
 - Match CTA labels to the real next step.
-- Continue the ad promise in the hero when an ad or campaign promise exists.
-- Put available proof close to the material claim it supports, or rewrite the claim within verified facts.
-- Use real urgency only.
-- Continue the ad's hook and reason for the click before expecting product-level purchase intent.
+- Continue the ad's hook and reason for the click in the hero when a campaign promise exists.
+- Give the buyer a reason to act based on the value of using, enjoying or having the product ready. Use the seller's actual terms for promotional urgency.
 - Preserve visible purchase access when useful, but do not force every cold-traffic opening into a PDP buy box.
-- Give premium pages enough product and offer clarity, useful detail, relevant evidence, objection handling, and an appropriate response path to justify the decision.
+- Give premium pages the product detail, available proof and clear offer that make the price worth paying.
 
 ## Intake Fields
 
@@ -25,20 +22,20 @@ Extract or infer:
 {
   "brand": "name, category, voice, trust level, positioning",
   "product": "name, type, price, variants, mechanism, benefits, objections",
-  "offer": "actual merchant offer and any verified discount, bundle, shipping, gift, guarantee, urgency, eligibility",
+  "offer": "actual merchant offer, including applicable price, quantities, options and purchase terms",
   "traffic": "source, campaign stage, temperature, ad angle, ad promise, click motivation, work already completed by the ad, audience, awareness level",
-  "proof": "available reviews, UGC, press, certifications, testing, founder/expert evidence; none is an allowed result",
+  "proof": "any seller-supplied customer experiences, demonstrations, product detail, press or founder story that helps the buyer believe",
   "assets": "product, lifestyle, UGC, packaging, logo, and social images",
-  "constraints": "compliance, claims to avoid, platform, required sections",
+  "constraints": "seller-supplied boundaries, approved disclosures, platform, required sections",
   "response_path": "purchase, variant selection, bundle, quiz, lead capture, verification, customization, or collection click"
 }
 ```
 
-Ask only for missing fields that materially change the page. Otherwise infer, label the assumption, and continue.
+Ask a focused question only if a missing decision materially changes the page or the buyer cannot understand the actual offer or next step. Infer the creative direction from the brief and label assumptions in the strategy.
 
 ## Derived Strategy Fields
 
-Include these in every design package:
+Use these optional planning fields when they clarify a decision. Consolidate them into the compact brief in `dtc-design-package.md`; do not create a second mandatory schema or duplicate information.
 
 ```json
 {
@@ -53,17 +50,15 @@ Include these in every design package:
   "pdp_eligibility_rationale": "Explicit retargeting evidence and last-choice comparison or missing requirement",
   "confidence_label": "validated_pattern | first_draft_to_test",
   "education_need": "low | medium | high",
-  "proof_need": "low | medium | high",
   "risk_reversal_need": "low | medium | high",
   "comparison_need": "none | helpful | essential",
   "cta_mode": "direct_purchase | selection | quiz_start | offer_claim | lead_capture | verification | customization",
   "offer_stack_strength": "weak | adequate | strong",
-  "claim_sensitivity": "low | medium | high",
   "mobile_sticky_cta": true
 }
 ```
 
-Use `validated_pattern` only with relevant observed performance evidence for the destination and persuasion combination. Otherwise use `first_draft_to_test`, especially where material assumptions or proof gaps remain. Category or archetype popularity is not performance validation.
+Use `validated_pattern` when observed performance applies to this destination and argument. Use `first_draft_to_test` for a new editorial direction.
 
 ## Destination And Persuasion Selection
 
@@ -76,10 +71,10 @@ Override the listicle only when the response path requires a quiz, collection sp
 Use:
 
 - `AIDA` for aspiration, discovery, launch novelty, or a strong attention hook that must build desire.
-- `problem_solution_proof_offer` for a clear pain or job, a credible solution, substantiating proof, and a concrete offer.
-- `problem_agitate_solve` for truthful problem reframing that does not shame or exaggerate.
+- `problem_solution_proof_offer` for a clear pain or job, a specific product role, a convincing reason why and a concrete offer.
+- `problem_agitate_solve` for a recognizable frustration and its consequences, followed by the buyer's way forward.
 - `mechanism_first` when the distinctive reason the product works caused the click.
-- `demonstration_first` when the ad showed an observable result that the page should explain and substantiate.
+- `demonstration_first` when the ad showed an observable result that the page should continue and explain.
 - `comparison_first` when the click came from a contrast with the old way or an alternative.
 
 A PDP is eligible only for explicitly identified retargeting traffic. Consider it last, after the long-form listicle and relevant specialized destinations, and select it only when a documented comparison clearly shows it is the strongest fit. Search, Shopping, product awareness, existing-customer status, a discount, subscription, configuration or a named SKU does not independently qualify. PDP variants and hybrids follow this same gate.
@@ -90,21 +85,15 @@ When multiple ads or campaign hooks are supplied, group them by the promise and 
 
 Apply the same archetype and PDP eligibility rules to each route. A routing recommendation does not authorize creating extra pages or changing ads: when implementation is limited to one page, design the requested route and identify the other route needs in the handoff.
 
-## Need Scores
+## Editorial Emphasis
 
-These labels guide editorial emphasis; they do not require proof modules, risk-reversal promises, comparison sections, or FAQ blocks. Use only actual merchant facts and material buyer questions. A missing optional element does not become a launch blocker.
+These labels guide how much explanation, reassurance or comparison will help this buyer decide. Choose sections that earn their place.
 
 Education need:
 
 - low: familiar product, low price, simple SKU, clear category
 - medium: premium price, material/ingredient differentiation, meaningful variants, new brand
 - high: regulated category, high-AOV product, technical product, subscription, quiz, customization, new mechanism, unfamiliar product behavior
-
-Proof need:
-
-- low: established brand, simple product, low claims, low price
-- medium: growing brand, mid price, moderate claims, common product with differentiation
-- high: strong material claims, high price, health/safety claims, baby/pet/wellness, technical product, subscription, new mechanism, strong superiority claims; a new brand may need more explanation without requiring nonexistent third-party proof
 
 Risk reversal need:
 
@@ -116,7 +105,7 @@ Comparison need:
 
 - none: simple low-consideration product with no meaningful comparison story
 - helpful: premium price, multiple variants, competing materials, or hard-to-understand value
-- essential: category disruption, superiority claims, subscription value defense, or plan/tier comparison
+- essential: choosing between named alternatives, plans or tiers is central to the decision
 
 ## CTA Mode
 
@@ -134,7 +123,7 @@ Never use `Buy Now` if the user must first choose size, flavor, formula, color, 
 
 ## Copy Strategy Packet
 
-Create this before final page copy:
+The following is an optional structure for the same conversion brief, not an additional required deliverable. For listicles, organize it around positioning, reasons to believe, the package and the experience of choosing and buying. Establish a concrete reason this buyer should want this product before choosing the headline.
 
 ```json
 {
@@ -143,7 +132,7 @@ Create this before final page copy:
   "ad_angle": "problem | curiosity | aspiration | mechanism | demonstration | comparison | offer | proof",
   "ad_job_completed": ["What the ad already established"],
   "click_motivation": "Why the visitor left the feed",
-  "remaining_belief_gap": "What the page must make believable",
+  "remaining_belief_gap": "What the buyer still needs to understand or see",
   "persuasion_architecture": "Selected copy sequence and why",
   "audience": "Who is most motivated to buy now",
   "awareness_level": "unaware | problem_aware | solution_aware | product_aware | brand_aware",
@@ -151,43 +140,42 @@ Create this before final page copy:
   "big_idea": "One concrete organizing product truth",
   "mechanism": "Why the product can deliver the promise",
   "primary_hook": "Benefit, curiosity, proof, identity, comparison, or offer hook",
-  "transformation": "Before/after change to make believable",
-  "proof_needed": ["Evidence needed only for material claims proposed in customer copy"],
-  "offer_logic": "Actual merchant offer and why it matters; no invented urgency",
+  "transformation": "The practical change and emotional payoff the buyer wants",
+  "reason_now": "A use, occasion, recurring cost of waiting, preparation benefit or actual promotional deadline",
+  "reason_to_believe": "The most useful explanation, product detail, demonstration or seller-supplied proof",
+  "offer_logic": "Actual merchant offer and why each choice matters",
   "response_path": "Actual CTA and next step",
-  "headline_bank": [{"headline": "Product-specific alternative", "angle": "Meaningfully different hook", "message_family": "Relevant ad family, if supplied", "proof_needed": "Evidence only if the headline makes a material claim"}],
-  "claim_verification_notes": ["Only material unresolved claims retained for possible published copy"]
+  "headline_bank": [{"headline": "Product-specific alternative", "angle": "Meaningfully different hook", "message_family": "Relevant ad family, if supplied"}]
 }
 ```
 
-A strong big idea is concrete, product-specific, visual enough to remember, tied to a real product truth, and supportable by proof, mechanism, or offer logic. Reject generic big ideas that could fit a competitor unchanged.
+A strong big idea is concrete, product-specific, easy to picture and tied to a practical and emotional payoff. If a competitor could swap in its name unchanged, sharpen the idea. For a listicle, express it in a visible “N Reasons” main headline, introduce the named product before the reasons and make every numbered reason advance a distinct part of the decision.
 
 ## Offer And Proof Architecture
 
-Consider these five optional offer layers only when they exist in the actual merchant offer. Omit absent layers; do not create a missing-input checklist for them, invent an incentive or turn illustrative values into presumed facts:
+Build the package around the buyer's decision. Make contents, quantities, variants, price, applicable terms and the next action easy to scan. Explain the practical point of a larger package when it suits a use such as placement in several rooms, gifting, replenishment or complementary tasks. Consider these layers where they fit:
 
 ```json
 {
-  "primary_incentive": "Verified merchant incentive, if any",
-  "aov_lever": "Verified bundle or quantity offer, if any",
-  "friction_reducer": "Verified shipping or payment term, if any",
-  "risk_reversal": "Verified return, trial, or guarantee term, if any",
-  "urgency_or_reason_now": "Real merchant deadline or reason to act now, if any"
+  "primary_incentive": "Actual merchant incentive",
+  "aov_lever": "Actual bundle or quantity offer and why it fits",
+  "friction_reducer": "Useful shipping or payment term",
+  "risk_reversal": "Applicable return, trial or guarantee term",
+  "urgency_or_reason_now": "Timely buyer benefit or actual merchant deadline"
 }
 ```
 
-Proof layers:
+Ways to make the argument believable:
 
-- volume: star rating, review count, customers served
-- human: testimonials, UGC, before/after where compliant, fit data
-- authority: press, experts, founder, partners, certifications
-- technical: ingredients, materials, specs, testing, comparison data
-- risk: actual merchant guarantee, trial, warranty, checkout terms, or returns policy when relevant
+- Explain a feature, material or design choice and show what it makes easier.
+- Show the product doing the specific job the reader cares about.
+- Use a seller-supplied customer experience, founder detail, rating or comparison when it makes a point more memorable or believable.
+- Put useful terms near the buying hesitation they resolve.
 
-Place available proof close to the material claims it supports. If that proof does not exist, write a narrower truthful claim or omit it. A weak proof inventory is an input to copy judgment, not a command to insert empty proof modules.
+Choose the best available material for each moment in the argument. A clear product explanation or useful scene can carry a section.
 
 ## Research Depth And Copy Length
 
-Follow the Full Design Process in `../SKILL.md`: default to substantive long form, develop important reasons beyond benefit summaries, preserve purposeful reinforcement, and remove only irrelevant or purposeless repetition. Plan depth using known product facts, supported explanations, available evidence and meaningful objections; do not invent claims to make the page longer. Relevant performance evidence and a recorded rationale are required for an overall short-form departure, not individual editorial cuts. No word count or reason quota applies.
+Follow the copy-depth guidance in `../SKILL.md`. Default to substantive long form and give important reasons enough space for a concrete situation, product detail, consequence, desire or objection. Preserve purposeful reinforcement and cut repetition that adds no value. For an overall short page, record a concise rationale based on the buyer, traffic, product and offer. Let the argument set the length and reason count.
 
-Deepen research for unclear positioning, weak proof, complex offers, claim sensitivity or QA failures within the same full-design process. Do not require fresh brand exemplars.
+Use buyer language, seller material and relevant examples when they sharpen an unclear angle or make a complex choice easier.

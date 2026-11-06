@@ -1,12 +1,12 @@
 # Source Guide Index
 
-The full original framework is preserved unchanged in [source-landing-page-design-guide-v2.md](source-landing-page-design-guide-v2.md) (3,086 lines). Use it as a targeted design-example library alongside the maintained references. When choosing a category's art direction, a component layout or a shopping interaction, consult the matching section below if a concrete example will help. Do not load the whole file routinely.
+The original framework is preserved in [source-landing-page-design-guide-v2.md](source-landing-page-design-guide-v2.md) (3,086 lines). Use the selected visual and interaction examples below for category art direction, component layout or shopping controls.
 
 ## Current Rules Take Precedence
 
-SKILL.md and the maintained builder references govern task scope, defaults, copy, archetypes, QA, wireframe review, imagery and Shopify release. This archive retains historical implementation ownership and broad generator instructions for context, not as active commands. It does not require a standalone design, audit or rewrite to onboard a store or deploy, nor switch implementation to another skill. Use [dtc-qa-rubric.md](dtc-qa-rubric.md) for the current score and revision thresholds; do not combine different rubric versions. The current rubric also explains the retired condensed rubric differences. Preserve the source unchanged so the line references below remain accurate.
+Use [SKILL.md](../SKILL.md) and the maintained references for scope, copy, wireframe review, imagery and Shopify release. Use the [listicle playbook](listicle-playbook.md) for the numbered headline, reason order and purchase path. Use [dtc-qa-rubric.md](dtc-qa-rubric.md) for current review guidance.
 
-Archived offers, ratings, certifications, prices and sample copy are illustrative, not merchant facts. Do not import its mandatory proof stacks, minimum FAQs, automatic verification placeholders, fixed section template, older scoring blockers or implementation ownership. Apply the current finished-copy rule and select only useful patterns. Long-form, routing, image-approval and release decisions remain owned by current references.
+Archived offers, ratings, certifications, prices and sample copy are illustrative. Use the merchant's facts and actual offer for finished copy. The archived generator prompt, verification and scoring workflows, mandatory proof stacks, minimum FAQs, and implementation ownership are inactive. Preserve the archive unchanged so the example ranges stay accurate.
 
 ## Targeted Design Examples
 
@@ -21,9 +21,11 @@ These ranges add detail to the maintained guidance; they are options, not requir
 | Sticky CTA timing and restraint | 1557-1600 | `dtc-components.md` |
 | Category art direction and image ideas | 1606-2145; use the specific category range below | `dtc-category-packs.md` |
 
-Read only the selected range, assess its usefulness for the actual product and brand, then return to the maintained workflow. Do not treat an example's optional feature as a missing requirement.
+Read the range that helps with the design decision, then return to the maintained workflow.
 
-## Top-Level Sections
+## Historical Top-Level Sections
+
+The index below identifies sections of the original guide. The targeted examples above are the working routes for a current design.
 
 ```text
 1: DTC Landing Page Generation Guide for AI Designers / Codex
